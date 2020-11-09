@@ -31,8 +31,8 @@
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skin.cs" />
       </list>
     </option>
   </component>
@@ -87,7 +87,7 @@
       <workItem from="1604868192339" duration="9419000" />
       <workItem from="1604885547858" duration="3828000" />
       <workItem from="1604889445437" duration="20590000" />
-      <workItem from="1604936447922" duration="1709000" />
+      <workItem from="1604936447922" duration="2874000" />
     </task>
     <servers />
   </component>

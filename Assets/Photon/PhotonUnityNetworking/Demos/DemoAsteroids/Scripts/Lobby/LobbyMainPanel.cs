@@ -1,5 +1,4 @@
-﻿using ExitGames.Client.Photon;
-using Photon.Realtime;
+﻿using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,19 +26,11 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("Room List Panel")]
         public GameObject RoomListPanel;
-
         public GameObject RoomListContent;
         public GameObject RoomListEntryPrefab;
-
-        [Header("Inside Room Panel")]
-        public GameObject InsideRoomPanel;
-
-        public Button StartGameButton;
-        public GameObject PlayerListEntryPrefab;
-
+        
         private Dictionary<string, RoomInfo> cachedRoomList;
         private Dictionary<string, GameObject> roomListEntries;
-        private Dictionary<int, GameObject> playerListEntries;
 
         #region UNITY
 
@@ -94,98 +85,8 @@ namespace Photon.Pun.Demo.Asteroids
             RoomOptions options = new RoomOptions {MaxPlayers = 8};
 
             PhotonNetwork.CreateRoom(roomName, options, null);
-        }
-
-        public override void OnJoinedRoom()
-        {
-            SetActivePanel(InsideRoomPanel.name);
-
-            if (playerListEntries == null)
-            {
-                playerListEntries = new Dictionary<int, GameObject>();
-            }
-
-            foreach (var p in PhotonNetwork.PlayerList)
-            {
-                var entry = Instantiate(PlayerListEntryPrefab, InsideRoomPanel.transform, true);
-                entry.transform.localScale = Vector3.one;
-                entry.GetComponent<PlayerListEntry>().Initialize(p.ActorNumber, p.NickName);
-
-                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out var isPlayerReady))
-                {
-                    entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
-                }
-
-                playerListEntries.Add(p.ActorNumber, entry);
-            }
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
-
-            var props = new Hashtable
-            {
-                {AsteroidsGame.PLAYER_LOADED_LEVEL, false}
-            };
-            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
-        }
-
-        public override void OnLeftRoom()
-        {
-            SetActivePanel(SelectionPanel.name);
-
-            foreach (GameObject entry in playerListEntries.Values)
-            {
-                Destroy(entry.gameObject);
-            }
-
-            playerListEntries.Clear();
-            playerListEntries = null;
-        }
-
-        public override void OnPlayerEnteredRoom(Player newPlayer)
-        {
-            GameObject entry = Instantiate(PlayerListEntryPrefab);
-            entry.transform.SetParent(InsideRoomPanel.transform);
-            entry.transform.localScale = Vector3.one;
-            entry.GetComponent<PlayerListEntry>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
-
-            playerListEntries.Add(newPlayer.ActorNumber, entry);
-
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
-        }
-
-        public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            Destroy(playerListEntries[otherPlayer.ActorNumber].gameObject);
-            playerListEntries.Remove(otherPlayer.ActorNumber);
-
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
-        }
-
-        public override void OnMasterClientSwitched(Player newMasterClient)
-        {
-            if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
-            {
-                StartGameButton.gameObject.SetActive(CheckPlayersReady());
-            }
-        }
-
-        public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-        {
-            if (playerListEntries == null)
-            {
-                playerListEntries = new Dictionary<int, GameObject>();
-            }
-
-            GameObject entry;
-            if (playerListEntries.TryGetValue(targetPlayer.ActorNumber, out entry))
-            {
-                object isPlayerReady;
-                if (changedProps.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
-                {
-                    entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
-                }
-            }
-
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            
+            PhotonNetwork.LoadLevel("Lobby");
         }
 
         #endregion
@@ -213,18 +114,15 @@ namespace Photon.Pun.Demo.Asteroids
             var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 10000 };
 
             PhotonNetwork.CreateRoom(roomName, options, null);
+            
+            PhotonNetwork.LoadLevel("Lobby");
         }
 
         public void OnJoinRandomRoomButtonClicked()
         {
             SetActivePanel(JoinRandomRoomPanel.name);
-
             PhotonNetwork.JoinRandomRoom();
-        }
-
-        public void OnLeaveGameButtonClicked()
-        {
-            PhotonNetwork.LeaveRoom();
+            
         }
 
         public void OnLoginButtonClicked()
@@ -257,37 +155,11 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("DemoAsteroids-GameScene");
+            PhotonNetwork.LoadLevel("Lobby");
         }
 
         #endregion
 
-        private bool CheckPlayersReady()
-        {
-            if (!PhotonNetwork.IsMasterClient)
-            {
-                return false;
-            }
-
-            foreach (Player p in PhotonNetwork.PlayerList)
-            {
-                object isPlayerReady;
-                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
-                {
-                    if (!(bool) isPlayerReady)
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-        
         private void ClearRoomListView()
         {
             foreach (GameObject entry in roomListEntries.Values)
@@ -298,11 +170,6 @@ namespace Photon.Pun.Demo.Asteroids
             roomListEntries.Clear();
         }
 
-        public void LocalPlayerPropertiesUpdated()
-        {
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
-        }
-
         private void SetActivePanel(string activePanel)
         {
             LoginPanel.SetActive(activePanel.Equals(LoginPanel.name));
@@ -310,7 +177,6 @@ namespace Photon.Pun.Demo.Asteroids
             CreateRoomPanel.SetActive(activePanel.Equals(CreateRoomPanel.name));
             JoinRandomRoomPanel.SetActive(activePanel.Equals(JoinRandomRoomPanel.name));
             RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
-            InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
         }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)

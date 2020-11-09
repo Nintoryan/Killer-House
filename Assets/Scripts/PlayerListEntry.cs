@@ -1,22 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PlayerListEntry.cs" company="Exit Games GmbH">
-//   Part of: Asteroid Demo,
-// </copyright>
-// <summary>
-//  Player List Entry
-// </summary>
-// <author>developer@exitgames.com</author>
-// --------------------------------------------------------------------------------------------------------------------
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
+using Photon.Pun;
 using ExitGames.Client.Photon;
+using Photon.Pun.Demo.Asteroids;
 using Photon.Realtime;
 using Photon.Pun.UtilityScripts;
 
-namespace Photon.Pun.Demo.Asteroids
-{
     public class PlayerListEntry : MonoBehaviour
     {
         [Header("UI References")]
@@ -58,7 +47,7 @@ namespace Photon.Pun.Demo.Asteroids
 
                     if (PhotonNetwork.IsMasterClient)
                     {
-                        FindObjectOfType<LobbyMainPanel>().LocalPlayerPropertiesUpdated();
+                        FindObjectOfType<LobbyManager>().LocalPlayerPropertiesUpdated();
                     }
                 });
             }
@@ -94,4 +83,3 @@ namespace Photon.Pun.Demo.Asteroids
             PlayerReadyImage.enabled = playerReady;
         }
     }
-}

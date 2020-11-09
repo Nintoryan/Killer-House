@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Pun.Demo.Asteroids;
@@ -17,9 +16,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         public GameObject InsideRoomPanel;
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
+        public Transform PlayersHub;
 
         private Dictionary<int, GameObject> playerListEntries;
-        private Dictionary<int, GameObject> playerListCharacters;
         private bool isHide;
 
 
@@ -48,26 +47,24 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             entry.GetComponent<PlayerListEntry>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
             playerListEntries.Add(newPlayer.ActorNumber, entry);
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
-            Debug.Log($"Player {newPlayer.NickName} connected to the room.");
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
             Destroy(playerListEntries[otherPlayer.ActorNumber].gameObject);
             playerListEntries.Remove(otherPlayer.ActorNumber);
-            Debug.Log($"Player {otherPlayer.NickName} left the room.");
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
         public override void OnJoinedRoom()
         {
             SetActivePanel(InsideRoomPanel.name);
-            PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(10, 15), -1.7f, Random.Range(-5, 0)), Quaternion.identity);
+            var Character = PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(10, 15), -1.7f, Random.Range(-5, 0)), Quaternion.identity);
+            Character.transform.SetParent(PlayersHub);
             if (playerListEntries == null)
             {
                 playerListEntries = new Dictionary<int, GameObject>();
             }
-
             foreach (var p in PhotonNetwork.PlayerList)
             {
                 var entry = Instantiate(PlayerListEntryPrefab, InsideRoomPanel.transform, true);
@@ -78,8 +75,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
                 {
                     entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
                 }
-
                 playerListEntries.Add(p.ActorNumber, entry);
+            }
+
+            for (int i = 0; i < PlayersHub.childCount; i++)
+            {
+                PlayersHub.GetChild(i).GetComponent<PlayerController>().UpdateColor(i);
             }
 
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
@@ -111,11 +112,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
                 playerListEntries = new Dictionary<int, GameObject>();
             }
 
-            GameObject entry;
-            if (playerListEntries.TryGetValue(targetPlayer.ActorNumber, out entry))
+            if (playerListEntries.TryGetValue(targetPlayer.ActorNumber, out var entry))
             {
-                object isPlayerReady;
-                if (changedProps.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
+                if (changedProps.TryGetValue(AsteroidsGame.PLAYER_READY, out var isPlayerReady))
                 {
                     entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
                 }
@@ -141,10 +140,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
                 return false;
             }
 
-            foreach (Player p in PhotonNetwork.PlayerList)
+            foreach (var p in PhotonNetwork.PlayerList)
             {
-                object isPlayerReady;
-                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out isPlayerReady))
+                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_READY, out var isPlayerReady))
                 {
                     if (!(bool) isPlayerReady)
                     {
@@ -158,5 +156,22 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             }
 
             return true;
+        }
+
+        public static Color GetColor(int id)
+        {
+            switch (id)
+                {
+                    case 0: return Color.red;
+                    case 1: return Color.green;
+                    case 2: return Color.blue;
+                    case 3: return Color.yellow;
+                    case 4: return Color.cyan;
+                    case 5: return Color.grey;
+                    case 6: return Color.magenta;
+                    case 7: return Color.white;
+                }
+
+                return Color.black;
         }
     }

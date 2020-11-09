@@ -72,7 +72,7 @@ using Photon.Pun.UtilityScripts;
             {
                 if (p.ActorNumber == ownerId)
                 {
-                    PlayerColorImage.color = AsteroidsGame.GetColor(p.GetPlayerNumber());
+                    PlayerColorImage.color = LobbyManager.GetColor(p.GetPlayerNumber());
                 }
             }
         }

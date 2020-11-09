@@ -56,7 +56,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
             {
-                r.material.color = AsteroidsGame.GetColor(photonView.Owner.GetPlayerNumber());
+               // r.material.color = AsteroidsGame.GetColor(photonView.Owner.GetPlayerNumber());
             }
         }
 

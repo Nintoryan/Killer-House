@@ -11,13 +11,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ShowHideLobbyUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Room.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MenuManger.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ShowHideLobbyUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Room.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManger.cs" />
       </list>
     </option>
   </component>
@@ -59,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604868173117</updated>
-      <workItem from="1604868192339" duration="3326000" />
+      <workItem from="1604868192339" duration="9419000" />
     </task>
     <servers />
   </component>

@@ -80,7 +80,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
             for (int i = 0; i < PlayersHub.childCount; i++)
             {
-                PlayersHub.GetChild(i).GetComponent<PlayerController>().UpdateColor(i);
+                PlayersHub.GetChild(i).GetComponent<PlayerController>()._skin.UpdateColor(i);
             }
 
             StartGameButton.gameObject.SetActive(CheckPlayersReady());

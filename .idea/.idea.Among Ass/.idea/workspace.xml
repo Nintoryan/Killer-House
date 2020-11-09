@@ -31,6 +31,7 @@
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
@@ -86,6 +87,7 @@
       <workItem from="1604868192339" duration="9419000" />
       <workItem from="1604885547858" duration="3828000" />
       <workItem from="1604889445437" duration="20590000" />
+      <workItem from="1604936447922" duration="1709000" />
     </task>
     <servers />
   </component>
@@ -162,6 +164,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="292" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1604889411928" />
+    <state x="501" y="119" key="RiderGenerateDialog" timestamp="1604937863057">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="501" y="119" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1604937863057" />
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1604903376856">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

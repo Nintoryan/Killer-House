@@ -21,6 +21,19 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
+--- !u!114 &3449069519872095525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90107967886366004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b0d902ad8db304a90a101542c8347a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mesh: {fileID: 90107967891576920}
 --- !u!1 &887302962690538279
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +250,7 @@ MonoBehaviour:
   controller: {fileID: 3655408425186577709}
   _floatingJoystick: {fileID: 4347181808870956944}
   _camera: {fileID: 4777210978111403303}
-  _mesh: {fileID: 90107967891576920}
+  _skin: {fileID: 3449069519872095525}
 --- !u!114 &3706719653554171646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +272,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 5316149679955128270}
   - {fileID: 7159649482509469005}
+  - {fileID: 3449069519872095525}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -441,6 +455,11 @@ Transform:
 --- !u!95 &90107967895889560 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4831290010421516432, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
+  m_PrefabInstance: {fileID: 4777210978117664264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &90107967886366004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4831290010428779324, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
   m_PrefabInstance: {fileID: 4777210978117664264}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &90107967891576920 stripped

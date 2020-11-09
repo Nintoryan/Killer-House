@@ -319,7 +319,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="CameraFollow.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerListEntry.cs" t="Include" />

@@ -85,8 +85,6 @@ namespace Photon.Pun.Demo.Asteroids
             RoomOptions options = new RoomOptions {MaxPlayers = 8};
 
             PhotonNetwork.CreateRoom(roomName, options, null);
-            
-            PhotonNetwork.LoadLevel("Lobby");
         }
 
         #endregion
@@ -114,8 +112,6 @@ namespace Photon.Pun.Demo.Asteroids
             var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 10000 };
 
             PhotonNetwork.CreateRoom(roomName, options, null);
-            
-            PhotonNetwork.LoadLevel("Lobby");
         }
 
         public void OnJoinRandomRoomButtonClicked()
@@ -149,13 +145,16 @@ namespace Photon.Pun.Demo.Asteroids
 
             SetActivePanel(RoomListPanel.name);
         }
+        
+        public override void OnJoinedRoom()
+        {
+            PhotonNetwork.LoadLevel("Lobby");
+        }
 
         public void OnStartGameButtonClicked()
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
-
-            PhotonNetwork.LoadLevel("Lobby");
         }
 
         #endregion

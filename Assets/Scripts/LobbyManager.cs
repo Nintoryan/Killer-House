@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Pun.Demo.Asteroids;
@@ -6,8 +7,9 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-    public class LobbyManager : MonoBehaviourPunCallbacks
+public class LobbyManager : MonoBehaviourPunCallbacks
     {
         public GameObject PlayerPrefab;
         [Header("Inside Room Panel")] 
@@ -30,10 +32,13 @@ using UnityEngine.UI;
         {
             PhotonNetwork.LeaveRoom();
         }
-        
+
         private void Start()
         {
-            Instantiate(PlayerPrefab, new Vector3(Random.Range(10, 15), -1.7f, Random.Range(-5, 0)), Quaternion.identity);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                OnJoinedRoom();
+            }
         }
 
         public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -57,7 +62,7 @@ using UnityEngine.UI;
         public override void OnJoinedRoom()
         {
             SetActivePanel(InsideRoomPanel.name);
-
+            PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(10, 15), -1.7f, Random.Range(-5, 0)), Quaternion.identity);
             if (playerListEntries == null)
             {
                 playerListEntries = new Dictionary<int, GameObject>();

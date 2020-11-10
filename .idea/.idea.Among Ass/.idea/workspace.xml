@@ -13,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerOffline.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -33,6 +34,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerOffline.cs" />
       </list>
     </option>
   </component>
@@ -88,6 +90,7 @@
       <workItem from="1604885547858" duration="3828000" />
       <workItem from="1604889445437" duration="20590000" />
       <workItem from="1604936447922" duration="4138000" />
+      <workItem from="1605023373129" duration="851000" />
     </task>
     <servers />
   </component>

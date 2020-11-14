@@ -1,6 +1,6 @@
 ﻿using Photon.Pun;
 using UnityEngine;
-
+#pragma warning disable CS0649
 public class Skin : MonoBehaviour,IPunObservable
 {
     

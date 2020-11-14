@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+#pragma warning disable CS0649
 namespace AAPlayer
 {
     public class Body : MonoBehaviour
@@ -20,7 +20,15 @@ namespace AAPlayer
         private void FixedUpdate()
         {
             if (!_Controller._photonView.IsMine) return;
-            foreach (var player in Controller.AllPlayers)
+            if (_Controller.IsDead)
+            {
+                foreach (var player in GameManager.Instance._players)
+                {
+                    player._Body.Show();
+                }
+                return;
+            }
+            foreach (var player in GameManager.Instance._players)
             {
                 if(player == _Controller) continue;
                 int layerMask = 1 << 8;

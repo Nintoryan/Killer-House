@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+#pragma warning disable CS0649
 namespace AAPlayer
 {
     public class KillingZone : MonoBehaviour
@@ -11,7 +11,7 @@ namespace AAPlayer
         private void OnTriggerEnter(Collider other)
         {
             var body = other.GetComponent<Body>();
-            if (body && body != _myBody)
+            if (body && body != _myBody && !PlayersInside.Contains(body))
             {
                 PlayersInside.Add(body);
             }
@@ -19,7 +19,7 @@ namespace AAPlayer
         private void OnTriggerExit(Collider other)
         {
             var body = other.GetComponent<Body>();
-            if (body && body != _myBody)
+            if (body && body != _myBody && PlayersInside.Contains(body))
             {
                 PlayersInside.Remove(body);
             }

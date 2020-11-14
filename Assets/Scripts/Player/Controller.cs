@@ -1,23 +1,24 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
-using DG.Tweening;
 
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Controller : MonoBehaviourPunCallbacks, IPunObservable
+    public class Controller : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        public PhotonView _photonView;
         [SerializeField] private CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
         [SerializeField] private Camera _camera;
+        [SerializeField] private Skills _skills;
+        
         public Body _Body;
-        public static List<Controller> AllPlayers = new List<Controller>();
         public Skin _skin;
+        public PhotonView _photonView;
+        
         private Vector3 playerVelocity;
         private bool groundedPlayer;
         private float playerSpeed = 3.5f;
@@ -28,37 +29,11 @@ namespace AAPlayer
         private string Name;
         private string ID;
         private float gravityValue = -9.81f;
-
-        private bool _isDead;
-        private bool IsDead
-        {
-            get => _isDead;
-            set
-            {
-                _isDead = value;
-                _animator.enabled = !_isDead;
-            } }
-
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(IsDead);   
-            }
-            else
-            {
-                IsDead = (bool)stream.ReceiveNext();
-            }
-        }
+        public bool IsDead { get; private set;}
 
         private void Start()
         {
-            if (!AllPlayers.Contains(this))
-            {
-                AllPlayers.Add(this);
-                Debug.Log($"Кол-во игроков:{AllPlayers.Count}");
-            }
+            GameManager.Instance.AddPlayer(this);
 
             if (!_photonView.IsMine)
             {
@@ -67,26 +42,8 @@ namespace AAPlayer
             else
             {
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
-                Initialize(PhotonNetwork.LocalPlayer.UserId, PhotonNetwork.NickName);
+                _skin.ColorID = PhotonNetwork.LocalPlayer.ActorNumber;
             }
-        }
-
-        public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            foreach (var player in AllPlayers.Where(player => player.ID == otherPlayer.UserId))
-            {
-                AllPlayers.Remove(player);
-                Debug.Log($"Кол-во игроков:{AllPlayers.Count}");
-                Destroy(player.gameObject);
-                break;
-            }
-        }
-
-        private void Initialize(string id, string ActorName)
-        {
-            ID = id;
-            Name = ActorName;
-            _skin.ColorID = PhotonNetwork.LocalPlayer.ActorNumber;
         }
 
         private void Update()
@@ -133,23 +90,24 @@ namespace AAPlayer
                 controller.transform.forward = direction;
             }
         }
-        public static void Die(Controller c)
+        
+
+        public void DieEvent()
         {
-            c.IsDead = true;
-            c._animator.enabled = false;
-            c._floatingJoystick.enabled = false;
-            var s = DOTween.Sequence();
-            s.AppendInterval(1f);
-            s.AppendCallback(() =>
-            {
-                c._camera.transform.localPosition += new Vector3(1, 1, -1) * 10;
-                var RagDollParts = c.GetComponentsInChildren<Rigidbody>();
-                foreach (var RagDollsPart in RagDollParts)
-                {
-                    RagDollsPart.isKinematic = false;
-                }
-                c._floatingJoystick.enabled = true;
-            });
+            int sendingData = _photonView.Owner.ActorNumber;
+            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            SendOptions sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(42, sendingData, options, sendOptions);
+            Debug.Log($"Я убил игрока {sendingData}");
+        }
+
+        public void SetDead()
+        {
+            IsDead = true;
+            _animator.enabled = false;
+            _skills.DiableKilling();
+            controller.enabled = false;
+            Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");
         }
     }
 }

@@ -317,14 +317,17 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Body.cs" t="Include" />
-          <e p="Controller.cs" t="Include" />
-          <e p="KillingZone.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="Body.cs" t="Include" />
+            <e p="Controller.cs" t="Include" />
+            <e p="KillingZone.cs" t="Include" />
+            <e p="PlayerOffline.cs" t="Include" />
+            <e p="Skills.cs" t="Include" />
+            <e p="Skin.cs" t="Include" />
+          </e>
           <e p="PlayerListEntry.cs" t="Include" />
-          <e p="PlayerOffline.cs" t="Include" />
-          <e p="Skills.cs" t="Include" />
-          <e p="Skin.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="LobbyMainPanel.cs" t="Include" />
             <e p="LobbyTopPanel.cs" t="Include" />

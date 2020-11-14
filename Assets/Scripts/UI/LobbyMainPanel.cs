@@ -40,8 +40,6 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         roomListEntries = new Dictionary<string, GameObject>();
 
         PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
-        Controller.AllPlayers.Clear();
-        Debug.Log($"Кол-во игроков:{Controller.AllPlayers.Count}");
     }
 
     #endregion

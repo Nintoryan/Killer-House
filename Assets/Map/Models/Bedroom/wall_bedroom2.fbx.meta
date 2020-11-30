@@ -1,8 +1,32 @@
 fileFormatVersion: 2
-guid: 549cf325478b58643ba70b35866c919a
+guid: 9860e8e33bd07db429577f164d9658aa
 ModelImporter:
   serializedVersion: 20101
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -792101732945047751
+    second: IC_Wall01.006|Cube.080Action
+  - first:
+      74: -2379414061527036301
+    second: IC_Wall01.006|Cube.084Action
+  - first:
+      74: -3643479440485660857
+    second: IC_Wall01.006|Default
+  - first:
+      74: -2243598128892278735
+    second: IC_Wall01.006|flower
+  - first:
+      74: -7546636902349965182
+    second: IC_Wall01.006|Hand1
+  - first:
+      74: 120979159051888547
+    second: IC_Wall01.006|Head2
+  - first:
+      74: -2098905125570116100
+    second: IC_Wall01.006|IC_Wall01.004Action
+  - first:
+      74: -2084654185916429271
+    second: IC_Wall01.006|Moving
   externalObjects: {}
   materials:
     materialImportMode: 1

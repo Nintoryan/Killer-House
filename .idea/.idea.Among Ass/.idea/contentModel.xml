@@ -223,11 +223,6 @@
                     <e p="PlayerOverviewPanel.cs" t="Include" />
                     <e p="Spaceship.cs" t="Include" />
                   </e>
-                  <e p="Lobby" t="Include">
-                    <e p="LobbyMainPanel.cs" t="Include" />
-                    <e p="LobbyTopPanel.cs" t="Include" />
-                    <e p="RoomListEntry.cs" t="Include" />
-                  </e>
                 </e>
               </e>
               <e p="PhotonUnityNetworking.Demos.asmdef" t="Include" />
@@ -322,13 +317,19 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Body.cs" t="Include" />
+          <e p="Controller.cs" t="Include" />
+          <e p="KillingZone.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
           <e p="PlayerListEntry.cs" t="Include" />
           <e p="PlayerOffline.cs" t="Include" />
+          <e p="Skills.cs" t="Include" />
           <e p="Skin.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="LobbyMainPanel.cs" t="Include" />
+            <e p="LobbyTopPanel.cs" t="Include" />
             <e p="Logger.cs" t="Include" />
+            <e p="RoomListEntry.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

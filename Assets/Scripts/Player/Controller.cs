@@ -154,6 +154,19 @@ namespace AAPlayer
             Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");
         }
 
+        public void DisableDeadBodyEvent()
+        {
+            int sendingData = _photonView.Owner.ActorNumber;
+            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            SendOptions sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(50, sendingData, options, sendOptions);
+        }
+        public void DisableDeadBody()
+        {
+            _Body.HideDeadBody();
+            _deadBodyCollider.gameObject.SetActive(false);
+        }
+
         public void DisableControll()
         {
             _floatingJoystick.enabled = false;

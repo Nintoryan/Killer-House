@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AAPlayer;
 using DG.Tweening;
 using ExitGames.Client.Photon;
 using Photon.Pun;
@@ -23,8 +24,6 @@ namespace Voting
         [SerializeField] private TMP_Text VotingResultText;
         private float timeLeft;
         private Dictionary<string, UILineRenderer> _playersLines =new Dictionary<string, UILineRenderer>();
-        private Image SuspectLine;
-        private Image ProtectLine;
         private PointerState _pointerState = PointerState.None;
         private PlayerAvatar _localPlayer;
         private PlayerAvatar _suspectPlayer;
@@ -40,31 +39,16 @@ namespace Voting
             return _PlayerAvatar;
         }
 
-        public void VotingEventMeeting()
+        public void VotingEvent(Controller WhoStarted)
         {
-            string sendingData = "";
             RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             SendOptions sendOptions = new SendOptions {Reliability = true};
-            PhotonNetwork.RaiseEvent(46, sendingData, options, sendOptions);
-        }
-
-        public void VotingEventDeadbody(int FoundBodyActorNumber)
-        {
-            int sendingData = FoundBodyActorNumber;
-            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-            SendOptions sendOptions = new SendOptions {Reliability = true};
-            PhotonNetwork.RaiseEvent(47, sendingData, options, sendOptions);
-            Debug.Log($"Event 47 was raised! SendingData:{sendingData}");
+            PhotonNetwork.RaiseEvent(46, WhoStarted._photonView.Owner.ActorNumber, options, sendOptions);
         }
 
         private void InitializeVoting(int DeadBodyID = -1)
         {
-            Debug.Log("InitializeVoting");
             VotingParent.SetActive(true);
-            if (DeadBodyID != -1)
-            {
-                //Отобразить - кто умер
-            }
             timeLeft = GameManager.Instance.VotingDuration;
             var controllers = GameManager.Instance._players
                 .OrderBy(p => p._photonView.Owner.ActorNumber)
@@ -94,7 +78,10 @@ namespace Voting
             {
                 var s = DOTween.Sequence();
                 s.AppendInterval(timeLeft);
-                s.AppendCallback(EndVoting); 
+                s.AppendCallback(()=>
+                {
+                    EndVoting(DeadBodyID);
+                }); 
             }
         }
 
@@ -104,14 +91,52 @@ namespace Voting
             Timer.text = timeLeft.ToString("0.0");
         }
 
-        private void EndVoting()
+        private void EndVoting(int DeadActorNumber)
         {
+            foreach (var p in GameManager.Instance._players.Where(p => p._photonView.Owner.ActorNumber == DeadActorNumber))
+            {
+                p.DisableDeadBody();
+            }
             var s = DOTween.Sequence();
             s.AppendCallback(() =>
             {
+                VotingResultText.text = "Nobody was ejected...";
                 VotingParent.SetActive(false);
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    int max = -100;
+                    int maxI = 0;
+                    bool NotOneMax = false;
+                    for (int i = 0; i < _playerAvatars.Length; i++)
+                    {
+                        if (_playerAvatars[i].KickScore > max)
+                        {
+                            max = _playerAvatars[i].KickScore;
+                            maxI = i;
+                        }
+                    }
+                    for (int i = 0; i < _playerAvatars.Length; i++)
+                    {
+                        if(i==maxI) continue;
+                        
+                        if (_playerAvatars[i].KickScore == max)
+                        {
+                            NotOneMax = true;
+                        }
+                    }
+
+                    if (!NotOneMax)
+                    {
+                        foreach (var p in GameManager.Instance._players.Where(p =>
+                            p._photonView.Owner.ActorNumber == DeadActorNumber))
+                        {
+                            p.DieEvent();
+                            p.DisableDeadBodyEvent();
+                            PlayerKickedEvent(p._photonView.Owner.NickName);
+                        }
+                    }
+                }
                 VotingResults.SetActive(true);
-                VotingResultText.text = "Nobody was ejected";
             });
             s.AppendInterval(2f);
             s.AppendCallback(() =>
@@ -128,6 +153,15 @@ namespace Voting
             SendOptions sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(44, sendingData, options, sendOptions);
             Debug.Log($"Event 44 send {sendingData}");
+        }
+
+        private void PlayerKickedEvent(string Name)
+        {
+            string sendingData = Name;
+            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            SendOptions sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(48, sendingData, options, sendOptions);
+            Debug.Log($"Event 48 send {sendingData}");
         }
 
         private void DrawLine(PlayerAvatar first, PlayerAvatar second, Color _color)
@@ -187,11 +221,11 @@ namespace Voting
                     }
                     break;
                 case 46:
+                    Debug.Log($"Event 46 has gotten! RecivedData:{(int)photonEvent.CustomData}");
                     InitializeVoting();
                     break;
-                case 47:
-                    Debug.Log($"Event 47 has gotten! RecivedData:{photonEvent.CustomData}");
-                    InitializeVoting();
+                case 48:
+                    VotingResultText.text = $"{(string) photonEvent.CustomData} was ejected";
                     break;
             }
         }

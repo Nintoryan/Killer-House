@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public List<Controller> _players = new List<Controller>();
     public Controller LocalPlayer;
     public Transform[] SpawnPlaces;
+    public GameObject AmountOfPlayers;
     public float VotingDuration;
     
 
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 break;
             case 43:
                 //Событие начала игры
+                AmountOfPlayers.SetActive(false);
                 var OrderedPlayers = _players
                     .OrderBy(p => p._photonView.Owner.ActorNumber)
                     .ToArray();
@@ -63,6 +65,13 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s.AppendInterval(1f);
                 s.AppendCallback(() => LocalPlayer.ActivateControll());
                 break;
+            case 50:
+                foreach (var p in _players.Where(p => p._photonView.Owner.ActorNumber == (int)photonEvent.CustomData))
+                {
+                    p.DisableDeadBody();
+                }
+                break;
+            
         }
     }
 

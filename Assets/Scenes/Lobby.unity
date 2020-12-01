@@ -1305,6 +1305,7 @@ MonoBehaviour:
   - {fileID: 1825110943}
   - {fileID: 1410597557}
   - {fileID: 359116871}
+  AmountOfPlayers: {fileID: 215629944}
   VotingDuration: 50
 --- !u!4 &857152431
 Transform:
@@ -2045,7 +2046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

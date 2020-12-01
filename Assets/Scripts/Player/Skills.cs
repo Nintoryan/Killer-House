@@ -9,6 +9,7 @@ namespace AAPlayer
     public class Skills : MonoBehaviour
     {
         [SerializeField] private KillingZone _killingZone;
+        [SerializeField] private Body _body;
         [SerializeField] private Button _killButton;
         [SerializeField] private Image _killButtonBg;
         [SerializeField] private Button _AlarmButton;
@@ -48,14 +49,12 @@ namespace AAPlayer
 
         public void Alarm()
         {
-            if (FoundBodyID != -1)
+            var Dead = _body.GetDeadBody();
+            if (Dead != null)
             {
-                _votingManager.VotingEventDeadbody(FoundBodyID);
+                Dead.DisableDeadBodyEvent();
             }
-            else
-            {
-                _votingManager.VotingEventMeeting();
-            }
+            _votingManager.VotingEvent(GetComponent<Controller>());
         }
 
         public void DiableKilling()
@@ -69,16 +68,14 @@ namespace AAPlayer
             _killButtonBg.gameObject.SetActive(true);
         }
 
-        public void EnterDeadBody(int id)
+        public void EnterDeadBody()
         {
             _AlarmButton.interactable = true;
-            FoundBodyID = id;
         }
 
         public void ExitDeadBody()
         {
             _AlarmButton.interactable = false;
-            FoundBodyID = -1;
         }
         
     }

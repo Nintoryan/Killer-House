@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
@@ -7,6 +8,8 @@ namespace AAPlayer
         public Controller _Controller;
         [SerializeField] private Skills _skills;
         [SerializeField] private GameObject _Graphics;
+        private List<Controller> _deadBodies = new List<Controller>();
+        public bool HiddenDeadBody;
 
         private void Hide()
         {
@@ -23,6 +26,7 @@ namespace AAPlayer
         private void FixedUpdate()
         {
             if (!_Controller._photonView.IsMine) return;
+
             if (_Controller.IsDead)
             {
                 foreach (var player in GameManager.Instance._players)
@@ -41,24 +45,53 @@ namespace AAPlayer
                 }
                 else
                 {
-                    player._Body.Show();
+                    if (player._Body.HiddenDeadBody)
+                    {
+                        player._Body.Hide();
+                    }
+                    else
+                    {
+                        player._Body.Show();
+                    }
+                    
                 }
             }
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<DeadBodyZone>() != null)
+            var body = other.GetComponent<DeadBodyZone>();
+            if (body != null)
             {
-                _skills.EnterDeadBody(other.GetComponent<DeadBodyZone>()._Controller._photonView.Owner.ActorNumber);
+                if (!_deadBodies.Contains(body._Controller))
+                {
+                    _deadBodies.Add(body._Controller);
+                }
+                _skills.EnterDeadBody();
             }
+        }
+
+        public Controller GetDeadBody()
+        {
+            return _deadBodies.Count > 0 ? _deadBodies[0] : null;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.GetComponent<DeadBodyZone>() != null)
+            var body = other.GetComponent<DeadBodyZone>();
+            if (body != null)
             {
+                if (_deadBodies.Contains(body._Controller))
+                {
+                    _deadBodies.Remove(body._Controller);
+                }
                 _skills.ExitDeadBody();
             }
+        }
+
+        public void HideDeadBody()
+        {
+            HiddenDeadBody = true;
+            Hide();
         }
     } 
 }

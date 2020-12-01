@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ChatGui.cs" company="Exit Games GmbH">
-//   Part of: PhotonChat demo,
-// </copyright>
-// <author>developer@exitgames.com</author>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿
 using System;
 using System.Collections.Generic;
 

@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: dbb4bcecfb31bd34eb50a24b487e7840
+timeCreated: 1565273552
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Barracks
+    100002: //RootNode
+    100004: BlueFlag
+    100006: Colors01
+    100008: Colors02
+    100010: Colors02.001
+    100012: Cube
+    100014: Ground
+    400000: Barracks
+    400002: //RootNode
+    400004: BlueFlag
+    400006: Colors01
+    400008: Colors02
+    400010: Colors02.001
+    400012: Cube
+    400014: Ground
+    2100000: Material.001
+    2100002: No Name
+    2100004: Material
+    2300000: Barracks
+    2300002: BlueFlag
+    2300004: Colors01
+    2300006: Colors02
+    2300008: Colors02.001
+    2300010: Cube
+    2300012: Ground
+    3300000: Barracks
+    3300002: BlueFlag
+    3300004: Colors01
+    3300006: Colors02
+    3300008: Colors02.001
+    3300010: Cube
+    3300012: Ground
+    4300000: BlueFlag
+    4300002: Ground
+    4300004: Cube
+    4300006: Barracks
+    4300008: Colors02.001
+    4300010: Colors01
+    4300012: Colors02
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

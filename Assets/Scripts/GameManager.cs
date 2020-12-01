@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using AAPlayer;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
-
+using DG.Tweening;
 public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public List<Controller> _players = new List<Controller>();
+    public Controller LocalPlayer;
+    public Transform[] SpawnPlaces;
+    public float VotingDuration;
+    
 
     public static GameManager Instance;
 
@@ -30,16 +34,52 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         switch (photonEvent.Code)
         {
             case 42:
-                Debug.Log($"Надо убить игрока {(int) photonEvent.CustomData}");
                 foreach (var p in _players)
                 {
-                    Debug.Log($"Проверяю игрока {p._photonView.Owner.ActorNumber}");
                     if (p._photonView.Owner.ActorNumber == (int) photonEvent.CustomData)
                     {
                         p.SetDead();
                     }
                 }
                 break;
+            case 43:
+                var OrderedPlayers = _players
+                    .OrderBy(p => p._photonView.Owner.ActorNumber)
+                    .ToArray();
+                LocalPlayer.DisableControll();
+                int imposterID = (int) photonEvent.CustomData;
+                for (int i = 0; i < OrderedPlayers.Length; i++)
+                {
+                    OrderedPlayers[i]._Body.transform.position = new Vector3(
+                        SpawnPlaces[i].position.x,
+                        OrderedPlayers[i].transform.position.y,
+                        SpawnPlaces[i].position.z);
+                    
+                    if (i == imposterID)
+                    {
+                        OrderedPlayers[i]._skills.EnableKilling();
+                    }
+                }
+
+                var s = DOTween.Sequence();
+                s.AppendInterval(1f);
+                s.AppendCallback(() => LocalPlayer.ActivateControll());
+                break;
+        }
+    }
+
+    public void MovePlayersToSpawn()
+    {
+        var OrderedPlayers = _players
+            .OrderBy(p => p._photonView.Owner.ActorNumber)
+            .ToArray();
+        LocalPlayer.DisableControll();
+        for (int i = 0; i < OrderedPlayers.Length; i++)
+        {
+            OrderedPlayers[i]._Body.transform.position = new Vector3(
+                SpawnPlaces[i].position.x,
+                OrderedPlayers[i].transform.position.y,
+                SpawnPlaces[i].position.z);
         }
     }
 

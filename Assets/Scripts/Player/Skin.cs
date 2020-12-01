@@ -20,6 +20,7 @@ public class Skin : MonoBehaviour,IPunObservable
         }
     }
 
+    public Color _Color => LobbyManager.GetColor(_colorID - 1);
     private MaterialPropertyBlock _propBlock;
     private int _colorID;
 

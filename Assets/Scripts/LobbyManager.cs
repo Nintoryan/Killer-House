@@ -23,6 +23,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         private bool isHide;
 
 
+        public void StartGame()
+        {
+            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            SendOptions sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(43, Random.Range(0,playerListEntries.Count), options, sendOptions);
+        }
         public void ShowHideInsideRoomPanel()
         {
             InsideRoomPanel.SetActive(isHide);
@@ -60,7 +66,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         public override void OnJoinedRoom()
         {
             SetActivePanel(InsideRoomPanel.name);
-            var Character = PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(15, 25), -1.7f, Random.Range(-5, 5)), Quaternion.identity);
+            PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(15, 25), -1.7f, Random.Range(-5, 5)), Quaternion.identity);
             if (playerListEntries == null)
             {
                 playerListEntries = new Dictionary<int, GameObject>();

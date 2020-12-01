@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using ExitGames.Client.Photon;
+﻿using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 #pragma warning disable CS0649
@@ -13,12 +13,15 @@ namespace AAPlayer
         [SerializeField] private CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
         [SerializeField] private Camera _camera;
-        [SerializeField] private Skills _skills;
-        
+        public Skills _skills;
+        [SerializeField] private Transform NickNameCanvas;
+        [SerializeField] private TMP_Text NickName;
+        [SerializeField] private Chat _chat;
+        [SerializeField] private SphereCollider _deadBodyCollider;
+
         public Body _Body;
         public Skin _skin;
         public PhotonView _photonView;
-        
         private Vector3 playerVelocity;
         private bool groundedPlayer;
         private float playerSpeed = 3.5f;
@@ -26,15 +29,16 @@ namespace AAPlayer
         private float turnSmoothVelocity;
         private static readonly int Status = Animator.StringToHash("status");
         private Vector3 BodyCamDistance;
-        private string Name;
-        private string ID;
-        private float gravityValue = -9.81f;
+        private Vector3 NickNameDistance;
+        public string Name =>_photonView.Owner.NickName;
+        public int ID;
+        private float gravityValue = -981f;
         public bool IsDead { get; private set;}
 
         private void Start()
         {
             GameManager.Instance.AddPlayer(this);
-
+            NickName.text = _photonView.Owner.NickName;
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
@@ -42,23 +46,46 @@ namespace AAPlayer
             else
             {
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
+                NickNameDistance = NickNameCanvas.position - controller.transform.position;
                 _skin.ColorID = PhotonNetwork.LocalPlayer.ActorNumber;
+                ID = PhotonNetwork.LocalPlayer.ActorNumber;
+                GameManager.Instance.LocalPlayer = this;
+                _skills.DiableKilling();
+                _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
             }
         }
 
         private void Update()
         {
-            if (!_photonView.IsMine) return;
-            var direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
-                _floatingJoystick.Direction.x + _floatingJoystick.Direction.y);
-            if (!IsDead)
+            if (_photonView.IsMine)
             {
-                AliveMove(direction);
+                var direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
+                    _floatingJoystick.Direction.x + _floatingJoystick.Direction.y);
+                if (!IsDead)
+                {
+                    AliveMove(direction);
+                }
+                else
+                {
+                    _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
+                }
             }
             else
             {
-                _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
+                
             }
+            NickNameCanvas.position = NickNameDistance + controller.transform.position;
+            
+        }
+
+        public void DisableNickName()
+        {
+            NickNameCanvas.gameObject.SetActive(false);
+        }
+
+        public void ActivateNickName()
+        {
+            NickNameCanvas.gameObject.SetActive(true);
         }
 
         private void AliveMove(Vector3 direction)
@@ -104,10 +131,23 @@ namespace AAPlayer
         public void SetDead()
         {
             IsDead = true;
-            _animator.enabled = false;
+            if(_photonView.IsMine)
+                _animator.SetInteger(Status,-1);
+            DisableNickName();
             _skills.DiableKilling();
             controller.enabled = false;
+            _deadBodyCollider.gameObject.SetActive(true);
             Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");
+        }
+
+        public void DisableControll()
+        {
+            _floatingJoystick.enabled = false;
+        }
+
+        public void ActivateControll()
+        {
+            _floatingJoystick.enabled = true;
         }
     }
 }

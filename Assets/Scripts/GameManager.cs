@@ -34,15 +34,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         switch (photonEvent.Code)
         {
             case 42:
-                foreach (var p in _players)
+                //Событие смерти игрока
+                foreach (var p in _players.Where(p => p._photonView.Owner.ActorNumber == (int) photonEvent.CustomData))
                 {
-                    if (p._photonView.Owner.ActorNumber == (int) photonEvent.CustomData)
-                    {
-                        p.SetDead();
-                    }
+                    p.SetDead();
                 }
                 break;
             case 43:
+                //Событие начала игры
                 var OrderedPlayers = _players
                     .OrderBy(p => p._photonView.Owner.ActorNumber)
                     .ToArray();
@@ -54,13 +53,12 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         SpawnPlaces[i].position.x,
                         OrderedPlayers[i].transform.position.y,
                         SpawnPlaces[i].position.z);
-                    
+                    OrderedPlayers[i].UpdateCameraPos();
                     if (i == imposterID)
                     {
                         OrderedPlayers[i]._skills.EnableKilling();
                     }
                 }
-
                 var s = DOTween.Sequence();
                 s.AppendInterval(1f);
                 s.AppendCallback(() => LocalPlayer.ActivateControll());
@@ -80,6 +78,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 SpawnPlaces[i].position.x,
                 OrderedPlayers[i].transform.position.y,
                 SpawnPlaces[i].position.z);
+            OrderedPlayers[i].UpdateCameraPos();
         }
     }
 

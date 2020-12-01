@@ -75,9 +75,23 @@ namespace AAPlayer
                 
             }
             NickNameCanvas.position = NickNameDistance + controller.transform.position;
-            
         }
 
+        public void UpdateCameraPos()
+        {
+            if (_photonView.IsMine)
+            {
+                if (!IsDead)
+                {
+                    _camera.transform.position = BodyCamDistance + controller.transform.position;
+                }
+                else
+                {
+                    _camera.transform.position = new Vector3(11,20,-13);
+                }
+            }
+        }
+        
         public void DisableNickName()
         {
             NickNameCanvas.gameObject.SetActive(false);

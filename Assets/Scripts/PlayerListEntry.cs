@@ -25,34 +25,6 @@ using Photon.Pun.UtilityScripts;
             PlayerNumbering.OnPlayerNumberingChanged += OnPlayerNumberingChanged;
         }
 
-        public void Start()
-        {
-            if (PhotonNetwork.LocalPlayer.ActorNumber != ownerId)
-            {
-                PlayerReadyButton.gameObject.SetActive(false);
-            }
-            else
-            {
-                Hashtable initialProps = new Hashtable() {{AsteroidsGame.PLAYER_READY, isPlayerReady}, {AsteroidsGame.PLAYER_LIVES, AsteroidsGame.PLAYER_MAX_LIVES}};
-                PhotonNetwork.LocalPlayer.SetCustomProperties(initialProps);
-                PhotonNetwork.LocalPlayer.SetScore(0);
-
-                PlayerReadyButton.onClick.AddListener(() =>
-                {
-                    isPlayerReady = !isPlayerReady;
-                    SetPlayerReady(isPlayerReady);
-
-                    Hashtable props = new Hashtable() {{AsteroidsGame.PLAYER_READY, isPlayerReady}};
-                    PhotonNetwork.LocalPlayer.SetCustomProperties(props);
-
-                    if (PhotonNetwork.IsMasterClient)
-                    {
-                        FindObjectOfType<LobbyManager>().LocalPlayerPropertiesUpdated();
-                    }
-                });
-            }
-        }
-
         public void OnDisable()
         {
             PlayerNumbering.OnPlayerNumberingChanged -= OnPlayerNumberingChanged;
@@ -75,11 +47,5 @@ using Photon.Pun.UtilityScripts;
                     PlayerColorImage.color = LobbyManager.GetColor(p.GetPlayerNumber());
                 }
             }
-        }
-
-        public void SetPlayerReady(bool playerReady)
-        {
-            PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
-            PlayerReadyImage.enabled = playerReady;
         }
     }

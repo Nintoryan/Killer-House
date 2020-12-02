@@ -88,19 +88,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public static Color GetColor(int id)
     {
-        return id switch
+        switch(id)
         {
-            0 => new Color(0.1f, 0.74f, 0.61f),
-            1 => new Color(0.18f, 0.8f, 0.44f),
-            2 => new Color(0.2f, 0.6f, 0.86f),
-            3 => new Color(0.61f, 0.35f, 0.71f),
-            4 => new Color(0.2f, 0.29f, 0.37f),
-            5 => new Color(0.93f, 0.94f, 0.95f),
-            6 => new Color(0.91f, 0.3f, 0.24f),
-            7 => new Color(0.83f, 0.33f, 0f),
-            8 => new Color(0.95f, 0.77f, 0.06f),
-            9 => new Color(0.95f, 0.61f, 0.07f),
-            _ => new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), 1)
+            case 0: return new Color(0.1f, 0.74f, 0.61f);
+            case 1: return new Color(0.18f, 0.8f, 0.44f);
+            case 2: return new Color(0.2f, 0.6f, 0.86f);
+            case 3: return new Color(0.61f, 0.35f, 0.71f);
+            case 4: return new Color(0.2f, 0.29f, 0.37f);
+            case 5: return new Color(0.93f, 0.94f, 0.95f);
+            case 6: return new Color(0.91f, 0.3f, 0.24f);
+            case 7: return new Color(0.83f, 0.33f, 0f);
+            case 8: return new Color(0.95f, 0.77f, 0.06f);
+            case 9: return new Color(0.95f, 0.61f, 0.07f);
+            default: return new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), 1);
         };
     }
 }

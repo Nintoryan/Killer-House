@@ -14,7 +14,6 @@ namespace AAPlayer
         [SerializeField] private Image _killButtonBg;
         [SerializeField] private Button _AlarmButton;
         [SerializeField] private int KillingColdown = 35;
-        [SerializeField] private VotingManager _votingManager;
 
         private int FoundBodyID = -1;
 
@@ -54,7 +53,7 @@ namespace AAPlayer
             {
                 Dead.DisableDeadBodyEvent();
             }
-            _votingManager.VotingEvent(GetComponent<Controller>());
+            VotingManager.RaiseVotingEvent(GetComponent<Controller>());
         }
 
         public void DiableKilling()

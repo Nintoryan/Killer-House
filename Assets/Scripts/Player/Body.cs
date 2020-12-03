@@ -19,6 +19,7 @@ namespace AAPlayer
 
         private void Show()
         {
+            if(HiddenDeadBody) return;
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
@@ -45,15 +46,7 @@ namespace AAPlayer
                 }
                 else
                 {
-                    if (player._Body.HiddenDeadBody)
-                    {
-                        player._Body.Hide();
-                    }
-                    else
-                    {
-                        player._Body.Show();
-                    }
-                    
+                    player._Body.Show();
                 }
             }
         }

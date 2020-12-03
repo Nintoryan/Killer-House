@@ -642,6 +642,7 @@
             <e p="RoomListEntry.cs" t="Include" />
             <e p="VotingManager.cs" t="Include" />
           </e>
+          <e p="VotingZone.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

@@ -270,7 +270,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!114 &3102593261100312655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -411,7 +409,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2677176069476201135}
         m_TargetAssemblyTypeName: Voting.Voting, Assembly-CSharp
-        m_MethodName: SetPointerState
+        m_MethodName: SetDependencyType
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -736,7 +734,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &5599419830636808821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +842,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -978,7 +974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2024,6 +2019,7 @@ MonoBehaviour:
   _Controller: {fileID: 8899025424892144629}
   _skills: {fileID: 6180608721847349546}
   _Graphics: {fileID: 90107967886366000}
+  HiddenDeadBody: 0
 --- !u!136 &6138149367261027161
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2442,7 +2438,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1406947925582045022}
   - {fileID: 7034218212812087257}
   - {fileID: 5093172299922920303}
   - {fileID: 8323128247413494770}
@@ -2515,8 +2510,6 @@ MonoBehaviour:
   - {fileID: 5140517288997189855}
   - {fileID: 2846760235374976553}
   - {fileID: 4985720071521786491}
-  _line: {fileID: 1205981801720841739, guid: b6fa5fe94524d82498886c78754f9558, type: 3}
-  LinesParent: {fileID: 1406947925582045022}
   Timer: {fileID: 647904011515114023}
   VotingParent: {fileID: 7298276244101056719}
   VotingResults: {fileID: 6357857217468759650}
@@ -3055,7 +3048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3197,11 +3189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killingZone: {fileID: 1389770541291987898}
+  _body: {fileID: 6974272432337578942}
   _killButton: {fileID: 8359482524731314859}
   _killButtonBg: {fileID: 1189889013697667122}
   _AlarmButton: {fileID: 7418585591761482181}
   KillingColdown: 35
-  _votingManager: {fileID: 2677176069476201135}
 --- !u!1 &4409022821137601862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3255,7 +3247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3576,7 +3567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3700,7 +3690,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &751251635273903846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3885,7 +3874,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4187,7 +4175,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
 --- !u!114 &4038570092131164647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4205,41 +4192,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &7406486435767447517
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1406947925582045022}
-  m_Layer: 5
-  m_Name: Lines
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1406947925582045022
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7406486435767447517}
-  m_LocalRotation: {x: 0.000000029802315, y: -0.000000029802315, z: 0.000000014901158, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9102632456058970505}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 2048, y: 1152}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7718805214619344116
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,7 +4781,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4861,7 +4812,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2677176069476201135}
         m_TargetAssemblyTypeName: Voting.Voting, Assembly-CSharp
-        m_MethodName: SetPointerState
+        m_MethodName: SetDependencyType
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5037,7 +4988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
-    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5096,7 +5046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5188,11 +5138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -5212,11 +5162,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
---- !u!224 &767961967669483800 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 2909537250403789314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2846760235374976553 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -5228,6 +5173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &767961967669483800 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 2909537250403789314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4386544308646899098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5245,7 +5195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5337,11 +5287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -5361,11 +5311,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
---- !u!224 &2173192631961411200 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 4386544308646899098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3675318970841749937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -5377,6 +5322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2173192631961411200 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 4386544308646899098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4777210978117664264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5574,6 +5524,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
+--- !u!1 &90107967886366000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4831290010428779320, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
+  m_PrefabInstance: {fileID: 4777210978117664264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &90107967886264656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4831290010429273944, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
+  m_PrefabInstance: {fileID: 4777210978117664264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &90107967891576920 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4831290010425665104, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
+  m_PrefabInstance: {fileID: 4777210978117664264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &90107967886366004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4831290010428779324, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
@@ -5582,21 +5547,6 @@ GameObject:
 --- !u!95 &90107967895889560 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4831290010421516432, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
-  m_PrefabInstance: {fileID: 4777210978117664264}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &90107967886264656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4831290010429273944, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
-  m_PrefabInstance: {fileID: 4777210978117664264}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &90107967886366000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4831290010428779320, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
-  m_PrefabInstance: {fileID: 4777210978117664264}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &90107967891576920 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4831290010425665104, guid: eca4bfeb94455044c8d87aa4ae9e6407, type: 3}
   m_PrefabInstance: {fileID: 4777210978117664264}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4852076452861570243
@@ -5616,7 +5566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5708,11 +5658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -5765,7 +5715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5857,11 +5807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -5914,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6006,11 +5956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6179,6 +6129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+--- !u!224 &4347181808870956949 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+  m_PrefabInstance: {fileID: 5563772123683758481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4347181808870956944 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
@@ -6190,11 +6145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &4347181808870956949 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
-  m_PrefabInstance: {fileID: 5563772123683758481}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5687226610567855927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6212,7 +6162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6304,11 +6254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6328,11 +6278,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
---- !u!224 &7792792621233802285 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 5687226610567855927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4687244006670043932 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -6344,6 +6289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &7792792621233802285 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 5687226610567855927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5857257778208268520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6361,7 +6311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6453,11 +6403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6510,7 +6460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6602,11 +6552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6659,7 +6609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6751,11 +6701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -6808,7 +6758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6900,11 +6850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPlayerAvatar
+      value: RaiseSetDependencyEvent
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Voting.Voting, Assembly-CSharp
+      value: Voting.VotingManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697257938872007042, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument

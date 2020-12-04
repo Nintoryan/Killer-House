@@ -50,7 +50,8 @@ namespace AAPlayer
                 _skin.ColorID = PhotonNetwork.LocalPlayer.ActorNumber;
                 ID = PhotonNetwork.LocalPlayer.ActorNumber;
                 GameManager.Instance.LocalPlayer = this;
-                _skills.DiableKilling();
+                _skills.DisableKilling();
+                _skills.HideAlarmButton();
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
             }
         }
@@ -148,7 +149,8 @@ namespace AAPlayer
             if(_photonView.IsMine)
                 _animator.SetInteger(Status,-1);
             DisableNickName();
-            _skills.DiableKilling();
+            _skills.DisableKilling();
+            _skills.HideAlarmButton();
             controller.enabled = false;
             _deadBodyCollider.gameObject.SetActive(true);
             Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");

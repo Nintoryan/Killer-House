@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         OrderedPlayers[i].transform.position.y,
                         SpawnPlaces[i].position.z);
                     OrderedPlayers[i].UpdateCameraPos();
+                    OrderedPlayers[i]._skills.ShowAlarmButton();
                     if (i == imposterID)
                     {
                         OrderedPlayers[i]._skills.EnableKilling();

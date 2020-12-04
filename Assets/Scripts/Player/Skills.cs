@@ -15,6 +15,7 @@ namespace AAPlayer
         [SerializeField] private Button _AlarmButton;
         [SerializeField] private int KillingColdown = 35;
 
+        public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
 
         public void TryKill()
@@ -52,11 +53,20 @@ namespace AAPlayer
             if (Dead != null)
             {
                 Dead.DisableDeadBodyEvent();
+                VotingManager.RaiseVotingEvent(GetComponent<Controller>());
             }
-            VotingManager.RaiseVotingEvent(GetComponent<Controller>());
+            else
+            {
+                if (!HadSpawnAlarm)
+                {
+                    HadSpawnAlarm = true;
+                    VotingManager.RaiseVotingEvent(GetComponent<Controller>());
+                    DisableAlarmButton();
+                }
+            }
         }
 
-        public void DiableKilling()
+        public void DisableKilling()
         {
             _killButton.gameObject.SetActive(false);
             _killButtonBg.gameObject.SetActive(false);
@@ -67,12 +77,22 @@ namespace AAPlayer
             _killButtonBg.gameObject.SetActive(true);
         }
 
-        public void EnterDeadBody()
+        public void HideAlarmButton()
+        {
+            _AlarmButton.gameObject.SetActive(false);
+        }
+
+        public void ShowAlarmButton()
+        {
+            _AlarmButton.gameObject.SetActive(true);
+        }
+
+        public void EnableAlarmButton()
         {
             _AlarmButton.interactable = true;
         }
 
-        public void ExitDeadBody()
+        public void DisableAlarmButton()
         {
             _AlarmButton.interactable = false;
         }

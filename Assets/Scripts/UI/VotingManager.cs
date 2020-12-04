@@ -21,6 +21,8 @@ namespace Voting
         private DependecieType _dependecieType = DependecieType.None;
         private PlayerAvatar _localPlayer;
         private PlayerAvatar _WhoStartedVoting;
+        
+        
         public static void RaiseVotingEvent(Controller WhoStarted)
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
@@ -29,7 +31,10 @@ namespace Voting
         }
         public void RaiseSetDependencyEvent(PlayerAvatar _selectedPlayerAvatar)
         {
-            if(_selectedPlayerAvatar == _localPlayer || _dependecieType == DependecieType.None) return;
+
+            if(_selectedPlayerAvatar == _localPlayer ||
+               _dependecieType == DependecieType.None ||
+               GameManager.Instance.FindPlayer(_localPlayer.ID).IsDead) return;
             
             var sendingData = $"{_localPlayer.ID}:{_selectedPlayerAvatar.ID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
@@ -56,10 +61,6 @@ namespace Voting
                 {
                     _playerAvatars[i].gameObject.SetActive(false);
                 }
-                else if (controllers[i].IsDead)
-                {
-                    _playerAvatars[i].gameObject.SetActive(false);
-                }
                 else
                 {
                     _playerAvatars[i].gameObject.SetActive(true);
@@ -70,13 +71,13 @@ namespace Voting
                     }
                 }
             }
-
             if (GameManager.Instance.LocalPlayer._photonView.IsMine)
             {
                 var s = DOTween.Sequence();
                 s.AppendInterval(timeLeft);
                 s.AppendCallback(EndVoting); 
             }
+            
         }
 
         private void EndVoting()
@@ -133,17 +134,17 @@ namespace Voting
             if (!PhotonNetwork.IsMasterClient) return;
             
             var MaxKickScore = -100;
-            var MaxID = 0;
+            var MaxI = 0;
             var NotOneMaxPlayer = false;
             for (var i = 0; i < _playerAvatars.Length; i++)
             {
                 if (_playerAvatars[i].KickScore <= MaxKickScore) continue;
                 MaxKickScore = _playerAvatars[i].KickScore;
-                MaxID = i;
+                MaxI = i;
             }
             for (var i = 0; i < _playerAvatars.Length; i++)
             {
-                if(i==MaxID) continue;
+                if(i==MaxI) continue;
                 if (_playerAvatars[i].KickScore == MaxKickScore)
                 {
                     NotOneMaxPlayer = true;
@@ -151,7 +152,7 @@ namespace Voting
             }
             if (NotOneMaxPlayer) return;
             foreach (var p in GameManager.Instance._players.Where(p =>
-                p._photonView.Owner.ActorNumber == MaxID))
+                p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].ID))
             {
                 RaiseKickedEvent(p._photonView.Owner.ActorNumber);
             }
@@ -159,7 +160,7 @@ namespace Voting
         
         private static void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer, DependecieType type)
         {
-            switch (type )
+            switch (type)
             {
                 case DependecieType.None:
                     Debug.Log("Попытка установить неправильное отношение между игроками!");

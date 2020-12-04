@@ -59,7 +59,12 @@ namespace AAPlayer
                 {
                     _deadBodies.Add(body._Controller);
                 }
-                _skills.EnterDeadBody();
+                _skills.EnableAlarmButton();
+            }
+
+            if (other.GetComponent<VotingZone>() != null && !_skills.HadSpawnAlarm)
+            {
+                _skills.EnableAlarmButton();
             }
         }
 
@@ -77,7 +82,11 @@ namespace AAPlayer
                 {
                     _deadBodies.Remove(body._Controller);
                 }
-                _skills.ExitDeadBody();
+                _skills.DisableAlarmButton();
+            }
+            if (other.GetComponent<VotingZone>() != null)
+            {
+                _skills.DisableAlarmButton();
             }
         }
 

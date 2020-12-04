@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
     public float VotingDuration;
+    public MinigameZone[] AllMinigames;
+    public List<MinigameZone> MyMinigames;
     
 
     public static GameManager Instance;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         SpawnPlaces[i].position.z);
                     OrderedPlayers[i].UpdateCameraPos();
                     OrderedPlayers[i]._skills.ShowAlarmButton();
+                    OrderedPlayers[i]._skills.ShowInteractButton();
                     if (i == imposterID)
                     {
                         OrderedPlayers[i]._skills.EnableKilling();

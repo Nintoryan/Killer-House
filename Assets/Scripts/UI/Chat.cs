@@ -37,7 +37,6 @@ public class Chat : MonoBehaviour, IChatClientListener
     }
     public void DebugReturn(DebugLevel level, string message)
     {
-        throw new System.NotImplementedException();
     }
 
     public void OnDisconnected()
@@ -65,31 +64,31 @@ public class Chat : MonoBehaviour, IChatClientListener
 
     public void OnPrivateMessage(string sender, object message, string channelName)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnUnsubscribed(string[] channels)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnStatusUpdate(string user, int status, bool gotMessage, object message)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void OnUserSubscribed(string channel, string user)
     {
-        throw new System.NotImplementedException();
+       
     }
 
     public void OnUserUnsubscribed(string channel, string user)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

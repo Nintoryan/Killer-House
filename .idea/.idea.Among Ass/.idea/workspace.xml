@@ -20,15 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/TAPTAPTAP.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/TAPTAPTAP.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/Text (TMP).controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/Text (TMP).controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.renderTexture" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.renderTexture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +63,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DeadBodyZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,21 +97,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UILineRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Voting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DeadBodyZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
+        <option value="$PROJECT_DIR$/Assets/MinigameZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
       </list>
     </option>
   </component>
@@ -165,7 +190,7 @@
       <workItem from="1606851981751" duration="5521000" />
       <workItem from="1606933515496" duration="1707000" />
       <workItem from="1607004776696" duration="4936000" />
-      <workItem from="1607022187852" duration="12616000" />
+      <workItem from="1607022187852" duration="19255000" />
     </task>
     <servers />
   </component>
@@ -267,9 +292,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1606212219249" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1606854340968">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607045843974">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1606854340968" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607045843974" />
   </component>
 </project>

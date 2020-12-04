@@ -13,6 +13,7 @@ namespace AAPlayer
         [SerializeField] private Button _killButton;
         [SerializeField] private Image _killButtonBg;
         [SerializeField] private Button _AlarmButton;
+        public Button _interactButton;
         [SerializeField] private int KillingColdown = 35;
 
         public bool HadSpawnAlarm;
@@ -81,10 +82,20 @@ namespace AAPlayer
         {
             _AlarmButton.gameObject.SetActive(false);
         }
-
+        
         public void ShowAlarmButton()
         {
             _AlarmButton.gameObject.SetActive(true);
+        }
+        
+        public void HideInteractButton()
+        {
+            _interactButton.gameObject.SetActive(false);
+        }
+
+        public void ShowInteractButton()
+        {
+            _interactButton.gameObject.SetActive(true);
         }
 
         public void EnableAlarmButton()
@@ -96,6 +107,7 @@ namespace AAPlayer
         {
             _AlarmButton.interactable = false;
         }
+        
         
     }
 }

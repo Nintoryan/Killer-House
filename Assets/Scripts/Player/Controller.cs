@@ -52,6 +52,7 @@ namespace AAPlayer
                 GameManager.Instance.LocalPlayer = this;
                 _skills.DisableKilling();
                 _skills.HideAlarmButton();
+                _skills.HideInteractButton();
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
             }
         }

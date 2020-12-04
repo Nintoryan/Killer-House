@@ -623,6 +623,12 @@
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
+          <e p="Minigames" t="Include">
+            <e p="Minigame.cs" t="Include" />
+            <e p="MinigamesManager.cs" t="Include" />
+            <e p="MinigameZone.cs" t="Include" />
+            <e p="TapsMinigame.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Body.cs" t="Include" />
             <e p="Controller.cs" t="Include" />

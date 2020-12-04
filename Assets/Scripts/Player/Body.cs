@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
@@ -66,7 +67,17 @@ namespace AAPlayer
             {
                 _skills.EnableAlarmButton();
             }
+            var MiniGame = other.GetComponent<MinigameZone>();
+            if (MiniGame != null)
+            {
+                if (!MiniGame.isComplete)
+                {
+                    _skills._interactButton.interactable = true;
+                }
+            }
+            
         }
+        
 
         public Controller GetDeadBody()
         {
@@ -87,6 +98,11 @@ namespace AAPlayer
             if (other.GetComponent<VotingZone>() != null)
             {
                 _skills.DisableAlarmButton();
+            }
+
+            if (other.GetComponent<MinigameZone>() != null)
+            {
+                _skills._interactButton.interactable = false;
             }
         }
 

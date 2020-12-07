@@ -624,9 +624,13 @@
           <e p="GameManager.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
           <e p="Minigames" t="Include">
+            <e p="Gestures" t="Include">
+              <e p="Swipe.cs" t="Include" />
+            </e>
             <e p="Minigame.cs" t="Include" />
             <e p="MinigamesManager.cs" t="Include" />
             <e p="MinigameZone.cs" t="Include" />
+            <e p="SwipeMinigame.cs" t="Include" />
             <e p="TapsMinigame.cs" t="Include" />
           </e>
           <e p="Player" t="Include">

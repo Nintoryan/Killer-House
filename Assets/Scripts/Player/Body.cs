@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
@@ -19,6 +20,7 @@ namespace AAPlayer
 
         private void Show()
         {
+            if(HiddenDeadBody) return;
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
@@ -45,15 +47,7 @@ namespace AAPlayer
                 }
                 else
                 {
-                    if (player._Body.HiddenDeadBody)
-                    {
-                        player._Body.Hide();
-                    }
-                    else
-                    {
-                        player._Body.Show();
-                    }
-                    
+                    player._Body.Show();
                 }
             }
         }
@@ -66,9 +60,24 @@ namespace AAPlayer
                 {
                     _deadBodies.Add(body._Controller);
                 }
-                _skills.EnterDeadBody();
+                _skills.EnableAlarmButton();
             }
+
+            if (other.GetComponent<VotingZone>() != null && !_skills.HadSpawnAlarm)
+            {
+                _skills.EnableAlarmButton();
+            }
+            var MiniGame = other.GetComponent<MinigameZone>();
+            if (MiniGame != null)
+            {
+                if (!MiniGame.isComplete)
+                {
+                    _skills._interactButton.interactable = true;
+                }
+            }
+            
         }
+        
 
         public Controller GetDeadBody()
         {
@@ -84,7 +93,16 @@ namespace AAPlayer
                 {
                     _deadBodies.Remove(body._Controller);
                 }
-                _skills.ExitDeadBody();
+                _skills.DisableAlarmButton();
+            }
+            if (other.GetComponent<VotingZone>() != null)
+            {
+                _skills.DisableAlarmButton();
+            }
+
+            if (other.GetComponent<MinigameZone>() != null)
+            {
+                _skills._interactButton.interactable = false;
             }
         }
 

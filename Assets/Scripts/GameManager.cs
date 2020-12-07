@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
     public float VotingDuration;
+    public MinigameZone[] AllMinigames;
+    public List<MinigameZone> MyMinigames;
     
 
     public static GameManager Instance;
@@ -36,10 +38,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             case 42:
                 //Событие смерти игрока
-                foreach (var p in _players.Where(p => p._photonView.Owner.ActorNumber == (int) photonEvent.CustomData))
-                {
-                    p.SetDead();
-                }
+                var KilledPlayer = FindPlayer((int) photonEvent.CustomData);
+                KilledPlayer.SetDead();
                 break;
             case 43:
                 //Событие начала игры
@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         OrderedPlayers[i].transform.position.y,
                         SpawnPlaces[i].position.z);
                     OrderedPlayers[i].UpdateCameraPos();
+                    OrderedPlayers[i]._skills.ShowAlarmButton();
+                    OrderedPlayers[i]._skills.ShowInteractButton();
                     if (i == imposterID)
                     {
                         OrderedPlayers[i]._skills.EnableKilling();
@@ -66,15 +68,24 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s.AppendCallback(() => LocalPlayer.ActivateControll());
                 break;
             case 50:
-                foreach (var p in _players.Where(p => p._photonView.Owner.ActorNumber == (int)photonEvent.CustomData))
-                {
-                    p.DisableDeadBody();
-                }
+                //Событие выключения мертвого тела
+                var DeadPlayer = FindPlayer((int) photonEvent.CustomData);
+                DeadPlayer.DisableDeadBody();
                 break;
             
         }
     }
 
+    public Controller FindPlayer(int ActorID)
+    {
+        var Player = _players.FirstOrDefault(avatar => avatar._photonView.Owner.ActorNumber == ActorID);
+        if (Player == null)
+        {
+            Debug.Log($"Я не нашёл {ActorID} в массиве {_players}");
+        }
+        return Player;
+    }
+    
     public void MovePlayersToSpawn()
     {
         var OrderedPlayers = _players

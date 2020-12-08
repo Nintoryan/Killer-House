@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
@@ -9,10 +8,22 @@ namespace AAPlayer
         public Controller _Controller;
         [SerializeField] private Skills _skills;
         [SerializeField] private GameObject _Graphics;
+        [SerializeField] private GameObject[] AllSkins;
         [SerializeField] private MinigamesManager _minigamesManager;
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
 
+        public Animator _Animator => _Graphics.GetComponent<Animator>();
+        
+        public void Initialize(int id)
+        {
+            foreach (var t in AllSkins)
+            {
+                t.SetActive(false);
+            }
+            AllSkins[id].SetActive(true);
+            _Graphics = AllSkins[id];
+        }
         private void Hide()
         {
             _Graphics.SetActive(false);

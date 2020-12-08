@@ -7,7 +7,6 @@ public class PlayerOffline : MonoBehaviour
     [SerializeField]private CharacterController controller;
     [SerializeField]private FloatingJoystick _floatingJoystick;
     [SerializeField]private Camera _camera;
-    public Skin _skin;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     public float playerSpeed = 3.5f;
@@ -20,15 +19,11 @@ public class PlayerOffline : MonoBehaviour
 
     private void Start()
     {
-
-            BodyCamDistance = _camera.transform.position - controller.transform.position;
+        BodyCamDistance = _camera.transform.position - controller.transform.position;
     }
-
-
-
+    
     private void Update()
     {
-
         var direction = new Vector3(_floatingJoystick.Direction.x, 0, _floatingJoystick.Direction.y);
         if (direction.magnitude >= 0.05f)
         {

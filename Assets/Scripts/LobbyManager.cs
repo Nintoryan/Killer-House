@@ -4,14 +4,12 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using AAPlayer;
 using TMPro;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPrefab;
     public Button StartGameButton;
-    public Transform PlayersHub;
     [SerializeField] private TMP_Text AmountOfPlayers;
 
     public void StartGame()
@@ -57,13 +55,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(15, 25), -1.7f, Random.Range(-5, 5)),
-            Quaternion.identity);
-        for (int i = 0; i < PlayersHub.childCount; i++)
-        {
-            PlayersHub.GetChild(i).GetComponent<Controller>()._skin.UpdateColor(i);
-        }
-
+        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(15, 25), -1.7f, Random.Range(-5, 5)), Quaternion.identity);
         StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         StartGameButton.interactable = CheckPlayersReady();
     }

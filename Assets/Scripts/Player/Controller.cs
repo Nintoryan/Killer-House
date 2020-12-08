@@ -3,13 +3,13 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using Hashtable = System.Collections.Hashtable;
 
 #pragma warning disable CS0649
 namespace AAPlayer
 {
     public class Controller : MonoBehaviour
     {
-        [SerializeField] private Animator _animator;
         [SerializeField] private CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
         [SerializeField] private Camera _camera;
@@ -18,9 +18,7 @@ namespace AAPlayer
         [SerializeField] private TMP_Text NickName;
         [SerializeField] private Chat _chat;
         [SerializeField] private SphereCollider _deadBodyCollider;
-
         public Body _Body;
-        public Skin _skin;
         public PhotonView _photonView;
         private Vector3 playerVelocity;
         private bool groundedPlayer;
@@ -31,7 +29,20 @@ namespace AAPlayer
         private Vector3 BodyCamDistance;
         private Vector3 NickNameDistance;
         public string Name =>_photonView.Owner.NickName;
-        public int ID;
+
+        private int _localNumber=-1;
+        public int LocalNumber
+        {
+            get => _localNumber;
+            set
+            {
+                if (_localNumber != value)
+                {
+                    _localNumber = value;
+                    _Body.Initialize(value);
+                }
+            }
+        }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
 
@@ -42,14 +53,14 @@ namespace AAPlayer
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
+                LocalNumber = _photonView.Owner.ActorNumber-1;
             }
             else
             {
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
                 NickNameDistance = NickNameCanvas.position - controller.transform.position;
-                _skin.ColorID = PhotonNetwork.LocalPlayer.ActorNumber;
-                ID = PhotonNetwork.LocalPlayer.ActorNumber;
                 GameManager.Instance.LocalPlayer = this;
+                LocalNumber = PhotonNetwork.LocalPlayer.ActorNumber-1;
                 _skills.DisableKilling();
                 _skills.HideAlarmButton();
                 _skills.HideInteractButton();
@@ -115,7 +126,7 @@ namespace AAPlayer
             controller.Move(playerVelocity * Time.deltaTime);
             if (direction.magnitude >= 0.05f)
             {
-                _animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
+                _Body._Animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
                 var targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
                 var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
                     turnSmoothTime);
@@ -125,7 +136,7 @@ namespace AAPlayer
             }
             else
             {
-                _animator.SetInteger(Status, 0);
+                _Body._Animator.SetInteger(Status, 0);
             }
 
             if (direction != Vector3.zero)
@@ -148,7 +159,7 @@ namespace AAPlayer
         {
             IsDead = true;
             if(_photonView.IsMine)
-                _animator.SetInteger(Status,-1);
+                _Body._Animator.SetInteger(Status,-1);
             DisableNickName();
             _skills.DisableKilling();
             _skills.HideAlarmButton();
@@ -179,5 +190,6 @@ namespace AAPlayer
         {
             _floatingJoystick.enabled = true;
         }
+        
     }
 }

@@ -34,9 +34,9 @@ namespace Voting
 
             if(_selectedPlayerAvatar == _localPlayer ||
                _dependecieType == DependecieType.None ||
-               GameManager.Instance.FindPlayer(_localPlayer.ID).IsDead) return;
+               GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead) return;
             
-            var sendingData = $"{_localPlayer.ID}:{_selectedPlayerAvatar.ID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
+            var sendingData = $"{_localPlayer.thisPlayerActorID}:{_selectedPlayerAvatar.thisPlayerActorID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(44, sendingData, options, sendOptions);
@@ -64,7 +64,8 @@ namespace Voting
                 else
                 {
                     _playerAvatars[i].gameObject.SetActive(true);
-                    _playerAvatars[i].Initialize(controllers[i].Name,controllers[i]._skin._Color,controllers[i]._photonView.Owner.ActorNumber);
+                    _playerAvatars[i].Initialize(controllers[i].Name, controllers[i].LocalNumber, controllers[i]._photonView.Owner.ActorNumber);
+                    _playerAvatars[i].localPlayerNumber = i;
                     if (controllers[i]._photonView.IsMine)
                     {
                         _localPlayer = _playerAvatars[i];
@@ -111,12 +112,13 @@ namespace Voting
                     }
                     var second = FindPlayerAvatar(Convert.ToInt32(data.Split(':')[1]));
                     var isSus = data.Split(':')[2] == "1";
-                    SetDependecy(first, second, isSus ? DependecieType.Suspect : DependecieType.Protect);
+                    SetDependecy(first, second);
                     break;
                 case 46:
                     Debug.Log($"Событие начала голосования получено. Данные: {(int)photonEvent.CustomData}");
-                    _WhoStartedVoting = FindPlayerAvatar((int) photonEvent.CustomData);
                     StartVoting();
+                    _WhoStartedVoting = FindPlayerAvatar((int) photonEvent.CustomData);
+                    _WhoStartedVoting.WhoStartedIcon.gameObject.SetActive(true);
                     break;
                 case 48:
                     var KickedPlayerActorID = (int) photonEvent.CustomData;
@@ -152,52 +154,35 @@ namespace Voting
             }
             if (NotOneMaxPlayer) return;
             foreach (var p in GameManager.Instance._players.Where(p =>
-                p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].ID))
+                p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].thisPlayerActorID))
             {
                 RaiseKickedEvent(p._photonView.Owner.ActorNumber);
             }
         }
         
-        private static void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer, DependecieType type)
+        private static void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
         {
-            switch (type)
+            if (fromPlayer._suspectPlayer != null)
             {
-                case DependecieType.None:
-                    Debug.Log("Попытка установить неправильное отношение между игроками!");
-                    return;
-                case DependecieType.Suspect:
-                    if (fromPlayer._suspectPlayer != null)
-                    {
-                        fromPlayer._suspectPlayer.KickScore--;
-                    }
-                    fromPlayer._suspectPlayer = toPlayer;
-                    toPlayer.KickScore++;
-                    break;
-                case DependecieType.Protect:
-                    if (fromPlayer._protectedPlayer != null)
-                    {
-                        fromPlayer._protectedPlayer.KickScore++;
-                    }
-                    fromPlayer._protectedPlayer = toPlayer;
-                    toPlayer.KickScore--;
-                    break;
+                fromPlayer._suspectPlayer.suspectedByPlayersID.Remove(fromPlayer.localPlayerNumber);
+                fromPlayer._suspectPlayer.KickScore--;
             }
+            fromPlayer._suspectPlayer = toPlayer;
+            toPlayer.suspectedByPlayersID.Add(fromPlayer.localPlayerNumber);
+            toPlayer.KickScore++;
         }
-        
         public void SetDependencyType(int _state)
         {
             _dependecieType = (DependecieType)_state;
         }
-        
         private void Update()
         {
             timeLeft -= Time.deltaTime;
             Timer.text = timeLeft.ToString("0.0");
         }
-        
         private PlayerAvatar FindPlayerAvatar(int ActorID)
         {
-            var _PlayerAvatar = _playerAvatars.FirstOrDefault(avatar => ActorID == avatar.ID);
+            var _PlayerAvatar = _playerAvatars.FirstOrDefault(avatar => ActorID == avatar.thisPlayerActorID);
             if (_PlayerAvatar == null)
             {
                 Debug.Log($"Я не нашёл {ActorID} в массиве {_playerAvatars}");

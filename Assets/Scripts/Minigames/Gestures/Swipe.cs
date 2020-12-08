@@ -30,7 +30,7 @@ public class Swipe : MonoBehaviour
         }
         #endregion
 
-        #region MobileInput
+      /*  #region MobileInput
 
         if (Input.touches.Length > 0)
         {
@@ -46,21 +46,13 @@ public class Swipe : MonoBehaviour
             }
         }
 
-        #endregion
+        #endregion*/
 
         SwipeDelta = Vector2.zero;
         if (isDraging)
         {
-            if (Input.touches.Length > 0)
-            {
-                SwipeDelta = Input.touches[0].position - startTouch;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                SwipeDelta = (Vector2) Input.mousePosition - startTouch;
-            }
+            SwipeDelta = (Vector2) Input.mousePosition - startTouch;
         }
-
         if (SwipeDelta.magnitude > 125)
         {
             float x = SwipeDelta.x;

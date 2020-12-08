@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
-using AAPlayer;
-
 
 public class LobbyMainPanel : MonoBehaviourPunCallbacks
 {
@@ -119,6 +117,10 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
 
     }
 
+    public void Disconnect()
+    {
+        PhotonNetwork.Disconnect();
+    }
     public void OnLoginButtonClicked()
     {
         string playerName = PlayerNameInput.text;

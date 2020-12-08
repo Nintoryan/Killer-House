@@ -20,71 +20,196 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame0.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame0.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Material.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame0.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame0.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 10.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 11.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 12.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 13.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/color_font.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/color_font.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/ref.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 58.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 7.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 8.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/color_font.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/color_font.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/ref.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 55.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 56.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/ref.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 14.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Ref.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Ref.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame16.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame16.renderTexture.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame19.renderTexture" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame19.renderTexture.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame8.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame8.renderTexture.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LowPolyInterior/Materials/Toilet.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LowPolyInterior/Materials/Toilet.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame1.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame1.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame10.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame10.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame10.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame11.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame11.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame11.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame11.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame12.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame12.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame12.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame12.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame13.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame13.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame13.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame13.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame14.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame14.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame14.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame14.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame15.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame15.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame15.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame15.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame16.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame16.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame16.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame16.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame17.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame17.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame17.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame17.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame18.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame18.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame18.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame18.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame19.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame19.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame2.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame3.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame3.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame4.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame4.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame5.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame5.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame5.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame6.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame6.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame6.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame7.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame7.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame7.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame7.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame8.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame8.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame8.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame9.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame9.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Minigames/Minigame9.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame10.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame10.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame11.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame11.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame12.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame12.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame13.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame13.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame14.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame14.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame15.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame15.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame16.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame16.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame17.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame17.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame18.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame18.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame19.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame19.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame2.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame2.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame3.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame3.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame4.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame4.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame5.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame5.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame6.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame6.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame7.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame7.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame8.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame8.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame9.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Minigames/Minigame9.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame1.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame10.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame10.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame11.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame11.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame12.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame12.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame13.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame13.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame14.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame14.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame15.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame15.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame16.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame16.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame17.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame17.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame18.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame18.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame2.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame2.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame3.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame3.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame4.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame4.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame5.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame5.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame6.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame6.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame7.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame7.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame8.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame8.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame9.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Minigames/RenderTextures/Minigame9.renderTexture.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +232,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -133,7 +259,6 @@
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonChat/Demos/DemoChat/ChatGui.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
@@ -150,15 +275,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
       </list>
     </option>
   </component>
@@ -237,7 +364,7 @@
       <workItem from="1607022187852" duration="19255000" />
       <workItem from="1607154436689" duration="3120000" />
       <workItem from="1607182956688" duration="1481000" />
-      <workItem from="1607422922013" duration="5144000" />
+      <workItem from="1607422922013" duration="10260000" />
     </task>
     <servers />
   </component>
@@ -339,23 +466,23 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607155079626" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607045843974">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607432529022">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607045843974" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607432529022" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs</url>
-          <line>83</line>
+          <line>86</line>
           <properties documentPath="C:\Users\Nintoryan\Documents\GitHub\Among Ass\Assets\Scripts\Minigames\SwipeMinigame.cs" initialLine="65">
             <startOffsets>
-              <option value="2287" />
+              <option value="2448" />
             </startOffsets>
             <endOffsets>
-              <option value="2305" />
+              <option value="2466" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

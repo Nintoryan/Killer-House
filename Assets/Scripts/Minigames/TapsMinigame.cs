@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TapsMinigame : Minigame
 {
@@ -13,6 +14,7 @@ public class TapsMinigame : Minigame
     {
         base.InitializeMiniGame();
         Button.gameObject.SetActive(true);
+        Button.GetComponent<Button>().onClick.AddListener(Tap);
         Button.localScale = Vector3.one;
         Button.anchoredPosition = Positons[0];
     }
@@ -32,9 +34,11 @@ public class TapsMinigame : Minigame
         {
             Fail();
             Button.gameObject.SetActive(false);
+            Button.GetComponent<Button>().onClick.RemoveAllListeners();
         }
     }
-    public void Tap()
+
+    private void Tap()
     {
         if (!isMiniGameStarted)
         {
@@ -46,6 +50,7 @@ public class TapsMinigame : Minigame
         {
             Win();
             Button.gameObject.SetActive(false);
+            Button.GetComponent<Button>().onClick.RemoveAllListeners();
             return;
         }
         Button.localScale = Vector3.one;

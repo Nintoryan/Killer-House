@@ -19,6 +19,7 @@ public class SwipeMinigame : Minigame
     {
         base.InitializeMiniGame();
         _swipeControlls.enabled = true;
+        GuidePointer.gameObject.SetActive(true);
         ShowWhereHaveToSwipe(_directions[0]);
     }
 
@@ -53,6 +54,7 @@ public class SwipeMinigame : Minigame
         {
             Fail();
             _swipeControlls.enabled = false;
+            GuidePointer.gameObject.SetActive(false);
         }
     }
     private void DoSwipe(Direction userinput)
@@ -69,6 +71,7 @@ public class SwipeMinigame : Minigame
             {
                 Win();
                 _swipeControlls.enabled = false;
+                GuidePointer.gameObject.SetActive(false);
             }
             else
             {

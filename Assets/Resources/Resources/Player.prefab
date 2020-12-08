@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 809a2e5cdeb991042b0d861d28321033, type: 2}
+  m_Texture: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: FAIL!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &389738661560880570
@@ -1238,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 17
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 0100000002000000010000000300000001000000
   DelayCountDown: 3
 --- !u!1 &1166887996552927013
 GameObject:
@@ -1369,19 +1369,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7683272314980836564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TapsMinigame, Assembly-CSharp
-        m_MethodName: Tap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1358858513059126280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 12
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -1492,7 +1480,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 0000000001000000020000000300000000000000
   DelayCountDown: 3
 --- !u!1 &1558460511257041125
 GameObject:
@@ -1935,7 +1923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 15
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -1946,7 +1934,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 0000000001000000020000000000000001000000
   DelayCountDown: 3
 --- !u!1 &1961770643528919295
 GameObject:
@@ -2276,7 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 5
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -2287,7 +2275,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 01000000000000000200000003000000
   DelayCountDown: 3
 --- !u!1 &2306940125882424579
 GameObject:
@@ -2637,7 +2625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 16
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -3597,28 +3585,7 @@ MonoBehaviour:
   - {fileID: 5348226505011666674}
   - {fileID: 1971804460735874062}
   - {fileID: 2490081470348802536}
-  AllAnimations:
-  - {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
-  - {fileID: 8400000, guid: 81ef0c3050ad95e4e889f98a89fd081c, type: 2}
-  - {fileID: 8400000, guid: 0d7479c9413962f47b3f4fbe80683af4, type: 2}
-  - {fileID: 8400000, guid: 809a2e5cdeb991042b0d861d28321033, type: 2}
-  - {fileID: 8400000, guid: 91ccc3b292292d54da6aee9aa4dc6c2a, type: 2}
-  - {fileID: 8400000, guid: a20952fcb54d706479e096d33de891bc, type: 2}
-  - {fileID: 8400000, guid: 58d3a26fe7d8c6846bc08b3950bb8b36, type: 2}
-  - {fileID: 8400000, guid: 9256a4b5f3294af44981e442a1c3754c, type: 2}
-  - {fileID: 8400000, guid: 35b724b6cee91df4eb1d0cdf39b08899, type: 2}
-  - {fileID: 8400000, guid: 1b15ef2a59eaac94ca24a9c6f1a741ef, type: 2}
-  - {fileID: 8400000, guid: 63d4111764b682345bea980096a64f4f, type: 2}
-  - {fileID: 8400000, guid: 7de6d8a9a70c99440be001e1c162fec3, type: 2}
-  - {fileID: 8400000, guid: 86c73543fbbdce743b5114f4a5ca8727, type: 2}
-  - {fileID: 8400000, guid: e8c3f09e9b5df814ebab5f9c59c34d0b, type: 2}
-  - {fileID: 8400000, guid: d6f854285c5d94940b7237e5e935cbcd, type: 2}
-  - {fileID: 8400000, guid: 94b2b2c3919a3d14b87612bd9f63235a, type: 2}
-  - {fileID: 8400000, guid: 7a86f1796bd0b5c458734520d8fcac5f, type: 2}
-  - {fileID: 8400000, guid: 21f459f987036a24a82c9a14d21dfbe2, type: 2}
-  - {fileID: 8400000, guid: 3c9ed7d6cd3cb3b42b475cf2ab73d311, type: 2}
   MiniGamesCanvas: {fileID: 1050954773776646550}
-  Animation: {fileID: 3224914540600728190}
   CurrentMinigameID: -1
 --- !u!114 &3798208714291609936
 MonoBehaviour:
@@ -3627,7 +3594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3052614698309101162}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b5d4519f4b0a1e4aa142a1f5928e457, type: 3}
   m_Name: 
@@ -4011,7 +3978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 2
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -4967,7 +4934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 18
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -4978,7 +4945,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 010000000200000002000000030000000000000002000000
   DelayCountDown: 3
 --- !u!1 &5309597217611919478
 GameObject:
@@ -5023,7 +4990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 8
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -5311,7 +5278,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: WIN!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5375,7 +5342,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6151145199506633852
@@ -5421,7 +5388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 10
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -5689,7 +5656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 7
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -5700,7 +5667,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 020000000300000002000000030000000200000003000000
   DelayCountDown: 3
 --- !u!1 &6949963911316604542
 GameObject:
@@ -6023,7 +5990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2933127999827052768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6323,7 +6290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 13
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -6334,7 +6301,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 0200000003000000000000000300000002000000
   DelayCountDown: 3
 --- !u!1 &7718805214619344116
 GameObject:
@@ -6458,7 +6425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 14
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -6514,7 +6481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 9
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -6525,7 +6492,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 00000000010000000000000001000000
   DelayCountDown: 3
 --- !u!1 &7882476526622144903
 GameObject:
@@ -6595,7 +6562,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Swipe!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6659,7 +6626,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &7401023786651947969
@@ -6724,7 +6691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 11
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -6735,7 +6702,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 0100000000000000010000000000000001000000
   DelayCountDown: 3
 --- !u!1 &8042281530037142052
 GameObject:
@@ -6780,7 +6747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 1
+  Number: 3
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 7882476526622144903}
   FailScreen: {fileID: 1961770643528919295}
@@ -6791,7 +6758,7 @@ MonoBehaviour:
   TopGuidePos: {x: 0, y: 200}
   LeftGuidePos: {x: -200, y: 0}
   RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000000000000000000000000000000000000
+  _directions: 010000000200000003000000
   DelayCountDown: 3
 --- !u!1 &8061031890286042244
 GameObject:
@@ -6836,7 +6803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 4
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}
@@ -7051,15 +7018,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: TAP! TAP! TAP!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
+  m_sharedMaterial: {fileID: 6215373928125741934, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7338,8 +7305,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
+  m_sharedMaterial: {fileID: 6215373928125741934, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7524,7 +7491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 0
+  Number: 6
   WinScreen: {fileID: 1600741363091702509}
   Guide: {fileID: 8381907635031555791}
   FailScreen: {fileID: 1961770643528919295}

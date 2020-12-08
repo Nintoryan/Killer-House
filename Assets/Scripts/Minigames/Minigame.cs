@@ -12,6 +12,7 @@ public class Minigame : MonoBehaviour
     public virtual void InitializeMiniGame()
     {
         FailScreen.SetActive(false);
+        WinScreen.SetActive(false);
         Guide.SetActive(true);
         Interface.SetActive(true);
         GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(true);

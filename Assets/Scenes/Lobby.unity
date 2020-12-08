@@ -394,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 8852391658477612129, guid: 3b7e137697351a5488b25737faebdba7, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: a20952fcb54d706479e096d33de891bc, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b7e137697351a5488b25737faebdba7, type: 3}
 --- !u!4 &149572413 stripped
@@ -4323,7 +4323,7 @@ PrefabInstance:
     - target: {fileID: 7039017427566246075, guid: 886094a09ca54a749b3f8899fe669332, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: e8c3f09e9b5df814ebab5f9c59c34d0b, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 8460321938605623711, guid: 886094a09ca54a749b3f8899fe669332, type: 3}
       propertyPath: _Animator
       value: 
@@ -4872,6 +4872,10 @@ PrefabInstance:
       propertyPath: m_CullingMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3813125910076570526, guid: 6fdfc4c8cbfeea443b40ff045b4b9df0, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 6872920102296674876, guid: 6fdfc4c8cbfeea443b40ff045b4b9df0, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.35949206
@@ -5525,7 +5529,7 @@ PrefabInstance:
     - target: {fileID: 2492981176696761365, guid: bdd3999a751dd5f4283aa40cd0c5c736, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: d6f854285c5d94940b7237e5e935cbcd, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 3241633617836132318, guid: bdd3999a751dd5f4283aa40cd0c5c736, type: 3}
       propertyPath: _Animator
       value: 
@@ -5970,7 +5974,7 @@ PrefabInstance:
     - target: {fileID: 4853885125968319766, guid: be8757c24584b1543babecc2e5ef2608, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 9256a4b5f3294af44981e442a1c3754c, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 5044273154770024350, guid: be8757c24584b1543babecc2e5ef2608, type: 3}
       propertyPath: m_Name
       value: Minigame7
@@ -6302,7 +6306,7 @@ PrefabInstance:
     - target: {fileID: 7707474704770636678, guid: 3af40b2aa24e8a645b3b621895a81aca, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 58d3a26fe7d8c6846bc08b3950bb8b36, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 7880049763407785427, guid: 3af40b2aa24e8a645b3b621895a81aca, type: 3}
       propertyPath: m_Name
       value: Minigame6
@@ -6739,7 +6743,7 @@ PrefabInstance:
     - target: {fileID: 3003360666780567599, guid: 8b907b55d4d2ecb47a0de184ba8a53aa, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 1b15ef2a59eaac94ca24a9c6f1a741ef, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 3489516864138791381, guid: 8b907b55d4d2ecb47a0de184ba8a53aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.579056
@@ -7540,6 +7544,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3774960379360292625, guid: 18b5b25685cb7414ea57922f310b9a48, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 4626432679865587845, guid: 18b5b25685cb7414ea57922f310b9a48, type: 3}
       propertyPath: m_Name
       value: Minigame12
@@ -7818,7 +7826,7 @@ PrefabInstance:
     - target: {fileID: 5107639869315091884, guid: 0b963999c0d9c2a4c827743b40e9825a, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 21f459f987036a24a82c9a14d21dfbe2, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 6674504482825637113, guid: 0b963999c0d9c2a4c827743b40e9825a, type: 3}
       propertyPath: m_CullingMode
       value: 2
@@ -7996,7 +8004,7 @@ PrefabInstance:
     - target: {fileID: 6492295120012790887, guid: aa6f3216760c62447b2bba70ca12ce7d, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 3c9ed7d6cd3cb3b42b475cf2ab73d311, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6f3216760c62447b2bba70ca12ce7d, type: 3}
 --- !u!4 &1390551212 stripped
@@ -8176,7 +8184,7 @@ PrefabInstance:
     - target: {fileID: 4165594893526298123, guid: 78c2a4127aace3046981744041002266, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 35b724b6cee91df4eb1d0cdf39b08899, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 4520909171046824270, guid: 78c2a4127aace3046981744041002266, type: 3}
       propertyPath: _Animator
       value: 
@@ -8447,7 +8455,7 @@ PrefabInstance:
     - target: {fileID: 7414230073395110909, guid: df3aac8e103ebde408b8e647fb42e60a, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 7de6d8a9a70c99440be001e1c162fec3, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 7480965133754357369, guid: df3aac8e103ebde408b8e647fb42e60a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.12352
@@ -8574,6 +8582,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 256.431
       objectReference: {fileID: 0}
+    - target: {fileID: 8397811608500117346, guid: 58273ef73ae08a847a7e8e3d388eefd6, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58273ef73ae08a847a7e8e3d388eefd6, type: 3}
 --- !u!4 &1462535706 stripped
@@ -8798,7 +8810,7 @@ PrefabInstance:
     - target: {fileID: 6350887514232683496, guid: 6d44afa0fd74d5243aa1af9111ede94d, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 94b2b2c3919a3d14b87612bd9f63235a, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 6713852636483308376, guid: 6d44afa0fd74d5243aa1af9111ede94d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9377,7 +9389,7 @@ PrefabInstance:
     - target: {fileID: 6498638731812194285, guid: 34be3a8da22c6d644aaba9d9132da06d, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 809a2e5cdeb991042b0d861d28321033, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 6855841451614244906, guid: 34be3a8da22c6d644aaba9d9132da06d, type: 3}
       propertyPath: _Animator
       value: 
@@ -9427,7 +9439,7 @@ PrefabInstance:
     - target: {fileID: 2465666347130503404, guid: 4f6f74583047e56499d99cf45fed60a3, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 0d7479c9413962f47b3f4fbe80683af4, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 3580768894781874462, guid: 4f6f74583047e56499d99cf45fed60a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.6390533
@@ -9622,7 +9634,7 @@ PrefabInstance:
     - target: {fileID: 2021954222650434604, guid: 207c4e45770890c4c8f6a7b8265d3e10, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 63d4111764b682345bea980096a64f4f, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 2241923818021451206, guid: 207c4e45770890c4c8f6a7b8265d3e10, type: 3}
       propertyPath: m_CullingMode
       value: 2
@@ -9809,7 +9821,7 @@ PrefabInstance:
     - target: {fileID: 2287842642819853755, guid: 761fac41f1ee40444b34218611f5e09f, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 7a86f1796bd0b5c458734520d8fcac5f, type: 2}
+      objectReference: {fileID: 8400000, guid: ffb0001bdb319da43a76500812d2f39c, type: 2}
     - target: {fileID: 2728999560075148049, guid: 761fac41f1ee40444b34218611f5e09f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.78

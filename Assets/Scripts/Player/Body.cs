@@ -9,6 +9,7 @@ namespace AAPlayer
         public Controller _Controller;
         [SerializeField] private Skills _skills;
         [SerializeField] private GameObject _Graphics;
+        [SerializeField] private MinigamesManager _minigamesManager;
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
 
@@ -73,6 +74,7 @@ namespace AAPlayer
                 if (!MiniGame.isComplete)
                 {
                     _skills._interactButton.interactable = true;
+                    _minigamesManager.CurrentMinigameID = MiniGame.Number;
                 }
             }
             
@@ -103,6 +105,7 @@ namespace AAPlayer
             if (other.GetComponent<MinigameZone>() != null)
             {
                 _skills._interactButton.interactable = false;
+                _minigamesManager.CurrentMinigameID = -1;
             }
         }
 

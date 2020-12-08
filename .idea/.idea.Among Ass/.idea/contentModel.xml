@@ -628,6 +628,7 @@
               <e p="Swipe.cs" t="Include" />
             </e>
             <e p="Minigame.cs" t="Include" />
+            <e p="MinigamePresenter.cs" t="Include" />
             <e p="MinigamesManager.cs" t="Include" />
             <e p="MinigameZone.cs" t="Include" />
             <e p="SwipeMinigame.cs" t="Include" />

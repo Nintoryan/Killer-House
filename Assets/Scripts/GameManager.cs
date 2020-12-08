@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public Controller LocalPlayer;
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
+    public int QuestsAmount = 5;
     public float VotingDuration;
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
@@ -61,6 +62,13 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     if (i == imposterID)
                     {
                         OrderedPlayers[i]._skills.EnableKilling();
+                    }
+                }
+                while(MyMinigames.Count < QuestsAmount){
+                    var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
+                    if (!MyMinigames.Contains(minigame))
+                    {
+                        MyMinigames.Add(minigame);
                     }
                 }
                 var s = DOTween.Sequence();

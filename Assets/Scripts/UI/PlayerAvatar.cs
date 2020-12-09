@@ -13,6 +13,8 @@ namespace Voting
         [SerializeField] private TMP_Text _nickName;
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private Image _cross;
+        public Image Voted;
+        public Image Skiped;
         [SerializeField] private Image[] VoitingPortraits;
         [SerializeField] private Sprite[] allIcons;
         public PlayerAvatar _suspectPlayer;

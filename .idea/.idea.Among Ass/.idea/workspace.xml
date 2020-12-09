@@ -22,46 +22,8 @@
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 14.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 14.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Ref.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Ref.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,10 +97,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
       </list>
     </option>
   </component>
@@ -218,7 +180,7 @@
       <workItem from="1607154436689" duration="3120000" />
       <workItem from="1607182956688" duration="1481000" />
       <workItem from="1607422922013" duration="10913000" />
-      <workItem from="1607456552304" duration="13430000" />
+      <workItem from="1607456552304" duration="15993000" />
     </task>
     <servers />
   </component>
@@ -312,18 +274,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="501" y="119" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1606055245516" />
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1607461554016">
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1607472500248">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1607461554016" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1607472500248" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1607155079626">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607155079626" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607459950154">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607471731867">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607459950154" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607471731867" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

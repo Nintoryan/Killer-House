@@ -21,6 +21,7 @@ namespace Voting
         private DependecieType _dependecieType = DependecieType.None;
         private PlayerAvatar _localPlayer;
         private PlayerAvatar _WhoStartedVoting;
+        private bool isSkiped;
         
         
         public static void RaiseVotingEvent(Controller WhoStarted)
@@ -29,13 +30,17 @@ namespace Voting
             var sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(46, WhoStarted._photonView.Owner.ActorNumber, options, sendOptions);
         }
+
+        private void RaiseSkipEvent()
+        {
+            var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            var sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(50, _localPlayer.thisPlayerActorID, options, sendOptions);
+        }
         public void RaiseSetDependencyEvent(PlayerAvatar _selectedPlayerAvatar)
         {
-
-            if(_selectedPlayerAvatar == _localPlayer ||
-               _dependecieType == DependecieType.None ||
-               GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead) return;
-            
+            if(isSkiped) return;
+            if(_selectedPlayerAvatar == _localPlayer || GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead) return;
             var sendingData = $"{_localPlayer.thisPlayerActorID}:{_selectedPlayerAvatar.thisPlayerActorID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
@@ -97,6 +102,11 @@ namespace Voting
             });
 
         }
+        public void Skip()
+        {
+            isSkiped = true;
+            RaiseSkipEvent();
+        }
 
         public void OnEvent(EventData photonEvent)
         {
@@ -127,6 +137,10 @@ namespace Voting
                     KickedPlayer.SetDead();
                     KickedPlayer.DisableDeadBody();
                     VotingResultText.text = $"{KickedPlayer.Name} was ejected";
+                    break;
+                case 50:
+                    var SkipedPlayerActorID = (int) photonEvent.CustomData;
+                    FindPlayerAvatar(SkipedPlayerActorID).Skiped.gameObject.SetActive(true);
                     break;
             }
         }
@@ -168,6 +182,7 @@ namespace Voting
                 fromPlayer._suspectPlayer.KickScore--;
             }
             fromPlayer._suspectPlayer = toPlayer;
+            fromPlayer.Voted.gameObject.SetActive(true);
             toPlayer.suspectedByPlayersID.Add(fromPlayer.localPlayerNumber);
             toPlayer.KickScore++;
         }

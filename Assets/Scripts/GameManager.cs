@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public List<MinigameZone> MyMinigames;
     public int AmountOfDoneQuests;
     public int AmountOfQuests;
-    [SerializeField] private BeginEndGame _beginEndGame;
+    public BeginEndGame _beginEndGame;
 
     public static GameManager Instance;
 

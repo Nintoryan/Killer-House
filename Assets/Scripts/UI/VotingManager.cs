@@ -45,6 +45,7 @@ namespace Voting
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(44, sendingData, options, sendOptions);
+            CanSkip = false;
         }
         private static void RaiseKickedEvent(int ActorID)
         {
@@ -56,6 +57,7 @@ namespace Voting
         private void StartVoting()
         {
             VotingParent.SetActive(true);
+            CanSkip = true;
             timeLeft = GameManager.Instance.VotingDuration;
             var controllers = GameManager.Instance._players
                 .OrderBy(p => p._photonView.Owner.ActorNumber)
@@ -95,17 +97,25 @@ namespace Voting
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
             });
-            s.AppendInterval(2f);
+            s.AppendInterval(3f);
+            s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
+            s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
                 VotingResults.SetActive(false);
             });
+            s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
 
         }
+
+        private bool CanSkip = true;
         public void Skip()
         {
-            isSkiped = true;
-            RaiseSkipEvent();
+            if (CanSkip)
+            {
+                isSkiped = true;
+                RaiseSkipEvent();
+            }
         }
 
         public void OnEvent(EventData photonEvent)
@@ -133,10 +143,17 @@ namespace Voting
                 case 48:
                     var KickedPlayerActorID = (int) photonEvent.CustomData;
                     Debug.Log($"Событие исключения игрока получено. Данные: {KickedPlayerActorID}");
-                    var KickedPlayer = GameManager.Instance.FindPlayer(KickedPlayerActorID);
-                    KickedPlayer.SetDead();
-                    KickedPlayer.DisableDeadBody();
-                    VotingResultText.text = $"{KickedPlayer.Name} was ejected";
+                    if (KickedPlayerActorID == -1)
+                    {
+                        VotingResultText.text = "Nobody was ejected";
+                    }
+                    else
+                    {
+                        var KickedPlayer = GameManager.Instance.FindPlayer(KickedPlayerActorID);
+                        KickedPlayer.SetDead();
+                        KickedPlayer.DisableDeadBody();
+                        VotingResultText.text = $"{KickedPlayer.Name} was ejected";
+                    }
                     break;
                 case 51:
                     var SkipedPlayerActorID = (int) photonEvent.CustomData;
@@ -166,12 +183,20 @@ namespace Voting
                     NotOneMaxPlayer = true;
                 }
             }
-            if (NotOneMaxPlayer) return;
-            foreach (var p in GameManager.Instance._players.Where(p =>
-                p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].thisPlayerActorID))
+
+            if (NotOneMaxPlayer)
             {
-                RaiseKickedEvent(p._photonView.Owner.ActorNumber);
+                RaiseKickedEvent(-1);
             }
+            else
+            {
+                foreach (var p in GameManager.Instance._players.Where(p =>
+                    p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].thisPlayerActorID))
+                {
+                    RaiseKickedEvent(p._photonView.Owner.ActorNumber);
+                }
+            }
+            
         }
         
         private static void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)

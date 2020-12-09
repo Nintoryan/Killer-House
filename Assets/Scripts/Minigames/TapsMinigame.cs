@@ -19,7 +19,7 @@ public class TapsMinigame : Minigame
         Button.anchoredPosition = Positons[0];
     }
 
-    protected override void StartMinigame()
+    public override void StartMinigame()
     {
         base.StartMinigame();
         currentCountDown = DelayCountDown;

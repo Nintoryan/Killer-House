@@ -18,10 +18,11 @@ public class Minigame : MonoBehaviour
         WinScreen.SetActive(false);
         Guide.SetActive(true);
         Interface.SetActive(true);
+        isMiniGameStarted = false;
         GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(true);
     }
 
-    protected virtual void StartMinigame()
+    public virtual void StartMinigame()
     {
         isMiniGameStarted = true;
         Guide.SetActive(false);
@@ -37,7 +38,7 @@ public class Minigame : MonoBehaviour
         var sendOptions = new SendOptions {Reliability = true};
         PhotonNetwork.RaiseEvent(53,gm.LocalPlayer._photonView.Owner.ActorNumber , options, sendOptions);
     }
-    protected void Win()
+    public void Win()
     {
         WinScreen.SetActive(true);
         isMiniGameStarted = false;
@@ -46,7 +47,7 @@ public class Minigame : MonoBehaviour
         Complete();
     }
 
-    protected void Fail()
+    public void Fail()
     {
         FailScreen.SetActive(true);
         isMiniGameStarted = false;

@@ -5,6 +5,7 @@
     <e p="C:\Users\Nintoryan\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Among Ass.2123523216.00" t="ExcludeRecursive" />
     <e p="C:\Users\Nintoryan\Documents\GitHub\Among Ass" t="IncludeRecursive">
       <e p="Among Ass.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -617,6 +618,117 @@
                 <e p="DOTweenModuleUtils.cs" t="Include" />
               </e>
               <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Febucci" t="Include">
+            <e p="Text Animator" t="Include">
+              <e p="Core" t="Include">
+                <e p="Base" t="Include">
+                  <e p="Character.cs" t="Include" />
+                  <e p="EffectInfoAttribute.cs" t="Include" />
+                  <e p="EffectsBase.cs" t="Include" />
+                  <e p="Modifier.cs" t="Include" />
+                </e>
+                <e p="Editor" t="Include">
+                  <e p="BuiltinEffectsDataScriptableDrawer.cs" t="Include" />
+                  <e p="TAnimGlobalDataScriptableDrawer.cs" t="Include" />
+                  <e p="TAnimPlayerBaseDrawer.cs" t="Include" />
+                  <e p="TextAnimatorDrawer.cs" t="Include" />
+                </e>
+                <e p="EffectsDefaultValues.cs" t="Include" />
+                <e p="Scriptables" t="Include">
+                  <e p="BuiltinAppearancesDataScriptable.cs" t="Include" />
+                  <e p="BuiltinBehaviorsDataScriptable.cs" t="Include" />
+                  <e p="BuiltinDataScriptableBase.cs" t="Include" />
+                </e>
+                <e p="Special Tags" t="Include">
+                  <e p="EventMarker.cs" t="Include" />
+                </e>
+                <e p="TAnimBuilder.cs" t="Include" />
+                <e p="TAnimGlobalDataScriptable.cs" t="Include" />
+                <e p="TAnimPlayerBase.cs" t="Include" />
+                <e p="TAnimTags.cs" t="Include" />
+                <e p="TypewriterAction.cs" t="Include" />
+                <e p="Utilities" t="Include">
+                  <e p="Attributes" t="Include">
+                    <e p="CharsDisplayTimeAttribute.cs" t="Include" />
+                    <e p="Editor" t="Include">
+                      <e p="CharsDisplayTimeAttributeDrawer.cs" t="Include" />
+                      <e p="MinValueAttributeDrawer.cs" t="Include" />
+                      <e p="NotZeroAttribute.cs" t="Include" />
+                      <e p="PositiveValueAttributeDrawer.cs" t="Include" />
+                    </e>
+                    <e p="MinValueAttribute.cs" t="Include" />
+                    <e p="NotZeroAttribute.cs" t="Include" />
+                    <e p="PositiveValueAttribute.cs" t="Include" />
+                  </e>
+                  <e p="FormatUtils.cs" t="Include" />
+                  <e p="TAnimExtensions.cs" t="Include" />
+                  <e p="TextUtilities.cs" t="Include" />
+                  <e p="Tween.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Effects" t="Include">
+                <e p="Appearance Effects" t="Include">
+                  <e p="Base" t="Include">
+                    <e p="AppearanceBase.cs" t="Include" />
+                    <e p="IAppearanceEffect.cs" t="Include" />
+                  </e>
+                  <e p="Defaults" t="Include">
+                    <e p="DiagonalExpandAppearance.cs" t="Include" />
+                    <e p="FadeAppearance.cs" t="Include" />
+                    <e p="HorizontallExpandAppearance.cs" t="Include" />
+                    <e p="OffsetAppearance.cs" t="Include" />
+                    <e p="RotatingAppearance.cs" t="Include" />
+                    <e p="SizeAppearance.cs" t="Include" />
+                    <e p="VerticalExpandAppearance.cs" t="Include" />
+                  </e>
+                  <e p="Presets" t="Include">
+                    <e p="PresetAppearance.cs" t="Include" />
+                    <e p="PresetAppearanceValues.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Behavior Effects" t="Include">
+                  <e p="Base" t="Include">
+                    <e p="BehaviorBase.cs" t="Include" />
+                    <e p="BehaviorSine.cs" t="Include" />
+                    <e p="IBehaviorEffect.cs" t="Include" />
+                  </e>
+                  <e p="Defaults" t="Include">
+                    <e p="BounceBehavior.cs" t="Include" />
+                    <e p="FadeBehavior.cs" t="Include" />
+                    <e p="RainbowBehavior.cs" t="Include" />
+                    <e p="RotationBehavior.cs" t="Include" />
+                    <e p="ShakeBehavior.cs" t="Include" />
+                    <e p="SizeBehavior.cs" t="Include" />
+                    <e p="SlideBehavior.cs" t="Include" />
+                    <e p="SwingBehavior.cs" t="Include" />
+                    <e p="WaveBehavior.cs" t="Include" />
+                    <e p="WiggleBehavior.cs" t="Include" />
+                  </e>
+                  <e p="Preset" t="Include">
+                    <e p="PresetBehavior.cs" t="Include" />
+                    <e p="PresetBehaviorValues.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="Custom Effects" t="Include">
+                  <e p="AppearanceTemplate.cs" t="Include" />
+                  <e p="BehaviorTemplate.cs" t="Include" />
+                  <e p="CustomEffects.cs" t="Include" />
+                </e>
+                <e p="Presets Base" t="Include">
+                  <e p="ColorCurve.cs" t="Include" />
+                  <e p="EffectEvaluator.cs" t="Include" />
+                  <e p="EmissionControl.cs" t="Include" />
+                  <e p="FloatCurve.cs" t="Include" />
+                  <e p="PresetBaseValues.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Integrations" t="Include">
+                <e p="Integrations.txt" t="Include" />
+              </e>
+              <e p="TextAnimator.cs" t="Include" />
+              <e p="TextAnimatorPlayer.cs" t="Include" />
             </e>
           </e>
         </e>

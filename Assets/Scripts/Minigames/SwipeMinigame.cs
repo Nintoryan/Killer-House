@@ -15,15 +15,18 @@ public class SwipeMinigame : Minigame
     private float currentCountDown;
     private int CurrentPositionID;
 
+    private bool isPlaying;
+
     public override void InitializeMiniGame()
     {
         base.InitializeMiniGame();
-        _swipeControlls.enabled = true;
         GuidePointer.gameObject.SetActive(true);
+        currentCountDown = DelayCountDown;
+        isPlaying = true;
         ShowWhereHaveToSwipe(_directions[0]);
     }
 
-    protected override void StartMinigame()
+    public override void StartMinigame()
     {
         base.StartMinigame();
         currentCountDown = DelayCountDown;
@@ -32,6 +35,7 @@ public class SwipeMinigame : Minigame
     
     private void Update()
     {
+        if(!isPlaying) return;
         if (_swipeControlls.SwipeDown)
         {
             DoSwipe(Direction.Down);
@@ -52,13 +56,17 @@ public class SwipeMinigame : Minigame
         currentCountDown -= Time.deltaTime;
         if (currentCountDown < 0)
         {
+            Debug.Log($"isMinigameStarted:{isMiniGameStarted}");
+            Debug.Log($"currentCountDown:{currentCountDown}");
+            Debug.Log($"gameObject.name:{gameObject.name}");
+            isPlaying = false;
             Fail();
-            _swipeControlls.enabled = false;
             GuidePointer.gameObject.SetActive(false);
         }
     }
     private void DoSwipe(Direction userinput)
     {
+        Debug.Log("Do swipe performed!");
         if(!isMiniGameStarted)
         {
             StartMinigame();
@@ -69,8 +77,9 @@ public class SwipeMinigame : Minigame
             CurrentPositionID++;
             if (CurrentPositionID >= _directions.Length)
             {
+                isPlaying = false;
                 Win();
-                _swipeControlls.enabled = false;
+                currentCountDown = 100000;
                 GuidePointer.gameObject.SetActive(false);
             }
             else
@@ -82,6 +91,7 @@ public class SwipeMinigame : Minigame
 
     private void ShowWhereHaveToSwipe(Direction direction)
     {
+        GuidePointer.DOKill();
         var s = DOTween.Sequence();
         s.SetLoops(180, LoopType.Restart);
         switch (direction)
@@ -96,11 +106,11 @@ public class SwipeMinigame : Minigame
                 break;
             case Direction.Left:
                 s.AppendCallback(() => { GuidePointer.anchoredPosition = RightGuidePos; });
-                s.Append(GuidePointer.DOAnchorPos(RightGuidePos, DelayCountDown/3));
+                s.Append(GuidePointer.DOAnchorPos(LeftGuidePos, DelayCountDown/3));
                 break;
             case Direction.Right:
                 s.AppendCallback(() => { GuidePointer.anchoredPosition = LeftGuidePos; });
-                s.Append(GuidePointer.DOAnchorPos(LeftGuidePos, DelayCountDown/3));
+                s.Append(GuidePointer.DOAnchorPos(RightGuidePos, DelayCountDown/3));
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(direction), direction, null);

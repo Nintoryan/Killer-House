@@ -13,6 +13,12 @@ public class MinigamesManager : MonoBehaviour
             return;
         }
         MiniGamesCanvas.SetActive(true);
+        AllMinigames[CurrentMinigameID].gameObject.SetActive(true);
         AllMinigames[CurrentMinigameID].InitializeMiniGame();
+    }
+
+    public void Close()
+    {
+        AllMinigames[CurrentMinigameID].gameObject.SetActive(false);
     }
 }

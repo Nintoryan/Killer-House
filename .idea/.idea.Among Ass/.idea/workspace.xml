@@ -20,51 +20,174 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Boy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Boy.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cook.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cowboy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cowboy.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cyberpunk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Cyberpunk.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Doctor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Doctor.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Girl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Girl.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Raper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Raper.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/SportGirl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/SportGirl.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Teacher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/Teacher.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back_1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back_without_stickman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/back_without_stickman.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/policeman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/policeman.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/viner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/viner.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/Character.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/Character.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/EffectInfoAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/EffectInfoAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/EffectsBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/EffectsBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/Modifier.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Base/Modifier.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/BuiltinEffectsDataScriptableDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/BuiltinEffectsDataScriptableDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TAnimGlobalDataScriptableDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TAnimGlobalDataScriptableDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TAnimPlayerBaseDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TAnimPlayerBaseDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TextAnimatorDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Editor/TextAnimatorDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/EffectsDefaultValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/EffectsDefaultValues.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinAppearancesDataScriptable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinAppearancesDataScriptable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinBehaviorsDataScriptable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinBehaviorsDataScriptable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinDataScriptableBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Scriptables/BuiltinDataScriptableBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Special Tags.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Special Tags/EventMarker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Special Tags/EventMarker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimBuilder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimGlobalDataScriptable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimGlobalDataScriptable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimPlayerBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimPlayerBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimTags.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TAnimTags.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TypewriterAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/TypewriterAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/CharsDisplayTimeAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/CharsDisplayTimeAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/CharsDisplayTimeAttributeDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/CharsDisplayTimeAttributeDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/MinValueAttributeDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/MinValueAttributeDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/NotZeroAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/NotZeroAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/PositiveValueAttributeDrawer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/Editor/PositiveValueAttributeDrawer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/MinValueAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/MinValueAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/NotZeroAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/NotZeroAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/PositiveValueAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Attributes/PositiveValueAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/FormatUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/FormatUtils.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/TAnimExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/TAnimExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/TextUtilities.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/TextUtilities.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Tween.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Core/Utilities/Tween.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Documentation &amp; Quick Start.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Documentation &amp; Quick Start.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Base.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Base/AppearanceBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Base/AppearanceBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Base/IAppearanceEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Base/IAppearanceEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/DiagonalExpandAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/DiagonalExpandAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/FadeAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/FadeAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/HorizontallExpandAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/HorizontallExpandAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/OffsetAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/OffsetAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/RotatingAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/RotatingAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/SizeAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/SizeAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/VerticalExpandAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Defaults/VerticalExpandAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Presets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Presets/PresetAppearance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Presets/PresetAppearance.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Presets/PresetAppearanceValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Appearance Effects/Presets/PresetAppearanceValues.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/BehaviorBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/BehaviorBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/BehaviorSine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/BehaviorSine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/IBehaviorEffect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Base/IBehaviorEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/BounceBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/BounceBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/FadeBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/FadeBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/RainbowBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/RainbowBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/RotationBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/RotationBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/ShakeBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/ShakeBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SizeBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SizeBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SlideBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SlideBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SwingBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/SwingBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/WaveBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/WaveBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/WiggleBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Defaults/WiggleBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Preset/PresetBehavior.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Preset/PresetBehavior.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Preset/PresetBehaviorValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Behavior Effects/Preset/PresetBehaviorValues.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/AppearanceTemplate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/AppearanceTemplate.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/BehaviorTemplate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/BehaviorTemplate.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/CustomEffects.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Custom Effects/CustomEffects.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/ColorCurve.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/ColorCurve.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/EffectEvaluator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/EffectEvaluator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/EmissionControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/EmissionControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/FloatCurve.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/FloatCurve.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/PresetBaseValues.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Effects/Presets Base/PresetBaseValues.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Extra.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Extra/Typewriter Sound - Package.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Integrations.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Integrations/Integrations.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Integrations/Integrations.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/Integrations/PlayMaker - Integration.unitypackage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/TextAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/TextAnimator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/TextAnimatorPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Febucci/Text Animator/TextAnimatorPlayer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,9 +252,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
@@ -140,13 +261,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
       </list>
     </option>
   </component>
@@ -226,7 +349,7 @@
       <workItem from="1607154436689" duration="3120000" />
       <workItem from="1607182956688" duration="1481000" />
       <workItem from="1607422922013" duration="10913000" />
-      <workItem from="1607456552304" duration="24581000" />
+      <workItem from="1607456552304" duration="26926000" />
     </task>
     <servers />
   </component>
@@ -328,23 +451,23 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607155079626" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607491503668">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607494061374">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607491503668" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607494061374" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs</url>
-          <line>86</line>
+          <line>96</line>
           <properties documentPath="C:\Users\Nintoryan\Documents\GitHub\Among Ass\Assets\Scripts\Minigames\SwipeMinigame.cs" initialLine="65">
             <startOffsets>
-              <option value="2448" />
+              <option value="2811" />
             </startOffsets>
             <endOffsets>
-              <option value="2466" />
+              <option value="2829" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

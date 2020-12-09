@@ -32,7 +32,7 @@ public class Minigame : MonoBehaviour
     {
         var gm = GameManager.Instance;
         gm.AllMinigames[Number].isComplete = true;
-        gm.LocalPlayer._skills._interactButton.interactable = false;
+        gm.LocalPlayer._skills.SetInteractButtonInteractable(false);
         gm.LocalPlayer._InGameUI.SetMarkDisables(Number);
         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
         var sendOptions = new SendOptions {Reliability = true};

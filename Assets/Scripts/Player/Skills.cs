@@ -11,10 +11,11 @@ namespace AAPlayer
         [SerializeField] private KillingZone _killingZone;
         [SerializeField] private Body _body;
         [SerializeField] private Button _killButton;
-        [SerializeField] private Image _killButtonBg;
         [SerializeField] private Button _AlarmButton;
-        public Button _interactButton;
+        [SerializeField] private Button domofonButton;
+        [SerializeField] private Button _interactButton;
         [SerializeField] private int KillingColdown = 35;
+        [SerializeField] private int DomofonColdown = 20;
 
         public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
@@ -26,11 +27,31 @@ namespace AAPlayer
                 _killingZone.GetPlayer().DieEvent();
                 _killButton.interactable = false;
                 _killButton.GetComponent<Image>().fillAmount = 0;
+                _killButton.GetComponent<Image>().raycastTarget = false;
                 var s = DOTween.Sequence();
                 s.Append(_killButton.GetComponent<Image>().DOFillAmount(1, KillingColdown));
                 s.AppendCallback(()=>
                 {
                     _killButton.interactable = true;
+                    _killButton.GetComponent<Image>().raycastTarget = true;
+                });
+            }
+        }
+
+        public void UseDomofon()
+        {
+            if (_body.GetDomofon() != null)
+            {
+                _body.GetDomofon().Use();
+                domofonButton.interactable = false;
+                domofonButton.GetComponent<Image>().raycastTarget = false;
+                domofonButton.GetComponent<Image>().fillAmount = 0;
+                var s = DOTween.Sequence();
+                s.Append(domofonButton.GetComponent<Image>().DOFillAmount(1, DomofonColdown));
+                s.AppendCallback(() =>
+                {
+                    domofonButton.interactable = true;
+                    domofonButton.GetComponent<Image>().raycastTarget = true;
                 });
             }
         }
@@ -62,50 +83,53 @@ namespace AAPlayer
                 {
                     HadSpawnAlarm = true;
                     VotingManager.RaiseVotingEvent(GetComponent<Controller>());
-                    DisableAlarmButton();
+                    SetAlarmButtonInteractable(false);
                 }
             }
         }
-
-        public void DisableKilling()
+        
+        public void SetKillingActive(bool isActive)
         {
-            _killButton.gameObject.SetActive(false);
-            _killButtonBg.gameObject.SetActive(false);
-        }
-        public void EnableKilling()
-        {
-            _killButton.gameObject.SetActive(true);
-            _killButtonBg.gameObject.SetActive(true);
+            _killButton.gameObject.SetActive(isActive);
         }
 
-        public void HideAlarmButton()
+        public void SetKillingInteractable(bool isInteractable)
         {
-            _AlarmButton.gameObject.SetActive(false);
+            _killButton.interactable = isInteractable;
+            _killButton.GetComponent<Image>().raycastTarget = isInteractable;
+        }
+
+        public void SetAlarmButtonActive(bool isActive)
+        {
+            _AlarmButton.gameObject.SetActive(isActive);
+        }
+
+        public void SetInteractButtonActive(bool isActive)
+        {
+            _interactButton.gameObject.SetActive(isActive);
+        }
+
+        public void SetInteractButtonInteractable(bool isInteractable)
+        {
+            _interactButton.interactable = isInteractable;
+            _interactButton.GetComponent<Image>().raycastTarget = isInteractable;
         }
         
-        public void ShowAlarmButton()
+        public void SetAlarmButtonInteractable(bool isActive)
         {
-            _AlarmButton.gameObject.SetActive(true);
-        }
-        
-        public void HideInteractButton()
-        {
-            _interactButton.gameObject.SetActive(false);
+            _AlarmButton.interactable = isActive;
+            _AlarmButton.GetComponent<Image>().raycastTarget = isActive;
         }
 
-        public void ShowInteractButton()
+        public void SetDomofonButtonActive(bool isActive)
         {
-            _interactButton.gameObject.SetActive(true);
+            domofonButton.gameObject.SetActive(isActive);
         }
 
-        public void EnableAlarmButton()
+        public void SetDomofonButtonInteracteble(bool isInteractable)
         {
-            _AlarmButton.interactable = true;
-        }
-
-        public void DisableAlarmButton()
-        {
-            _AlarmButton.interactable = false;
+            domofonButton.interactable = isInteractable;
+            domofonButton.GetComponent<Image>().raycastTarget = isInteractable;
         }
         
         

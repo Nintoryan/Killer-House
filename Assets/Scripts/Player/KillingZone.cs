@@ -14,6 +14,7 @@ namespace AAPlayer
             if (body && body != _myBody && !PlayersInside.Contains(body))
             {
                 PlayersInside.Add(body);
+                _myBody._Controller._skills.SetKillingInteractable(true);
             }
         }
         private void OnTriggerExit(Collider other)
@@ -22,6 +23,10 @@ namespace AAPlayer
             if (body && body != _myBody && PlayersInside.Contains(body))
             {
                 PlayersInside.Remove(body);
+                if (PlayersInside.Count == 0)
+                {
+                    _myBody._Controller._skills.SetKillingInteractable(false);
+                }
             }
         }
 

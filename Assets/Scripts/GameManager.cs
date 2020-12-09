@@ -65,24 +65,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                             OrderedPlayers[i].transform.position.y,
                             SpawnPlaces[i].position.z);
                         OrderedPlayers[i].UpdateCameraPos();
-                        OrderedPlayers[i]._skills.ShowAlarmButton();
-                        OrderedPlayers[i]._skills.ShowInteractButton();
+                        OrderedPlayers[i]._skills.SetKillingActive(i == imposterID);
+                        OrderedPlayers[i]._skills.SetAlarmButtonActive(i != imposterID);
+                        OrderedPlayers[i]._skills.SetInteractButtonActive(i != imposterID);
+                        OrderedPlayers[i]._skills.SetDomofonButtonActive(i == imposterID);
+                        OrderedPlayers[i].isImposter = i == imposterID;
                         _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber);
-                        if (i == imposterID)
-                        {
-                            OrderedPlayers[i]._skills.EnableKilling();
-                            OrderedPlayers[i].isImposter = true;
-                        }
                     }
-                    while(MyMinigames.Count < QuestsAmountForEachPlayer){
-                        var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
-                        if (!MyMinigames.Contains(minigame))
-                        {
-                            MyMinigames.Add(minigame);
-                            LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
-                        }
-                    }
-                    AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
+                    
                     if (LocalPlayer.isImposter)
                     {
                         _beginEndGame.SetKillerScreen(true);
@@ -90,7 +80,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     else
                     {
                         _beginEndGame.SetCivilianScreen(true);
+                        while(MyMinigames.Count < QuestsAmountForEachPlayer){
+                            var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
+                            if (!MyMinigames.Contains(minigame))
+                            {
+                                MyMinigames.Add(minigame);
+                                LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
+                            }
+                        }
                     }
+                    AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
                 });
                 s.AppendCallback(_beginEndGame.FadeOut);
                 s.AppendInterval(3f);

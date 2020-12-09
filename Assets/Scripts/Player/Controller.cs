@@ -62,9 +62,9 @@ namespace AAPlayer
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
                 GameManager.Instance.LocalPlayer = this;
                 LocalNumber = PhotonNetwork.LocalPlayer.ActorNumber-1;
-                _skills.DisableKilling();
-                _skills.HideAlarmButton();
-                _skills.HideInteractButton();
+                _skills.SetKillingActive(false);
+                _skills.SetAlarmButtonActive(false);
+                _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
             }
         }
@@ -158,8 +158,8 @@ namespace AAPlayer
             if(_photonView.IsMine)
                 _Body._Animator.SetInteger(Status,-1);
             DisableNickName();
-            _skills.DisableKilling();
-            _skills.HideAlarmButton();
+            _skills.SetKillingActive(false);
+            _skills.SetAlarmButtonActive(false);
             controller.enabled = false;
             _deadBodyCollider.gameObject.SetActive(true);
             Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");

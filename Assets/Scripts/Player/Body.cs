@@ -13,6 +13,8 @@ namespace AAPlayer
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
 
+        private DomofonZone CurrentDomofon;
+
         public Animator _Animator => _Graphics.GetComponent<Animator>();
         
         public void Initialize(int id)
@@ -72,26 +74,31 @@ namespace AAPlayer
                 {
                     _deadBodies.Add(body._Controller);
                 }
-                _skills.EnableAlarmButton();
+                _skills.SetAlarmButtonInteractable(true);
             }
 
             if (other.GetComponent<VotingZone>() != null && !_skills.HadSpawnAlarm)
             {
-                _skills.EnableAlarmButton();
+                _skills.SetAlarmButtonInteractable(true);
             }
             var MiniGame = other.GetComponent<MinigameZone>();
             if (MiniGame != null)
             {
                 if (!MiniGame.isComplete && GameManager.Instance.MyMinigames.Contains(MiniGame))
                 {
-                    _skills._interactButton.interactable = true;
+                    _skills.SetInteractButtonInteractable(true);
                     _minigamesManager.CurrentMinigameID = MiniGame.Number;
                 }
             }
-            
+
+            var Domofon = other.GetComponent<DomofonZone>();
+            if (Domofon != null)
+            {
+                CurrentDomofon = Domofon;
+            }
         }
         
-
+    
         public Controller GetDeadBody()
         {
             return _deadBodies.Count > 0 ? _deadBodies[0] : null;
@@ -106,18 +113,28 @@ namespace AAPlayer
                 {
                     _deadBodies.Remove(body._Controller);
                 }
-                _skills.DisableAlarmButton();
+                _skills.SetAlarmButtonInteractable(false);
             }
             if (other.GetComponent<VotingZone>() != null)
             {
-                _skills.DisableAlarmButton();
+                _skills.SetAlarmButtonInteractable(false);
             }
 
             if (other.GetComponent<MinigameZone>() != null)
             {
-                _skills._interactButton.interactable = false;
+                _skills.SetInteractButtonInteractable(false);
                 _minigamesManager.CurrentMinigameID = -1;
             }
+            var Domofon = other.GetComponent<DomofonZone>();
+            if (Domofon != null)
+            {
+                CurrentDomofon = null;
+            }
+        }
+
+        public DomofonZone GetDomofon()
+        {
+            return CurrentDomofon;
         }
 
         public void HideDeadBody()

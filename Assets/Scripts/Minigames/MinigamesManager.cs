@@ -19,6 +19,9 @@ public class MinigamesManager : MonoBehaviour
 
     public void Close()
     {
+        MiniGamesCanvas.SetActive(false);
+        GameManager.Instance.AllMinigames[CurrentMinigameID]._MinigamePresenter.Stop();
+        GameManager.Instance.AllMinigames[CurrentMinigameID]._MinigamePresenter.gameObject.SetActive(false);
         AllMinigames[CurrentMinigameID].gameObject.SetActive(false);
     }
 }

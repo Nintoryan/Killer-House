@@ -19,23 +19,30 @@ namespace AAPlayer
 
         public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
+        private bool isKillOnCD = false;
 
         public void TryKill()
         {
             if (_killingZone.GetPlayer() != null)
             {
                 _killingZone.GetPlayer().DieEvent();
-                _killButton.interactable = false;
-                _killButton.GetComponent<Image>().fillAmount = 0;
-                _killButton.GetComponent<Image>().raycastTarget = false;
-                var s = DOTween.Sequence();
-                s.Append(_killButton.GetComponent<Image>().DOFillAmount(1, KillingColdown));
-                s.AppendCallback(()=>
-                {
-                    _killButton.interactable = true;
-                    _killButton.GetComponent<Image>().raycastTarget = true;
-                });
+                KillGoCD();
             }
+        }
+
+        public void KillGoCD()
+        {
+            isKillOnCD = true;
+            _killButton.interactable = false;
+            _killButton.GetComponent<Image>().fillAmount = 0;
+            _killButton.GetComponent<Image>().raycastTarget = false;
+            var s = DOTween.Sequence();
+            s.Append(_killButton.GetComponent<Image>().DOFillAmount(1, KillingColdown));
+            s.AppendCallback(()=>
+            {
+                SetKillingInteractable(true);
+                isKillOnCD = false;
+            });
         }
 
         public void UseDomofon()
@@ -95,8 +102,8 @@ namespace AAPlayer
 
         public void SetKillingInteractable(bool isInteractable)
         {
-            _killButton.interactable = isInteractable;
-            _killButton.GetComponent<Image>().raycastTarget = isInteractable;
+            _killButton.interactable = isInteractable && !isKillOnCD;
+            _killButton.GetComponent<Image>().raycastTarget = isInteractable && !isKillOnCD;
         }
 
         public void SetAlarmButtonActive(bool isActive)

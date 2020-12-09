@@ -1,16 +1,50 @@
 ﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BeginEndGame : MonoBehaviour
 {
     [SerializeField] private GameObject[] CharactersImages;
-    [SerializeField] private GameObject CivilianScreen;
-    [SerializeField] private GameObject KillerScreen;
     [SerializeField] private GameObject Vinet;
     [SerializeField] private GameObject WholeScreen;
     [SerializeField] private Image DarkScreen;
+    [SerializeField] private Image BG;
+    [SerializeField] private Sprite GrayBg;
+    [SerializeField] private Sprite GreenBg;
+    [SerializeField] private GameObject CivilianScreen;
+    [SerializeField] private GameObject KillerScreen;
+    [SerializeField] private GameObject CivilianVictory;
+    [SerializeField] private GameObject CivilianDefeat;
+    [SerializeField] private GameObject ImposterVictory;
 
+    public void SetCivilianVictory()
+    {
+        CivilianVictory.SetActive(true);
+        CivilianScreen.SetActive(false);
+        KillerScreen.SetActive(false);
+    }
+
+    public void TurnAllPortraitsOff()
+    {
+        foreach (var image in CharactersImages)
+        {
+            image.SetActive(false);
+        }    
+    }
+    
+    public void SetCivilianDefeat()
+    {
+        CivilianDefeat.SetActive(true);
+        CivilianScreen.SetActive(false);
+        KillerScreen.SetActive(false);
+    }
+    public void SetImposterVictory()
+    {
+        ImposterVictory.SetActive(true);
+        CivilianScreen.SetActive(false);
+        KillerScreen.SetActive(false);
+    }
     public void FadeIn()
     {
         DarkScreen.gameObject.SetActive(true);
@@ -30,9 +64,29 @@ public class BeginEndGame : MonoBehaviour
         });
     }
 
-    public void SetCharacterImageActive(int id)
+    public void SetGreenBG()
+    {
+        BG.sprite = GreenBg;
+    }
+
+    public void SetGrayBG()
+    {
+        BG.sprite = GrayBg;
+    }
+    public void SetCharacterImageActive(int id,string Name)
     {
         CharactersImages[id].SetActive(true);
+        CharactersImages[id].GetComponentInChildren<TMP_Text>().text = Name;
+    }
+
+    public void SetCharacteImageDead(int id)
+    {
+        CharactersImages[id].GetComponent<Image>().color = new Color(0.17f, 0.17f, 0.17f);
+    }
+
+    public void SetCharacterImageRed(int id)
+    {
+        CharactersImages[id].GetComponent<Image>().color = Color.red;
     }
 
     public void DisableScreen()

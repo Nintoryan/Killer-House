@@ -12,7 +12,6 @@ public class SwipeMinigame : Minigame
     [SerializeField] private Vector2 RightGuidePos;
     [SerializeField] private Direction[] _directions;
     [SerializeField] private float DelayCountDown;
-    private float currentCountDown;
     private int CurrentPositionID;
 
     private bool isPlaying;
@@ -21,7 +20,6 @@ public class SwipeMinigame : Minigame
     {
         base.InitializeMiniGame();
         GuidePointer.gameObject.SetActive(true);
-        currentCountDown = DelayCountDown;
         isPlaying = true;
         ShowWhereHaveToSwipe(_directions[0]);
     }
@@ -29,7 +27,6 @@ public class SwipeMinigame : Minigame
     public override void StartMinigame()
     {
         base.StartMinigame();
-        currentCountDown = DelayCountDown;
         CurrentPositionID = 0;
     }
     
@@ -52,17 +49,6 @@ public class SwipeMinigame : Minigame
         {
             DoSwipe(Direction.Right);
         }
-        if(!isMiniGameStarted) return;
-        currentCountDown -= Time.deltaTime;
-        if (currentCountDown < 0)
-        {
-            Debug.Log($"isMinigameStarted:{isMiniGameStarted}");
-            Debug.Log($"currentCountDown:{currentCountDown}");
-            Debug.Log($"gameObject.name:{gameObject.name}");
-            isPlaying = false;
-            Fail();
-            GuidePointer.gameObject.SetActive(false);
-        }
     }
     private void DoSwipe(Direction userinput)
     {
@@ -73,13 +59,11 @@ public class SwipeMinigame : Minigame
         }
         if (userinput == _directions[CurrentPositionID])
         {
-            currentCountDown = DelayCountDown;
             CurrentPositionID++;
             if (CurrentPositionID >= _directions.Length)
             {
                 isPlaying = false;
                 Win();
-                currentCountDown = 100000;
                 GuidePointer.gameObject.SetActive(false);
             }
             else

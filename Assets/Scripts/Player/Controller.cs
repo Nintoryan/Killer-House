@@ -83,6 +83,7 @@ namespace AAPlayer
                 {
                     _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
                 }
+                _InGameUI.MoveMe(controller.transform.position);
             }
             NickNameCanvas.position = controller.transform.position + new Vector3(0,1.5f,0);
         }

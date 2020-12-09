@@ -1,5 +1,4 @@
-﻿using System;
-using ExitGames.Client.Photon;
+﻿using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -12,7 +11,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPrefab;
     public Button StartGameButton;
-    [SerializeField] private GameObject StartGameBG;
     [SerializeField] private TMP_Text AmountOfPlayers;
 
     public void StartGame()
@@ -30,7 +28,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     private void Awake()
     {
         StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
-        StartGameBG.gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     private void Start()

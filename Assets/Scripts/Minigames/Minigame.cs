@@ -1,6 +1,8 @@
-﻿using ExitGames.Client.Photon;
+﻿using DG.Tweening;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 public class Minigame : MonoBehaviour
@@ -8,13 +10,12 @@ public class Minigame : MonoBehaviour
     public int Number;
     [SerializeField] private GameObject WinScreen;
     [SerializeField] private GameObject Guide;
-    [SerializeField] private GameObject FailScreen;
     [SerializeField] private GameObject Interface;
+    [SerializeField] private MinigamesManager _minigamesManager;
     protected bool isMiniGameStarted;
 
     public virtual void InitializeMiniGame()
     {
-        FailScreen.SetActive(false);
         WinScreen.SetActive(false);
         Guide.SetActive(true);
         Interface.SetActive(true);
@@ -41,17 +42,14 @@ public class Minigame : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
+        WinScreen.GetComponentInChildren<TMP_Text>().text = "Done!";
         isMiniGameStarted = false;
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.Stop();
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(false);
+        var s = DOTween.Sequence();
+        s.AppendInterval(2f);
+        s.AppendCallback(() =>
+        {
+            _minigamesManager.Close();
+        });
         Complete();
-    }
-
-    public void Fail()
-    {
-        FailScreen.SetActive(true);
-        isMiniGameStarted = false;
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.Stop();
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(false);
     }
 }

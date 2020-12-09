@@ -18,22 +18,31 @@ namespace Voting
         [SerializeField] private Image[] VoitingPortraits;
         [SerializeField] private Sprite[] allIcons;
         public PlayerAvatar _suspectPlayer;
-        public List<int> suspectedByPlayersID;
+
+        private List<int> _suspectedByPlayersIDs = new List<int>();
+        
         //public PlayerAvatar _protectedPlayer;
+        public void AddToSuspectedByPlayer(int id)
+        {
+            if (!_suspectedByPlayersIDs.Contains(id))
+            {
+                _suspectedByPlayersIDs.Add(id);
+                VoitingPortraits[id].gameObject.SetActive(true);
+            }
+        }
+        public void RemoveFromSuspectedByPlayer(int id)
+        {
+            if (_suspectedByPlayersIDs.Contains(id))
+            {
+                _suspectedByPlayersIDs.Remove(id);
+                VoitingPortraits[id].gameObject.SetActive(false);
+            }
+        }
 
         private int _kickScore;
         public int KickScore
         {
-            get => _kickScore;
-            set
-            {
-                _kickScore = value;
-                _scoreText.text = $"{value}";
-                for (int i = 0; i < VoitingPortraits.Length; i++)
-                {
-                    VoitingPortraits[i].gameObject.SetActive(suspectedByPlayersID.Contains(i));
-                }
-            }
+            get => _suspectedByPlayersIDs.Count;
         }
         public int thisPlayerActorID;
         public int localPlayerNumber;
@@ -43,6 +52,14 @@ namespace Voting
             _icon.sprite = allIcons[skinID];
             thisPlayerActorID = ActorID;
             _nickName.text = NickName;
+            Voted.gameObject.SetActive(false);
+            Skiped.gameObject.SetActive(false);
+            _suspectedByPlayersIDs.Clear();
+            foreach (var t in VoitingPortraits)
+            {
+                t.gameObject.SetActive(false);
+            }
+            _kickScore = 0;
             if (GameManager.Instance.FindPlayer(ActorID).IsDead)
             {
                 _cross.gameObject.SetActive(true);

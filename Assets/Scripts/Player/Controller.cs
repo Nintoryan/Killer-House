@@ -18,6 +18,7 @@ namespace AAPlayer
         [SerializeField] private TMP_Text NickName;
         [SerializeField] private Chat _chat;
         [SerializeField] private SphereCollider _deadBodyCollider;
+        public InGameUI _InGameUI;
         public Body _Body;
         public PhotonView _photonView;
         private Vector3 playerVelocity;
@@ -58,7 +59,6 @@ namespace AAPlayer
             else
             {
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
-                NickNameDistance = NickNameCanvas.position - controller.transform.position;
                 GameManager.Instance.LocalPlayer = this;
                 LocalNumber = PhotonNetwork.LocalPlayer.ActorNumber-1;
                 _skills.DisableKilling();
@@ -83,11 +83,7 @@ namespace AAPlayer
                     _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
                 }
             }
-            else
-            {
-                
-            }
-            NickNameCanvas.position = NickNameDistance + controller.transform.position;
+            NickNameCanvas.position = controller.transform.position + new Vector3(0,1.5f,0);
         }
 
         public void UpdateCameraPos()

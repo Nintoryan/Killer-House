@@ -20,10 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Artboard 3 copy 4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Artboard 3 copy 4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 60.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 63.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 64.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 65.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 66.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 67.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 68.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +74,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DeadBodyZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,7 +120,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
@@ -93,14 +129,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
       </list>
     </option>
   </component>
@@ -180,7 +219,7 @@
       <workItem from="1607154436689" duration="3120000" />
       <workItem from="1607182956688" duration="1481000" />
       <workItem from="1607422922013" duration="10913000" />
-      <workItem from="1607456552304" duration="15993000" />
+      <workItem from="1607456552304" duration="20825000" />
     </task>
     <servers />
   </component>
@@ -282,10 +321,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607155079626" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607471731867">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607479639501">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607471731867" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607479639501" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

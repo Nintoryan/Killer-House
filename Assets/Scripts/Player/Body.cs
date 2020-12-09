@@ -82,7 +82,7 @@ namespace AAPlayer
             var MiniGame = other.GetComponent<MinigameZone>();
             if (MiniGame != null)
             {
-                if (!MiniGame.isComplete)
+                if (!MiniGame.isComplete && GameManager.Instance.MyMinigames.Contains(MiniGame))
                 {
                     _skills._interactButton.interactable = true;
                     _minigamesManager.CurrentMinigameID = MiniGame.Number;

@@ -1,15 +1,18 @@
-﻿using ExitGames.Client.Photon;
+﻿using System;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     public GameObject PlayerPrefab;
     public Button StartGameButton;
+    [SerializeField] private GameObject StartGameBG;
     [SerializeField] private TMP_Text AmountOfPlayers;
 
     public void StartGame()
@@ -24,9 +27,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         AmountOfPlayers.gameObject.SetActive(false);
     }
 
-    public void Leave()
+    private void Awake()
     {
-        PhotonNetwork.LeaveRoom();
+        StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
+        StartGameBG.gameObject.SetActive(PhotonNetwork.IsMasterClient);
     }
 
     private void Start()
@@ -42,7 +46,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         AmountOfPlayers.text = $"{PhotonNetwork.CurrentRoom.PlayerCount}/{PhotonNetwork.CurrentRoom.MaxPlayers}";
-        StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         StartGameButton.interactable = CheckPlayersReady();
     }
 

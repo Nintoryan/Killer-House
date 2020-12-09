@@ -58,7 +58,7 @@ public class Chat : MonoBehaviour, IChatClientListener
     {
         for (var i = 0; i < senders.Length; i++)
         {
-            _outputField.text += $"{senders[i]}:{messages[i]}\n";
+            _outputField.text += $"<color=white>{senders[i]}</color>:{messages[i]}\n";
         }
     }
 

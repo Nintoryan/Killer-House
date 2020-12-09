@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
     
+    
 
     public static GameManager Instance;
 
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     if (!MyMinigames.Contains(minigame))
                     {
                         MyMinigames.Add(minigame);
+                        LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
                     }
                 }
                 var s = DOTween.Sequence();

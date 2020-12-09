@@ -12,12 +12,13 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public Controller LocalPlayer;
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
-    public int QuestsAmount = 5;
+    public int QuestsAmountForEachPlayer = 5;
     public float VotingDuration;
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
-    
-    
+    public int AmountOfDoneQuests;
+    public int AmountOfQuests;
+    [SerializeField] private BeginEndGame _beginEndGame;
 
     public static GameManager Instance;
 
@@ -45,43 +46,70 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 break;
             case 43:
                 //Событие начала игры
-                AmountOfPlayers.SetActive(false);
-                var OrderedPlayers = _players
-                    .OrderBy(p => p._photonView.Owner.ActorNumber)
-                    .ToArray();
-                LocalPlayer.DisableControll();
-                int imposterID = (int) photonEvent.CustomData;
-                for (int i = 0; i < OrderedPlayers.Length; i++)
-                {
-                    OrderedPlayers[i]._Body.transform.position = new Vector3(
-                        SpawnPlaces[i].position.x,
-                        OrderedPlayers[i].transform.position.y,
-                        SpawnPlaces[i].position.z);
-                    OrderedPlayers[i].UpdateCameraPos();
-                    OrderedPlayers[i]._skills.ShowAlarmButton();
-                    OrderedPlayers[i]._skills.ShowInteractButton();
-                    OrderedPlayers[i].LocalNumber = i;
-                    if (i == imposterID)
-                    {
-                        OrderedPlayers[i]._skills.EnableKilling();
-                    }
-                }
-                while(MyMinigames.Count < QuestsAmount){
-                    var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
-                    if (!MyMinigames.Contains(minigame))
-                    {
-                        MyMinigames.Add(minigame);
-                        LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
-                    }
-                }
                 var s = DOTween.Sequence();
-                s.AppendInterval(1f);
+                s.AppendCallback(_beginEndGame.FadeIn);
+                s.AppendInterval(1.5f);
+                s.AppendCallback(() =>
+                {
+                    _beginEndGame.ActivateScreen();
+                    AmountOfPlayers.SetActive(false);
+                    var OrderedPlayers = _players
+                        .OrderBy(p => p._photonView.Owner.ActorNumber)
+                        .ToArray();
+                    LocalPlayer.DisableControll();
+                    int imposterID = (int) photonEvent.CustomData;
+                    for (int i = 0; i < OrderedPlayers.Length; i++)
+                    {
+                        OrderedPlayers[i]._Body.transform.position = new Vector3(
+                            SpawnPlaces[i].position.x,
+                            OrderedPlayers[i].transform.position.y,
+                            SpawnPlaces[i].position.z);
+                        OrderedPlayers[i].UpdateCameraPos();
+                        OrderedPlayers[i]._skills.ShowAlarmButton();
+                        OrderedPlayers[i]._skills.ShowInteractButton();
+                        _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber);
+                        if (i == imposterID)
+                        {
+                            OrderedPlayers[i]._skills.EnableKilling();
+                            OrderedPlayers[i].isImposter = true;
+                        }
+                    }
+                    while(MyMinigames.Count < QuestsAmountForEachPlayer){
+                        var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
+                        if (!MyMinigames.Contains(minigame))
+                        {
+                            MyMinigames.Add(minigame);
+                            LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
+                        }
+                    }
+                    AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
+                    if (LocalPlayer.isImposter)
+                    {
+                        _beginEndGame.SetKillerScreen(true);
+                    }
+                    else
+                    {
+                        _beginEndGame.SetCivilianScreen(true);
+                    }
+                });
+                s.AppendCallback(_beginEndGame.FadeOut);
+                s.AppendInterval(3f);
+                s.AppendCallback(_beginEndGame.FadeIn);
+                s.AppendInterval(1.5f);
+                s.AppendCallback(_beginEndGame.DisableScreen);
+                s.AppendCallback(_beginEndGame.FadeOut);
+                s.AppendInterval(1);
                 s.AppendCallback(() => LocalPlayer.ActivateControll());
                 break;
             case 50:
                 //Событие выключения мертвого тела
                 var DeadPlayer = FindPlayer((int) photonEvent.CustomData);
                 DeadPlayer.DisableDeadBody();
+                break;
+            case 53:
+                //Событие успешного завершения квеста
+                AmountOfDoneQuests++;
+                LocalPlayer._InGameUI.SetProgress((float)AmountOfDoneQuests/AmountOfQuests);
                 break;
             
         }

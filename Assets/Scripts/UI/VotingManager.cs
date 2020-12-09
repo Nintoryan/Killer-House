@@ -35,7 +35,7 @@ namespace Voting
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
-            PhotonNetwork.RaiseEvent(50, _localPlayer.thisPlayerActorID, options, sendOptions);
+            PhotonNetwork.RaiseEvent(51, _localPlayer.thisPlayerActorID, options, sendOptions);
         }
         public void RaiseSetDependencyEvent(PlayerAvatar _selectedPlayerAvatar)
         {
@@ -138,7 +138,7 @@ namespace Voting
                     KickedPlayer.DisableDeadBody();
                     VotingResultText.text = $"{KickedPlayer.Name} was ejected";
                     break;
-                case 50:
+                case 51:
                     var SkipedPlayerActorID = (int) photonEvent.CustomData;
                     FindPlayerAvatar(SkipedPlayerActorID).Skiped.gameObject.SetActive(true);
                     break;

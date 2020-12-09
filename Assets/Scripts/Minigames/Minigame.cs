@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine;
 
 public class Minigame : MonoBehaviour
 {
@@ -26,8 +29,13 @@ public class Minigame : MonoBehaviour
     }
     private void Complete()
     {
-        GameManager.Instance.AllMinigames[Number].isComplete = true;
-        GameManager.Instance.LocalPlayer._skills._interactButton.interactable = false;
+        var gm = GameManager.Instance;
+        gm.AllMinigames[Number].isComplete = true;
+        gm.LocalPlayer._skills._interactButton.interactable = false;
+        gm.LocalPlayer._InGameUI.SetMarkDisables(Number);
+        var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+        var sendOptions = new SendOptions {Reliability = true};
+        PhotonNetwork.RaiseEvent(53,gm.LocalPlayer._photonView.Owner.ActorNumber , options, sendOptions);
     }
     protected void Win()
     {

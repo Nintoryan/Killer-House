@@ -646,6 +646,7 @@
           <e p="PlayerListEntry.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="AudioManager.cs" t="Include" />
+            <e p="BeginEndGame.cs" t="Include" />
             <e p="Chat.cs" t="Include" />
             <e p="InGameUI.cs" t="Include" />
             <e p="LobbyMainPanel.cs" t="Include" />

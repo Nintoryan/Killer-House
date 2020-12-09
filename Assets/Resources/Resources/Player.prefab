@@ -529,7 +529,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580689721557890510}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -7134120923428084262, guid: e5882ef17269c304295ad25f824f4e1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -846,6 +846,7 @@ MonoBehaviour:
   - {fileID: 8782195227826881718}
   - {fileID: 8572646155674536501}
   - {fileID: 7098514300552243441}
+  ProgressBar: {fileID: 0}
 --- !u!1 &958357710662834405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6563,6 +6564,7 @@ MonoBehaviour:
   _InGameUI: {fileID: 2368812761158647822}
   _Body: {fileID: 6974272432337578942}
   _photonView: {fileID: 3706719653554171646}
+  isImposter: 0
 --- !u!114 &3706719653554171646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6742,9 +6744,9 @@ RectTransform:
   m_Father: {fileID: 4660104619320256021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -378.2, y: -83}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -378.2, y: -8}
   m_SizeDelta: {x: 612.30994, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6460682839516205017

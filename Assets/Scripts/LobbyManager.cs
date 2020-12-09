@@ -58,7 +58,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(Random.Range(15, 25), -1.7f, Random.Range(-5, 5)), Quaternion.identity);
+        var gm = GameManager.Instance;
+        PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(
+            gm.SpawnPlaces[Random.Range(0, gm.SpawnPlaces.Length)].position.x, 
+            -1.7f,
+            gm.SpawnPlaces[Random.Range(0, gm.SpawnPlaces.Length)].position.z), Quaternion.identity);
         StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         StartGameButton.interactable = CheckPlayersReady();
     }

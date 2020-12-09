@@ -29,6 +29,7 @@ namespace AAPlayer
         private static readonly int Status = Animator.StringToHash("status");
         private Vector3 BodyCamDistance;
         private Vector3 NickNameDistance;
+        public bool isImposter;
         public string Name =>_photonView.Owner.NickName;
 
         private int _localNumber=-1;

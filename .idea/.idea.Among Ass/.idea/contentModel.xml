@@ -669,6 +669,9 @@
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="Android" t="Include">
+            <e p="AndroidManifest.xml" t="Include" />
+          </e>
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
               <e p="Modules" t="Include">

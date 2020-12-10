@@ -20,118 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/BaseYandexAppMetrica.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/BaseYandexAppMetrica.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Editor/PostprocessBuildPlayerAppMetrica.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Editor/PostprocessBuildPlayerAppMetrica.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/AnotherScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/AnotherScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/AnotherSceneManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/AnotherSceneManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/MainScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/MainScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/MainSceneManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/MainSceneManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/PopUp.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/ExampleUI/PopUp.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/IYandexAppMetrica.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/IYandexAppMetrica.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/Android.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/Android/mobmetricalib-3.14.3.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/Android/mobmetricalib-3.14.3.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YMMBridge.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YMMBridge.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YMMBridge.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YMMBridge.m.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMCompletionBlocks.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMCompletionBlocks.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMError.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMError.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMErrorRepresentable.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMErrorRepresentable.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMProfileAttribute.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMProfileAttribute.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMReporterConfiguration.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMReporterConfiguration.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMRevenueInfo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMRevenueInfo.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMUserProfile.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMUserProfile.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMVersion.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMVersion.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetrica.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetrica.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaConfiguration.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaConfiguration.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaPreloadInfo.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaPreloadInfo.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaReporting.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YMMYandexMetricaReporting.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YandexMobileMetrica-umbrella.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YandexMobileMetrica-umbrella.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YandexMobileMetrica.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Headers/YandexMobileMetrica.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Modules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Modules/module.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/Modules/module.modulemap.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/YandexMobileMetrica" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetrica.framework/YandexMobileMetrica.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Headers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Headers/YandexMobileMetricaCrashes-umbrella.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Headers/YandexMobileMetricaCrashes-umbrella.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Modules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Modules/module.modulemap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/Modules/module.modulemap.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/YandexMobileMetricaCrashes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Plugins/iOS/YandexMobileMetricaCrashes.framework/YandexMobileMetricaCrashes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaBirthDateAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaBirthDateAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaBooleanAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaBooleanAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaCounterAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaCounterAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaGenderAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaGenderAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNameAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNameAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNotificationsEnabledAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNotificationsEnabledAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNumberAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaNumberAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaStringAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaStringAttribute.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaUserProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaUserProfile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaUserProfileUpdate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/Profile/YandexAppMetricaUserProfileUpdate.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YMMJSONUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YMMJSONUtils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaAndroid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaAndroid.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaDummy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaDummy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaError.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaError.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaIOS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaIOS.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaRevenue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AppMetrica/YandexAppMetricaRevenue.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 74.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 75.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 76.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,9 +111,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
       </list>
     </option>
   </component>
@@ -297,6 +196,7 @@
       <workItem from="1607456552304" duration="28317000" />
       <workItem from="1607514574737" duration="4581000" />
       <workItem from="1607520378299" duration="18077000" />
+      <workItem from="1607599559919" duration="3100000" />
     </task>
     <servers />
   </component>

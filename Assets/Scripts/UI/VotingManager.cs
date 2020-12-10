@@ -7,19 +7,22 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Voting
 {
     public class VotingManager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         [SerializeField] private PlayerAvatar[] _playerAvatars;
-        [SerializeField] private TMP_Text Timer;
         [SerializeField] private GameObject VotingParent;
         [SerializeField] private GameObject VotingResults;
         [SerializeField] private TMP_Text VotingResultText;
+        [SerializeField] private Image Clock;
+        [SerializeField] private RectTransform Arrow;
         private float timeLeft;
         private DependecieType _dependecieType = DependecieType.None;
         private PlayerAvatar _localPlayer;
+        [SerializeField] private TMP_Text Moto;
         private PlayerAvatar _WhoStartedVoting;
         private bool isSkiped;
         
@@ -78,6 +81,17 @@ namespace Voting
             }
             if (GameManager.Instance.LocalPlayer._photonView.IsMine)
             {
+                if (GameManager.Instance.FindPlayer(PhotonNetwork.LocalPlayer.ActorNumber).IsDead)
+                {
+                    Moto.text = "You are dead...";
+                }
+                else
+                {
+                    Moto.text = "Chose the suspect!";
+                }
+
+                Clock.DOFillAmount(0, timeLeft).SetEase(Ease.Linear);
+                Arrow.DORotate(new Vector3(0, 0, -360), timeLeft,RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
                 var s = DOTween.Sequence();
                 s.AppendInterval(timeLeft);
                 s.AppendCallback(EndVoting); 
@@ -240,7 +254,6 @@ namespace Voting
         private void Update()
         {
             timeLeft -= Time.deltaTime;
-            Timer.text = timeLeft.ToString("0.0");
         }
         private PlayerAvatar FindPlayerAvatar(int ActorID)
         {

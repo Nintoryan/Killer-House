@@ -20,75 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/ColdDeadZone.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/ColdDeadZone.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Fridge.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Fridge.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Poison.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Poison.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Poison.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Poison.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Sauna.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/Sauna.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/WarmZone.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Domofon/WarmZone.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Kevin Iglesias/Caster Mage Animations Pack/Prefabs/Spells/Nova/Poison.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Kevin Iglesias/Caster Mage Animations Pack/Prefabs/Spells/Nova/Poison.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Kevin Iglesias/Caster Mage Animations Pack/Prefabs/Spells/Nova/White.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Kevin Iglesias/Caster Mage Animations Pack/Prefabs/Spells/Nova/White.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/1.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/2.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/3.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/4.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/4.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/5.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/5.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/6.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/6.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/7.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/7.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Бег.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Бег.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Звук Начала игры.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Звук Начала игры.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Звук победы импостера.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Звук победы импостера.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Клик по убийству.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Клик по убийству.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Клик.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Клик.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Победа Мирных В игре.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Победа Мирных В игре.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Репортим Тело- голосование.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Репортим Тело- голосование.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Удачно выполнили задание.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Удачно выполнили задание.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/шаги.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/шаги.mp3.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +88,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
@@ -173,6 +105,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
       </list>
     </option>
   </component>
@@ -256,7 +189,7 @@
       <workItem from="1607514574737" duration="4581000" />
       <workItem from="1607520378299" duration="18077000" />
       <workItem from="1607599559919" duration="3562000" />
-      <workItem from="1607706215482" duration="15100000" />
+      <workItem from="1607706215482" duration="16098000" />
     </task>
     <servers />
   </component>
@@ -358,9 +291,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607534427368" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607727056920">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607728589913">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607727056920" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607728589913" />
   </component>
 </project>

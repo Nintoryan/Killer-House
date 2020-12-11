@@ -11,7 +11,7 @@ public class Minigame : MonoBehaviour
     [SerializeField] private GameObject WinScreen;
     [SerializeField] private GameObject Guide;
     [SerializeField] private GameObject Interface;
-    [SerializeField] private MinigamesManager _minigamesManager;
+    [SerializeField] protected MinigamesManager _minigamesManager;
     protected bool isMiniGameStarted;
 
     public virtual void InitializeMiniGame()
@@ -43,6 +43,7 @@ public class Minigame : MonoBehaviour
     {
         WinScreen.SetActive(true);
         WinScreen.GetComponentInChildren<TMP_Text>().text = "Done!";
+        _minigamesManager.PlayCompleteSound();
         isMiniGameStarted = false;
         var s = DOTween.Sequence();
         s.AppendInterval(2f);

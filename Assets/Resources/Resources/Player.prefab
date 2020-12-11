@@ -96,6 +96,64 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &92518670354408665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136858619135848573}
+  - component: {fileID: 8383307786531371644}
+  m_Layer: 0
+  m_Name: TapMinigame15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2136858619135848573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92518670354408665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8383307786531371644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92518670354408665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 13
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 250, y: 250}
+  - {x: 250, y: -250}
+  - {x: -250, y: -250}
+  - {x: -250, y: 250}
+  - {x: 250, y: 250}
+  - {x: -250, y: -250}
+  - {x: 0, y: 0}
 --- !u!1 &152181024020863929
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,62 +1044,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1 &1151391614623295857
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3888388145753368360}
-  - component: {fileID: 1971804460735874062}
-  m_Layer: 0
-  m_Name: SwipeMinigame17
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3888388145753368360
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151391614623295857}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1971804460735874062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1151391614623295857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 17
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 0100000002000000010000000300000001000000
-  DelayCountDown: 3
 --- !u!1 &1166887996552927013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1369,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 9c51aad5f7a82424195025d471f12a21, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1358858513059126280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,67 +1432,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
+  - {x: 0, y: 0}
+  - {x: 200, y: 200}
+  - {x: -200, y: -200}
   - {x: -100, y: -100}
-  - {x: 0, y: -200}
-  - {x: -400, y: 0}
---- !u!1 &1369426458138856681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8237210628969214582}
-  - component: {fileID: 4405542305068656171}
-  m_Layer: 0
-  m_Name: SwipeMinigame1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8237210628969214582
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369426458138856681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4405542305068656171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369426458138856681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 1
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000001000000020000000300000000000000
-  DelayCountDown: 3
+  - {x: 400, y: 200}
+  - {x: -400, y: 200}
+  - {x: 200, y: 0}
 --- !u!1 &1473944833045019354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1514,64 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1484246943389923972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750467991662083586}
+  - component: {fileID: 6215285456237511271}
+  m_Layer: 0
+  m_Name: TapMinigame5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &750467991662083586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484246943389923972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6215285456237511271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484246943389923972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 5
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 50, y: 100}
+  - {x: -400, y: 0}
+  - {x: 400, y: 0}
+  - {x: 0, y: -200}
+  - {x: 0, y: 0}
+  - {x: 200, y: 200}
+  - {x: -200, y: -200}
 --- !u!1 &1558460511257041125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,62 +1956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675285339713490157}
   m_CullTransparentMesh: 0
---- !u!1 &1718414038392450121
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7979177521763450231}
-  - component: {fileID: 7437933061095927676}
-  m_Layer: 0
-  m_Name: SwipeMinigame15
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7979177521763450231
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718414038392450121}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7437933061095927676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718414038392450121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 15
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 0000000001000000020000000000000001000000
-  DelayCountDown: 3
 --- !u!1 &1760184408145619969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,6 +2356,64 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1985041995500316635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4552238340749515535}
+  - component: {fileID: 609429790143391296}
+  m_Layer: 0
+  m_Name: TapMinigame3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4552238340749515535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985041995500316635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &609429790143391296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985041995500316635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 3
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 200, y: 200}
+  - {x: 0, y: 0}
+  - {x: -200, y: -200}
+  - {x: 0, y: 0}
+  - {x: -200, y: 200}
+  - {x: 0, y: 0}
+  - {x: 200, y: -200}
 --- !u!1 &2029059882775267838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,7 +2852,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2287481461666979080
+--- !u!1 &2275671459218248572
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2840,54 +2860,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6839774681815084923}
-  - component: {fileID: 8410767503527957561}
+  - component: {fileID: 5162569804573372427}
+  - component: {fileID: 4041086550928482179}
   m_Layer: 0
-  m_Name: SwipeMinigame5
+  m_Name: TapMinigame7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &6839774681815084923
+--- !u!4 &5162569804573372427
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287481461666979080}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 2275671459218248572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8410767503527957561
+--- !u!114 &4041086550928482179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2287481461666979080}
+  m_GameObject: {fileID: 2275671459218248572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Number: 5
+  Number: 7
   WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
   _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 01000000000000000200000003000000
   DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 400, y: 0}
+  - {x: 0, y: -400}
+  - {x: -400, y: 0}
+  - {x: 0, y: 400}
+  - {x: 400, y: 0}
+  - {x: 0, y: -400}
+  - {x: 100, y: 100}
 --- !u!1 &2289969861043755700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,11 +3501,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
-  - {x: 0, y: -200}
-  - {x: -400, y: 0}
+  - {x: -300, y: 300}
+  - {x: -100, y: 100}
+  - {x: 100, y: -100}
+  - {x: 300, y: -300}
+  - {x: 0, y: 0}
+  - {x: 300, y: 300}
+  - {x: -300, y: -300}
 --- !u!1 &2502073560783703069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,6 +3914,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 9c51aad5f7a82424195025d471f12a21, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2685519877816387049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4068,6 +4104,8 @@ GameObject:
   - component: {fileID: 6974272432337578942}
   - component: {fileID: 6138149367261027161}
   - component: {fileID: 2696801478549155708}
+  - component: {fileID: 2215563708116420863}
+  - component: {fileID: 1746604318740268446}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -4089,6 +4127,8 @@ Transform:
   - {fileID: 5409681494153991741}
   - {fileID: 8451468814342760088}
   - {fileID: 8513403058625712916}
+  - {fileID: 2962089565060154827}
+  - {fileID: 629062122905676024}
   m_Father: {fileID: 5132932481316610413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4183,6 +4223,110 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!82 &2215563708116420863
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679382723031313968}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b70acb25209ba7242835f100ecaf7e9f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!81 &1746604318740268446
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679382723031313968}
+  m_Enabled: 1
 --- !u!1 &2697811104203356167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,6 +4527,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2845381523708243631}
   m_CullTransparentMesh: 0
+--- !u!1 &2859022361593205939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3583909511614755796}
+  - component: {fileID: 3413120435249746791}
+  m_Layer: 0
+  m_Name: TapMinigame1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3583909511614755796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859022361593205939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3413120435249746791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859022361593205939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 1
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 100, y: 100}
+  - {x: -100, y: -200}
+  - {x: -100, y: -100}
+  - {x: 100, y: -200}
+  - {x: -400, y: 300}
+  - {x: 0, y: -250}
+  - {x: 30, y: 50}
 --- !u!1 &2870243077993207759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +4925,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 9c51aad5f7a82424195025d471f12a21, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3051191182110395809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4884,24 +5098,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2641984139471941243}
-  - {fileID: 8237210628969214582}
+  - {fileID: 3583909511614755796}
   - {fileID: 4348341407431806632}
-  - {fileID: 99220977993934530}
+  - {fileID: 4552238340749515535}
   - {fileID: 1993333271370602546}
-  - {fileID: 6839774681815084923}
+  - {fileID: 750467991662083586}
   - {fileID: 4250515388241893699}
-  - {fileID: 1694211851372778606}
+  - {fileID: 5162569804573372427}
   - {fileID: 8154680765948941712}
-  - {fileID: 1478676836171537451}
+  - {fileID: 4624364012082956880}
   - {fileID: 8824234036865424939}
-  - {fileID: 4479851357596487797}
+  - {fileID: 4276628645716644787}
   - {fileID: 2193332087584679230}
-  - {fileID: 3221964798123580467}
+  - {fileID: 4128867126581042640}
   - {fileID: 4049117152612641502}
-  - {fileID: 7979177521763450231}
+  - {fileID: 2136858619135848573}
   - {fileID: 6091501286189933447}
-  - {fileID: 3888388145753368360}
-  - {fileID: 3963891483560980887}
+  - {fileID: 3081302476809033592}
+  - {fileID: 4172906515138139493}
   - {fileID: 3486344565863057721}
   m_Father: {fileID: 4777210978111403296}
   m_RootOrder: 4
@@ -4920,26 +5134,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllMinigames:
   - {fileID: 2574710038954524392}
-  - {fileID: 4405542305068656171}
+  - {fileID: 3413120435249746791}
   - {fileID: 5906664533001721022}
-  - {fileID: 2004382917949444952}
+  - {fileID: 609429790143391296}
   - {fileID: 867026251862330033}
-  - {fileID: 8410767503527957561}
+  - {fileID: 6215285456237511271}
   - {fileID: 6208401318402903520}
-  - {fileID: 277325775341228134}
+  - {fileID: 4041086550928482179}
   - {fileID: 3878035548061474948}
-  - {fileID: 2300462112778216579}
+  - {fileID: 777722773188691638}
   - {fileID: 3579126517251349511}
-  - {fileID: 8055109402746398343}
+  - {fileID: 2065516200093856748}
   - {fileID: 9039831303783066326}
-  - {fileID: 3071184704194626523}
+  - {fileID: 8574652019748245200}
   - {fileID: 2772787632303666133}
-  - {fileID: 7437933061095927676}
+  - {fileID: 8383307786531371644}
   - {fileID: 5348226505011666674}
-  - {fileID: 1971804460735874062}
-  - {fileID: 2490081470348802536}
+  - {fileID: 6215847195515620680}
+  - {fileID: 7719383786824446924}
   MiniGamesCanvas: {fileID: 1050954773776646550}
   CurrentMinigameID: -1
+  TapSounds:
+  - {fileID: 8300000, guid: 0d63f834064129f429f1f3e83dbab97c, type: 3}
+  - {fileID: 8300000, guid: f2390c5c0a6289c44b117c41aaea8a66, type: 3}
+  - {fileID: 8300000, guid: 183dd8e1cf39b74408735adda7d2c381, type: 3}
+  - {fileID: 8300000, guid: 73c1738b50d239549906832cf275c1cb, type: 3}
+  - {fileID: 8300000, guid: 7328ff3e94847c946be2802f9bff1d76, type: 3}
+  - {fileID: 8300000, guid: 86a62d04940f16d4c8b77a9722705241, type: 3}
+  - {fileID: 8300000, guid: 862e0f9bcfffdba41a8f07f11f2eb94d, type: 3}
+  OnCompleteSound: {fileID: 8300000, guid: b086041af974bb74290745ff1074acff, type: 3}
+  _audioSource: {fileID: 5709560799687360253}
 --- !u!114 &3798208714291609936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5263,6 +5487,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 9c51aad5f7a82424195025d471f12a21, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3295832041063703288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,6 +5651,64 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3341559438844361257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4128867126581042640}
+  - component: {fileID: 8574652019748245200}
+  m_Layer: 0
+  m_Name: TapMinigame13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4128867126581042640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341559438844361257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8574652019748245200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341559438844361257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 13
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 400, y: 400}
+  - {x: -400, y: 400}
+  - {x: -400, y: -400}
+  - {x: 400, y: -400}
+  - {x: 400, y: 400}
+  - {x: -400, y: -400}
+  - {x: 0, y: 0}
 --- !u!1 &3415880729930463381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5608,6 +5902,11 @@ MonoBehaviour:
   VotingResultText: {fileID: 6142601333254915043}
   Clock: {fileID: 7188822863892023179}
   Arrow: {fileID: 6101406129101871181}
+  skipButton: {fileID: 3606159521806584549}
+  SendMessageButton: {fileID: 1706133088986576315}
+  SendMessageField: {fileID: 6949963911316604542}
+  VotingStartsSound: {fileID: 8300000, guid: dc994a23be47b4c4690164f675da79b8, type: 3}
+  _audioSource: {fileID: 5709560799687360253}
   Moto: {fileID: 6385956714347929833}
 --- !u!1 &3501268194489298160
 GameObject:
@@ -5781,11 +6080,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
-  - {x: 0, y: -200}
-  - {x: -400, y: 0}
+  - {x: 0, y: 123}
+  - {x: 20, y: 40}
+  - {x: 120, y: 140}
+  - {x: 220, y: 240}
+  - {x: -220, y: -240}
+  - {x: -120, y: -140}
+  - {x: -20, y: -40}
 --- !u!1 &3843565130119008315
 GameObject:
   m_ObjectHideFlags: 0
@@ -6375,6 +6676,10 @@ MonoBehaviour:
   _Body: {fileID: 6974272432337578942}
   _photonView: {fileID: 3706719653554171646}
   isImposter: 0
+  _RunAudioSource: {fileID: 2215563708116420863}
+  _WalkAudioSource: {fileID: 2485597822396485764}
+  UiaAudioSource: {fileID: 5709560799687360253}
+  _audioListener: {fileID: 1746604318740268446}
 --- !u!114 &3706719653554171646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6394,6 +6699,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
+  - {fileID: 8899025424892144629}
   - {fileID: 5316149679955128270}
   - {fileID: 2342898109561713614}
   - {fileID: 1042885137690706189}
@@ -6696,7 +7002,6 @@ GameObject:
   - component: {fileID: 4777210978111403296}
   - component: {fileID: 4777210978111403303}
   - component: {fileID: 4777210978111403297}
-  - component: {fileID: 4777210978111403302}
   - component: {fileID: 4381859096331479515}
   - component: {fileID: 8308364284245084714}
   - component: {fileID: 5125695974070109989}
@@ -6771,14 +7076,6 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!124 &4777210978111403297
 Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4777210978111403300}
-  m_Enabled: 1
---- !u!81 &4777210978111403302
-AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6880,6 +7177,64 @@ MonoBehaviour:
   waveform: 0
   vectorscope: 0
   debugOverlay: 0
+--- !u!1 &4781820775062184326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3081302476809033592}
+  - component: {fileID: 6215847195515620680}
+  m_Layer: 0
+  m_Name: TapMinigame17
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3081302476809033592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781820775062184326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6215847195515620680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781820775062184326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 17
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 0, y: 0}
+  - {x: 100, y: 100}
+  - {x: -100, y: -100}
+  - {x: 200, y: 200}
+  - {x: -300, y: -300}
+  - {x: 400, y: 400}
+  - {x: 0, y: 0}
 --- !u!1 &4922325020060777890
 GameObject:
   m_ObjectHideFlags: 0
@@ -7220,6 +7575,8 @@ MonoBehaviour:
   - {x: -100, y: -100}
   - {x: 0, y: -200}
   - {x: -400, y: 0}
+  - {x: -200, y: 350}
+  - {x: 0, y: 0}
 --- !u!1 &5065852927311409427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7320,7 +7677,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7485,7 +7842,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &5143970001021248469
+--- !u!1 &5269878576074985958
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7493,54 +7850,125 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3963891483560980887}
-  - component: {fileID: 2490081470348802536}
-  m_Layer: 0
-  m_Name: SwipeMinigame18
+  - component: {fileID: 629062122905676024}
+  - component: {fileID: 2485597822396485764}
+  m_Layer: 10
+  m_Name: "\u0428\u0430\u0433\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3963891483560980887
+  m_IsActive: 1
+--- !u!4 &629062122905676024
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143970001021248469}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 5269878576074985958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 18
+  m_Father: {fileID: 5893980646749742687}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2490081470348802536
-MonoBehaviour:
+--- !u!82 &2485597822396485764
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143970001021248469}
+  m_GameObject: {fileID: 5269878576074985958}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 18
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 010000000200000002000000030000000000000002000000
-  DelayCountDown: 3
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ca7428e34fa5dbe4f8380e4d1072e43c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5309597217611919478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,11 +8020,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
-  - {x: 0, y: -200}
-  - {x: -400, y: 0}
+  - {x: 250, y: 250}
+  - {x: 250, y: 0}
+  - {x: 0, y: 250}
+  - {x: -250, y: -250}
+  - {x: 0, y: -250}
+  - {x: 0, y: 0}
+  - {x: 400, y: 400}
 --- !u!114 &1042885137690706189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8240,6 +8670,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 9c51aad5f7a82424195025d471f12a21, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &5837936260278149189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8869,11 +9311,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
+  - {x: 150, y: 0}
+  - {x: 0, y: 150}
+  - {x: -200, y: -100}
   - {x: 0, y: -200}
-  - {x: -400, y: 0}
+  - {x: 0, y: 0}
+  - {x: 200, y: 200}
+  - {x: -200, y: 0}
 --- !u!1 &6207158613824380745
 GameObject:
   m_ObjectHideFlags: 0
@@ -9167,6 +9611,64 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6374795272122343723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4624364012082956880}
+  - component: {fileID: 777722773188691638}
+  m_Layer: 0
+  m_Name: TapMinigame9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4624364012082956880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374795272122343723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777722773188691638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374795272122343723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 9
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 0, y: 0}
+  - {x: 100, y: -400}
+  - {x: 300, y: -100}
+  - {x: -200, y: 300}
+  - {x: 400, y: 0}
+  - {x: 200, y: -200}
+  - {x: 0, y: 0}
 --- !u!1 &6425614096900399945
 GameObject:
   m_ObjectHideFlags: 0
@@ -9243,7 +9745,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6499201150122209351
+--- !u!1 &6443830542670364510
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9251,54 +9753,125 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1694211851372778606}
-  - component: {fileID: 277325775341228134}
-  m_Layer: 0
-  m_Name: SwipeMinigame7
+  - component: {fileID: 2962089565060154827}
+  - component: {fileID: 5709560799687360253}
+  m_Layer: 10
+  m_Name: Audio SourceUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1694211851372778606
+  m_IsActive: 1
+--- !u!4 &2962089565060154827
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6499201150122209351}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 6443830542670364510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 7
+  m_Father: {fileID: 5893980646749742687}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &277325775341228134
-MonoBehaviour:
+--- !u!82 &5709560799687360253
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6499201150122209351}
+  m_GameObject: {fileID: 6443830542670364510}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 7
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 020000000300000002000000030000000200000003000000
-  DelayCountDown: 3
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0
+  MaxDistance: 0.01
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6533956381491993159
 GameObject:
   m_ObjectHideFlags: 0
@@ -9428,6 +10001,64 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6867124773057847582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4172906515138139493}
+  - component: {fileID: 7719383786824446924}
+  m_Layer: 0
+  m_Name: TapMinigame18
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4172906515138139493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867124773057847582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7719383786824446924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867124773057847582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 18
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 250, y: -250}
+  - {x: 100, y: 100}
+  - {x: -100, y: -100}
+  - {x: 0, y: 0}
+  - {x: 275, y: 0}
+  - {x: -400, y: 275}
+  - {x: 400, y: 0}
 --- !u!1 &6919151584909705820
 GameObject:
   m_ObjectHideFlags: 0
@@ -10519,62 +11150,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &7431349910195283473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3221964798123580467}
-  - component: {fileID: 3071184704194626523}
-  m_Layer: 0
-  m_Name: SwipeMinigame13
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3221964798123580467
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431349910195283473}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3071184704194626523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7431349910195283473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 13
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 0200000003000000000000000300000002000000
-  DelayCountDown: 3
 --- !u!1 &7582695801583310283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10910,67 +11485,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
-  - {x: 0, y: -200}
+  - {x: -100, y: -200}
+  - {x: 300, y: 100}
+  - {x: 100, y: -100}
+  - {x: -100, y: -200}
   - {x: -400, y: 0}
---- !u!1 &7817899586207038986
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1478676836171537451}
-  - component: {fileID: 2300462112778216579}
-  m_Layer: 0
-  m_Name: SwipeMinigame9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1478676836171537451
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7817899586207038986}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2300462112778216579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7817899586207038986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 9
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 00000000010000000000000001000000
-  DelayCountDown: 3
+  - {x: 0, y: -400}
+  - {x: -400, y: 0}
 --- !u!1 &7882476526622144903
 GameObject:
   m_ObjectHideFlags: 0
@@ -11358,118 +11879,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7998960738574641316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4479851357596487797}
-  - component: {fileID: 8055109402746398343}
-  m_Layer: 0
-  m_Name: SwipeMinigame11
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4479851357596487797
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998960738574641316}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8055109402746398343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998960738574641316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 11
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 0100000000000000010000000000000001000000
-  DelayCountDown: 3
---- !u!1 &8042281530037142052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 99220977993934530}
-  - component: {fileID: 2004382917949444952}
-  m_Layer: 0
-  m_Name: SwipeMinigame3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &99220977993934530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8042281530037142052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3155680470196582725}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2004382917949444952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8042281530037142052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7570fd8eda64af468b0049ff72a2e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Number: 3
-  WinScreen: {fileID: 1600741363091702509}
-  Guide: {fileID: 7882476526622144903}
-  Interface: {fileID: 7129088421416187189}
-  _minigamesManager: {fileID: 7674446999787591144}
-  _swipeControlls: {fileID: 3798208714291609936}
-  GuidePointer: {fileID: 8997989095598328928}
-  BottomGuidePos: {x: 0, y: -200}
-  TopGuidePos: {x: 0, y: 200}
-  LeftGuidePos: {x: -200, y: 0}
-  RightGuidePos: {x: 200, y: 0}
-  _directions: 010000000200000003000000
-  DelayCountDown: 3
 --- !u!1 &8061031890286042244
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,11 +11930,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
-  - {x: -100, y: -100}
-  - {x: 0, y: -200}
+  - {x: 0, y: 400}
+  - {x: 150, y: -150}
+  - {x: 150, y: 150}
   - {x: -400, y: 0}
+  - {x: 400, y: 0}
+  - {x: 0, y: 0}
+  - {x: 100, y: 100}
 --- !u!1 &8236742104527385719
 GameObject:
   m_ObjectHideFlags: 0
@@ -12098,6 +12509,64 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8499741730113171061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4276628645716644787}
+  - component: {fileID: 2065516200093856748}
+  m_Layer: 0
+  m_Name: TapMinigame11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4276628645716644787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499741730113171061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3155680470196582725}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065516200093856748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499741730113171061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dab8de16aa4164cb89c4fd6b3ac182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Number: 11
+  WinScreen: {fileID: 1600741363091702509}
+  Guide: {fileID: 8381907635031555791}
+  Interface: {fileID: 6207158613824380745}
+  _minigamesManager: {fileID: 7674446999787591144}
+  DelayCountDown: 3
+  Button: {fileID: 4980855747485629843}
+  Positons:
+  - {x: 350, y: -350}
+  - {x: 100, y: 100}
+  - {x: -100, y: -100}
+  - {x: 0, y: -200}
+  - {x: -350, y: -350}
+  - {x: -350, y: 0}
+  - {x: 0, y: -350}
 --- !u!1 &8515387292808213904
 GameObject:
   m_ObjectHideFlags: 0
@@ -12669,11 +13138,13 @@ MonoBehaviour:
   DelayCountDown: 3
   Button: {fileID: 4980855747485629843}
   Positons:
-  - {x: 400, y: 0}
-  - {x: 100, y: 100}
+  - {x: -400, y: -400}
+  - {x: -300, y: -300}
+  - {x: -200, y: -200}
   - {x: -100, y: -100}
-  - {x: 0, y: -200}
-  - {x: -400, y: 0}
+  - {x: 100, y: 100}
+  - {x: 300, y: 300}
+  - {x: 0, y: 0}
 --- !u!1 &8776699396752830242
 GameObject:
   m_ObjectHideFlags: 0
@@ -13163,6 +13634,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5709560799687360253}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1bb4b8c560a4ee14a8784da67c45b204, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &495982535574555531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13240,14 +13723,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186e8381a3f81344aa78df057ee16554, type: 3}
---- !u!4 &6981169636759261663 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7349889671574280788, guid: 186e8381a3f81344aa78df057ee16554, type: 3}
-  m_PrefabInstance: {fileID: 495982535574555531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6249097508154352588 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5790314585590966343, guid: 186e8381a3f81344aa78df057ee16554, type: 3}
+  m_PrefabInstance: {fileID: 495982535574555531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6981169636759261663 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7349889671574280788, guid: 186e8381a3f81344aa78df057ee16554, type: 3}
   m_PrefabInstance: {fileID: 495982535574555531}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &736533369769791596
@@ -13501,14 +13984,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a08a75ffa9409c4d8a615f10551bcfa, type: 3}
---- !u!4 &7006716306554814701 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8771773823470377331, guid: 2a08a75ffa9409c4d8a615f10551bcfa, type: 3}
-  m_PrefabInstance: {fileID: 1767454542462884254}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6298146104692568830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5755811471377525600, guid: 2a08a75ffa9409c4d8a615f10551bcfa, type: 3}
+  m_PrefabInstance: {fileID: 1767454542462884254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7006716306554814701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8771773823470377331, guid: 2a08a75ffa9409c4d8a615f10551bcfa, type: 3}
   m_PrefabInstance: {fileID: 1767454542462884254}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2909537250403789314
@@ -13884,6 +14367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+--- !u!224 &767961967669483800 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 2909537250403789314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2846760235374976553 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -13895,11 +14383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &767961967669483800 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 2909537250403789314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4386544308646899098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14453,14 +14936,14 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 4e44fe16fc31f9147a78894664d81120, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
---- !u!4 &748501359378729821 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3883728349590037533, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
-  m_PrefabInstance: {fileID: 4577610358571085632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4339341238772463950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 269828414942959118, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
+  m_PrefabInstance: {fileID: 4577610358571085632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &748501359378729821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3883728349590037533, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
   m_PrefabInstance: {fileID: 4577610358571085632}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4852076452861570243
@@ -14804,6 +15287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+--- !u!224 &7034218212812087257 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 4852076452861570243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5528010473891944680 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -14815,11 +15303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &7034218212812087257 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 4852076452861570243}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4852416807242239382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14897,14 +15380,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67716e530ee1f145a96bc270027e05b, type: 3}
---- !u!1 &2721526514036824531 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7391518120079774789, guid: b67716e530ee1f145a96bc270027e05b, type: 3}
-  m_PrefabInstance: {fileID: 4852416807242239382}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1414011712174959552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5821090850907694678, guid: b67716e530ee1f145a96bc270027e05b, type: 3}
+  m_PrefabInstance: {fileID: 4852416807242239382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2721526514036824531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7391518120079774789, guid: b67716e530ee1f145a96bc270027e05b, type: 3}
   m_PrefabInstance: {fileID: 4852416807242239382}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5239851108754541812
@@ -15280,6 +15763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+--- !u!224 &7673897592465850350 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 5239851108754541812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5140517288997189855 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -15291,11 +15779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &7673897592465850350 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 5239851108754541812}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5391279422344621648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16215,11 +16698,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
---- !u!224 &7792792621233802285 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 5687226610567855927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4687244006670043932 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -16231,6 +16709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &7792792621233802285 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 5687226610567855927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5857257778208268520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17080,6 +17563,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+--- !u!224 &9035114116046451672 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 6893803261698392258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5785661409599190249 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -17091,11 +17579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &9035114116046451672 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 6893803261698392258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7105810274103938086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17945,11 +18428,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
---- !u!224 &5154520732669675199 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
-  m_PrefabInstance: {fileID: 7295849720529761701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7683538185416147342 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1144329849094943787, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
@@ -17961,6 +18439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227aae7302ca79b4fa729d5a42f22621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5154520732669675199 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2506422386508083994, guid: 6cbc1b7475b39e847a020d7313e66cb8, type: 3}
+  m_PrefabInstance: {fileID: 7295849720529761701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7666721336496960844
 PrefabInstance:
   m_ObjectHideFlags: 0

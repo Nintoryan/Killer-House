@@ -15,11 +15,12 @@ namespace AAPlayer
         [SerializeField] private Button domofonButton;
         [SerializeField] private Button _interactButton;
         [SerializeField] private int KillingColdown = 35;
-        [SerializeField] private int DomofonColdown = 20;
+        [SerializeField] private int DomofonColdown = 30;
 
         public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
         private bool isKillOnCD = false;
+        private bool isDomofonOnCD = false;
 
         public void TryKill()
         {
@@ -50,16 +51,21 @@ namespace AAPlayer
             if (_body.GetDomofon() != null)
             {
                 _body.GetDomofon().Use();
-                domofonButton.interactable = false;
-                domofonButton.GetComponent<Image>().raycastTarget = false;
+                isDomofonOnCD = true;
+                Debug.Log($"Domofon:{_body.GetDomofon()}");
+                SetDomofonButtonInteracteble(false);
                 domofonButton.GetComponent<Image>().fillAmount = 0;
                 var s = DOTween.Sequence();
                 s.Append(domofonButton.GetComponent<Image>().DOFillAmount(1, DomofonColdown));
                 s.AppendCallback(() =>
                 {
-                    domofonButton.interactable = true;
-                    domofonButton.GetComponent<Image>().raycastTarget = true;
+                    SetDomofonButtonInteracteble(true);
+                    isDomofonOnCD = false;
                 });
+            }
+            else
+            {
+                Debug.Log("Нет домофона!");
             }
         }
 
@@ -135,7 +141,7 @@ namespace AAPlayer
 
         public void SetDomofonButtonInteracteble(bool isInteractable)
         {
-            domofonButton.interactable = isInteractable;
+            domofonButton.interactable = isInteractable && !isDomofonOnCD;
             domofonButton.GetComponent<Image>().raycastTarget = isInteractable;
         }
         

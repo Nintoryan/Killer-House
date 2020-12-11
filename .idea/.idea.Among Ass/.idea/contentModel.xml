@@ -817,6 +817,7 @@
             <e p="Body.cs" t="Include" />
             <e p="Controller.cs" t="Include" />
             <e p="DeadBodyZone.cs" t="Include" />
+            <e p="DyingZone.cs" t="Include" />
             <e p="KillingZone.cs" t="Include" />
             <e p="PlayerOffline.cs" t="Include" />
             <e p="Skills.cs" t="Include" />

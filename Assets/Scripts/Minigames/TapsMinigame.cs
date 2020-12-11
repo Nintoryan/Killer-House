@@ -30,6 +30,7 @@ public class TapsMinigame : Minigame
         {
             StartMinigame();
         }
+        _minigamesManager.PlaySound(CurrentPositionID);
         CurrentPositionID++;
         if (CurrentPositionID >= Positons.Length)
         {

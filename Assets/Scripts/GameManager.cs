@@ -9,6 +9,7 @@ using DG.Tweening;
 public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public List<Controller> _players = new List<Controller>();
+    public DomofonZone[] _DomofonZones;
     public Controller LocalPlayer;
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
@@ -22,7 +23,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public static GameManager Instance;
     private bool isGameStarted;
-
+    [Header("Звуки")] [SerializeField] private AudioClip GameBeginsSound;
+    [SerializeField] private AudioClip ImposterWinsSound;
+    [SerializeField] private AudioClip CivilianWinsSound;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -206,6 +210,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s2.AppendCallback(_beginEndGame.FadeIn);
                 s2.AppendInterval(3);
                 s2.AppendCallback(() => LocalPlayer._InGameUI.Leave());
+                break;
+            case 67:
+                //Событие использования домофона
+                _DomofonZones[(int)photonEvent.CustomData].GetEventUse();
                 break;
 
         }

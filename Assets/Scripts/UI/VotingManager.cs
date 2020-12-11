@@ -19,6 +19,13 @@ namespace Voting
         [SerializeField] private TMP_Text VotingResultText;
         [SerializeField] private Image Clock;
         [SerializeField] private RectTransform Arrow;
+        [SerializeField] private Button skipButton;
+        [SerializeField] private Button SendMessageButton;
+        [SerializeField] private GameObject SendMessageField;
+        
+        [SerializeField] private AudioClip VotingStartsSound;
+        [SerializeField] private AudioSource _audioSource;
+            
         private float timeLeft;
         private DependecieType _dependecieType = DependecieType.None;
         private PlayerAvatar _localPlayer;
@@ -58,6 +65,7 @@ namespace Voting
         private void StartVoting()
         {
             VotingParent.SetActive(true);
+            _audioSource.PlayOneShot(VotingStartsSound);
             timeLeft = GameManager.Instance.VotingDuration;
             var controllers = GameManager.Instance._players
                 .OrderBy(p => p._photonView.Owner.ActorNumber)
@@ -84,6 +92,9 @@ namespace Voting
                 if (GameManager.Instance.FindPlayer(PhotonNetwork.LocalPlayer.ActorNumber).IsDead)
                 {
                     Moto.text = "You are dead...";
+                    skipButton.gameObject.SetActive(false);
+                    SendMessageButton.gameObject.SetActive(false);
+                    SendMessageField.SetActive(false);
                 }
                 else
                 {

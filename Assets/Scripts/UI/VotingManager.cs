@@ -49,7 +49,9 @@ namespace Voting
         }
         public void RaiseSetDependencyEvent(PlayerAvatar _selectedPlayerAvatar)
         {
-            if(_selectedPlayerAvatar == _localPlayer || GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead) return;
+            if(_selectedPlayerAvatar == _localPlayer 
+               || GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead
+               || _selectedPlayerAvatar == _localPlayer._suspectPlayer) return;
             var sendingData = $"{_localPlayer.thisPlayerActorID}:{_selectedPlayerAvatar.thisPlayerActorID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
@@ -105,17 +107,41 @@ namespace Voting
                 Arrow.DORotate(new Vector3(0, 0, -360), timeLeft,RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
                 var s = DOTween.Sequence();
                 s.AppendInterval(timeLeft);
+                s.AppendCallback(ShowVotes);
+                s.AppendInterval(5f);
                 s.AppendCallback(EndVoting); 
             }
-            
         }
 
+        private void OnAllVoted()
+        {
+            this.DOKill();
+            Clock.DOKill();
+            Clock.DOFillAmount(0, 0.1f).SetEase(Ease.Linear);
+            Arrow.DOKill();
+            Arrow.DORotate(new Vector3(0, 0, -360), 0.1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
+            var s = DOTween.Sequence();
+            s.AppendCallback(ShowVotes);
+            s.AppendInterval(5f);
+            s.AppendCallback(EndVoting); 
+        }
+
+        private void ShowVotes()
+        {
+            foreach (var playerAvatar in _playerAvatars)
+            {
+                playerAvatar.WhoVotedParent.SetActive(true);
+            }
+        }
         private void EndVoting()
         {
             var s = DOTween.Sequence();
             s.AppendCallback(() =>
             {
-                TryKickWorstPlayer();
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    TryKickWorstPlayer();
+                }
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
             });
@@ -175,6 +201,7 @@ namespace Voting
                         KickedPlayer.DisableDeadBody();
                         if (KickedPlayer.isImposter)
                         {
+                            Debug.Log($"Исключённый игрок {KickedPlayer} был импостером.");
                             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                             var sendOptions = new SendOptions {Reliability = true};
                             var s5 = DOTween.Sequence();
@@ -186,12 +213,22 @@ namespace Voting
                         }
                         else
                         {
+                            Debug.Log($"Исключённый игрок {KickedPlayer} НЕ был импостером.");
                             var AlivePlayers = GameManager.Instance._players.Where(player => !player.isImposter).Count(player => !player.IsDead);
-                            if (AlivePlayers == 1)
+                            if (AlivePlayers <= 1)
                             {
                                 var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                                 var sendOptions = new SendOptions {Reliability = true};
                                 PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                            }
+                            else if (PhotonNetwork.IsMasterClient)
+                            {
+                                //Только если мастер клиент уловил смерть игрока
+                                Debug.Log($"Мастер уловил смерть игрока {KickedPlayer}");
+                                Debug.Log($"У него {KickedPlayer.AvaliableQuestsAmount} не сделаных заданий, вызываю перераспределение");
+                                var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                                var sendOptions = new SendOptions {Reliability = true};
+                                PhotonNetwork.RaiseEvent(65,KickedPlayer.AvaliableQuestsAmount, options, sendOptions);
                             }
                         }
                         VotingResultText.text = $"{KickedPlayer.Name} was ejected";
@@ -214,7 +251,6 @@ namespace Voting
         private void TryKickWorstPlayer()
         {
             if (!PhotonNetwork.IsMasterClient) return;
-            
             var MaxKickScore = -100;
             var MaxI = 0;
             var NotOneMaxPlayer = false;
@@ -232,7 +268,6 @@ namespace Voting
                     NotOneMaxPlayer = true;
                 }
             }
-
             if (NotOneMaxPlayer)
             {
                 RaiseKickedEvent(-1);

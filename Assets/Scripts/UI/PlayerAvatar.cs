@@ -18,6 +18,7 @@ namespace Voting
         [SerializeField] private Image[] VoitingPortraits;
         [SerializeField] private Sprite[] allIcons;
         public PlayerAvatar _suspectPlayer;
+        public GameObject WhoVotedParent;
 
         private List<int> _suspectedByPlayersIDs = new List<int>();
         

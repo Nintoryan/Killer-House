@@ -59,15 +59,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 //Событие смерти игрока
                 var KilledPlayer = FindPlayer((int) photonEvent.CustomData);
                 KilledPlayer.SetDead();
-                if (KilledPlayer.isImposter)
-                {
-                    var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                    var sendOptions = new SendOptions {Reliability = true};
-                    PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
-                }
-                else
-                {
-                    var AlivePlayers = _players.Where(player => !player.isImposter).
+                var AlivePlayers = _players.Where(player => !player.isImposter).
                         Count(player => !player.IsDead);
                     if (AlivePlayers <= 1)
                     {
@@ -75,16 +67,17 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         var sendOptions = new SendOptions {Reliability = true};
                         PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
                     }
-                    if (PhotonNetwork.IsMasterClient)
-                    {
-                        //Только если мастер клиент уловил смерть игрока
-                        Debug.Log($"Мастер уловил смерть игрока {KilledPlayer}");
-                        Debug.Log($"У него {KilledPlayer.AvaliableQuestsAmount} не сделаных заданий, вызываю перераспределение");
-                        var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                        var sendOptions = new SendOptions {Reliability = true};
-                        PhotonNetwork.RaiseEvent(65,KilledPlayer.AvaliableQuestsAmount, options, sendOptions);
-                    }
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    //Только если мастер клиент уловил смерть игрока
+                    Debug.Log($"Мастер уловил смерть игрока {KilledPlayer}");
+                    Debug.Log(
+                        $"У него {KilledPlayer.AvaliableQuestsAmount} не сделаных заданий, вызываю перераспределение");
+                    var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                    var sendOptions = new SendOptions {Reliability = true};
+                    PhotonNetwork.RaiseEvent(65, KilledPlayer.AvaliableQuestsAmount, options, sendOptions);
                 }
+
                 break;
             case 43:
                 //Событие начала игры

@@ -7,7 +7,6 @@ public class TapsMinigame : Minigame
     [SerializeField] private float DelayCountDown;
     [SerializeField] private RectTransform Button;
     [SerializeField] private Vector2[] Positons;
-    private float currentCountDown;
     private int CurrentPositionID;
 
     public override void InitializeMiniGame()
@@ -22,20 +21,7 @@ public class TapsMinigame : Minigame
     public override void StartMinigame()
     {
         base.StartMinigame();
-        currentCountDown = DelayCountDown;
         CurrentPositionID = 0;
-    }
-
-    private void Update()
-    {
-        if(!isMiniGameStarted) return;
-        currentCountDown -= Time.deltaTime;
-        if (currentCountDown < 0)
-        {
-            Fail();
-            Button.gameObject.SetActive(false);
-            Button.GetComponent<Button>().onClick.RemoveAllListeners();
-        }
     }
 
     private void Tap()
@@ -44,7 +30,7 @@ public class TapsMinigame : Minigame
         {
             StartMinigame();
         }
-        currentCountDown = DelayCountDown;
+        _minigamesManager.PlaySound(CurrentPositionID);
         CurrentPositionID++;
         if (CurrentPositionID >= Positons.Length)
         {
@@ -55,7 +41,7 @@ public class TapsMinigame : Minigame
         }
         Button.localScale = Vector3.one;
         Button.DOKill();
-        Button.DOScale(new Vector3(0, 0, 0), DelayCountDown);
+        Button.DOScale(new Vector3(0.5f, 0.5f, 0.5f), DelayCountDown);
         Button.DOAnchorPos(Positons[CurrentPositionID], 0.1f);
     }
 }

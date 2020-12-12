@@ -95,6 +95,7 @@ namespace AAPlayer
             if (Domofon != null)
             {
                 CurrentDomofon = Domofon;
+                _skills.SetDomofonButtonInteracteble(true);
             }
         }
         
@@ -129,6 +130,7 @@ namespace AAPlayer
             if (Domofon != null)
             {
                 CurrentDomofon = null;
+                _skills.SetDomofonButtonInteracteble(false);
             }
         }
 

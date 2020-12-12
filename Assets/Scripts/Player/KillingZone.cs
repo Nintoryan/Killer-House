@@ -13,8 +13,11 @@ namespace AAPlayer
             var body = other.GetComponent<Body>();
             if (body && body != _myBody && !PlayersInside.Contains(body))
             {
-                PlayersInside.Add(body);
-                _myBody._Controller._skills.SetKillingInteractable(true);
+                if (!body._Controller.IsDead)
+                {
+                    PlayersInside.Add(body);
+                    _myBody._Controller._skills.SetKillingInteractable(true);
+                }
             }
         }
         private void OnTriggerExit(Collider other)
@@ -22,11 +25,23 @@ namespace AAPlayer
             var body = other.GetComponent<Body>();
             if (body && body != _myBody && PlayersInside.Contains(body))
             {
-                PlayersInside.Remove(body);
-                if (PlayersInside.Count == 0)
+                if (!body._Controller.IsDead)
                 {
-                    _myBody._Controller._skills.SetKillingInteractable(false);
+                    PlayersInside.Remove(body);
+                    if (PlayersInside.Count == 0)
+                    {
+                        _myBody._Controller._skills.SetKillingInteractable(false);
+                    }
                 }
+            }
+        }
+
+        public void TryRemoveDeadBody(Controller DeadPlayer)
+        {
+            var body = DeadPlayer._Body;
+            if (PlayersInside.Contains(body))
+            {
+                PlayersInside.Remove(body);
             }
         }
 

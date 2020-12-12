@@ -1,4 +1,6 @@
-﻿using ExitGames.Client.Photon;
+﻿using System;
+using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -8,7 +10,7 @@ using Hashtable = System.Collections.Hashtable;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Controller : MonoBehaviour
+    public class Controller : MonoBehaviour, IPunObservable
     {
         [SerializeField] private CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
@@ -30,6 +32,13 @@ namespace AAPlayer
         private Vector3 BodyCamDistance;
         private Vector3 NickNameDistance;
         public bool isImposter;
+        [Header("Sound")]
+        [SerializeField] private AudioSource _RunAudioSource;
+
+        [SerializeField] private AudioSource _WalkAudioSource;
+        public AudioSource UiaAudioSource;
+
+        [SerializeField] private AudioListener _audioListener;
         public string Name =>_photonView.Owner.NickName;
 
         private int _localNumber=-1;
@@ -47,6 +56,7 @@ namespace AAPlayer
         }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
+        public int AvaliableQuestsAmount; 
 
         private void Start()
         {
@@ -56,6 +66,7 @@ namespace AAPlayer
             {
                 _camera.gameObject.SetActive(false);
                 LocalNumber = _photonView.Owner.ActorNumber-1;
+                Destroy(_audioListener);
             }
             else
             {
@@ -69,12 +80,16 @@ namespace AAPlayer
             }
         }
 
+        private float directionmagnitude;
+        private Vector3 direction;
+
         private void Update()
         {
             if (_photonView.IsMine)
             {
-                var direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
+                direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
                     _floatingJoystick.Direction.x + _floatingJoystick.Direction.y);
+                directionmagnitude = direction.magnitude;
                 if (!IsDead)
                 {
                     AliveMove(direction);
@@ -83,8 +98,33 @@ namespace AAPlayer
                 {
                     _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
                 }
+
+                _InGameUI.MoveMe(controller.transform.position);
             }
-            NickNameCanvas.position = controller.transform.position + new Vector3(0,1.5f,0);
+
+            if (directionmagnitude >= 0.05f && !IsDead)
+            {
+                
+                if (directionmagnitude > 0.6f)
+                {
+                    //Бег
+                    _RunAudioSource.UnPause();
+                    _WalkAudioSource.Pause();
+                }
+                else
+                {
+                    //Шаг
+                    _RunAudioSource.Pause();
+                    _WalkAudioSource.UnPause();
+                }
+            }
+            else
+            {
+                _RunAudioSource.Pause();
+                _WalkAudioSource.Pause();
+            }
+
+            NickNameCanvas.position = controller.transform.position + new Vector3(0, 1.5f, 0);
         }
 
         public void UpdateCameraPos()
@@ -186,6 +226,17 @@ namespace AAPlayer
         public void ActivateControll()
         {
             _floatingJoystick.enabled = true;
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(directionmagnitude);
+            }else if (stream.IsReading)
+            {
+                directionmagnitude = (float)stream.ReceiveNext();
+            }
         }
         
     }

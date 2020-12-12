@@ -17,6 +17,7 @@ namespace Voting
         [SerializeField] private GameObject VotingParent;
         [SerializeField] private GameObject VotingResults;
         [SerializeField] private TMP_Text VotingResultText;
+        [SerializeField] private TMP_Text VotingResultRole;
         [SerializeField] private Image Clock;
         [SerializeField] private RectTransform Arrow;
         [SerializeField] private Button skipButton;
@@ -202,6 +203,7 @@ namespace Voting
                         if (KickedPlayer.isImposter)
                         {
                             Debug.Log($"Исключённый игрок {KickedPlayer} был импостером.");
+                            VotingResultRole.text = $"{KickedPlayer.Name} was the <color=red>Killer</color>";
                             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                             var sendOptions = new SendOptions {Reliability = true};
                             var s5 = DOTween.Sequence();
@@ -214,6 +216,7 @@ namespace Voting
                         else
                         {
                             Debug.Log($"Исключённый игрок {KickedPlayer} НЕ был импостером.");
+                            VotingResultRole.text = $"{KickedPlayer.Name} was the <color=#00BDBBff>Civilian</color>";
                             var AlivePlayers = GameManager.Instance._players.Where(player => !player.isImposter).Count(player => !player.IsDead);
                             if (AlivePlayers <= 1)
                             {

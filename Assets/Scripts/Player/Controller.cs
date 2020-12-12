@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -61,19 +62,34 @@ namespace AAPlayer
 
         private void Start()
         {
+            if (!_photonView.Owner.CustomProperties.ContainsKey("id"))
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    var players = PhotonNetwork.PlayerListOthers;
+                    var notfree = players.Aggregate(false, (current, player) => current || (int) player.CustomProperties["id"] == i);
+                    if (notfree) continue;
+                    var a = new ExitGames.Client.Photon.Hashtable {{"id", i}};
+                    _photonView.Owner.SetCustomProperties(a);
+                    LocalNumber = i;
+                    break;
+                }
+            }
+            else
+            {
+                LocalNumber = (int)_photonView.Owner.CustomProperties["id"];
+            }
             GameManager.Instance.AddPlayer(this);
             NickName.text = _photonView.Owner.NickName;
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
-                LocalNumber = _photonView.Owner.ActorNumber-1;
                 Destroy(_audioListener);
             }
             else
             {
                 BodyCamDistance = _camera.transform.position - controller.transform.position;
                 GameManager.Instance.LocalPlayer = this;
-                LocalNumber = PhotonNetwork.LocalPlayer.ActorNumber-1;
                 _skills.SetKillingActive(false);
                 _skills.SetAlarmButtonActive(false);
                 _skills.SetInteractButtonActive(false);

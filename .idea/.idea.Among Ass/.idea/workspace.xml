@@ -20,12 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameObject.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameObject.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Image.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Image.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/DefaultDoor.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/DefaultDoor.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/DefaultShortCut.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/DefaultShortCut.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/Door.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/Door.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeDoor.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeDoor.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeShortCuts 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeShortCuts 1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeShortCuts.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/FridgeShortCuts.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/SaunaDoor.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/SaunaDoor.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/SaunaShortCut.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/ShortCuts/SaunaShortCut.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/questSign.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/questSign.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DefaultShortCut0.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/DefaultShortCut0.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_76.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_77.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Fishes.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Fishes.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +79,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DeadBodyZone.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManger.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/PlayerListEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/AsteroidsGame.cs" />
@@ -84,7 +120,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/MinigameZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
@@ -99,17 +134,19 @@
         <option value="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
       </list>
     </option>
   </component>
@@ -194,7 +231,7 @@
       <workItem from="1607520378299" duration="18077000" />
       <workItem from="1607599559919" duration="3562000" />
       <workItem from="1607706215482" duration="16098000" />
-      <workItem from="1607778682401" duration="7795000" />
+      <workItem from="1607778682401" duration="14666000" />
     </task>
     <servers />
   </component>
@@ -296,9 +333,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607534427368" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607786539522">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607796942979">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607786539522" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607796942979" />
   </component>
 </project>

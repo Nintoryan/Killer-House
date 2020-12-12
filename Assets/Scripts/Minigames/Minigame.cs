@@ -35,6 +35,7 @@ public class Minigame : MonoBehaviour
         gm.AllMinigames[Number].isComplete = true;
         gm.LocalPlayer._skills.SetInteractButtonInteractable(false);
         gm.LocalPlayer._InGameUI.SetMarkDisables(Number);
+        gm.AllMinigames[Number].QuestSign.SetActive(false);
         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
         var sendOptions = new SendOptions {Reliability = true};
         PhotonNetwork.RaiseEvent(53,gm.LocalPlayer._photonView.Owner.ActorNumber , options, sendOptions);

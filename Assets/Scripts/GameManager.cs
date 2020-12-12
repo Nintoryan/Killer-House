@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
 using ExitGames.Client.Photon;
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public float VotingDuration;
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
+    public ShortCutZone[] AllShortCutZones;
 
     public List<int> MyMinigamesIDs
     {
@@ -111,6 +111,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         OrderedPlayers[i]._skills.SetAlarmButtonActive(true);
                         OrderedPlayers[i]._skills.SetInteractButtonActive(i != imposterID);
                         OrderedPlayers[i]._skills.SetDomofonButtonActive(i == imposterID);
+                        OrderedPlayers[i]._skills.SetShortCutButtonActive(i == imposterID);
                         OrderedPlayers[i].isImposter = i == imposterID;
                         _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber,OrderedPlayers[i].Name);
                         if (i != imposterID)
@@ -132,6 +133,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                             {
                                 MyMinigames.Add(minigame);
                                 LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
+                                minigame.QuestSign.SetActive(true);
                             }
                         }
                         
@@ -278,12 +280,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     }
                     MyMinigames.Add(AllMinigames[RandomID]);
                     LocalPlayer._InGameUI.SetMarkActive(RandomID);
+                    AllMinigames[RandomID].QuestSign.SetActive(true);
                     Debug.Log($"Игрок получил событие добавления нового задания ID:{RandomID}");
                 }
                 else
                 {
                     QuestGeter.AvaliableQuestsAmount++;
                 }
+                break;
+            case 75:
+                AllShortCutZones[(int) photonEvent.CustomData].GetEventUse();
                 break;
 
         }

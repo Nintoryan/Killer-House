@@ -820,6 +820,7 @@
             <e p="DyingZone.cs" t="Include" />
             <e p="KillingZone.cs" t="Include" />
             <e p="PlayerOffline.cs" t="Include" />
+            <e p="ShortCutZone.cs" t="Include" />
             <e p="Skills.cs" t="Include" />
             <e p="Skin.cs" t="Include" />
           </e>

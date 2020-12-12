@@ -12,7 +12,7 @@ namespace AAPlayer
 {
     public class Controller : MonoBehaviour, IPunObservable
     {
-        [SerializeField] private CharacterController controller;
+        public CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
         [SerializeField] private Camera _camera;
         public Skills _skills;
@@ -32,6 +32,7 @@ namespace AAPlayer
         private Vector3 BodyCamDistance;
         private Vector3 NickNameDistance;
         public bool isImposter;
+        public bool isInShortCut;
         [Header("Sound")]
         [SerializeField] private AudioSource _RunAudioSource;
 
@@ -233,9 +234,11 @@ namespace AAPlayer
             if (stream.IsWriting)
             {
                 stream.SendNext(directionmagnitude);
+                stream.SendNext(isInShortCut);
             }else if (stream.IsReading)
             {
                 directionmagnitude = (float)stream.ReceiveNext();
+                isInShortCut = (bool) stream.ReceiveNext();
             }
         }
         

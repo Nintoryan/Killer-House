@@ -26,15 +26,15 @@ namespace AAPlayer
             AllSkins[id].SetActive(true);
             _Graphics = AllSkins[id];
         }
-        private void Hide()
+        public void Hide()
         {
             _Graphics.SetActive(false);
             _Controller.DisableNickName();
         }
 
-        private void Show()
+        public void Show()
         {
-            if(HiddenDeadBody) return;
+            if(HiddenDeadBody || _Controller.isInShortCut) return;
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
@@ -92,10 +92,17 @@ namespace AAPlayer
             }
 
             var Domofon = other.GetComponent<DomofonZone>();
-            if (Domofon != null)
+            if (Domofon != null && _Controller.isImposter)
             {
                 CurrentDomofon = Domofon;
                 _skills.SetDomofonButtonInteracteble(true);
+            }
+
+            var sczone = other.GetComponent<ShortCutZone>();
+            if (sczone != null && _Controller.isImposter)
+            {
+                _skills.SetShortCutButtonInteractable(true);
+                myShortCutZone = sczone;
             }
         }
         
@@ -127,12 +134,20 @@ namespace AAPlayer
                 _minigamesManager.CurrentMinigameID = -1;
             }
             var Domofon = other.GetComponent<DomofonZone>();
-            if (Domofon != null)
+            if (Domofon != null && _Controller.isImposter)
             {
                 CurrentDomofon = null;
                 _skills.SetDomofonButtonInteracteble(false);
             }
+            var sczone = other.GetComponent<ShortCutZone>();
+            if (sczone != null && _Controller.isImposter)
+            {
+                _skills.SetShortCutButtonInteractable(false);
+                myShortCutZone = null;
+            }
         }
+
+        public ShortCutZone myShortCutZone;
 
         public DomofonZone GetDomofon()
         {

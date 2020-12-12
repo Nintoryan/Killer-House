@@ -1,4 +1,6 @@
-﻿using Voting;
+﻿using System;
+using System.Collections.Generic;
+using Voting;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
@@ -14,14 +16,88 @@ namespace AAPlayer
         [SerializeField] private Button _AlarmButton;
         [SerializeField] private Button domofonButton;
         [SerializeField] private Button _interactButton;
+        [SerializeField] private Button _EnterExitShortCut;
         [SerializeField] private int KillingColdown = 35;
         [SerializeField] private int DomofonColdown = 30;
+        [SerializeField] private Controller MyController;
+        [Header("ShortCuts")] 
+        [SerializeField] private ArrowsPack[] scArrows;
+
+        [SerializeField] private GameObject JoyStick;
+        
+        private bool isInShortCut;
 
         public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
         private bool isKillOnCD = false;
         private bool isDomofonOnCD = false;
 
+        private int CurrentShortCutIn = -1;
+
+
+        private void EnterShortCut()
+        {
+            ShowArrows(_body.myShortCutZone.Number);
+            CurrentShortCutIn = _body.myShortCutZone.Number;
+            _body.myShortCutZone.Use();
+            _body.Hide();
+            MyController.isInShortCut = true;
+            JoyStick.SetActive(false);
+        }
+
+        private void ExitShortCut()
+        {
+            HideAllArrows();
+            GameManager.Instance.AllShortCutZones[CurrentShortCutIn].Use();
+            MyController.isInShortCut = false;
+            _body.Show();
+            JoyStick.SetActive(true);
+        }
+
+        public void UseShortCutZone()
+        {
+            if (isInShortCut)
+            {
+                ExitShortCut();
+            }
+            else
+            {
+                EnterShortCut();
+            }
+            isInShortCut = !isInShortCut;
+        }
+
+        public void UseArrow(int id)
+        {
+            HideAllArrows();
+            ShowArrows(id);
+            CurrentShortCutIn = id;
+            MyController.controller.enabled = false;
+            _body.transform.position = GameManager.Instance.AllShortCutZones[id].PlayerInSidePosition.position;
+            MyController.UpdateCameraPos();
+            MyController.controller.enabled = true;
+        }
+
+        public void ShowArrows(int id)
+        {
+            foreach (var arrow in scArrows[id].Arrows)
+            {
+                arrow.gameObject.SetActive(true);
+            }
+        }
+
+        private void HideAllArrows()
+        {
+            foreach (var t1 in scArrows)
+            {
+                foreach (var t in t1.Arrows)
+                {
+                    t.gameObject.SetActive(false);
+                }
+            }
+        }
+        
+        
         public void TryKill()
         {
             if (_killingZone.GetPlayer() != null)
@@ -145,8 +221,25 @@ namespace AAPlayer
             domofonButton.interactable = isInteractable && !isDomofonOnCD;
             domofonButton.GetComponent<Image>().raycastTarget = isInteractable;
         }
-        
+
+        public void SetShortCutButtonActive(bool isActive)
+        {
+            _EnterExitShortCut.gameObject.SetActive(isActive);
+        }
+
+        public void SetShortCutButtonInteractable(bool isInteractable)
+        {
+            _EnterExitShortCut.interactable = isInteractable;
+            _EnterExitShortCut.GetComponent<Image>().raycastTarget = isInteractable;
+        }
         
     }
+}
+
+[Serializable]
+public class ArrowsPack
+{
+    public int Number;
+    public List<Button> Arrows =new List<Button>();
 }
 

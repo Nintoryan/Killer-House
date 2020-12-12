@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
 using ExitGames.Client.Photon;
@@ -6,6 +7,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using DG.Tweening;
+using Random = UnityEngine.Random;
+
 public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public List<Controller> _players = new List<Controller>();
@@ -17,6 +20,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public float VotingDuration;
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
+
+    public List<int> MyMinigamesIDs
+    {
+        get
+        {
+            return MyMinigames.Select(mg => mg.Number).ToList();
+        }
+    }
     public int AmountOfDoneQuests;
     public int AmountOfQuests;
     public BeginEndGame _beginEndGame;
@@ -58,11 +69,20 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 {
                     var AlivePlayers = _players.Where(player => !player.isImposter).
                         Count(player => !player.IsDead);
-                    if (AlivePlayers == 1)
+                    if (AlivePlayers <= 1)
                     {
                         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                         var sendOptions = new SendOptions {Reliability = true};
                         PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
+                    }
+                    if (PhotonNetwork.IsMasterClient)
+                    {
+                        //Только если мастер клиент уловил смерть игрока
+                        Debug.Log($"Мастер уловил смерть игрока {KilledPlayer}");
+                        Debug.Log($"У него {KilledPlayer.AvaliableQuestsAmount} не сделаных заданий, вызываю перераспределение");
+                        var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                        var sendOptions = new SendOptions {Reliability = true};
+                        PhotonNetwork.RaiseEvent(65,KilledPlayer.AvaliableQuestsAmount, options, sendOptions);
                     }
                 }
                 break;
@@ -93,6 +113,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         OrderedPlayers[i]._skills.SetDomofonButtonActive(i == imposterID);
                         OrderedPlayers[i].isImposter = i == imposterID;
                         _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber,OrderedPlayers[i].Name);
+                        if (i != imposterID)
+                        {
+                            OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
+                        }
                     }
                     
                     if (LocalPlayer.isImposter)
@@ -110,6 +134,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                                 LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
                             }
                         }
+                        
                     }
                     AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
                 });
@@ -137,6 +162,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 break;
             case 53:
                 //Событие успешного завершения квеста
+                FindPlayer((int) photonEvent.CustomData).AvaliableQuestsAmount--;
                 AmountOfDoneQuests++;
                 LocalPlayer._InGameUI.SetProgress((float)AmountOfDoneQuests/AmountOfQuests);
                 if (AmountOfDoneQuests == AmountOfQuests)
@@ -211,9 +237,53 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s2.AppendInterval(3);
                 s2.AppendCallback(() => LocalPlayer._InGameUI.Leave());
                 break;
+            case 65:
+                //Событие распределения квестов
+                if(!PhotonNetwork.IsMasterClient) return;
+                var AliveCivilians = _players.Where(p=>!p.IsDead && !p.isImposter)
+                    .OrderBy(p => p._photonView.Owner.ActorNumber)
+                    .ToArray();
+                var QuestsToDistibute = (int) photonEvent.CustomData;
+                Debug.Log($"Мастер получил запрос на перераспределение {QuestsToDistibute} заданий");
+                for (int i = 0; i < QuestsToDistibute; i++)
+                {    
+                    var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                    var sendOptions = new SendOptions {Reliability = true};
+                    PhotonNetwork.RaiseEvent(70,AliveCivilians[i % AliveCivilians.Length]._photonView.Owner.ActorNumber, options, sendOptions);
+                }
+                break;
             case 67:
                 //Событие использования домофона
                 _DomofonZones[(int)photonEvent.CustomData].GetEventUse();
+                break;
+            case 70:
+                //Событие получения нового задания
+                var ActorIDNumber = (int)photonEvent.CustomData;
+                var QuestGeter = FindPlayer(ActorIDNumber);
+                if (QuestGeter == LocalPlayer)
+                {
+                    var RandomID = Random.Range(0,AllMinigames.Length);
+                    int interationsAmount = 0;
+                    while (MyMinigamesIDs.Contains(RandomID))
+                    {
+                        RandomID = Random.Range(0,AllMinigames.Length);
+                        interationsAmount++;
+                        if (interationsAmount >= 10)
+                        {
+                            var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                            var sendOptions = new SendOptions {Reliability = true};
+                            PhotonNetwork.RaiseEvent(53,LocalPlayer._photonView.Owner.ActorNumber, options, sendOptions);
+                            return;
+                        }
+                    }
+                    MyMinigames.Add(AllMinigames[RandomID]);
+                    LocalPlayer._InGameUI.SetMarkActive(RandomID);
+                    Debug.Log($"Игрок получил событие добавления нового задания ID:{RandomID}");
+                }
+                else
+                {
+                    QuestGeter.AvaliableQuestsAmount++;
+                }
                 break;
 
         }
@@ -243,11 +313,18 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             else
             {
                 var AlivePlayers = _players.Where(player => !player.isImposter).Count(player => !player.IsDead);
-                if (AlivePlayers == 1)
+                if (AlivePlayers <= 1)
                 {
                     var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                     var sendOptions = new SendOptions {Reliability = true};
                     PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                }
+                if (PhotonNetwork.IsMasterClient && !p.IsDead)
+                {
+                    //Только если мастер клиент уловил уничтожение игрока
+                    var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                    var sendOptions = new SendOptions {Reliability = true};
+                    PhotonNetwork.RaiseEvent(65,p.AvaliableQuestsAmount, options, sendOptions);
                 }
             }
         }

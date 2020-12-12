@@ -27,6 +27,7 @@ namespace AAPlayer
             if (_killingZone.GetPlayer() != null)
             {
                 _killingZone.GetPlayer().DieEvent();
+                _killingZone.TryRemoveDeadBody(_killingZone.GetPlayer());
                 KillGoCD();
             }
         }

@@ -1,4 +1,6 @@
-﻿using ExitGames.Client.Photon;
+﻿using System;
+using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -54,6 +56,7 @@ namespace AAPlayer
         }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
+        public int AvaliableQuestsAmount; 
 
         private void Start()
         {
@@ -235,5 +238,6 @@ namespace AAPlayer
                 directionmagnitude = (float)stream.ReceiveNext();
             }
         }
+        
     }
 }

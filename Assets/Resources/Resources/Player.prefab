@@ -621,9 +621,9 @@ RectTransform:
   - {fileID: 4660104619320256021}
   - {fileID: 4347181808870956949}
   - {fileID: 1944303014959317491}
-  - {fileID: 8237532518717618171}
   - {fileID: 7492575973910478694}
   - {fileID: 7599164944779592579}
+  - {fileID: 8237532518717618171}
   - {fileID: 433568942055599279}
   - {fileID: 2975413972113270838}
   - {fileID: 2577194850874178313}
@@ -6515,7 +6515,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1580947448544261330}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -6680,6 +6680,7 @@ MonoBehaviour:
   _WalkAudioSource: {fileID: 2485597822396485764}
   UiaAudioSource: {fileID: 5709560799687360253}
   _audioListener: {fileID: 1746604318740268446}
+  AvaliableQuestsAmount: 0
 --- !u!114 &3706719653554171646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7608,7 +7609,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1580947448544261330}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -10398,7 +10399,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1580947448544261330}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}

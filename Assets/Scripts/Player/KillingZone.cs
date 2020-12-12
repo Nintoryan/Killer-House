@@ -36,6 +36,15 @@ namespace AAPlayer
             }
         }
 
+        public void TryRemoveDeadBody(Controller DeadPlayer)
+        {
+            var body = DeadPlayer._Body;
+            if (PlayersInside.Contains(body))
+            {
+                PlayersInside.Remove(body);
+            }
+        }
+
         public Controller GetPlayer()
         {
             return PlayersInside.Count > 0 ? PlayersInside[0]._Controller : null;

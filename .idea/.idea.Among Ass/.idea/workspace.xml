@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,15 +101,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -190,6 +194,7 @@
       <workItem from="1607520378299" duration="18077000" />
       <workItem from="1607599559919" duration="3562000" />
       <workItem from="1607706215482" duration="16098000" />
+      <workItem from="1607778682401" duration="7795000" />
     </task>
     <servers />
   </component>
@@ -291,9 +296,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607534427368" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607728589913">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607786539522">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607728589913" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607786539522" />
   </component>
 </project>

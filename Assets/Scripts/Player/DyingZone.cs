@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AAPlayer;
+using Photon.Pun;
 using UnityEngine;
 
 public class DyingZone : MonoBehaviour
@@ -19,7 +20,10 @@ public class DyingZone : MonoBehaviour
             if(!_controllers.Contains(player))
             {
                 _controllers.Add(player);
-                player.DieEvent();
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    player.DieEvent();
+                }
             }
         }
     }

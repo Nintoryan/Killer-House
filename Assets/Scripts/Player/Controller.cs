@@ -81,7 +81,7 @@ namespace AAPlayer
 
         private IEnumerator LoadLocalNumber()
         {
-            yield return new WaitForSecondsRealtime(0.25f);
+            yield return new WaitForSecondsRealtime(0.6f);
             if (LocalNumber == -1)
             {
                 var busyNumbers = (from p in GameManager.Instance._players where p != this select p._localNumber).ToList();

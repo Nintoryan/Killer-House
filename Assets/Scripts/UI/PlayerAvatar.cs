@@ -77,6 +77,7 @@ namespace Voting
             {
                 _cross.gameObject.SetActive(true);
                 _button.interactable = false;
+                CanVote = false;
             }
             else
             {

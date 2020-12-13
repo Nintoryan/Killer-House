@@ -318,7 +318,8 @@ namespace Voting
 
             foreach (var t in _playerAvatars)
             {
-                if (t.CanVote && t._suspectPlayer == null && !t.IsSkiped) return false;
+                if(!t.CanVote) continue;
+                if (t._suspectPlayer == null && !t.IsSkiped) return false;
             }
             return true;
         }

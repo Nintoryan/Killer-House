@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
 using DG.Tweening;
@@ -28,11 +30,12 @@ namespace Voting
         [SerializeField] private AudioSource _audioSource;
             
         private float timeLeft;
-        private DependecieType _dependecieType = DependecieType.None;
         private PlayerAvatar _localPlayer;
         [SerializeField] private TMP_Text Moto;
         private PlayerAvatar _WhoStartedVoting;
         private bool isSkiped;
+        private bool VotingStarted;
+        private bool IsVotesShown;
         
         
         public static void RaiseVotingEvent(Controller WhoStarted)
@@ -54,7 +57,7 @@ namespace Voting
             if(_selectedPlayerAvatar == _localPlayer 
                || GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead
                || _selectedPlayerAvatar == _localPlayer._suspectPlayer) return;
-            var sendingData = $"{_localPlayer.thisPlayerActorID}:{_selectedPlayerAvatar.thisPlayerActorID}:{(_dependecieType == DependecieType.Suspect ? 1 : 0)}";
+            var sendingData = $"{_localPlayer.thisPlayerActorID}:{_selectedPlayerAvatar.thisPlayerActorID}";
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(44, sendingData, options, sendOptions);
@@ -69,7 +72,7 @@ namespace Voting
         private void StartVoting()
         {
             IsVotesShown = false;
-            notAllVoted = true;
+            VotingStarted = true;
             VotingParent.SetActive(true);
             _audioSource.PlayOneShot(VotingStartsSound);
             timeLeft = GameManager.Instance.VotingDuration;
@@ -107,40 +110,29 @@ namespace Voting
                     Moto.text = "Chose the suspect!";
                 }
 
+                Clock.fillAmount = 1;
                 Clock.DOFillAmount(0, timeLeft).SetEase(Ease.Linear);
                 Arrow.DORotate(new Vector3(0, 0, -360), timeLeft,RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
-                var s = DOTween.Sequence();
-                s.AppendInterval(timeLeft);
-                s.AppendCallback(()=>
-                {
-                    if (notAllVoted)
-                    {
-                        ShowVotes();
-                    }
-                });
-                s.AppendInterval(5f);
-                s.AppendCallback(()=>
-                {
-                    if (notAllVoted)
-                    {
-                        EndVoting();
-                    }
-                }); 
+                StartCoroutine(WaitUntilVotingEnds());
             }
+        }
+
+        private IEnumerator WaitUntilVotingEnds()
+        {
+            yield return new WaitWhile(() => !isAllVoted());
+            OnAllVoted();
         }
 
         private void OnAllVoted()
         {
-            this.DOKill();
             Clock.DOComplete();
             Arrow.DOComplete();
             var s = DOTween.Sequence();
             s.AppendCallback(ShowVotes);
             s.AppendInterval(5f);
-            s.AppendCallback(EndVoting); 
+            s.AppendCallback(EndVoting);
         }
-
-        private bool IsVotesShown;
+        
         private void ShowVotes()
         {
             IsVotesShown = true;
@@ -154,8 +146,6 @@ namespace Voting
             var s = DOTween.Sequence();
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
             s.AppendInterval(1f);
-            s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
-            s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
                 if (PhotonNetwork.IsMasterClient)
@@ -165,7 +155,8 @@ namespace Voting
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
             });
-            s.AppendInterval(6f);
+            s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
+            s.AppendInterval(7f);
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
             s.AppendInterval(1f);
             s.AppendCallback(() =>
@@ -189,12 +180,7 @@ namespace Voting
                     var data = (string) photonEvent.CustomData;
                     Debug.Log($"Событие нажатия на портрет игрока получено. Данные: {data}");
                     var first = FindPlayerAvatar(Convert.ToInt32(data.Split(':')[0]));
-                    if (first == null)
-                    {
-                        Debug.Log($"first is null!!! Parametr:{Convert.ToInt32(data.Split(':')[0])}");
-                    }
                     var second = FindPlayerAvatar(Convert.ToInt32(data.Split(':')[1]));
-                    var isSus = data.Split(':')[2] == "1";
                     SetDependecy(first, second);
                     break;
                 case 46:
@@ -213,12 +199,12 @@ namespace Voting
                     if (KickedPlayerActorID == -1)
                     {
                         VotingResultText.text = "Nobody was ejected";
+                        VotingResultRole.gameObject.SetActive(false);
                     }
                     else
                     {
+                        VotingResultRole.gameObject.SetActive(true);
                         var KickedPlayer = GameManager.Instance.FindPlayer(KickedPlayerActorID);
-                        KickedPlayer.SetDead();
-                        KickedPlayer.DisableDeadBody();
                         if (KickedPlayer.isImposter)
                         {
                             Debug.Log($"Исключённый игрок {KickedPlayer} был импостером.");
@@ -235,6 +221,8 @@ namespace Voting
                         else
                         {
                             Debug.Log($"Исключённый игрок {KickedPlayer} НЕ был импостером.");
+                            KickedPlayer.SetDead();
+                            KickedPlayer.DisableDeadBody();
                             VotingResultRole.text = $"{KickedPlayer.Name} was the <color=#00BDBBff>Civilian</color>";
                             var AlivePlayers = GameManager.Instance._players.Where(player => !player.isImposter).Count(player => !player.IsDead);
                             if (AlivePlayers <= 1)
@@ -260,12 +248,16 @@ namespace Voting
                     var SkipedPlayerActorID = (int) photonEvent.CustomData;
                     var SkipedPlayer = FindPlayerAvatar(SkipedPlayerActorID);
                     SkipedPlayer.Voted.gameObject.SetActive(false);
+                    SkipedPlayer.IsSkiped = true;
                     if (SkipedPlayer._suspectPlayer != null)
                     {
                         SkipedPlayer._suspectPlayer.RemoveFromSuspectedByPlayer(SkipedPlayer.localPlayerNumber);
                         SkipedPlayer._suspectPlayer = null;
                     }
-                    SkipedPlayer.Skiped.gameObject.SetActive(true);
+                    if (isAllVoted())
+                    {
+                        OnAllVoted();
+                    }
                     break;
             }
         }
@@ -303,33 +295,38 @@ namespace Voting
                 }
             }
         }
-
-        private bool notAllVoted = true; 
+        
         private void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
         {
             if (fromPlayer._suspectPlayer != null)
             {
                 fromPlayer._suspectPlayer.RemoveFromSuspectedByPlayer(fromPlayer.localPlayerNumber);
             }
-            fromPlayer.Skiped.gameObject.SetActive(false);
+            fromPlayer.IsSkiped = false; 
             fromPlayer._suspectPlayer = toPlayer;
             fromPlayer.Voted.gameObject.SetActive(true);
             toPlayer.AddToSuspectedByPlayer(fromPlayer.localPlayerNumber);
-            notAllVoted = _playerAvatars.Aggregate(false, (current, player) => 
-                current 
-                || (player._suspectPlayer == null && player.CanVote));
-            if (!notAllVoted)
-            {
-                OnAllVoted();
-            }
         }
-        public void SetDependencyType(int _state)
+
+        private bool isAllVoted()
         {
-            _dependecieType = (DependecieType)_state;
+            if (timeLeft <= 0)
+            {
+                VotingStarted = false;
+                return true;
+            }
+
+            foreach (var t in _playerAvatars)
+            {
+                if (t.CanVote && t._suspectPlayer == null && !t.IsSkiped) return false;
+            }
+            return true;
         }
+        
         private void Update()
         {
-            timeLeft -= Time.deltaTime;
+            if(VotingStarted)
+                timeLeft -= Time.deltaTime;
         }
         private PlayerAvatar FindPlayerAvatar(int ActorID)
         {
@@ -340,13 +337,6 @@ namespace Voting
             }
             return _PlayerAvatar;
         }
-    }
-
-    public enum DependecieType
-    {
-        None = 0,
-        Suspect = 1,
-        Protect = 2
     }
 }
 

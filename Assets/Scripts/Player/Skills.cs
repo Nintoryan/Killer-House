@@ -41,7 +41,6 @@ namespace AAPlayer
             CurrentShortCutIn = _body.myShortCutZone.Number;
             _body.myShortCutZone.Use();
             _body.Hide();
-            MyController.isInShortCut = true;
             JoyStick.SetActive(false);
         }
 
@@ -49,8 +48,6 @@ namespace AAPlayer
         {
             HideAllArrows();
             GameManager.Instance.AllShortCutZones[CurrentShortCutIn].Use();
-            MyController.isInShortCut = false;
-            _body.Show();
             JoyStick.SetActive(true);
         }
 

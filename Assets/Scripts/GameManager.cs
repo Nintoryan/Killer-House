@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public List<Controller> _players = new List<Controller>();
     public DomofonZone[] _DomofonZones;
     public Controller LocalPlayer;
+    public Controller KillerPlayer;
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
     public int QuestsAmountForEachPlayer = 5;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public MinigameZone[] AllMinigames;
     public List<MinigameZone> MyMinigames;
     public ShortCutZone[] AllShortCutZones;
+    public LobbyManager _LobbyManager;
 
     public List<int> MyMinigamesIDs
     {
@@ -42,9 +44,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             Instance = this;
         }
-        
     }
-
     public void AddPlayer(Controller Player)
     {
         _players.Add(Player);
@@ -109,6 +109,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         if (i != imposterID)
                         {
                             OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
+                        }
+                        else
+                        {
+                            KilledPlayer = OrderedPlayers[i];
                         }
                     }
                     
@@ -301,8 +305,15 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         return Player;
     }
 
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
+    }
+
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
+        LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{otherPlayer.NickName} left the game");
+        
         var p = FindPlayer(otherPlayer.ActorNumber);
         if (isGameStarted)
         {

@@ -6568,6 +6568,7 @@ MonoBehaviour:
   - {fileID: 1729271607}
   - {fileID: 655689854}
   - {fileID: 2083314456}
+  _LobbyManager: {fileID: 570348448}
   AmountOfDoneQuests: 0
   AmountOfQuests: 0
   _beginEndGame: {fileID: 857152432}

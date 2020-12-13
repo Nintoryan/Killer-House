@@ -16,9 +16,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        
+        PhotonNetwork.CurrentRoom.IsOpen = false;
         var s = DOTween.Sequence();
-        s.AppendInterval(0.75f);
+        s.AppendInterval(1.25f);
         s.AppendCallback(() =>
         {
             int ImposterID = Random.Range(0, System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount));
@@ -27,7 +27,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             SendOptions sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(43, ImposterID, options, sendOptions);
-            PhotonNetwork.CurrentRoom.IsOpen = false;
             AmountOfPlayers.gameObject.SetActive(false);
         });
     }

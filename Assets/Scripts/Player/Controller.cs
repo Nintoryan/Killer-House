@@ -6,7 +6,6 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 
-
 #pragma warning disable CS0649
 namespace AAPlayer
 {
@@ -16,7 +15,7 @@ namespace AAPlayer
         [SerializeField] private FloatingJoystick _floatingJoystick;
         [SerializeField] private Camera _camera;
         public Skills _skills;
-        [SerializeField] private Transform NickNameCanvas;
+        public Transform NickNameCanvas;
         [SerializeField] private TMP_Text NickName;
         [SerializeField] private Chat _chat;
         [SerializeField] private SphereCollider _deadBodyCollider;
@@ -32,7 +31,6 @@ namespace AAPlayer
         private Vector3 BodyCamDistance;
         private Vector3 NickNameDistance;
         public bool isImposter;
-        public bool isInShortCut;
         [Header("Sound")]
         [SerializeField] private AudioSource _RunAudioSource;
 
@@ -46,7 +44,7 @@ namespace AAPlayer
         public int LocalNumber
         {
             get => _localNumber;
-            set
+            private set
             {
                 if (_localNumber != value)
                 {
@@ -63,11 +61,12 @@ namespace AAPlayer
         {
             GameManager.Instance.AddPlayer(this);
             NickName.text = _photonView.Owner.NickName;
+            StartCoroutine(LoadLocalNumber());
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
                 Destroy(_audioListener);
-                StartCoroutine(LoadLocalNumber());
+                
             }
             else
             {
@@ -77,23 +76,22 @@ namespace AAPlayer
                 _skills.SetAlarmButtonActive(false);
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
-                for (int i = 0; i < 10; i++)
-                {
-                    var players = PhotonNetwork.PlayerListOthers;
-                    var notfree = players.Aggregate(false, (current, player) => current || (int) player.CustomProperties["id"] == i);
-                    if (notfree) continue;
-                    var a = new ExitGames.Client.Photon.Hashtable {{"id", i}};
-                    _photonView.Owner.SetCustomProperties(a);
-                    LocalNumber = i;
-                    break;
-                }
             }
         }
 
         private IEnumerator LoadLocalNumber()
         {
-            yield return new WaitForSecondsRealtime(0.5f);
-            LocalNumber = (int)_photonView.Owner.CustomProperties["id"];
+            yield return new WaitForSecondsRealtime(0.25f);
+            if (LocalNumber == -1)
+            {
+                var busyNumbers = (from p in GameManager.Instance._players where p != this select p._localNumber).ToList();
+                for (int i = 0; i < 10; i++)
+                {
+                    if (busyNumbers.Contains(i)) continue;
+                    LocalNumber = i;
+                    break;
+                }
+            }
         }
 
         private float directionmagnitude;
@@ -115,9 +113,9 @@ namespace AAPlayer
                     var position = _camera.transform.position;
                     position += direction * (playerSpeed * 2 * Time.deltaTime);
                     position = new Vector3(
-                        Mathf.Clamp(position.x,-35,75),
+                        Mathf.Clamp(position.x,-25,85),
                         position.y,
-                    Mathf.Clamp(position.z,-45,135)
+                    Mathf.Clamp(position.z,-35,125)
                         );
                     _camera.transform.position = position;
                 }
@@ -256,12 +254,13 @@ namespace AAPlayer
         {
             if (stream.IsWriting)
             {
+                stream.SendNext(LocalNumber);
                 stream.SendNext(directionmagnitude);
-                stream.SendNext(isInShortCut);
+                
             }else if (stream.IsReading)
             {
+                LocalNumber = (int)stream.ReceiveNext();
                 directionmagnitude = (float)stream.ReceiveNext();
-                isInShortCut = (bool) stream.ReceiveNext();
             }
         }
         

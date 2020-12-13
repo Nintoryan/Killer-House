@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using DG.Tweening;
+using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,20 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private float b;
     [SerializeField] private float a1;
     [SerializeField] private float b1;
+    [SerializeField] private Transform PlayerLogParent;
+    [SerializeField] private TMP_Text PlayerNick;
+
+    public void ShowPlayerJoinLeave(string a)
+    {
+        var inst = Instantiate(PlayerNick.gameObject, PlayerLogParent);
+        inst.GetComponent<TMP_Text>().text = a;
+        var s = DOTween.Sequence();
+        s.AppendInterval(3f);
+        s.AppendCallback(() =>
+        {
+            Destroy(inst);
+        });
+    }
     public void Leave()
     {
         PhotonNetwork.LeaveRoom();

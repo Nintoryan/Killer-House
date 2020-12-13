@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Body : MonoBehaviour
+    public class Body : MonoBehaviour,IPunObservable
     {
         public Controller _Controller;
         [SerializeField] private Skills _skills;
@@ -12,6 +13,7 @@ namespace AAPlayer
         [SerializeField] private MinigamesManager _minigamesManager;
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
+        public bool IsInShortCut;
 
         private DomofonZone CurrentDomofon;
 
@@ -34,7 +36,7 @@ namespace AAPlayer
 
         public void Show()
         {
-            if(HiddenDeadBody || _Controller.isInShortCut) return;
+            if(HiddenDeadBody || IsInShortCut) return;
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
@@ -54,6 +56,16 @@ namespace AAPlayer
             foreach (var player in GameManager.Instance._players)
             {
                 if(player == _Controller) continue;
+                if (player._Body.IsInShortCut)
+                {
+                    player._Body.gameObject.SetActive(false);
+                    player.NickNameCanvas.gameObject.SetActive(false);
+                }
+                else
+                {
+                    player._Body.gameObject.SetActive(true);
+                    player.NickNameCanvas.gameObject.SetActive(true);
+                }
                 int layerMask = 1 << 8;
                 if (Physics.Linecast(transform.position, player._Body.transform.position, layerMask))
                 {
@@ -158,6 +170,19 @@ namespace AAPlayer
         {
             HiddenDeadBody = true;
             Hide();
+        }
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                stream.SendNext(IsInShortCut);
+            }
+
+            if (stream.IsReading)
+            {
+                IsInShortCut = (bool)stream.ReceiveNext();
+            }
         }
     } 
 }

@@ -1100,6 +1100,7 @@ MonoBehaviour:
   WhoVotedParent: {fileID: 3844403126948909248}
   thisPlayerActorID: 0
   localPlayerNumber: 0
+  CanVote: 0
 --- !u!1 &5875224902691476793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1352,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843512157698776579}
   m_LocalRotation: {x: 0.000000029802315, y: -0.000000029802315, z: 0.000000014901158, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00000026822}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2506422386508083994}
@@ -1359,8 +1360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012495, y: 70.4}
-  m_SizeDelta: {x: 43.5, y: 42.5}
+  m_AnchoredPosition: {x: -0, y: 105}
+  m_SizeDelta: {x: 87, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4667713893944079571
 CanvasRenderer:

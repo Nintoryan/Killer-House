@@ -14,12 +14,21 @@ namespace Voting
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private Image _cross;
         public Image Voted;
-        public Image Skiped;
+        [SerializeField] private Image Skiped;
         [SerializeField] private Image[] VoitingPortraits;
         [SerializeField] private Sprite[] allIcons;
         public PlayerAvatar _suspectPlayer;
         public GameObject WhoVotedParent;
 
+        private bool _isSkiped;
+        public bool IsSkiped
+        {
+            get => _isSkiped;
+            set
+            {
+                _isSkiped = value;
+                Skiped.gameObject.SetActive(value);
+            } }
         private List<int> _suspectedByPlayersIDs = new List<int>();
         
         //public PlayerAvatar _protectedPlayer;
@@ -55,9 +64,10 @@ namespace Voting
             thisPlayerActorID = ActorID;
             _nickName.text = NickName;
             Voted.gameObject.SetActive(false);
-            Skiped.gameObject.SetActive(false);
             _suspectedByPlayersIDs.Clear();
             _suspectPlayer = null;
+            WhoVotedParent.SetActive(false);
+            IsSkiped = false;
             foreach (var t in VoitingPortraits)
             {
                 t.gameObject.SetActive(false);

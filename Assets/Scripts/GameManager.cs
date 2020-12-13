@@ -64,8 +64,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     {
                         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                         var sendOptions = new SendOptions {Reliability = true};
-                        if(!PhotonNetwork.IsMasterClient) return;
-                        PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
+                        if (PhotonNetwork.IsMasterClient)
+                        {
+                            PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
+                        }
                     }
                 if (PhotonNetwork.IsMasterClient)
                 {
@@ -106,7 +108,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         OrderedPlayers[i]._skills.SetDomofonButtonActive(i == imposterID);
                         OrderedPlayers[i]._skills.SetShortCutButtonActive(i == imposterID);
                         OrderedPlayers[i].isImposter = i == imposterID;
-                        _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber,OrderedPlayers[i].Name);
                         if (i != imposterID)
                         {
                             OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
@@ -124,9 +125,15 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         {
                             mg.QuestSign.SetActive(true);
                         }
+                        _beginEndGame.SetCharacterImageActive(LocalPlayer.LocalNumber, LocalPlayer.Name);
                     }
                     else
                     {
+                        for (int i = 0; i < OrderedPlayers.Length; i++)
+                        {
+                            _beginEndGame.SetCharacterImageActive(OrderedPlayers[i].LocalNumber,
+                                OrderedPlayers[i].Name);
+                        }
                         _beginEndGame.SetCivilianScreen(true);
                         while(MyMinigames.Count < QuestsAmountForEachPlayer){
                             var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
@@ -172,8 +179,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 {
                     var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                     var sendOptions = new SendOptions {Reliability = true};
-                    if(!PhotonNetwork.IsMasterClient) return;
-                    PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                    if (PhotonNetwork.IsMasterClient)
+                    {
+                        PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                    }
                 }
                 break;
             case 55:
@@ -196,6 +205,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         if (t.IsDead)
                         {
                             _beginEndGame.SetCharacteImageDead(t.LocalNumber);
+                        }
+                        if (t.isImposter)
+                        {
+                            _beginEndGame.SetCharacterImageRed(t.LocalNumber);
                         }
                     }
                 });
@@ -323,8 +336,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             {
                 var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                 var sendOptions = new SendOptions {Reliability = true};
-                if(!PhotonNetwork.IsMasterClient) return;
-                PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                }
             }
             else
             {
@@ -333,8 +348,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 {
                     var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                     var sendOptions = new SendOptions {Reliability = true};
-                    if(!PhotonNetwork.IsMasterClient) return;
-                    PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                    if(PhotonNetwork.IsMasterClient)
+                    {
+                        PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                    }
+                    
                 }
                 if (PhotonNetwork.IsMasterClient && !p.IsDead)
                 {

@@ -4436,6 +4436,7 @@ MonoBehaviour:
   EnabledMusic: {fileID: 21300000, guid: bec2ba02499942b49af01fed74e03dab, type: 3}
   DisabledMusic: {fileID: 21300000, guid: 50b858ef11fde124ea9c1f0710388eb4, type: 3}
   MusicButton: {fileID: 271932745}
+  _AudioMixer: {fileID: 24100000, guid: 024c9f2ad4619204395fe8bc28b19077, type: 2}
 --- !u!82 &2005576215
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4445,7 +4446,7 @@ AudioSource:
   m_GameObject: {fileID: 2005576210}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 024c9f2ad4619204395fe8bc28b19077, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -198,7 +198,7 @@ namespace Voting
                     Debug.Log($"Событие исключения игрока получено. Данные: {KickedPlayerActorID}");
                     if (KickedPlayerActorID == -1)
                     {
-                        VotingResultText.text = "Nobody was ejected";
+                        VotingResultText.text = "Nobody was thrown into the basement";
                         VotingResultRole.gameObject.SetActive(false);
                     }
                     else
@@ -215,8 +215,10 @@ namespace Voting
                             s5.AppendInterval(1.5f);
                             s5.AppendCallback(() =>
                             {
-                                if(!PhotonNetwork.IsMasterClient) return;
-                                PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                                if (PhotonNetwork.IsMasterClient)
+                                {
+                                    PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                                }
                             });
                         }
                         else
@@ -230,8 +232,10 @@ namespace Voting
                             {
                                 var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                                 var sendOptions = new SendOptions {Reliability = true};
-                                if(!PhotonNetwork.IsMasterClient) return;
-                                PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                                if (PhotonNetwork.IsMasterClient)
+                                {
+                                    PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
+                                }
                             }
                             else if (PhotonNetwork.IsMasterClient)
                             {
@@ -243,7 +247,7 @@ namespace Voting
                                 PhotonNetwork.RaiseEvent(65,KickedPlayer.AvaliableQuestsAmount, options, sendOptions);
                             }
                         }
-                        VotingResultText.text = $"{KickedPlayer.Name} was ejected";
+                        VotingResultText.text = $"{KickedPlayer.Name} was thrown into the basement";
                     }
                     break;
                 case 51:

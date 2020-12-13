@@ -145,6 +145,11 @@ namespace AAPlayer
                 _WalkAudioSource.Pause();
             }
 
+            if (IsDead)
+            {
+                NickNameCanvas.gameObject.SetActive(false);
+                _Body.gameObject.SetActive(false);
+            }
             NickNameCanvas.position = controller.transform.position + new Vector3(0, 1.5f, 0);
         }
 
@@ -237,6 +242,7 @@ namespace AAPlayer
         {
             _Body.HideDeadBody();
             _deadBodyCollider.gameObject.SetActive(false);
+            NickNameCanvas.gameObject.SetActive(false);
             _Body.gameObject.SetActive(false);
         }
 

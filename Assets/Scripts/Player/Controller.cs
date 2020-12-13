@@ -113,9 +113,9 @@ namespace AAPlayer
                     var position = _camera.transform.position;
                     position += direction * (playerSpeed * 2 * Time.deltaTime);
                     position = new Vector3(
-                        Mathf.Clamp(position.x,-25,85),
+                        Mathf.Clamp(position.x,-15,90),
                         position.y,
-                    Mathf.Clamp(position.z,-35,125)
+                    Mathf.Clamp(position.z,-25,115)
                         );
                     _camera.transform.position = position;
                 }

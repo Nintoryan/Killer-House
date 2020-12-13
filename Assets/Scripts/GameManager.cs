@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     {
                         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                         var sendOptions = new SendOptions {Reliability = true};
+                        if(!PhotonNetwork.IsMasterClient) return;
                         PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
                     }
                 if (PhotonNetwork.IsMasterClient)
@@ -171,6 +172,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 {
                     var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                     var sendOptions = new SendOptions {Reliability = true};
+                    if(!PhotonNetwork.IsMasterClient) return;
                     PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
                 }
                 break;
@@ -321,6 +323,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             {
                 var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                 var sendOptions = new SendOptions {Reliability = true};
+                if(!PhotonNetwork.IsMasterClient) return;
                 PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
             }
             else
@@ -330,6 +333,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 {
                     var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                     var sendOptions = new SendOptions {Reliability = true};
+                    if(!PhotonNetwork.IsMasterClient) return;
                     PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
                 }
                 if (PhotonNetwork.IsMasterClient && !p.IsDead)

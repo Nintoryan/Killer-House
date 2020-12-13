@@ -215,6 +215,7 @@ namespace Voting
                             s5.AppendInterval(1.5f);
                             s5.AppendCallback(() =>
                             {
+                                if(!PhotonNetwork.IsMasterClient) return;
                                 PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
                             });
                         }
@@ -229,6 +230,7 @@ namespace Voting
                             {
                                 var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
                                 var sendOptions = new SendOptions {Reliability = true};
+                                if(!PhotonNetwork.IsMasterClient) return;
                                 PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
                             }
                             else if (PhotonNetwork.IsMasterClient)

@@ -48,6 +48,7 @@ namespace Voting
         public int thisPlayerActorID;
         public int localPlayerNumber;
 
+        public bool CanVote = false;
         public void Initialize(string NickName, int skinID, int ActorID)
         {
             _icon.sprite = allIcons[skinID];
@@ -56,6 +57,7 @@ namespace Voting
             Voted.gameObject.SetActive(false);
             Skiped.gameObject.SetActive(false);
             _suspectedByPlayersIDs.Clear();
+            _suspectPlayer = null;
             foreach (var t in VoitingPortraits)
             {
                 t.gameObject.SetActive(false);
@@ -65,6 +67,10 @@ namespace Voting
             {
                 _cross.gameObject.SetActive(true);
                 _button.interactable = false;
+            }
+            else
+            {
+                CanVote = true;
             }
         }
     }

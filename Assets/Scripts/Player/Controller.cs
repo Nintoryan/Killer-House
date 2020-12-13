@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
-using Hashtable = System.Collections.Hashtable;
+
 
 #pragma warning disable CS0649
 namespace AAPlayer
@@ -62,8 +61,22 @@ namespace AAPlayer
 
         private void Start()
         {
-            if (!_photonView.Owner.CustomProperties.ContainsKey("id"))
+            GameManager.Instance.AddPlayer(this);
+            NickName.text = _photonView.Owner.NickName;
+            if (!_photonView.IsMine)
             {
+                _camera.gameObject.SetActive(false);
+                Destroy(_audioListener);
+                StartCoroutine(LoadLocalNumber());
+            }
+            else
+            {
+                BodyCamDistance = _camera.transform.position - controller.transform.position;
+                GameManager.Instance.LocalPlayer = this;
+                _skills.SetKillingActive(false);
+                _skills.SetAlarmButtonActive(false);
+                _skills.SetInteractButtonActive(false);
+                _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
                 for (int i = 0; i < 10; i++)
                 {
                     var players = PhotonNetwork.PlayerListOthers;
@@ -75,26 +88,12 @@ namespace AAPlayer
                     break;
                 }
             }
-            else
-            {
-                LocalNumber = (int)_photonView.Owner.CustomProperties["id"];
-            }
-            GameManager.Instance.AddPlayer(this);
-            NickName.text = _photonView.Owner.NickName;
-            if (!_photonView.IsMine)
-            {
-                _camera.gameObject.SetActive(false);
-                Destroy(_audioListener);
-            }
-            else
-            {
-                BodyCamDistance = _camera.transform.position - controller.transform.position;
-                GameManager.Instance.LocalPlayer = this;
-                _skills.SetKillingActive(false);
-                _skills.SetAlarmButtonActive(false);
-                _skills.SetInteractButtonActive(false);
-                _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
-            }
+        }
+
+        private IEnumerator LoadLocalNumber()
+        {
+            yield return new WaitForSecondsRealtime(1f);
+            LocalNumber = (int)_photonView.Owner.CustomProperties["id"];
         }
 
         private float directionmagnitude;
@@ -113,7 +112,14 @@ namespace AAPlayer
                 }
                 else
                 {
-                    _camera.transform.position += direction * (playerSpeed * 2 * Time.deltaTime);
+                    var position = _camera.transform.position;
+                    position += direction * (playerSpeed * 2 * Time.deltaTime);
+                    position = new Vector3(
+                        Mathf.Clamp(position.x,-35,75),
+                        position.y,
+                    Mathf.Clamp(position.z,-45,135)
+                        );
+                    _camera.transform.position = position;
                 }
 
                 _InGameUI.MoveMe(controller.transform.position);

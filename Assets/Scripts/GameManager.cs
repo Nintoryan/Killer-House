@@ -34,10 +34,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public static GameManager Instance;
     private bool isGameStarted;
-    [Header("Звуки")] [SerializeField] private AudioClip GameBeginsSound;
-    [SerializeField] private AudioClip ImposterWinsSound;
-    [SerializeField] private AudioClip CivilianWinsSound;
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -116,6 +113,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     if (LocalPlayer.isImposter)
                     {
                         _beginEndGame.SetKillerScreen(true);
+                        foreach (var mg in AllMinigames)
+                        {
+                            mg.QuestSign.SetActive(true);
+                        }
                     }
                     else
                     {
@@ -328,6 +329,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             }
         }
         _players.Remove(p);
-        Destroy(p.gameObject);
+        //Destroy(p.gameObject);
     }
 }

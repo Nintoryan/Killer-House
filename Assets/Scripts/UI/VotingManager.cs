@@ -117,10 +117,8 @@ namespace Voting
         private void OnAllVoted()
         {
             this.DOKill();
-            Clock.DOKill();
-            Clock.DOFillAmount(0, 0.1f).SetEase(Ease.Linear);
-            Arrow.DOKill();
-            Arrow.DORotate(new Vector3(0, 0, -360), 0.1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
+            Clock.DOComplete();
+            Arrow.DOComplete();
             var s = DOTween.Sequence();
             s.AppendCallback(ShowVotes);
             s.AppendInterval(5f);
@@ -285,7 +283,7 @@ namespace Voting
             }
         }
         
-        private static void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
+        private void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
         {
             if (fromPlayer._suspectPlayer != null)
             {
@@ -295,6 +293,13 @@ namespace Voting
             fromPlayer._suspectPlayer = toPlayer;
             fromPlayer.Voted.gameObject.SetActive(true);
             toPlayer.AddToSuspectedByPlayer(fromPlayer.localPlayerNumber);
+            var notAllVoted = _playerAvatars.Aggregate(false, (current, player) => 
+                current 
+                || (player._suspectPlayer == null && player.CanVote));
+            if (!notAllVoted)
+            {
+                OnAllVoted();
+            }
         }
         public void SetDependencyType(int _state)
         {

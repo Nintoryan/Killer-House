@@ -78,7 +78,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private bool CheckPlayersReady()
     {
-        return PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers;
+        return PhotonNetwork.CurrentRoom.PlayerCount >= 4;
     }
 
     public static Color GetColor(int id)

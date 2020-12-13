@@ -50,6 +50,7 @@ namespace Voting
         }
         public void RaiseSetDependencyEvent(PlayerAvatar _selectedPlayerAvatar)
         {
+            if (IsVotesShown) return;
             if(_selectedPlayerAvatar == _localPlayer 
                || GameManager.Instance.FindPlayer(_localPlayer.thisPlayerActorID).IsDead
                || _selectedPlayerAvatar == _localPlayer._suspectPlayer) return;
@@ -67,6 +68,8 @@ namespace Voting
 
         private void StartVoting()
         {
+            IsVotesShown = false;
+            notAllVoted = true;
             VotingParent.SetActive(true);
             _audioSource.PlayOneShot(VotingStartsSound);
             timeLeft = GameManager.Instance.VotingDuration;
@@ -108,9 +111,21 @@ namespace Voting
                 Arrow.DORotate(new Vector3(0, 0, -360), timeLeft,RotateMode.FastBeyond360).SetRelative().SetEase(Ease.Linear);
                 var s = DOTween.Sequence();
                 s.AppendInterval(timeLeft);
-                s.AppendCallback(ShowVotes);
+                s.AppendCallback(()=>
+                {
+                    if (notAllVoted)
+                    {
+                        ShowVotes();
+                    }
+                });
                 s.AppendInterval(5f);
-                s.AppendCallback(EndVoting); 
+                s.AppendCallback(()=>
+                {
+                    if (notAllVoted)
+                    {
+                        EndVoting();
+                    }
+                }); 
             }
         }
 
@@ -125,8 +140,10 @@ namespace Voting
             s.AppendCallback(EndVoting); 
         }
 
+        private bool IsVotesShown;
         private void ShowVotes()
         {
+            IsVotesShown = true;
             foreach (var playerAvatar in _playerAvatars)
             {
                 playerAvatar.WhoVotedParent.SetActive(true);
@@ -135,6 +152,10 @@ namespace Voting
         private void EndVoting()
         {
             var s = DOTween.Sequence();
+            s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
+            s.AppendInterval(1f);
+            s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
+            s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
                 if (PhotonNetwork.IsMasterClient)
@@ -144,7 +165,7 @@ namespace Voting
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
             });
-            s.AppendInterval(3f);
+            s.AppendInterval(6f);
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
             s.AppendInterval(1f);
             s.AppendCallback(() =>
@@ -282,7 +303,8 @@ namespace Voting
                 }
             }
         }
-        
+
+        private bool notAllVoted = true; 
         private void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
         {
             if (fromPlayer._suspectPlayer != null)
@@ -293,7 +315,7 @@ namespace Voting
             fromPlayer._suspectPlayer = toPlayer;
             fromPlayer.Voted.gameObject.SetActive(true);
             toPlayer.AddToSuspectedByPlayer(fromPlayer.localPlayerNumber);
-            var notAllVoted = _playerAvatars.Aggregate(false, (current, player) => 
+            notAllVoted = _playerAvatars.Aggregate(false, (current, player) => 
                 current 
                 || (player._suspectPlayer == null && player.CanVote));
             if (!notAllVoted)

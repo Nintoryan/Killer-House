@@ -92,7 +92,7 @@ namespace AAPlayer
 
         private IEnumerator LoadLocalNumber()
         {
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(0.5f);
             LocalNumber = (int)_photonView.Owner.CustomProperties["id"];
         }
 
@@ -239,6 +239,7 @@ namespace AAPlayer
         {
             _Body.HideDeadBody();
             _deadBodyCollider.gameObject.SetActive(false);
+            _Body.gameObject.SetActive(false);
         }
 
         public void DisableControll()

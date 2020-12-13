@@ -103,7 +103,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         roomName = (roomName.Equals(string.Empty)) ? "Room " + Random.Range(1000, 10000) : roomName;
 
         byte.TryParse(MaxPlayersInputField.text, out var maxPlayers);
-        maxPlayers = (byte) Mathf.Clamp(maxPlayers, 1, 10);
+        maxPlayers = (byte) Mathf.Clamp(maxPlayers, 4, 10);
 
         var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 10000};
 

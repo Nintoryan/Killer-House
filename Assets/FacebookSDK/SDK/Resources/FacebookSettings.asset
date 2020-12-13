@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 403346937760823
   appLabels:
-  - App Name
+  - KillerHouse
   cookie: 1
   logging: 1
   status: 1

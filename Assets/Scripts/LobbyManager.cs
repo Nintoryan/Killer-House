@@ -1,4 +1,5 @@
-﻿using ExitGames.Client.Photon;
+﻿using DG.Tweening;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -15,14 +16,20 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        int ImposterID = Random.Range(0, System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount));
-        Debug.Log($"Players Amount:{PhotonNetwork.CurrentRoom.PlayerCount}");
-        Debug.Log($"Imposter:{ImposterID}");
-        RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-        SendOptions sendOptions = new SendOptions {Reliability = true};
-        PhotonNetwork.RaiseEvent(43, ImposterID, options, sendOptions);
-        PhotonNetwork.CurrentRoom.IsOpen = false;
-        AmountOfPlayers.gameObject.SetActive(false);
+        
+        var s = DOTween.Sequence();
+        s.AppendInterval(0.75f);
+        s.AppendCallback(() =>
+        {
+            int ImposterID = Random.Range(0, System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount));
+            Debug.Log($"Players Amount:{PhotonNetwork.CurrentRoom.PlayerCount}");
+            Debug.Log($"Imposter:{ImposterID}");
+            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            SendOptions sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(43, ImposterID, options, sendOptions);
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+            AmountOfPlayers.gameObject.SetActive(false);
+        });
     }
 
     private void Awake()
@@ -57,9 +64,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         var gm = GameManager.Instance;
         PhotonNetwork.Instantiate(PlayerPrefab.name, new Vector3(
-            gm.SpawnPlaces[Random.Range(0, gm.SpawnPlaces.Length)].position.x, 
+            Random.Range(15, 25), 
             -1.7f,
-            gm.SpawnPlaces[Random.Range(0, gm.SpawnPlaces.Length)].position.z), Quaternion.identity);
+            -1), Quaternion.identity);
         StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         StartGameButton.interactable = CheckPlayersReady();
     }

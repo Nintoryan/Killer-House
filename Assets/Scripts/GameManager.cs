@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
 using ExitGames.Client.Photon;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             Instance = this;
         }
+        
     }
 
     public void AddPlayer(Controller Player)
@@ -329,6 +331,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             }
         }
         _players.Remove(p);
-        //Destroy(p.gameObject);
+        try
+        {
+            Destroy(p.gameObject);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

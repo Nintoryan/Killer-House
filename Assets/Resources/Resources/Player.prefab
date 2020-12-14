@@ -3086,7 +3086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Who is the traitor?
+  m_text: Who is the Killer?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_sharedMaterial: {fileID: 6215373928125741934, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
@@ -4760,7 +4760,6 @@ MonoBehaviour:
   - {fileID: 6298146104692568830}
   _minigamesManager: {fileID: 7674446999787591144}
   HiddenDeadBody: 0
-  IsInShortCut: 0
   myShortCutZone: {fileID: 0}
 --- !u!136 &6138149367261027161
 CapsuleCollider:
@@ -7573,7 +7572,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 8899025424892144629}
   - {fileID: 5316149679955128270}
-  - {fileID: 6974272432337578942}
   - {fileID: 2342898109561713614}
   - {fileID: 1042885137690706189}
   - {fileID: 6918522027787492013}
@@ -9991,10 +9989,10 @@ RectTransform:
   m_Father: {fileID: 1620083093462188425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 720, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &674709816053019514
 CanvasRenderer:
@@ -10033,8 +10031,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278240150
-  m_fontColor: {r: 0.5864525, g: 0.764151, b: 0, a: 1}
+    rgba: 4278243840
+  m_fontColor: {r: 0, g: 0.8235294, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10701,7 +10699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8587115272533399060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14775,16 +14773,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8381907635031555791}
   m_LocalRotation: {x: 0.000000029802315, y: -0.000000029802315, z: 0.000000014901158, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000016276043}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000010159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587115272533399060}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.4, y: -321.2}
-  m_SizeDelta: {x: 1440.8855, y: 171.72046}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.00002861, y: 53.242}
+  m_SizeDelta: {x: 1440.8855, y: 106.48489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7305672548700121820
 CanvasRenderer:
@@ -14808,13 +14806,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAP! TAP! TAP!
+  m_text: Tap the circle!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
   m_sharedMaterial: {fileID: 6215373928125741934, guid: 0bc17b26ab8a4424bbf5e57574d2c6cf, type: 2}
@@ -14823,8 +14821,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14841,12 +14839,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 115.6
+  m_fontSize: 84.2
   m_fontSizeBase: 115.6
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 93.41
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -14877,7 +14875,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 12.762692, z: 0, w: 5.9745812}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

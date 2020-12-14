@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Photon.Pun;
+//using Photon.Pun;
 using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Body : MonoBehaviour,IPunObservable
+    public class Body : MonoBehaviour//,IPunObservable
     {
         public Controller _Controller;
         [SerializeField] private Skills _skills;
@@ -13,7 +13,7 @@ namespace AAPlayer
         [SerializeField] private MinigamesManager _minigamesManager;
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
-        public bool IsInShortCut;
+        //public bool IsInShortCut;
 
         private DomofonZone CurrentDomofon;
 
@@ -36,12 +36,12 @@ namespace AAPlayer
 
         public void Show()
         {
-            if(HiddenDeadBody || IsInShortCut) return;
+            if(HiddenDeadBody) return;
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
 
-        private void FixedUpdate()
+        /*private void FixedUpdate()
         {
             if (!_Controller._photonView.IsMine) return;
 
@@ -76,7 +76,7 @@ namespace AAPlayer
                     player._Body.Show();
                 }
             }
-        }
+        }*/
         private void OnTriggerEnter(Collider other)
         {
             var body = other.GetComponent<DeadBodyZone>();
@@ -172,7 +172,7 @@ namespace AAPlayer
             Hide();
         }
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
             if (stream.IsWriting)
             {
@@ -183,7 +183,7 @@ namespace AAPlayer
             {
                 IsInShortCut = (bool)stream.ReceiveNext();
             }
-        }
+        }*/
     } 
 }
 

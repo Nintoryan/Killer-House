@@ -24,6 +24,13 @@ public class ShortCutZone : MonoBehaviour
     public void GetEventUse()
     {
         _animator.SetTrigger("activate");
+        var gm = GameManager.Instance;
+        if (!gm.LocalPlayer.isImposter)
+        {
+            bool isActive = gm.KillerPlayer._Body.gameObject.activeInHierarchy;
+            gm.KillerPlayer._Body.gameObject.SetActive(!isActive);
+            gm.KillerPlayer.NickNameCanvas.gameObject.SetActive(!isActive);
+        }
         var s = DOTween.Sequence();
         s.AppendInterval(1f);
         s.AppendCallback(() =>

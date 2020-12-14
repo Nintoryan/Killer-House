@@ -144,12 +144,7 @@ namespace AAPlayer
                 _RunAudioSource.Pause();
                 _WalkAudioSource.Pause();
             }
-
-            if (IsDead)
-            {
-                NickNameCanvas.gameObject.SetActive(false);
-                _Body.gameObject.SetActive(false);
-            }
+            
             NickNameCanvas.position = controller.transform.position + new Vector3(0, 1.5f, 0);
         }
 
@@ -223,7 +218,6 @@ namespace AAPlayer
             IsDead = true;
             if(_photonView.IsMine)
                 _Body._Animator.SetInteger(Status,-1);
-            DisableNickName();
             _skills.SetKillingActive(false);
             _skills.SetAlarmButtonActive(false);
             controller.enabled = false;
@@ -240,7 +234,6 @@ namespace AAPlayer
         }
         public void DisableDeadBody()
         {
-            _Body.HideDeadBody();
             _deadBodyCollider.gameObject.SetActive(false);
             NickNameCanvas.gameObject.SetActive(false);
             _Body.gameObject.SetActive(false);

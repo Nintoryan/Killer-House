@@ -143,15 +143,15 @@ namespace Voting
         }
         private void EndVoting()
         {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                TryKickWorstPlayer();
+            }
             var s = DOTween.Sequence();
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
             s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
-                if (PhotonNetwork.IsMasterClient)
-                {
-                    TryKickWorstPlayer();
-                }
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
             });

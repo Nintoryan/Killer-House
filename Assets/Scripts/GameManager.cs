@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         }
                         else
                         {
-                            KilledPlayer = OrderedPlayers[i];
+                            KillerPlayer = OrderedPlayers[i];
                         }
                     }
                     

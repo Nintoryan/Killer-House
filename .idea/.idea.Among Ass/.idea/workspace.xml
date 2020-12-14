@@ -20,184 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.activity.activity-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.activity.activity-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.annotation.annotation-1.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.annotation.annotation-1.1.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.appcompat.appcompat-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.appcompat.appcompat-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.appcompat.appcompat-resources-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.appcompat.appcompat-resources-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-common-2.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-common-2.1.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-runtime-2.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.arch.core.core-runtime-2.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.asynclayoutinflater.asynclayoutinflater-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.asynclayoutinflater.asynclayoutinflater-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.browser.browser-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.browser.browser-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cardview.cardview-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cardview.cardview-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.collection.collection-1.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.collection.collection-1.1.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.coordinatorlayout.coordinatorlayout-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.coordinatorlayout.coordinatorlayout-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.core.core-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.core.core-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cursoradapter.cursoradapter-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.cursoradapter.cursoradapter-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.customview.customview-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.customview.customview-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.documentfile.documentfile-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.documentfile.documentfile-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.drawerlayout.drawerlayout-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.drawerlayout.drawerlayout-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.fragment.fragment-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.fragment.fragment-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.interpolator.interpolator-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.interpolator.interpolator-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-ui-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-ui-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-utils-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-core-utils-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-v4-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.legacy.legacy-support-v4-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-common-2.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-common-2.1.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-2.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-2.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-core-2.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-livedata-core-2.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-runtime-2.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-runtime-2.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-viewmodel-2.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.lifecycle.lifecycle-viewmodel-2.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.loader.loader-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.loader.loader-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.localbroadcastmanager.localbroadcastmanager-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.localbroadcastmanager.localbroadcastmanager-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.media.media-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.media.media-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.print.print-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.print.print-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.savedstate.savedstate-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.savedstate.savedstate-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.slidingpanelayout.slidingpanelayout-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.slidingpanelayout.slidingpanelayout-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.swiperefreshlayout.swiperefreshlayout-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.swiperefreshlayout.swiperefreshlayout-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.vectordrawable.vectordrawable-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.vectordrawable.vectordrawable-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.vectordrawable.vectordrawable-animated-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.vectordrawable.vectordrawable-animated-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.versionedparcelable.versionedparcelable-1.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.versionedparcelable.versionedparcelable-1.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.viewpager.viewpager-1.0.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.viewpager.viewpager-1.0.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.android.installreferrer.installreferrer-1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.android.installreferrer.installreferrer-1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-applinks-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-applinks-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-gamingservices-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-gamingservices-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-login-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-login-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-share-8.1.0.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-share-8.1.0.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.zxing.core-3.3.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.zxing.core-3.3.3.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-android-1.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-android-1.4.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-applinks-1.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-applinks-1.4.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-tasks-1.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.parse.bolts.bolts-tasks-1.4.0.jar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_79.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_80.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_84.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kevin Iglesias/Basic Motions Pack/AnimationControllers/BasicMotions@Idles.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kevin Iglesias/Basic Motions Pack/AnimationControllers/BasicMotions@Idles.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/All.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/All.mixer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animations/TAPTAPTAP.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/TAPTAPTAP.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 49.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 51.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 52.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 53.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Asset 54.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Chat/Ref.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 74.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 74.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 75.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 75.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 76.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Clock/Asset 76.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 10.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 12.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 13.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Create_room/Asset 13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Artboard 3 copy 4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Artboard 3 copy 4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 60.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 61.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 63.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 63.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 64.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 64.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 67.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 67.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 68.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset 68.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_69.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_69.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_70.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_70.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_71.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_71.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_76.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_76.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_77.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Asset_77.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 58.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 58.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 7.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 8.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Main_menu/Asset 8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 55.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 55.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 56.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 56.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset 57.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_72.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/Asset_72.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Map_interface/ref.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Map_interface/ref.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 31.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 33.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 41.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 42.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 43.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 44.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 45.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 46.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 48.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 59.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +96,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" />
@@ -277,12 +113,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
       </list>
     </option>
   </component>
@@ -370,7 +207,8 @@
       <workItem from="1607778682401" duration="23211000" />
       <workItem from="1607858862077" duration="1962000" />
       <workItem from="1607867262896" duration="16636000" />
-      <workItem from="1607905394201" duration="2128000" />
+      <workItem from="1607905394201" duration="2342000" />
+      <workItem from="1607958216158" duration="3576000" />
     </task>
     <servers />
   </component>
@@ -472,9 +310,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1607534427368" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607906109849">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607961177779">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607906109849" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1607961177779" />
   </component>
 </project>

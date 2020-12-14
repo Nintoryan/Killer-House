@@ -81,7 +81,7 @@ namespace AAPlayer
 
         private IEnumerator LoadLocalNumber()
         {
-            yield return new WaitForSecondsRealtime(0.6f);
+            yield return new WaitForSecondsRealtime(0.75f);
             if (LocalNumber == -1)
             {
                 var busyNumbers = (from p in GameManager.Instance._players where p != this select p._localNumber).ToList();
@@ -184,6 +184,7 @@ namespace AAPlayer
             controller.Move(playerVelocity * Time.deltaTime);
             if (direction.magnitude >= 0.05f)
             {
+                _skills.isDancing = false;
                 _Body._Animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
                 var targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
                 var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
@@ -194,7 +195,10 @@ namespace AAPlayer
             }
             else
             {
-                _Body._Animator.SetInteger(Status, 0);
+                if (!_skills.isDancing)
+                {
+                    _Body._Animator.SetInteger(Status, 0);
+                }
             }
 
             if (direction != Vector3.zero)

@@ -26,6 +26,8 @@ namespace AAPlayer
         [SerializeField] private GameObject JoyStick;
         
         private bool isInShortCut;
+        private int DanceID = -2;
+        public bool isDancing = false;
 
         public bool HadSpawnAlarm;
         private int FoundBodyID = -1;
@@ -35,6 +37,19 @@ namespace AAPlayer
         private int CurrentShortCutIn = -1;
 
 
+        public void DanceButton()
+        {
+            _body._Animator.SetInteger("status",DanceID);
+            if (DanceID == -2)
+            {
+                DanceID = -3;
+            }
+            else
+            {
+                DanceID = -2;
+            }
+            isDancing = true;
+        }
         private void EnterShortCut()
         {
             ShowArrows(_body.myShortCutZone.Number);
@@ -170,6 +185,7 @@ namespace AAPlayer
                 if (!HadSpawnAlarm)
                 {
                     HadSpawnAlarm = true;
+                    GameManager.Instance.VotingSign.SetActive(false);
                     VotingManager.RaiseVotingEvent(GetComponent<Controller>());
                 }
             }

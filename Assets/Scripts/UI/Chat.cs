@@ -10,6 +10,8 @@ public class Chat : MonoBehaviour, IChatClientListener
     [SerializeField] private string _userID;
     [SerializeField] private TMP_InputField _inputField;
     [SerializeField] private TMP_Text _outputField;
+    public GameObject Notifications;
+    public GameObject ChatParent;
     private string _roomName;
     
     public void Initialize(string userName,string roomName)
@@ -59,6 +61,10 @@ public class Chat : MonoBehaviour, IChatClientListener
         for (var i = 0; i < senders.Length; i++)
         {
             _outputField.text += $"<color=white>{senders[i]}</color>:{messages[i]}\n";
+        }
+        if (!ChatParent.activeInHierarchy)
+        {
+            Notifications.SetActive(true);
         }
     }
 

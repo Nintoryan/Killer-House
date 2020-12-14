@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public List<MinigameZone> MyMinigames;
     public ShortCutZone[] AllShortCutZones;
     public LobbyManager _LobbyManager;
+    public GameObject VotingSign;
 
     public List<int> MyMinigamesIDs
     {
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s.AppendInterval(1.5f);
                 s.AppendCallback(() =>
                 {
+                    VotingSign.SetActive(true);
                     _beginEndGame.ActivateScreen();
                     AmountOfPlayers.SetActive(false);
                     var OrderedPlayers = _players

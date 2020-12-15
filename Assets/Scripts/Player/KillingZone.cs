@@ -10,12 +10,14 @@ namespace AAPlayer
 
         private void OnTriggerEnter(Collider other)
         {
+            
             var body = other.GetComponent<Body>();
             if (body && body != _myBody && !PlayersInside.Contains(body))
             {
                 if (!body._Controller.IsDead)
                 {
                     PlayersInside.Add(body);
+                    if(!_myBody._Controller._photonView.IsMine) return;
                     _myBody._Controller._skills.SetKillingInteractable(true);
                 }
             }
@@ -30,6 +32,7 @@ namespace AAPlayer
                     PlayersInside.Remove(body);
                     if (PlayersInside.Count == 0)
                     {
+                        if(!_myBody._Controller._photonView.IsMine) return;
                         _myBody._Controller._skills.SetKillingInteractable(false);
                     }
                 }

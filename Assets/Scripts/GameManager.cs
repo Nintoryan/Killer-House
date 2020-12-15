@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public LobbyManager _LobbyManager;
     public GameObject VotingSign;
 
+    public float TimeSinceGameStarted;
     public List<int> MyMinigamesIDs
     {
         get
@@ -34,10 +35,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     }
     public int AmountOfDoneQuests;
     public int AmountOfQuests;
+    public int Progress => Mathf.RoundToInt((float) AmountOfDoneQuests / AmountOfQuests * 100f);
     public BeginEndGame _beginEndGame;
 
     public static GameManager Instance;
-    private bool isGameStarted;
+    public bool isGameStarted;
 
     private void Awake()
     {
@@ -46,6 +48,12 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             Instance = this;
         }
     }
+
+    private void Update()
+    {
+        TimeSinceGameStarted += Time.deltaTime;
+    }
+
     public void AddPlayer(Controller Player)
     {
         _players.Add(Player);
@@ -58,6 +66,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             case 42:
                 //Событие смерти игрока
                 var KilledPlayer = FindPlayer((int) photonEvent.CustomData);
+                if (KilledPlayer == LocalPlayer)
+                {
+                    LocalPlayer.SetCamFOV(24);
+                }
                 KilledPlayer.SetDead();
                 var AlivePlayers = _players.Where(player => !player.isImposter).
                         Count(player => !player.IsDead);
@@ -84,18 +96,29 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 break;
             case 43:
                 //Событие начала игры
+                LocalPlayer.DisableControll();
                 var s = DOTween.Sequence();
                 s.AppendCallback(_beginEndGame.FadeIn);
                 s.AppendInterval(1.5f);
                 s.AppendCallback(() =>
                 {
+                    TimeSinceGameStarted = 0;
+                    var metrica = AppMetrica.Instance;
+                    PlayerPrefs.SetInt("levelNumber",PlayerPrefs.GetInt("levelNumber")+1);
+                    var paramerts = new Dictionary<string, object>
+                    {
+                        {"level", PlayerPrefs.GetInt("levelNumber")}
+                    };
+                    metrica.ReportEvent("level_start",paramerts);
+                    metrica.SendEventsBuffer();
+                    
+                    isGameStarted = true;
                     VotingSign.SetActive(true);
                     _beginEndGame.ActivateScreen();
                     AmountOfPlayers.SetActive(false);
                     var OrderedPlayers = _players
                         .OrderBy(p => p._photonView.Owner.ActorNumber)
                         .ToArray();
-                    LocalPlayer.DisableControll();
                     int imposterID = (int) photonEvent.CustomData;
                     for (int i = 0; i < OrderedPlayers.Length; i++)
                     {
@@ -128,6 +151,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                             mg.QuestSign.SetActive(true);
                         }
                         _beginEndGame.SetCharacterImageActive(LocalPlayer.LocalNumber, LocalPlayer.Name);
+                        LocalPlayer.SetCamFOV(24);
                     }
                     else
                     {
@@ -149,6 +173,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                         
                     }
                     AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
+                    LocalPlayer._chat.ChatParent.SetActive(false);
+                    LocalPlayer._skills.ChatButton.gameObject.SetActive(false);
                 });
                 s.AppendCallback(_beginEndGame.FadeOut);
                 s.AppendInterval(3f);
@@ -164,7 +190,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     {
                         LocalPlayer._skills.KillGoCD();
                     }
-                    isGameStarted = true;
                 });
                 break;
             case 50:
@@ -218,7 +243,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s1.AppendInterval(5f);
                 s1.AppendCallback(_beginEndGame.FadeIn);
                 s1.AppendInterval(3);
-                s1.AppendCallback(() => LocalPlayer._InGameUI.Leave());
+                s1.AppendCallback(() => LocalPlayer._InGameUI.Leave("win"));
                 break;
             case 57:
                 //Событие победы импостера
@@ -254,7 +279,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s2.AppendInterval(5f);
                 s2.AppendCallback(_beginEndGame.FadeIn);
                 s2.AppendInterval(3);
-                s2.AppendCallback(() => LocalPlayer._InGameUI.Leave());
+                s2.AppendCallback(() => LocalPlayer._InGameUI.Leave("lose"));
                 break;
             case 65:
                 //Событие распределения квестов
@@ -325,6 +350,21 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
+    }
+
+    public void MovePlayersOnSpawn()
+    {
+        var OrderedPlayers = _players
+            .OrderBy(p => p._photonView.Owner.ActorNumber)
+            .ToArray();
+        for (int i = 0; i < OrderedPlayers.Length; i++)
+        {
+            OrderedPlayers[i]._Body.transform.position = new Vector3(
+                SpawnPlaces[i].position.x,
+                OrderedPlayers[i].transform.position.y,
+                SpawnPlaces[i].position.z);
+            OrderedPlayers[i].UpdateCameraPos();
+        }
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

@@ -17,7 +17,7 @@ namespace AAPlayer
         public Skills _skills;
         public Transform NickNameCanvas;
         [SerializeField] private TMP_Text NickName;
-        [SerializeField] private Chat _chat;
+        public Chat _chat;
         [SerializeField] private SphereCollider _deadBodyCollider;
         public InGameUI _InGameUI;
         public Body _Body;
@@ -66,7 +66,6 @@ namespace AAPlayer
             {
                 _camera.gameObject.SetActive(false);
                 Destroy(_audioListener);
-                
             }
             else
             {
@@ -111,7 +110,7 @@ namespace AAPlayer
                 else
                 {
                     var position = _camera.transform.position;
-                    position += direction * (playerSpeed * 2 * Time.deltaTime);
+                    position += direction * (playerSpeed * 3 * Time.deltaTime);
                     position = new Vector3(
                         Mathf.Clamp(position.x,-15,90),
                         position.y,
@@ -251,6 +250,11 @@ namespace AAPlayer
         public void ActivateControll()
         {
             _floatingJoystick.enabled = true;
+        }
+
+        public void SetCamFOV(int fovValue)
+        {
+            _camera.fieldOfView = fovValue;
         }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

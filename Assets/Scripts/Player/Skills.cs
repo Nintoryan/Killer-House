@@ -17,6 +17,7 @@ namespace AAPlayer
         [SerializeField] private Button domofonButton;
         [SerializeField] private Button _interactButton;
         [SerializeField] private Button _EnterExitShortCut;
+        public Button ChatButton;
         [SerializeField] private int KillingColdown = 35;
         [SerializeField] private int DomofonColdown = 30;
         [SerializeField] private Controller MyController;

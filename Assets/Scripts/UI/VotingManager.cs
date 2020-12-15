@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
 using DG.Tweening;
@@ -74,6 +73,7 @@ namespace Voting
             IsVotesShown = false;
             VotingStarted = true;
             VotingParent.SetActive(true);
+            GameManager.Instance.LocalPlayer._skills.ChatButton.gameObject.SetActive(true);
             _audioSource.PlayOneShot(VotingStartsSound);
             timeLeft = GameManager.Instance.VotingDuration;
             var controllers = GameManager.Instance._players
@@ -136,6 +136,8 @@ namespace Voting
         private void ShowVotes()
         {
             IsVotesShown = true;
+            GameManager.Instance.LocalPlayer._chat.ChatParent.SetActive(false);
+            GameManager.Instance.LocalPlayer._skills.ChatButton.gameObject.SetActive(false);
             foreach (var playerAvatar in _playerAvatars)
             {
                 playerAvatar.WhoVotedParent.SetActive(true);
@@ -154,6 +156,7 @@ namespace Voting
             {
                 VotingParent.SetActive(false);
                 VotingResults.SetActive(true);
+                GameManager.Instance.MovePlayersOnSpawn();
             });
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
             s.AppendInterval(7f);

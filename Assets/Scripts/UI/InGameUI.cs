@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -27,8 +28,21 @@ public class InGameUI : MonoBehaviour
             Destroy(inst);
         });
     }
-    public void Leave()
+    public void Leave(string result = "exit")
     {
+        if (GameManager.Instance.isGameStarted)
+        {
+            var metrica = AppMetrica.Instance;
+            var paramerts = new Dictionary<string, object>
+            {
+                {"level", PlayerPrefs.GetInt("levelNumber")},
+                {"result", result},
+                {"time", GameManager.Instance.TimeSinceGameStarted},
+                {"progress",result == "exit"?0:GameManager.Instance.Progress}
+            };
+            metrica.ReportEvent("level_finish",paramerts);
+            metrica.SendEventsBuffer();
+        }
         PhotonNetwork.LeaveRoom();
     }
 

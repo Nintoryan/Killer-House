@@ -40,6 +40,8 @@ namespace AAPlayer
         [SerializeField] private AudioListener _audioListener;
         public string Name =>_photonView.Owner.NickName;
 
+        private Transform NickNameTarget;
+
         private int _localNumber=-1;
         public int LocalNumber
         {
@@ -76,6 +78,7 @@ namespace AAPlayer
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
             }
+            NickNameTarget = controller.transform;
         }
 
         private IEnumerator LoadLocalNumber()
@@ -109,14 +112,7 @@ namespace AAPlayer
                 }
                 else
                 {
-                    var position = _camera.transform.position;
-                    position += direction * (playerSpeed * 3 * Time.deltaTime);
-                    position = new Vector3(
-                        Mathf.Clamp(position.x,-15,90),
-                        position.y,
-                    Mathf.Clamp(position.z,-25,115)
-                        );
-                    _camera.transform.position = position;
+                    DeadMove(direction);
                 }
 
                 _InGameUI.MoveMe(controller.transform.position);
@@ -144,7 +140,7 @@ namespace AAPlayer
                 _WalkAudioSource.Pause();
             }
             
-            NickNameCanvas.position = controller.transform.position + new Vector3(0, 1.5f, 0);
+            NickNameCanvas.position =  NickNameTarget.position + new Vector3(0, 1.5f, 0);
         }
 
         public void UpdateCameraPos()
@@ -172,6 +168,45 @@ namespace AAPlayer
             NickNameCanvas.gameObject.SetActive(true);
         }
 
+        private void DeadMove(Vector3 direction)
+        {
+            var position = _camera.transform.position;
+            position += direction * (playerSpeed * Time.deltaTime);
+            position = new Vector3(
+                Mathf.Clamp(position.x,-15,90),
+                position.y,
+                Mathf.Clamp(position.z,-25,115)
+            );
+            _camera.transform.position = position;
+            var position1 = _Body.transform.position;
+            position1 += direction * (playerSpeed * Time.deltaTime);
+            position1 = new Vector3(
+                Mathf.Clamp(position1.x,-15,90),
+                position1.y,
+                Mathf.Clamp(position1.z,-25,115)
+            );
+            _Body.transform.position = position1;
+            if (direction.magnitude >= 0.05f)
+            {
+                _skills.isDancing = false;
+                _Body._Animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
+                var targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
+                    turnSmoothTime);
+                _Body.transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
+            else
+            {
+                if (!_skills.isDancing)
+                {
+                    _Body._Animator.SetInteger(Status, 0);
+                }
+            }
+            if (direction != Vector3.zero)
+            {
+                _Body.transform.forward = direction;
+            }
+        }
         private void AliveMove(Vector3 direction)
         {
             groundedPlayer = controller.isGrounded;
@@ -213,6 +248,7 @@ namespace AAPlayer
             RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             SendOptions sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(42, sendingData, options, sendOptions);
+            //Вызавает SetDead()
             Debug.Log($"Я убил игрока {sendingData}");
         }
 
@@ -221,10 +257,17 @@ namespace AAPlayer
             IsDead = true;
             if(_photonView.IsMine)
                 _Body._Animator.SetInteger(Status,-1);
+            else
+            {
+                SetNickNameTarget(_Body.AliveGraphicsTransform());
+            }
             _skills.SetKillingActive(false);
             _skills.SetAlarmButtonActive(false);
             controller.enabled = false;
+            playerSpeed = 5f;
+            _deadBodyCollider.transform.SetParent(null);
             _deadBodyCollider.gameObject.SetActive(true);
+            _Body.SwitchToDead();
             Debug.Log($"Убили игрока {_photonView.Owner.ActorNumber}");
         }
 
@@ -238,8 +281,7 @@ namespace AAPlayer
         public void DisableDeadBody()
         {
             _deadBodyCollider.gameObject.SetActive(false);
-            NickNameCanvas.gameObject.SetActive(false);
-            _Body.gameObject.SetActive(false);
+            _Body.Hide();
         }
 
         public void DisableControll()
@@ -255,6 +297,11 @@ namespace AAPlayer
         public void SetCamFOV(int fovValue)
         {
             _camera.fieldOfView = fovValue;
+        }
+
+        public void SetNickNameTarget(Transform newTarget)
+        {
+            NickNameTarget = newTarget;
         }
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

@@ -10,11 +10,15 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("UI References")]
         public Text ConnectionStatusText;
 
+        public Text AmountOfPlayersOnline;
+
         #region UNITY
 
         public void Update()
         {
             ConnectionStatusText.text = connectionStatusMessage + PhotonNetwork.NetworkClientState;
+            if(AmountOfPlayersOnline == null) return;
+            AmountOfPlayersOnline.text = PhotonNetwork.CountOfPlayers != 0 ? $"Now {PhotonNetwork.CountOfPlayers} players online" : "";
         }
 
         #endregion

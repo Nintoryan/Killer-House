@@ -16,6 +16,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
 
     public InputField RoomNameInputField;
     public InputField MaxPlayersInputField;
+    public InputField KillersAmountInputField;
 
     [Header("Join Random Room Panel")] public GameObject JoinRandomRoomPanel;
 
@@ -108,6 +109,23 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
             maxPlayers = 8;
         }
         maxPlayers = (byte) Mathf.Clamp(maxPlayers, 4, 10);
+
+        int.TryParse(KillersAmountInputField.text, out var AmountOfKillers);
+        if (AmountOfKillers == 0)
+        {
+            if (maxPlayers <= 6)
+            {
+                AmountOfKillers = 1;
+            }else if (maxPlayers < 10)
+            {
+                AmountOfKillers = 2;
+            }
+            else
+            {
+                AmountOfKillers = 3;
+            }
+        }
+        PlayerPrefs.SetInt("HostAmountOfKillers",AmountOfKillers);
 
         var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 10000};
 

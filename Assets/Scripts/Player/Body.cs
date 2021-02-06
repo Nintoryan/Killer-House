@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-//using Photon.Pun;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 #pragma warning disable CS0649
 namespace AAPlayer
 {
@@ -9,7 +10,10 @@ namespace AAPlayer
         public Controller _Controller;
         [SerializeField] private Skills _skills;
         [SerializeField] private GameObject _Graphics;
-        [SerializeField] private GameObject[] AllSkins;
+        [SerializeField] private GameObject _AliveGraphics;
+        [SerializeField] private GameObject _GhostGraphics;
+        [FormerlySerializedAs("AllSkins")] [SerializeField] private GameObject[] Skins;
+        [SerializeField] private GameObject[] Ghosts;
         [SerializeField] private MinigamesManager _minigamesManager;
         private List<Controller> _deadBodies = new List<Controller>();
         public bool HiddenDeadBody;
@@ -21,17 +25,33 @@ namespace AAPlayer
         
         public void Initialize(int id)
         {
-            foreach (var t in AllSkins)
+            foreach (var t in Skins)
             {
                 t.SetActive(false);
             }
-            AllSkins[id].SetActive(true);
-            _Graphics = AllSkins[id];
+            Skins[id].SetActive(true);
+            _Graphics = Skins[id];
+            _AliveGraphics = Skins[id];
+            _GhostGraphics = Ghosts[id];
+        }
+
+        public void SwitchToDead()
+        {
+            _Graphics = _GhostGraphics;
+            _AliveGraphics.transform.SetParent(null);
+            if (GameManager.Instance.LocalPlayer.IsDead)
+            {
+                _GhostGraphics.SetActive(true);
+                _GhostGraphics.transform.position = _AliveGraphics.transform.position;
+            }
         }
         public void Hide()
         {
-            _Graphics.SetActive(false);
-            _Controller.DisableNickName();
+            _AliveGraphics.SetActive(false);
+            if (!_Controller._photonView.IsMine)
+            {
+                _Controller.DisableNickName();
+            }
         }
 
         public void Show()
@@ -40,43 +60,6 @@ namespace AAPlayer
             _Graphics.SetActive(true);
             _Controller.ActivateNickName();
         }
-
-        /*private void FixedUpdate()
-        {
-            if (!_Controller._photonView.IsMine) return;
-
-            if (_Controller.IsDead)
-            {
-                foreach (var player in GameManager.Instance._players)
-                {
-                    player._Body.Show();
-                }
-                return;
-            }
-            foreach (var player in GameManager.Instance._players)
-            {
-                if(player == _Controller) continue;
-                if (player._Body.IsInShortCut)
-                {
-                    player._Body.gameObject.SetActive(false);
-                    player.NickNameCanvas.gameObject.SetActive(false);
-                }
-                else
-                {
-                    player._Body.gameObject.SetActive(true);
-                    player.NickNameCanvas.gameObject.SetActive(true);
-                }
-                int layerMask = 1 << 8;
-                if (Physics.Linecast(transform.position, player._Body.transform.position, layerMask))
-                {
-                    player._Body.Hide();
-                }
-                else
-                {
-                    player._Body.Show();
-                }
-            }
-        }*/
         private void OnTriggerEnter(Collider other)
         {
             var body = other.GetComponent<DeadBodyZone>();
@@ -166,24 +149,11 @@ namespace AAPlayer
             return CurrentDomofon;
         }
 
-        public void HideDeadBody()
+        public Transform AliveGraphicsTransform()
         {
-            HiddenDeadBody = true;
-            Hide();
+            return _AliveGraphics.transform;
         }
-
-        /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(IsInShortCut);
-            }
-
-            if (stream.IsReading)
-            {
-                IsInShortCut = (bool)stream.ReceiveNext();
-            }
-        }*/
+        
     } 
 }
 

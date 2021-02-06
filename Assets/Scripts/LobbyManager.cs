@@ -21,12 +21,27 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         s.AppendInterval(1.25f);
         s.AppendCallback(() =>
         {
-            int ImposterID = Random.Range(0, System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount));
+            int playersAmount = System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount);
+            int ImposterID1 = Random.Range(0, playersAmount);
+            int ImposterID2 = ImposterID1;
+            while (ImposterID2 == ImposterID1)
+            {
+                ImposterID2 = Random.Range(0, playersAmount);
+            }
+            int ImposterID3 = ImposterID1;
+            while (ImposterID3 == ImposterID1 || ImposterID3 == ImposterID2)
+            {
+                ImposterID3 = Random.Range(0, playersAmount);
+            }
             Debug.Log($"Players Amount:{PhotonNetwork.CurrentRoom.PlayerCount}");
-            Debug.Log($"Imposter:{ImposterID}");
-            RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-            SendOptions sendOptions = new SendOptions {Reliability = true};
-            PhotonNetwork.RaiseEvent(43, ImposterID, options, sendOptions);
+            Debug.Log($"Imposter:{ImposterID1},{ImposterID2},{ImposterID3}");
+            var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            var sendOptions = new SendOptions {Reliability = true};
+            var data = new object[]
+            {
+                ImposterID1,ImposterID2,ImposterID3
+            };
+            PhotonNetwork.RaiseEvent(43, data, options, sendOptions);
             AmountOfPlayers.gameObject.SetActive(false);
         });
     }

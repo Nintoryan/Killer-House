@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6843508782405175063}
   - component: {fileID: 7489715774978562837}
   m_Layer: 0
-  m_Name: Minigame3
+  m_Name: Minigame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,20 +71,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 6843508782405175063}
---- !u!64 &4338398032088419661
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3527584973172207642}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8861180440997155986, guid: b03b4270c28177f46a41a99654136691, type: 3}
 --- !u!1 &4779054557122710965
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,11 +510,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b03b4270c28177f46a41a99654136691, type: 3}
---- !u!1 &3527584973172207642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b03b4270c28177f46a41a99654136691, type: 3}
-  m_PrefabInstance: {fileID: 4338398032088419659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4305352712718854816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b03b4270c28177f46a41a99654136691, type: 3}

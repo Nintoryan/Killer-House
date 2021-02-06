@@ -12,24 +12,29 @@ public class ShortCutZone : MonoBehaviour
     public Transform PlayerInSidePosition;
     [SerializeField] private Animator _animator;
 
-    public void Use(){
+    public void Use(int KillerLocalNumber){
         
-        Debug.Log($"Домофон был использован номер:{Number}");
+        Debug.Log($"Дверь была использована:{Number}. Киллером: KillerLocalNumber");
         var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
         var sendOptions = new SendOptions {Reliability = true};
-        PhotonNetwork.RaiseEvent(75, Number, options, sendOptions);
+        var data = new object[]
+        {
+            Number,KillerLocalNumber
+        };
+        PhotonNetwork.RaiseEvent(75, data, options, sendOptions);
         var s = DOTween.Sequence();
 
     }
-    public void GetEventUse()
+    public void GetEventUse(int KillerLocalNumber)
     {
         _animator.SetTrigger("activate");
         var gm = GameManager.Instance;
         if (!gm.LocalPlayer.isImposter)
         {
-            bool isActive = gm.KillerPlayer._Body.gameObject.activeInHierarchy;
-            gm.KillerPlayer._Body.gameObject.SetActive(!isActive);
-            gm.KillerPlayer.NickNameCanvas.gameObject.SetActive(!isActive);
+            var KillerThatUsed = gm.FindPlayer(KillerLocalNumber);
+            bool isActive = KillerThatUsed._Body.gameObject.activeInHierarchy;
+            KillerThatUsed._Body.gameObject.SetActive(!isActive);
+            KillerThatUsed.NickNameCanvas.gameObject.SetActive(!isActive);
         }
         var s = DOTween.Sequence();
         s.AppendInterval(1f);

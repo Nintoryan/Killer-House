@@ -797,6 +797,28 @@
               <e p="TextAnimatorPlayer.cs" t="Include" />
             </e>
           </e>
+          <e p="UnityPurchasing" t="Include">
+            <e p="Editor" t="Include">
+              <e p="IAPButtonEditor.cs" t="Include" />
+              <e p="IAPGeneratedCredentials.cs.template" t="Include" />
+            </e>
+            <e p="LICENSE.txt" t="Include" />
+            <e p="script" t="Include">
+              <e p="CodelessIAPStoreListener.cs" t="Include" />
+              <e p="ComboBox.cs" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="DemoInventory.cs" t="Include" />
+              </e>
+              <e p="IAPButton.cs" t="Include" />
+              <e p="IAPConfigurationHelper.cs" t="Include" />
+              <e p="IAPDemo.cs" t="Include" />
+              <e p="IAPDemoProductUI.cs" t="Include" />
+              <e p="IAPListener.cs" t="Include" />
+              <e p="link.xml" t="Include" />
+              <e p="PurchasingCheck.cs" t="Include" />
+            </e>
+            <e p="third party notices.txt" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="DomofonZone.cs" t="Include" />
@@ -833,8 +855,12 @@
             <e p="LobbyMainPanel.cs" t="Include" />
             <e p="LobbyTopPanel.cs" t="Include" />
             <e p="Logger.cs" t="Include" />
+            <e p="Menu.cs" t="Include" />
             <e p="PlayerAvatar.cs" t="Include" />
             <e p="RoomListEntry.cs" t="Include" />
+            <e p="Shop" t="Include">
+              <e p="PreviewerRotation.cs" t="Include" />
+            </e>
             <e p="VotingManager.cs" t="Include" />
           </e>
           <e p="VotingZone.cs" t="Include" />

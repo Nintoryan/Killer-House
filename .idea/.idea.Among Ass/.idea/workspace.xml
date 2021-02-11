@@ -23,151 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/com.unity.mobile.notifications.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/com.unity.mobile.notifications/NotificationSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Editor/com.unity.mobile.notifications/NotificationSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Asset_105.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Asset_105.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Asset_106.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Asset_106.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Character.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/Character.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/billing-3.0.1.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/billing-3.0.1.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/common.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/common.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/AppleCore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/AppleCore.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/AppleMacos.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/AppleMacos.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/live.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/live/Apple.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/live/Apple.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/live/AppleMacos.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Apple/live/AppleMacos.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Editor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Editor.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook/live.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook/live/FacebookStore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Facebook/live/FacebookStore.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security/Security.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security/Security.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security/live.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Stores.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Stores.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Info.plist.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/MacOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/MacOS/unitypurchasing" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/MacOS/unitypurchasing.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Resources/en.lproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Resources/en.lproj/InfoPlist.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/unitypurchasing.bundle/Contents/Resources/en.lproj/InfoPlist.strings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Changelog.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Changelog.md.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/ETag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/ETag.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/AppleIncRootCertificate.cer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/AppleIncRootCertificate.cer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPButtonEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPButtonEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPGeneratedCredentials.cs.template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPGeneratedCredentials.cs.template.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPUpdaterPreferences.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Editor/IAPUpdaterPreferences.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/LinkBlack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/LinkBlack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/LinkWhite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/LinkWhite.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/UnityEngine.Purchasing.IAPButtonIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Icons/UnityEngine.Purchasing.IAPButtonIcon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Resources/UIFakeStoreCanvas.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Resources/UIFakeStoreCanvas.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityEarlyTransactionObserver.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityEarlyTransactionObserver.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityEarlyTransactionObserver.mm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityEarlyTransactionObserver.mm.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityPurchasing.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityPurchasing.h.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityPurchasing.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/iOS/UnityPurchasing.m.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/license.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/license.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/scenes/IAP Demo.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/scenes/IAP Demo.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/CodelessIAPStoreListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/CodelessIAPStoreListener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/ComboBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/ComboBox.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/Demo.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/Demo/DemoInventory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/Demo/DemoInventory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPConfigurationHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPConfigurationHelper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPDemo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPDemo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPDemoProductUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPDemoProductUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/IAPListener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/PurchasingCheck.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/PurchasingCheck.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/link.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/link.xml.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/third party notices.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/third party notices.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt/live.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt/live/winrt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt/live/winrt.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt/winrt.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/winrt/winrt.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/BillingMode.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/BillingMode.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/IAPProductCatalog.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/IAPProductCatalog.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/AmazonAppStore.aar.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/Bin/Android/SamsungApps.aar.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,9 +43,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Logger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" root0="FORCE_HIGHLIGHTING" />
@@ -192,6 +57,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" root0="FORCE_HIGHLIGHTING" />
@@ -202,10 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/Spaceship.cs" />
-        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Game/PlayerOverviewPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Skin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerOffline.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scripts/Lobby/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListEntry.cs" />
@@ -253,6 +115,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
       </list>
     </option>
   </component>
@@ -349,7 +215,9 @@
       <workItem from="1610392451457" duration="880000" />
       <workItem from="1612207687106" duration="4304000" />
       <workItem from="1612622721671" duration="11755000" />
-      <workItem from="1612997463083" duration="565000" />
+      <workItem from="1612997463083" duration="1358000" />
+      <workItem from="1613041061488" duration="1601000" />
+      <workItem from="1613046078890" duration="1946000" />
     </task>
     <servers />
   </component>

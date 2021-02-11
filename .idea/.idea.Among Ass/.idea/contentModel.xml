@@ -859,7 +859,10 @@
             <e p="PlayerAvatar.cs" t="Include" />
             <e p="RoomListEntry.cs" t="Include" />
             <e p="Shop" t="Include">
+              <e p="Item.cs" t="Include" />
               <e p="PreviewerRotation.cs" t="Include" />
+              <e p="ShopPreview.cs" t="Include" />
+              <e p="Wallet.cs" t="Include" />
             </e>
             <e p="VotingManager.cs" t="Include" />
           </e>

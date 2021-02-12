@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -71,6 +72,7 @@ public class BeginEndGame : MonoBehaviour
             character.SetActive(false);
         }
         Characters[GameManager.Instance.LocalPlayer.SkinID].SetActive(true);
+        Debug.Log($"Ну что пацанчик у тебя SkinID:{GameManager.Instance.LocalPlayer.SkinID}");
         CivilianNickName.text = GameManager.Instance.LocalPlayer.Name;
     }
     

@@ -318,13 +318,11 @@ namespace AAPlayer
             if (stream.IsWriting)
             {
                 stream.SendNext(LocalNumber);
-                stream.SendNext(directionmagnitude);
                 stream.SendNext(SkinID);
             }else if (stream.IsReading)
             {
                 LocalNumber = (int)stream.ReceiveNext();
-                directionmagnitude = (float)stream.ReceiveNext();
-                SkinID = (int) stream.ReceiveNext();
+                SkinID = (int)stream.ReceiveNext();
             }
         }
         

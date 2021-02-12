@@ -291,7 +291,7 @@ namespace Voting
                     NotOneMaxPlayer = true;
                 }
             }
-            if (NotOneMaxPlayer || MaxKickScore < GameManager.Instance._players.Count(p => !p.IsDead)/2)
+            if (NotOneMaxPlayer || MaxKickScore <= GameManager.Instance._players.Count(p => !p.IsDead)/2)
             {
                 RaiseKickedEvent(-1);
             }

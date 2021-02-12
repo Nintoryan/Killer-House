@@ -23,31 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/be.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/be/be1.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/be/be1.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/Killer_3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/killer_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InProcess/новыйстаф/killer_background.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/AnimationControllers/hmmm.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/AnimationControllers/hmmm.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/Animations/hmms.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/Animations/hmms.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,10 +113,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
       </list>
     </option>
@@ -238,7 +218,7 @@
       <workItem from="1613041061488" duration="1601000" />
       <workItem from="1613046078890" duration="1946000" />
       <workItem from="1613059409212" duration="607000" />
-      <workItem from="1613119410377" duration="24733000" />
+      <workItem from="1613119410377" duration="27203000" />
     </task>
     <servers />
   </component>
@@ -340,9 +320,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613162904794">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613166549150">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613162904794" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613166549150" />
   </component>
 </project>

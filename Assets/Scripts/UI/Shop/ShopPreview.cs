@@ -14,6 +14,10 @@ namespace Shop
         private GameObject CurrentSkin;
         [SerializeField] private AnimatorController[] AllDances;
         [SerializeField] private Button BuyButton;
+        [SerializeField] private Image BuyButtonCurrency;
+        [SerializeField] private GameObject SelectedButton;
+        [SerializeField] private Sprite Skull;
+        [SerializeField] private Sprite Key;
         [SerializeField] private TMP_Text Price;
         private Item CurrentItem;
         public Item SelectedItem;
@@ -32,6 +36,7 @@ namespace Shop
         private void Start()
         {
             Refresh();
+            BuyButton.gameObject.SetActive(false);
         }
 
         private void Refresh()
@@ -51,6 +56,7 @@ namespace Shop
             switch (_item.CurrentState)
             {
                 case State.Locked:
+                    SelectedButton.SetActive(false);
                     Change(_item);
                     if (_item._currency == Currency.Money)
                     {
@@ -65,12 +71,28 @@ namespace Shop
                             BuyButton.interactable = false;
                         }
                         Price.text = _item.Cost.ToString();
+                        BuyButtonCurrency.sprite = Skull;
+                    }
+                    else
+                    {
+                        if (Wallet.Keys >= _item.Cost)
+                        {
+                            BuyButton.gameObject.SetActive(true);
+                            BuyButton.interactable = true;
+                        }
+                        else
+                        {
+                            BuyButton.gameObject.SetActive(true);
+                            BuyButton.interactable = false;
+                        }
+                        Price.text = _item.Cost.ToString();
+                        BuyButtonCurrency.sprite = Key;
                     }
                     break;
                 case State.Unlocked:
                     Change(_item);
                     _item.StatePPValue = 2;
-                    BuyButton.gameObject.SetActive(false);
+                    SelectedButton.SetActive(true);
                     _item.Refresh();
                     if (SelectedItem != null)
                     {
@@ -80,7 +102,7 @@ namespace Shop
                     SelectedItem = _item;
                     break;
                 case State.Selected:
-                    BuyButton.gameObject.SetActive(false);
+                    SelectedButton.SetActive(true);
                     break;
             }
             if (CurrentItem != null)
@@ -122,7 +144,7 @@ namespace Shop
                     SelectedItem.Refresh(); 
                 }
                 SelectedItem = CurrentItem;
-                BuyButton.gameObject.SetActive(false);
+                SelectedButton.SetActive(true);
                 OnBuy?.Invoke();
             }
             else

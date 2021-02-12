@@ -9,6 +9,12 @@ namespace UserData
             get => PlayerPrefs.GetInt("Money");
             set => PlayerPrefs.SetInt("Money", value);
         }
+
+        public static int Keys
+        {
+            get => PlayerPrefs.GetInt("Keys");
+            set => PlayerPrefs.SetInt("Keys", value);
+        }
     }
 
     public static class Statistics
@@ -16,7 +22,11 @@ namespace UserData
         public static int Wins
         {
             get => PlayerPrefs.GetInt("Wins");
-            set => PlayerPrefs.SetInt("Wins",value);
+            set
+            {
+                PlayerPrefs.SetInt("Wins",value);
+                Wallet.Keys++;
+            }
         }
     }
 }

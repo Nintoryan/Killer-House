@@ -51,7 +51,7 @@ namespace AAPlayer
                 if (_localNumber != value)
                 {
                     _localNumber = value;
-                    _Body.Initialize(value);
+                    _Body.Initialize(PlayerPrefs.GetInt("SelectedSkin"));
                 }
             }
         }

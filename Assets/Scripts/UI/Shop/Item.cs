@@ -43,7 +43,16 @@ namespace Shop
             Refresh();
             if (CurrentState == State.Selected)
             {
-                ShopPreview.Instance.SelectedItem = this;
+                switch (_type)
+                {
+                    case Type.Skin:
+                        ShopPreview.Instance.SelectedSkinItem = this;
+                        break;
+                    case Type.Dance:
+                        ShopPreview.Instance.SelectedDanceItem = this;
+                        break;
+                }
+                
             }
         }
 
@@ -74,6 +83,7 @@ namespace Shop
         public void Select()
         {
             ShopPreview.Instance.Select(this);
+            
             switch (CurrentState)
             {
                 case State.Locked:
@@ -83,6 +93,15 @@ namespace Shop
                 case State.Unlocked:
                     StatePPValue = 2;
                     Refresh();
+                    switch (_type)
+                    {
+                        case Type.Skin:
+                            ShopPreview.Instance.SelectedSkinItem = this;
+                            break;
+                        case Type.Dance:
+                            ShopPreview.Instance.SelectedDanceItem = this;
+                            break;
+                    }
                     break;
             }
             

@@ -27,7 +27,6 @@ namespace AAPlayer
         [SerializeField] private GameObject JoyStick;
         
         private bool isInShortCut;
-        private int DanceID = -2;
         public bool isDancing = false;
 
         public bool HadSpawnAlarm;
@@ -36,19 +35,12 @@ namespace AAPlayer
         private bool isDomofonOnCD = false;
 
         private int CurrentShortCutIn = -1;
+        private static readonly int Status = Animator.StringToHash("status");
 
 
         public void DanceButton()
         {
-            _body._Animator.SetInteger("status",DanceID);
-            if (DanceID == -2)
-            {
-                DanceID = -3;
-            }
-            else
-            {
-                DanceID = -2;
-            }
+            _body._Animator.SetInteger(Status,-2-PlayerPrefs.GetInt("SelectedDance"));
             isDancing = true;
         }
         private void EnterShortCut()

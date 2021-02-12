@@ -16,7 +16,7 @@ namespace Voting
         public Image Voted;
         [SerializeField] private Image Skiped;
         [SerializeField] private Image[] VoitingPortraits;
-        [SerializeField] private Sprite[] allIcons;
+        [SerializeField] private Sprite[] AllPortraits;
         public PlayerAvatar _suspectPlayer;
         public GameObject WhoVotedParent;
 
@@ -32,6 +32,7 @@ namespace Voting
         private List<int> _suspectedByPlayersIDs = new List<int>();
         
         //public PlayerAvatar _protectedPlayer;
+        
         public void AddToSuspectedByPlayer(int id)
         {
             if (!_suspectedByPlayersIDs.Contains(id))
@@ -60,7 +61,7 @@ namespace Voting
         public bool CanVote = false;
         public void Initialize(string NickName, int skinID, int ActorID)
         {
-            _icon.sprite = allIcons[skinID];
+            _icon.sprite = AllPortraits[skinID];
             thisPlayerActorID = ActorID;
             _nickName.text = NickName;
             Voted.gameObject.SetActive(false);

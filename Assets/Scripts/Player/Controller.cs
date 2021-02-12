@@ -311,7 +311,6 @@ namespace AAPlayer
             {
                 stream.SendNext(LocalNumber);
                 stream.SendNext(directionmagnitude);
-                
             }else if (stream.IsReading)
             {
                 LocalNumber = (int)stream.ReceiveNext();

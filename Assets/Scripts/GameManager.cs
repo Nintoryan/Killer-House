@@ -448,8 +448,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            Console.WriteLine("Объект уже уничтожен!");
         }
     }
 }

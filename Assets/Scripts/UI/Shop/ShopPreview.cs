@@ -1,6 +1,5 @@
 ﻿using System;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,7 +11,6 @@ namespace Shop
     {
         [SerializeField] private GameObject[] AllSkins;
         private GameObject CurrentSkin;
-        [SerializeField] private AnimatorController[] AllDances;
         [SerializeField] private Button BuyButton;
         [SerializeField] private Image BuyButtonCurrency;
         [SerializeField] private GameObject SelectedButton;
@@ -20,8 +18,12 @@ namespace Shop
         [SerializeField] private Sprite Key;
         [SerializeField] private TMP_Text Price;
         private Item CurrentItem;
-        public Item SelectedItem;
+        private Item CurrentSkinItem;
+        public Item SelectedSkinItem;
+        private Item CurrentDanceItem;
+        public Item SelectedDanceItem;
         public static ShopPreview Instance;
+        private static readonly int Status = Animator.StringToHash("status");
 
         public event UnityAction OnBuy; 
 
@@ -47,45 +49,28 @@ namespace Shop
             }
             CurrentSkin = AllSkins[PlayerPrefs.GetInt($"Selected{Type.Skin}")];
             CurrentSkin.SetActive(true);
-            CurrentSkin.GetComponent<Animator>().runtimeAnimatorController =
-                AllDances[PlayerPrefs.GetInt($"Selected{Type.Dance}")];
+            CurrentSkin.GetComponent<Animator>().SetInteger(Status,-2-PlayerPrefs.GetInt($"Selected{Type.Dance}"));
         }
 
         public void Select(Item _item)
         {
+            CurrentItem = _item;
             switch (_item.CurrentState)
             {
                 case State.Locked:
                     SelectedButton.SetActive(false);
+                    Price.text = _item.Cost.ToString();
+                    BuyButton.gameObject.SetActive(true);
                     Change(_item);
+                    
                     if (_item._currency == Currency.Money)
                     {
-                        if (Wallet.Balance >= _item.Cost)
-                        {
-                            BuyButton.gameObject.SetActive(true);
-                            BuyButton.interactable = true;
-                        }
-                        else
-                        {
-                            BuyButton.gameObject.SetActive(true);
-                            BuyButton.interactable = false;
-                        }
-                        Price.text = _item.Cost.ToString();
+                        BuyButton.interactable = Wallet.Balance >= _item.Cost;
                         BuyButtonCurrency.sprite = Skull;
                     }
                     else
                     {
-                        if (Wallet.Keys >= _item.Cost)
-                        {
-                            BuyButton.gameObject.SetActive(true);
-                            BuyButton.interactable = true;
-                        }
-                        else
-                        {
-                            BuyButton.gameObject.SetActive(true);
-                            BuyButton.interactable = false;
-                        }
-                        Price.text = _item.Cost.ToString();
+                        BuyButton.interactable = Wallet.Keys >= _item.Cost;
                         BuyButtonCurrency.sprite = Key;
                     }
                     break;
@@ -94,22 +79,47 @@ namespace Shop
                     _item.StatePPValue = 2;
                     SelectedButton.SetActive(true);
                     _item.Refresh();
-                    if (SelectedItem != null)
+                    switch (_item._type)
                     {
-                        SelectedItem.StatePPValue = 1;
-                        SelectedItem.Refresh(); 
+                        case Type.Skin:
+                            if (SelectedSkinItem != null)
+                            {
+                                SelectedSkinItem.StatePPValue = 1;
+                                SelectedSkinItem.Refresh(); 
+                            }
+                            SelectedSkinItem = _item;
+                            break;
+                        case Type.Dance:
+                            if (SelectedDanceItem != null)
+                            {
+                                SelectedDanceItem.StatePPValue = 1;
+                                SelectedDanceItem.Refresh(); 
+                            }
+                            SelectedDanceItem = _item;
+                            break;
                     }
-                    SelectedItem = _item;
                     break;
                 case State.Selected:
                     SelectedButton.SetActive(true);
                     break;
             }
-            if (CurrentItem != null)
+            switch (_item._type)
             {
-                CurrentItem.Deselect();
+                case Type.Skin:
+                    if (CurrentSkinItem != null)
+                    {
+                        CurrentSkinItem.Deselect();
+                    }
+                    CurrentSkinItem = _item;
+                    break;
+                case Type.Dance:
+                    if (CurrentDanceItem != null)
+                    {
+                        CurrentDanceItem.Deselect();
+                    }
+                    CurrentDanceItem = _item;
+                    break;
             }
-            CurrentItem = _item;
         }
 
         private void Change(Item _item)
@@ -120,38 +130,52 @@ namespace Shop
                     CurrentSkin.SetActive(false);
                     CurrentSkin = AllSkins[_item.PPID];
                     CurrentSkin.SetActive(true);
-                    CurrentSkin.GetComponent<Animator>().runtimeAnimatorController =
-                        AllDances[PlayerPrefs.GetInt($"Selected{Type.Dance}")];
+                    CurrentSkin.GetComponent<Animator>().SetInteger(Status,-2-PlayerPrefs.GetInt($"Selected{Type.Dance}"));
                     break;
                 case Type.Dance:
-                    CurrentSkin.GetComponent<Animator>().runtimeAnimatorController = AllDances[_item.PPID];
+                    CurrentSkin.GetComponent<Animator>().SetInteger(Status,-2-_item.PPID);
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
 
         public void Buy()
         {
-            if (Wallet.Balance >= CurrentItem.Cost)
+            switch (CurrentItem._type)
             {
-                Wallet.Balance -= CurrentItem.Cost;
-                CurrentItem.StatePPValue = 2;
-                CurrentItem.Refresh();
-                if (SelectedItem != null)
-                {
-                    SelectedItem.StatePPValue = 1;
-                    SelectedItem.Refresh(); 
-                }
-                SelectedItem = CurrentItem;
-                SelectedButton.SetActive(true);
-                OnBuy?.Invoke();
-            }
-            else
-            {
-                Debug.LogError("У тебя нет денег на этот товар!");
+                case Type.Skin:
+                    BuyCustom(CurrentSkinItem,ref SelectedSkinItem);
+                    break;
+                case Type.Dance:
+                    BuyCustom(CurrentDanceItem,ref SelectedDanceItem);
+                    break;
             }
         }
 
+        private void BuyCustom(Item currentItem,ref Item selectedItem)
+        {
+            switch (currentItem._currency)
+            {
+                case Currency.Money when Wallet.Balance >= currentItem.Cost:
+                    Wallet.Balance -= currentItem.Cost;
+                    break;
+                case Currency.Money:
+                    return;
+                case Currency.Wins when Wallet.Keys >= currentItem.Cost:
+                    Wallet.Keys -= currentItem.Cost;
+                    break;
+                case Currency.Wins:
+                    return;
+            }
+            currentItem.StatePPValue = 2;
+            currentItem.Refresh();
+            if (selectedItem != null)
+            {
+                selectedItem.StatePPValue = 1;
+                selectedItem.Refresh();
+            }
+            selectedItem = currentItem;
+            SelectedButton.SetActive(true);
+            OnBuy?.Invoke();
+        }
     }
 }

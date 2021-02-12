@@ -23,8 +23,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset-163_v2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset-163_v2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl(1).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl(2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl(2).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier(1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier(1).png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/AnimationControllers/BasicMotions@Idles.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Kevin Iglesias/Basic Motions Pack/AnimationControllers/BasicMotions@Idles.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerAvatar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 22.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 28.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Asset 29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Girl2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Who_is_killer/Портреты/Soldier2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +138,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
@@ -105,16 +149,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
       </list>
     </option>
   </component>
@@ -215,7 +260,7 @@
       <workItem from="1613041061488" duration="1601000" />
       <workItem from="1613046078890" duration="1946000" />
       <workItem from="1613059409212" duration="607000" />
-      <workItem from="1613119410377" duration="10664000" />
+      <workItem from="1613119410377" duration="16639000" />
     </task>
     <servers />
   </component>
@@ -317,9 +362,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613137672442">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613142991663">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613137672442" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613142991663" />
   </component>
 </project>

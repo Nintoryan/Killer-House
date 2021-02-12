@@ -37,7 +37,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -576,8 +576,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &4102596940821656939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +599,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -688,8 +693,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &7803054997626632505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,7 +716,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1212,7 +1222,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1337,7 +1347,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1477,7 +1487,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1845,8 +1855,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &1345191204065401379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,8 +1876,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1358858513059126280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1957,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1956,8 +1976,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1437684232734338729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,8 +2147,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1484246943389923972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2379,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -2497,8 +2527,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1664624328978372177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,7 +3458,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -4239,8 +4274,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &2420783213716364728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,7 +4592,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -6036,7 +6076,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -6341,8 +6381,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &8975526942544372424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7050,8 +7095,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &1492785633916725668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7087,8 +7137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &3289249236925573124
 GameObject:
   m_ObjectHideFlags: 0
@@ -7247,8 +7302,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &3295832041063703288
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,8 +7400,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &3338364093345467407
 GameObject:
   m_ObjectHideFlags: 0
@@ -7848,7 +7913,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -8114,7 +8179,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -8133,8 +8198,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4120513959268050995
 GameObject:
   m_ObjectHideFlags: 0
@@ -8564,7 +8634,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -8760,8 +8830,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4632656336625395419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8853,7 +8928,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -8874,7 +8949,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -9371,8 +9446,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &4922325020060777890
 GameObject:
   m_ObjectHideFlags: 0
@@ -10032,7 +10112,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -10051,8 +10131,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &5266866679066193566
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,8 +10494,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &6443646997960319189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10427,7 +10517,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -10521,8 +10611,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &7598113621712600946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10539,7 +10634,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -11573,7 +11668,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -12400,7 +12495,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -12705,8 +12800,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &535515450500002836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12974,8 +13074,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &2993138512912196241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12990,8 +13095,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &6425614096900399945
 GameObject:
   m_ObjectHideFlags: 0
@@ -13471,7 +13581,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -13815,7 +13925,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -14040,8 +14150,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &7081649995309186749
 GameObject:
   m_ObjectHideFlags: 0
@@ -14780,8 +14895,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &1177708746707382274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14796,8 +14916,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &7298276244101056719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15500,7 +15625,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -16131,8 +16256,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &6565956353748183251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16147,8 +16277,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!114 &3314519628666119945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16165,7 +16300,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -17034,7 +17169,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -17348,7 +17483,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -17921,7 +18056,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -18015,8 +18150,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &8867747881361849652
 GameObject:
   m_ObjectHideFlags: 0
@@ -18165,7 +18305,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -18184,8 +18324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: status
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &9054686022830685054
 GameObject:
   m_ObjectHideFlags: 0
@@ -18476,7 +18621,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: status
   m_SynchronizeLayers:
   - SynchronizeType: 0

@@ -13,7 +13,9 @@ namespace Shop
         public Type _type;
         [SerializeField] private GameObject PriceSign;
         [SerializeField] private TMP_Text Price;
-        [SerializeField] private GameObject SelectedOutline;
+        [SerializeField] private GameObject SelectingOutline;
+        [SerializeField] private GameObject DefaultOutline;
+        [SerializeField] private GameObject Selected;
 
         private State _state;
 
@@ -39,9 +41,13 @@ namespace Shop
                 StatePPValue = 1;
             }
             Refresh();
+            if (CurrentState == State.Selected)
+            {
+                ShopPreview.Instance.SelectedItem = this;
+            }
         }
 
-        private void Refresh()
+        public void Refresh()
         {
             switch (CurrentState)
             {
@@ -51,11 +57,15 @@ namespace Shop
                     break;
                 case State.Unlocked:
                     PriceSign.SetActive(false);
-                    SelectedOutline.SetActive(false);
+                    DefaultOutline.SetActive(true);
+                    SelectingOutline.SetActive(false);
+                    Selected.SetActive(false);
                     break;
                 case State.Selected:
                     PriceSign.SetActive(false);
-                    SelectedOutline.SetActive(true);
+                    DefaultOutline.SetActive(true);
+                    SelectingOutline.SetActive(false);
+                    Selected.SetActive(true);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -64,6 +74,24 @@ namespace Shop
         public void Select()
         {
             ShopPreview.Instance.Select(this);
+            switch (CurrentState)
+            {
+                case State.Locked:
+                    DefaultOutline.SetActive(false);
+                    SelectingOutline.SetActive(true);
+                    break;
+                case State.Unlocked:
+                    StatePPValue = 2;
+                    Refresh();
+                    break;
+            }
+            
+        }
+
+        public void Deselect()
+        {
+            DefaultOutline.SetActive(true);
+            SelectingOutline.SetActive(false);
         }
     }
 

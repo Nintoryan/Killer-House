@@ -51,7 +51,7 @@ namespace AAPlayer
                 if (_localNumber != value)
                 {
                     _localNumber = value;
-                    _Body.Initialize(PlayerPrefs.GetInt("SelectedSkin"));
+                    _Body.Initialize(value);
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace AAPlayer
         {
             GameManager.Instance.AddPlayer(this);
             NickName.text = _photonView.Owner.NickName;
-            StartCoroutine(LoadLocalNumber());
+            
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
@@ -77,6 +77,7 @@ namespace AAPlayer
                 _skills.SetAlarmButtonActive(false);
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
+                LocalNumber = PlayerPrefs.GetInt("SelectedSkin");
             }
             NickNameTarget = controller.transform;
         }

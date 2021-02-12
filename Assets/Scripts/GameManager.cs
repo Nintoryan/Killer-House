@@ -98,7 +98,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     var sendOptions = new SendOptions {Reliability = true};
                     PhotonNetwork.RaiseEvent(65, KilledPlayer.AvaliableQuestsAmount, options, sendOptions);
                 }
-
                 break;
             case 43:
                 //Событие начала игры
@@ -345,6 +344,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void CheckGameEnded()
     {
         //Проверка на конец игры
+        if(!PhotonNetwork.IsMasterClient) return;
         var AlivePlayers = _players.Where(player => !player.isImposter).
             Count(player => !player.IsDead);
         if (AlivePlayers <= 1)

@@ -22,9 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" afterDir="false" />
-    </list>
+    <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -63,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerSkills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Body.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/KillingZone.cs" />
@@ -91,7 +89,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
@@ -113,6 +110,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" />
       </list>
     </option>
@@ -214,7 +213,7 @@
       <workItem from="1613041061488" duration="1601000" />
       <workItem from="1613046078890" duration="1946000" />
       <workItem from="1613059409212" duration="607000" />
-      <workItem from="1613119410377" duration="27508000" />
+      <workItem from="1613119410377" duration="27960000" />
     </task>
     <servers />
   </component>

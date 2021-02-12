@@ -892,6 +892,7 @@
             <e p="PlayerAvatar.cs" t="Include" />
             <e p="RoomListEntry.cs" t="Include" />
             <e p="Shop" t="Include">
+              <e p="DefaultLoader.cs" t="Include" />
               <e p="Item.cs" t="Include" />
               <e p="MoneyBar.cs" t="Include" />
               <e p="PreviewerRotation.cs" t="Include" />

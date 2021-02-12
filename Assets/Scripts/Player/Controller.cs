@@ -43,17 +43,25 @@ namespace AAPlayer
         private Transform NickNameTarget;
 
         private int _localNumber=-1;
-        public int LocalNumber
+
+        private int _skinID = -1;
+
+        public int SkinID
         {
-            get => _localNumber;
+            get => _skinID;
             private set
             {
-                if (_localNumber != value)
+                if (value != _skinID)
                 {
-                    _localNumber = value;
+                    _skinID = value;
                     _Body.Initialize(value);
                 }
             }
+        }
+        public int LocalNumber
+        {
+            get => _localNumber;
+            private set => _localNumber = value;
         }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
@@ -63,7 +71,7 @@ namespace AAPlayer
         {
             GameManager.Instance.AddPlayer(this);
             NickName.text = _photonView.Owner.NickName;
-            
+            StartCoroutine(LoadLocalNumber());
             if (!_photonView.IsMine)
             {
                 _camera.gameObject.SetActive(false);
@@ -77,7 +85,7 @@ namespace AAPlayer
                 _skills.SetAlarmButtonActive(false);
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
-                LocalNumber = PlayerPrefs.GetInt("SelectedSkin");
+                SkinID = PlayerPrefs.GetInt("SelectedSkin");
             }
             NickNameTarget = controller.transform;
         }
@@ -311,10 +319,12 @@ namespace AAPlayer
             {
                 stream.SendNext(LocalNumber);
                 stream.SendNext(directionmagnitude);
+                stream.SendNext(SkinID);
             }else if (stream.IsReading)
             {
                 LocalNumber = (int)stream.ReceiveNext();
                 directionmagnitude = (float)stream.ReceiveNext();
+                SkinID = (int) stream.ReceiveNext();
             }
         }
         

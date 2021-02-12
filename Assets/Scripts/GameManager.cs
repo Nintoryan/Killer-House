@@ -161,25 +161,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     }
                     if (LocalPlayer.isImposter)
                     {
-                        _beginEndGame.SetKillerScreen(true);
+                        _beginEndGame.StartKillerScreen();
                         foreach (var mg in AllMinigames)
                         {
                             mg.QuestSign.SetActive(true);
-                        }
-                        foreach (var Killer in KillerPlayers)
-                        {
-                            _beginEndGame.SetCharacterImageActive(Killer.LocalNumber, Killer.Name);
                         }
                         LocalPlayer.SetCamFOV(24);
                     }
                     else
                     {
-                        foreach (var t in OrderedPlayers)
-                        {
-                            _beginEndGame.SetCharacterImageActive(t.LocalNumber,
-                                t.Name);
-                        }
-                        _beginEndGame.SetCivilianScreen(true);
+                        _beginEndGame.StartCivilianScreen();
                         while(MyMinigames.Count < QuestsAmountForEachPlayer){
                             var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
                             if (!MyMinigames.Contains(minigame))
@@ -189,7 +180,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                                 minigame.QuestSign.SetActive(true);
                             }
                         }
-                        
                     }
                     AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
                     LocalPlayer._chat.ChatParent.SetActive(false);
@@ -239,24 +229,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s1.AppendInterval(1.5f);
                 s1.AppendCallback(() =>
                 {
-                    _beginEndGame.ActivateScreen();
-                    _beginEndGame.SetGreenBG();
                     _beginEndGame.SetCivilianVictory();
-                    var OrderedPlayers = _players
-                        .OrderBy(p => p._photonView.Owner.ActorNumber).ToArray();
                     LocalPlayer.DisableControll();
-                    foreach (var t in OrderedPlayers)
-                    {
-                        _beginEndGame.SetCharacterImageActive(t.LocalNumber,t.Name);
-                        if (t.IsDead)
-                        {
-                            _beginEndGame.SetCharacteImageDead(t.LocalNumber);
-                        }
-                        if (t.isImposter)
-                        {
-                            _beginEndGame.SetCharacterImageRed(t.LocalNumber);
-                        }
-                    }
                 });
                 s1.AppendCallback(_beginEndGame.FadeOut);
                 s1.AppendInterval(5f);
@@ -272,27 +246,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s2.AppendInterval(1.5f);
                 s2.AppendCallback(() =>
                 {
-                    _beginEndGame.ActivateScreen();
-                    _beginEndGame.SetGrayBG();
-                    _beginEndGame.TurnAllPortraitsOff();
-                    var OrderedPlayers = _players
-                        .OrderBy(p => p._photonView.Owner.ActorNumber).ToArray();
-                    foreach (var t in OrderedPlayers)
-                    {
-                        if (t.isImposter)
-                        {
-                            if (LocalPlayer.isImposter)
-                            {
-                                _beginEndGame.SetImposterVictory();
-                            }
-                            else
-                            {
-                                _beginEndGame.SetCivilianDefeat();
-                            }
-                            _beginEndGame.SetCharacterImageActive(t.LocalNumber,t.Name);
-                            _beginEndGame.SetCharacterImageRed(t.LocalNumber);
-                        }
-                    }
+                    _beginEndGame.SetImposterVictory();
+                    LocalPlayer.DisableControll();
                 });
                 s2.AppendCallback(_beginEndGame.FadeOut);
                 s2.AppendInterval(5f);

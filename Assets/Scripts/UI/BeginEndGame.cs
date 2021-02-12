@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -8,8 +6,13 @@ using UnityEngine.UI;
 
 public class BeginEndGame : MonoBehaviour
 {
-    [SerializeField] private GameObject[] CharactersImages;
-    [SerializeField] private GameObject Vinet;
+    [SerializeField] private GameObject[] Characters;
+    [SerializeField] private GameObject CharacterRawImage;
+    [SerializeField] private TMP_Text CivilianNickName;
+    [SerializeField] private TMP_Text CivilianStartSubTitle;
+    [SerializeField] private GameObject[] Killers;
+    [SerializeField] private TMP_Text[] KillersNickNames;
+    [SerializeField] private TMP_Text KillerStartTitle;
     [SerializeField] private GameObject WholeScreen;
     [SerializeField] private Image DarkScreen;
     [SerializeField] private Image BG;
@@ -18,60 +21,72 @@ public class BeginEndGame : MonoBehaviour
     [SerializeField] private GameObject CivilianScreen;
     [SerializeField] private GameObject KillerScreen;
     [SerializeField] private GameObject CivilianVictory;
-    [SerializeField] private GameObject CivilianDefeat;
     [SerializeField] private GameObject ImposterVictory;
     [Header("Sounds")]
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _StartSound;
     [SerializeField] private AudioClip _CivilianWinSound;
     [SerializeField] private AudioClip _ImposterWinSound;
-
-
+    
     private void Start()
     {
         StartCoroutine(FindAudioSource());
     }
-
-    private IEnumerator FindAudioSource()
+    
+    public void StartCivilianScreen()
     {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        _audioSource = GameManager.Instance.LocalPlayer.UiaAudioSource;
+        BG.sprite = GreenBg;
+        CivilianScreen.SetActive(true);
+        _audioSource.PlayOneShot(_StartSound);
+        CharacterRawImage.SetActive(true);
+        Characters[GameManager.Instance.LocalPlayer.SkinID].SetActive(true);
+        CivilianNickName.text = GameManager.Instance.LocalPlayer.Name;
+        CivilianStartSubTitle.text =
+            $"there is <color=red>{GameManager.Instance.KillerPlayers.Count} killer</color> among us";
     }
 
+    public void StartKillerScreen()
+    {
+        BG.sprite = GrayBg;
+        KillerScreen.SetActive(true);
+        _audioSource.PlayOneShot(_StartSound);
+        for (int i = 0; i < GameManager.Instance.KillerPlayers.Count; i++)
+        {
+            Killers[i].SetActive(true);
+            KillersNickNames[i].text = GameManager.Instance.KillerPlayers[i].Name;
+        }
+        KillerStartTitle.text = GameManager.Instance.KillerPlayers.Count > 1 ?
+            "You are <color #9C2116>Killers</color>" :
+            "You are <color #9C2116>Killer</color>";
+    }
     public void SetCivilianVictory()
     {
+        BG.sprite = GreenBg;
         CivilianVictory.SetActive(true);
         CivilianScreen.SetActive(false);
         KillerScreen.SetActive(false);
         _audioSource.PlayOneShot(_CivilianWinSound);
-    }
-
-    public void TurnAllPortraitsOff()
-    {
-        foreach (var image in CharactersImages)
+        foreach (var character in Characters)
         {
-            image.SetActive(false);
-        }    
+            character.SetActive(false);
+        }
+        Characters[GameManager.Instance.LocalPlayer.SkinID].SetActive(true);
+        CivilianNickName.text = GameManager.Instance.LocalPlayer.Name;
     }
     
-    public void SetCivilianDefeat()
-    {
-        CivilianDefeat.SetActive(true);
-        CivilianScreen.SetActive(false);
-        KillerScreen.SetActive(false);
-        _audioSource.PlayOneShot(_ImposterWinSound);
-    }
     public void SetImposterVictory()
     {
+        BG.sprite = GrayBg;
         ImposterVictory.SetActive(true);
         CivilianScreen.SetActive(false);
         KillerScreen.SetActive(false);
+        CharacterRawImage.SetActive(false);
         _audioSource.PlayOneShot(_ImposterWinSound);
+        for (int i = 0; i < GameManager.Instance.KillerPlayers.Count; i++)
+        {
+            Killers[i].SetActive(true);
+            KillersNickNames[i].text = GameManager.Instance.KillerPlayers[i].Name;
+        }
     }
     public void FadeIn()
     {
@@ -92,51 +107,20 @@ public class BeginEndGame : MonoBehaviour
         });
     }
 
-    public void SetGreenBG()
+    public void ActivateScreen()
     {
-        BG.sprite = GreenBg;
+        WholeScreen.SetActive(true);
     }
-
-    public void SetGrayBG()
-    {
-        BG.sprite = GrayBg;
-    }
-    public void SetCharacterImageActive(int id,string Name)
-    {
-        CharactersImages[id].SetActive(true);
-        CharactersImages[id].GetComponentInChildren<TMP_Text>().text = Name;
-    }
-
-    public void SetCharacteImageDead(int id)
-    {
-        CharactersImages[id].GetComponent<Image>().color = new Color(0.17f, 0.17f, 0.17f);
-    }
-
-    public void SetCharacterImageRed(int id)
-    {
-        CharactersImages[id].GetComponent<Image>().color = Color.red;
-    }
-
     public void DisableScreen()
     {
         WholeScreen.SetActive(false);
     }
-
-    public void SetCivilianScreen(bool isActive)
+    
+    private IEnumerator FindAudioSource()
     {
-        CivilianScreen.SetActive(isActive);
-        _audioSource.PlayOneShot(_StartSound);
-    }
-
-    public void SetKillerScreen(bool isActive)
-    {
-        KillerScreen.SetActive(isActive);
-        Vinet.SetActive(isActive);
-        _audioSource.PlayOneShot(_StartSound);
-    }
-
-    public void ActivateScreen()
-    {
-        WholeScreen.SetActive(true);
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        _audioSource = GameManager.Instance.LocalPlayer.UiaAudioSource;
     }
 }

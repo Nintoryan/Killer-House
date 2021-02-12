@@ -88,7 +88,7 @@ namespace Voting
                 else
                 {
                     _playerAvatars[i].gameObject.SetActive(true);
-                    _playerAvatars[i].Initialize(controllers[i].Name, controllers[i].LocalNumber, controllers[i]._photonView.Owner.ActorNumber);
+                    _playerAvatars[i].Initialize(controllers[i].Name, controllers[i].SkinID, controllers[i]._photonView.Owner.ActorNumber);
                     _playerAvatars[i].localPlayerNumber = i;
                     if (controllers[i]._photonView.IsMine)
                     {
@@ -291,7 +291,7 @@ namespace Voting
                     NotOneMaxPlayer = true;
                 }
             }
-            if (NotOneMaxPlayer)
+            if (NotOneMaxPlayer || MaxKickScore < GameManager.Instance._players.Count(p => !p.IsDead)/2)
             {
                 RaiseKickedEvent(-1);
             }

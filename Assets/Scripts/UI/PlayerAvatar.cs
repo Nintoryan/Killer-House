@@ -38,7 +38,7 @@ namespace Voting
             if (!_suspectedByPlayersIDs.Contains(id))
             {
                 _suspectedByPlayersIDs.Add(id);
-                VoitingPortraits[id].gameObject.SetActive(true);
+                VoitingPortraits[GameManager.Instance.FindPlayer(id).SkinID].gameObject.SetActive(true);
             }
         }
         public void RemoveFromSuspectedByPlayer(int id)
@@ -46,7 +46,7 @@ namespace Voting
             if (_suspectedByPlayersIDs.Contains(id))
             {
                 _suspectedByPlayersIDs.Remove(id);
-                VoitingPortraits[id].gameObject.SetActive(false);
+                VoitingPortraits[GameManager.Instance.FindPlayer(id).SkinID].gameObject.SetActive(false);
             }
         }
 

@@ -156,7 +156,15 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         {
             PlayerPrefs.SetString("NickName",playerName);
             PhotonNetwork.LocalPlayer.NickName = playerName;
-            PhotonNetwork.ConnectUsingSettings();
+            if (PhotonNetwork.IsConnected)
+            {
+                LoginPanel.SetActive(false);
+                SelectionPanel.SetActive(true);
+            }
+            else
+            {
+                PhotonNetwork.ConnectUsingSettings();
+            }
         }
         else
         {

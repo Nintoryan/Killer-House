@@ -31,7 +31,7 @@ public class Advertisment : MonoBehaviour
         {
             if (Instance != this)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

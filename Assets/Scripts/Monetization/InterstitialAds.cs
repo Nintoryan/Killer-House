@@ -32,7 +32,7 @@ public class InterstitialAds : MonoBehaviour
         var parametrs = new Dictionary<string, object>
             {
             {"ad_type", "interstitial"},
-            {"placement", "end_day_ad"},
+            {"placement", "match"},
             {"result", "clicked"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
             };
@@ -54,7 +54,7 @@ public class InterstitialAds : MonoBehaviour
         var parametrs = new Dictionary<string, object>
         {
             {"ad_type", "interstitial"},
-            {"placement", "end_day_ad"},
+            {"placement", "match"},
             {"result", "watched"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };
@@ -88,7 +88,7 @@ public class InterstitialAds : MonoBehaviour
         var parametrs = new Dictionary<string, object>
             {
             {"ad_type", "interstitial"},
-            {"placement", "end_day_ad"},
+            {"placement", "match"},
             {"result", "canceled"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
             };

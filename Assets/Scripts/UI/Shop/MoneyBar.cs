@@ -37,5 +37,10 @@ public class MoneyBar : MonoBehaviour
             Wallet.Keys += 1;
             Refresh();
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 }

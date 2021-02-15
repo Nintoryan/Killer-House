@@ -21,6 +21,7 @@ public class RewardedAds : MonoBehaviour
     public event UnityAction OnReciveReward;
     public event UnityAction OnDismissed;
 
+    
     public void SetAnalyticsData(Dictionary<string, object> adsAvailable, Dictionary<string, object> adsStarted, Dictionary<string, object> adsClicked, Dictionary<string, object> adsCanceled, Dictionary<string, object> adsWatched)
     {
         AdsAvailable = adsAvailable;
@@ -32,6 +33,47 @@ public class RewardedAds : MonoBehaviour
 
     public void Show()
     {
+        var available = new Dictionary<string, object>
+        {
+            {"ad_type", "rewarded"},
+            {"placement", "get_money"},
+            {"result", Advertisment.Instance.IsRewardedReady ? "success" : "not_available"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+
+        var start = new Dictionary<string, object>
+        {
+            {"ad_type", "rewarded"},
+            {"placement", "get_money"},
+            {"result", "start"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+
+        var clicked = new Dictionary<string, object>
+        {
+            {"ad_type", "rewarded"},
+            {"placement", "get_money"},
+            {"result", "clicked"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+
+        var canceled = new Dictionary<string, object>
+        {
+            {"ad_type", "rewarded"},
+            {"placement", "get_money"},
+            {"result", "canceled"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+
+        var watched = new Dictionary<string, object>
+        {
+            {"ad_type", "rewarded"},
+            {"placement", "get_money"},
+            {"result", "watched"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+
+        Advertisment.Instance.RewardedAd.SetAnalyticsData(available, start, clicked, canceled, watched);
         var metrica = AppMetrica.Instance;        
         metrica.ReportEvent("video_ads_available", AdsAvailable);
 

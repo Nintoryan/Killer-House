@@ -230,7 +230,7 @@ namespace Voting
                             {
                                 if (PhotonNetwork.IsMasterClient)
                                 {
-                                    PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
+                                    PhotonNetwork.RaiseEvent(42,KickedPlayerActorID, options, sendOptions);
                                 }
                             });
                         }

@@ -976,7 +976,9 @@
           </e>
           <e p="Monetization" t="Include">
             <e p="Advertisment.cs" t="Include" />
+            <e p="GDPR.cs" t="Include" />
             <e p="InterstitialAds.cs" t="Include" />
+            <e p="NoAdsPurchase.cs" t="Include" />
             <e p="RewardedAdButton.cs" t="Include" />
             <e p="RewardedAds.cs" t="Include" />
           </e>

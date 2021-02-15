@@ -19,8 +19,10 @@ public class FillingMinigame : Minigame
         remove => _goalReached.RemoveListener(value);
     }
 
-    private void Start()
+    public override void StartMinigame()
     {
+        base.StartMinigame();
+
         _step = (1 - _target.localScale.x) / _duration;
         _startScale = _target.localScale.x;
     }

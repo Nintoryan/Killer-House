@@ -9,18 +9,13 @@ public class FastTapMinigame : Minigame
     [SerializeField] private float _decreasingStep;
     [SerializeField] private Button _button;
     [SerializeField] private UnityEvent _goalReached;
-    private float _minScale;
+    private float _minScale = 0.2f;
     private bool _isDone;
 
     public event UnityAction GoalReached
     {
         add => _goalReached.AddListener(value);
         remove => _goalReached.RemoveListener(value);
-    }
-
-    private void Start()
-    {
-        _minScale = _target.localScale.x;
     }
 
     private void FixedUpdate()

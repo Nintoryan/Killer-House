@@ -6,6 +6,7 @@ using DG.Tweening;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using Shop;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,8 +36,17 @@ namespace Voting
         private bool isSkiped;
         private bool VotingStarted;
         private bool IsVotesShown;
-        
-        
+
+        public static VotingManager Instance;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+        }
+
         public static void RaiseVotingEvent(Controller WhoStarted)
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
@@ -314,7 +324,7 @@ namespace Voting
             fromPlayer.IsSkiped = false; 
             fromPlayer._suspectPlayer = toPlayer;
             fromPlayer.Voted.gameObject.SetActive(true);
-            toPlayer.AddToSuspectedByPlayer(fromPlayer.localPlayerNumber);
+            toPlayer.AddToSuspectedByPlayer(fromPlayer.localPlayerNumber,fromPlayer.SkinID);
         }
 
         private bool isAllVoted()

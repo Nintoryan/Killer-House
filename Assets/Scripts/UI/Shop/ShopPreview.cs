@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,6 +9,7 @@ namespace Shop
     public class ShopPreview : MonoBehaviour
     {
         [SerializeField] private GameObject[] AllSkins;
+        [SerializeField] private GameObject AddMoneypPanel;
         private GameObject CurrentSkin;
         [SerializeField] private Button BuyButton;
         [SerializeField] private Image BuyButtonCurrency;
@@ -65,8 +65,8 @@ namespace Shop
                     
                     if (_item._currency == Currency.Money)
                     {
-                        BuyButton.interactable = Wallet.Balance >= _item.Cost;
                         BuyButtonCurrency.sprite = Skull;
+                        BuyButton.interactable = true;
                     }
                     else
                     {
@@ -159,6 +159,7 @@ namespace Shop
                     Wallet.Balance -= currentItem.Cost;
                     break;
                 case Currency.Money:
+                    AddMoneypPanel.SetActive(true);
                     return;
                 case Currency.Wins when Wallet.Keys >= currentItem.Cost:
                     Wallet.Keys -= currentItem.Cost;

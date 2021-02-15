@@ -16,7 +16,25 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
 
     public InputField RoomNameInputField;
     public InputField MaxPlayersInputField;
+    private int MaxPlayers
+    {
+        get
+        {
+            int.TryParse(MaxPlayersInputField.text,out var result);
+            return result;
+        }
+        set => MaxPlayersInputField.text = Mathf.Clamp(value,Killers+3,10).ToString();
+    }
     public InputField KillersAmountInputField;
+    private int Killers
+    {
+        get
+        {
+            int.TryParse(KillersAmountInputField.text,out var result);
+            return result;
+        }
+        set => KillersAmountInputField.text = Mathf.Clamp(value,1,3).ToString();
+    }
 
     [Header("Join Random Room Panel")] public GameObject JoinRandomRoomPanel;
 
@@ -33,12 +51,22 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.SendRate = 24;
+        PhotonNetwork.GameVersion = Application.version; 
         PhotonNetwork.SerializationRate = 24;
 
         cachedRoomList = new Dictionary<string, RoomInfo>();
         roomListEntries = new Dictionary<string, GameObject>();
+        RoomNameInputField.text = "Room " + Random.Range(1000, 10000);
 
-        PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+        if (!PlayerPrefs.HasKey("NickName"))
+        {
+            PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+        }
+        else
+        {
+            PlayerNameInput.text = PlayerPrefs.GetString("NickName");
+        }
+        
     }
 
     #endregion
@@ -104,31 +132,10 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         roomName = (roomName.Equals(string.Empty)) ? "Room " + Random.Range(1000, 10000) : roomName;
 
         byte.TryParse(MaxPlayersInputField.text, out var maxPlayers);
-        if (maxPlayers == 0)
-        {
-            maxPlayers = 8;
-        }
-        maxPlayers = (byte) Mathf.Clamp(maxPlayers, 4, 10);
-
         int.TryParse(KillersAmountInputField.text, out var AmountOfKillers);
-        if (AmountOfKillers == 0)
-        {
-            if (maxPlayers <= 6)
-            {
-                AmountOfKillers = 1;
-            }else if (maxPlayers < 10)
-            {
-                AmountOfKillers = 2;
-            }
-            else
-            {
-                AmountOfKillers = 3;
-            }
-        }
+
         PlayerPrefs.SetInt("HostAmountOfKillers",AmountOfKillers);
-
-        var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 10000};
-
+        var options = new RoomOptions {MaxPlayers = maxPlayers, PlayerTtl = 1000};
         PhotonNetwork.CreateRoom(roomName, options, null);
     }
 
@@ -136,7 +143,6 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
         SetActivePanel(JoinRandomRoomPanel.name);
         PhotonNetwork.JoinRandomRoom();
-
     }
 
     public void Disconnect()
@@ -146,9 +152,9 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     public void OnLoginButtonClicked()
     {
         string playerName = PlayerNameInput.text;
-
         if (!playerName.Equals(""))
         {
+            PlayerPrefs.SetString("NickName",playerName);
             PhotonNetwork.LocalPlayer.NickName = playerName;
             PhotonNetwork.ConnectUsingSettings();
         }
@@ -164,7 +170,6 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.JoinLobby();
         }
-
         SetActivePanel(RoomListPanel.name);
     }
 
@@ -212,7 +217,6 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
                 {
                     cachedRoomList.Remove(info.Name);
                 }
-
                 continue;
             }
 
@@ -240,5 +244,28 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
 
             roomListEntries.Add(info.Name, entry);
         }
+    }
+
+
+    public void IncreaseKillersLevel()
+    {
+        Killers++;
+        MaxPlayers += 0;
+    }
+
+    public void DecreaseKillersLevel()
+    {
+        Killers--;
+        MaxPlayers += 0;
+    }
+
+    public void IncreasePlayersLevel()
+    {
+        MaxPlayers++;
+    }
+
+    public void DecreasePlayersLevel()
+    {
+        MaxPlayers--;
     }
 }

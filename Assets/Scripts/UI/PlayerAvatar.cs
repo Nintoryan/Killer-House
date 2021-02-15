@@ -11,7 +11,6 @@ namespace Voting
         public Image WhoStartedIcon;
         [SerializeField] private Button _button;
         [SerializeField] private TMP_Text _nickName;
-        [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private Image _cross;
         public Image Voted;
         [SerializeField] private Image Skiped;
@@ -19,6 +18,8 @@ namespace Voting
         [SerializeField] private Sprite[] AllPortraits;
         public PlayerAvatar _suspectPlayer;
         public GameObject WhoVotedParent;
+
+        public int SkinID;
 
         private bool _isSkiped;
         public bool IsSkiped
@@ -30,15 +31,19 @@ namespace Voting
                 Skiped.gameObject.SetActive(value);
             } }
         private List<int> _suspectedByPlayersIDs = new List<int>();
+
+        public void Select()
+        {
+            VotingManager.Instance.RaiseSetDependencyEvent(this);
+        }
         
-        //public PlayerAvatar _protectedPlayer;
-        
-        public void AddToSuspectedByPlayer(int id)
+        public void AddToSuspectedByPlayer(int id,int skinID)
         {
             if (!_suspectedByPlayersIDs.Contains(id))
             {
                 _suspectedByPlayersIDs.Add(id);
-                VoitingPortraits[GameManager.Instance.FindPlayer(id).SkinID].gameObject.SetActive(true);
+                VoitingPortraits[id].gameObject.SetActive(true);
+                VoitingPortraits[id].sprite = AllPortraits[skinID];
             }
         }
         public void RemoveFromSuspectedByPlayer(int id)
@@ -46,22 +51,21 @@ namespace Voting
             if (_suspectedByPlayersIDs.Contains(id))
             {
                 _suspectedByPlayersIDs.Remove(id);
-                VoitingPortraits[GameManager.Instance.FindPlayer(id).SkinID].gameObject.SetActive(false);
+                VoitingPortraits[id].gameObject.SetActive(false);
             }
         }
-
-        private int _kickScore;
-        public int KickScore
-        {
-            get => _suspectedByPlayersIDs.Count;
-        }
+        
+        public int KickScore => _suspectedByPlayersIDs.Count;
         public int thisPlayerActorID;
         public int localPlayerNumber;
 
-        public bool CanVote = false;
+        public bool CanVote;
+        private int _kickScore;
+
         public void Initialize(string NickName, int skinID, int ActorID)
         {
             _icon.sprite = AllPortraits[skinID];
+            SkinID = skinID;
             thisPlayerActorID = ActorID;
             _nickName.text = NickName;
             Voted.gameObject.SetActive(false);

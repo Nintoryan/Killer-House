@@ -87,7 +87,15 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene(0);
+        if (PlayerPrefs.GetInt("ToEndGameScreen") == 1)
+        {
+            SceneManager.LoadScene("EndGameScreen");
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
+        
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)

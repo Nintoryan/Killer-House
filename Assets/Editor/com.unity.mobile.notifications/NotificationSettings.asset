@@ -40,3 +40,4 @@ MonoBehaviour:
     - False
     - com.unity3d.player.UnityPlayerActivity
   TrackedResourceAssets: []
+  <CustomEditor>k__BackingField: {fileID: 0}

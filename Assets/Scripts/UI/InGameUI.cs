@@ -3,6 +3,7 @@ using DG.Tweening;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
@@ -42,6 +43,10 @@ public class InGameUI : MonoBehaviour
             };
             metrica.ReportEvent("level_finish",paramerts);
             metrica.SendEventsBuffer();
+            if (result != "exit")
+            {
+                PlayerPrefs.SetInt("ToEndGameScreen",1);
+            }
         }
         PhotonNetwork.LeaveRoom();
     }

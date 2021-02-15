@@ -12,13 +12,16 @@ public class MoneyBar : MonoBehaviour
     private void Start()
     {
         Refresh();
-        _shopPreview.OnBuy += Refresh;
+        if (_shopPreview != null)
+        {
+            _shopPreview.OnBuy += Refresh;
+        }
     }
 
-    private void Refresh()
+    public void Refresh()
     {
         Money.text = Wallet.Balance.ToString();
-        Wins.text = Statistics.Wins.ToString();
+        Wins.text = Wallet.Keys.ToString();
     }
 
     private void Update()
@@ -32,6 +35,7 @@ public class MoneyBar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             Wallet.Keys += 1;
+            Refresh();
         }
     }
 }

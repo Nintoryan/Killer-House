@@ -53,5 +53,7 @@ public class Minigame : MonoBehaviour
             _minigamesManager.Close();
         });
         Complete();
+
+        Interface.SetActive(false);
     }
 }

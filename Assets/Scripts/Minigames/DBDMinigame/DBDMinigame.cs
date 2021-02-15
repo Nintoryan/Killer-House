@@ -18,8 +18,10 @@ public class DBDMinigame : Minigame
         remove => _goalReached.RemoveListener(value);
     }
 
-    private void Start()
+    public override void StartMinigame()
     {
+        base.StartMinigame();
+
         _index = 0;
         SetArcPosition(_index);
 

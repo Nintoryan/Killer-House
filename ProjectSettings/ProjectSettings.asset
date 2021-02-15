@@ -128,7 +128,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.2.27
+  bundleVersion: 2.3.28
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -270,7 +270,7 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  AndroidMinifyWithR8: 0
+  AndroidMinifyWithR8: 1
   AndroidMinifyRelease: 1
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
@@ -705,7 +705,7 @@ PlayerSettings:
   scriptingBackend:
     Android: 1
   il2cppCompilerConfiguration:
-    Android: 2
+    Android: 0
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0

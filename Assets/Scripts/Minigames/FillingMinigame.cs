@@ -11,7 +11,8 @@ public class FillingMinigame : Minigame
     [SerializeField] private EventTrigger _eventTrigger;
     private Coroutine _increasing;
     private float _step;
-    private float _startScale;
+
+    private const float _startScale = 0.2f;
 
     public event UnityAction GoalReached
     {
@@ -23,8 +24,7 @@ public class FillingMinigame : Minigame
     {
         base.StartMinigame();
 
-        _step = (1 - _target.localScale.x) / _duration;
-        _startScale = _target.localScale.x;
+        _step = (1 - _startScale) / _duration;
     }
 
     public override void InitializeMiniGame()

@@ -42,7 +42,7 @@ public class DBDMinigame : Minigame
 
     public void OnTap()
     {
-        if (isMiniGameStarted)
+        if (!isMiniGameStarted)
         {
             StartMinigame();
         }

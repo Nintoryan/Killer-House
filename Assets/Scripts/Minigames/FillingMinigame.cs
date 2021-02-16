@@ -37,7 +37,7 @@ public class FillingMinigame : Minigame
         _eventTriggerFacade.OnPointerUp += Stop;
     }
 
-    public void Launch()
+    private void Launch()
     {
         if (!isMiniGameStarted)
         {
@@ -46,7 +46,7 @@ public class FillingMinigame : Minigame
         _increasing = StartCoroutine(Increasing());
     }
 
-    public void Stop()
+    private void Stop()
     {
         if (_increasing != null)
         {

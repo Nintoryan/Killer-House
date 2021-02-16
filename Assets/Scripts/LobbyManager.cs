@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -22,17 +23,17 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         s.AppendCallback(() =>
         {
             int playersAmount = System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount);
+            var NumbersList = new List<int>();
+            for (int i = 0; i < playersAmount; i++)
+            {
+                NumbersList.Add(i);
+            }
             int ImposterID1 = Random.Range(0, playersAmount);
-            int ImposterID2 = ImposterID1;
-            while (ImposterID2 == ImposterID1)
-            {
-                ImposterID2 = Random.Range(0, playersAmount);
-            }
-            int ImposterID3 = ImposterID1;
-            while (ImposterID3 == ImposterID1 || ImposterID3 == ImposterID2)
-            {
-                ImposterID3 = Random.Range(0, playersAmount);
-            }
+            NumbersList.Remove(ImposterID1);
+            int ImposterID2 = NumbersList[Random.Range(0, NumbersList.Count)];
+            NumbersList.Remove(ImposterID2);
+            int ImposterID3 = NumbersList[Random.Range(0, NumbersList.Count)];
+            NumbersList.Remove(ImposterID3);
             Debug.Log($"Players Amount:{PhotonNetwork.CurrentRoom.PlayerCount}");
             Debug.Log($"Imposter:{ImposterID1},{ImposterID2},{ImposterID3}");
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};

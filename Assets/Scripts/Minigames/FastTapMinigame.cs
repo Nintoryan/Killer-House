@@ -39,7 +39,7 @@ public class FastTapMinigame : Minigame
 
     public void OnTap()
     {
-        if (isMiniGameStarted)
+        if (!isMiniGameStarted)
         {
             StartMinigame();
         }

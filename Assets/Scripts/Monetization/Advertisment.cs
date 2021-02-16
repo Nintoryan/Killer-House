@@ -19,13 +19,20 @@ public class Advertisment : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             MaxSdkCallbacks.OnSdkInitializedEvent += sdkConfiguration => {
                 _interstitialAd.Initialize();
                 RewardedAd.Initialize();
             };
             MaxSdk.SetSdkKey("6AQkyPv9b4u7yTtMH9PT40gXg00uJOTsmBOf7hDxa_-FnNZvt_qTLnJAiKeb5-2_T8GsI_dGQKKKrtwZTlCzAR");
             MaxSdk.InitializeSdk();
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

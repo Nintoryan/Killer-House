@@ -6001,6 +6001,7 @@ GameObject:
   - component: {fileID: 2696801478549155708}
   - component: {fileID: 2215563708116420863}
   - component: {fileID: 1746604318740268446}
+  - component: {fileID: 9109354202932964938}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -6283,6 +6284,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2679382723031313968}
   m_Enabled: 1
+--- !u!136 &9109354202932964938
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2679382723031313968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.39909935
+  m_Height: 1.6242875
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.823855, z: 0}
 --- !u!1 &2697811104203356167
 GameObject:
   m_ObjectHideFlags: 0
@@ -24302,14 +24317,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9a8f31cc2f3cf04c92a2895198a00c4, type: 3}
---- !u!4 &5711716637905552891 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6961268041219670976, guid: f9a8f31cc2f3cf04c92a2895198a00c4, type: 3}
-  m_PrefabInstance: {fileID: 3449612606432675387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8727767023592568808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6251064170129355219, guid: f9a8f31cc2f3cf04c92a2895198a00c4, type: 3}
+  m_PrefabInstance: {fileID: 3449612606432675387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5711716637905552891 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6961268041219670976, guid: f9a8f31cc2f3cf04c92a2895198a00c4, type: 3}
   m_PrefabInstance: {fileID: 3449612606432675387}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3546541865783823135

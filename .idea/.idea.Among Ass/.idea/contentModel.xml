@@ -964,6 +964,13 @@
           <e p="GameManager.cs" t="Include" />
           <e p="LobbyManager.cs" t="Include" />
           <e p="Minigames" t="Include">
+            <e p="DBDMinigame" t="Include">
+              <e p="CursorRotator.cs" t="Include" />
+              <e p="DBDMinigame.cs" t="Include" />
+            </e>
+            <e p="EventTriggerFacade.cs" t="Include" />
+            <e p="FastTapMinigame.cs" t="Include" />
+            <e p="FillingMinigame.cs" t="Include" />
             <e p="Gestures" t="Include">
               <e p="Swipe.cs" t="Include" />
             </e>
@@ -971,6 +978,12 @@
             <e p="MinigamePresenter.cs" t="Include" />
             <e p="MinigamesManager.cs" t="Include" />
             <e p="MinigameZone.cs" t="Include" />
+            <e p="RotatingMinigame" t="Include">
+              <e p="RotatingInput.cs" t="Include" />
+              <e p="RotatingMinigame.cs" t="Include" />
+              <e p="RotationDirection.cs" t="Include" />
+            </e>
+            <e p="RotatingUtilities.cs" t="Include" />
             <e p="SwipeMinigame.cs" t="Include" />
             <e p="TapsMinigame.cs" t="Include" />
           </e>
@@ -1023,6 +1036,7 @@
             <e p="VotingManager.cs" t="Include" />
           </e>
           <e p="VotingZone.cs" t="Include" />
+          <e p="WatchAdsZone.cs" t="Include" />
         </e>
       </e>
       <e p="MaxSdk.Scripts.csproj" t="IncludeRecursive" />

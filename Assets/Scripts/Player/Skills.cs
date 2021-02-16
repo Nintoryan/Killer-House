@@ -13,6 +13,7 @@ namespace AAPlayer
         [SerializeField] private KillingZone _killingZone;
         [SerializeField] private Body _body;
         [SerializeField] private Button _killButton;
+        [SerializeField] private Button _watchTVButton;
         [SerializeField] private Button _AlarmButton;
         [SerializeField] private Button domofonButton;
         [SerializeField] private Button _interactButton;
@@ -102,8 +103,7 @@ namespace AAPlayer
                 }
             }
         }
-        
-        
+
         public void TryKill()
         {
             if (_killingZone.GetPlayer() != null)
@@ -189,6 +189,21 @@ namespace AAPlayer
         public void SetKillingActive(bool isActive)
         {
             _killButton.gameObject.SetActive(isActive);
+        }
+
+        public void SetWatchTVButton(bool isActive)
+        {
+            _watchTVButton.gameObject.SetActive(isActive);
+        }
+        public void SetWatchTVInteractable(bool isActive)
+        {
+            _watchTVButton.interactable = isActive;
+            _watchTVButton.GetComponent<Image>().raycastTarget = isActive;
+        }
+
+        public void WatchTV()
+        {
+            Advertisment.Instance.ShowRewarded();
         }
 
         public void SetKillingInteractable(bool isInteractable)

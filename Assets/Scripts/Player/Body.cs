@@ -76,6 +76,11 @@ namespace AAPlayer
             {
                 _skills.SetAlarmButtonInteractable(true);
             }
+
+            if (other.GetComponent<WatchAdsZone>() != null)
+            {
+                _skills.SetWatchTVInteractable(true);
+            }
             var MiniGame = other.GetComponent<MinigameZone>();
             if (MiniGame != null)
             {
@@ -121,6 +126,10 @@ namespace AAPlayer
             if (other.GetComponent<VotingZone>() != null)
             {
                 _skills.SetAlarmButtonInteractable(false);
+            }
+            if (other.GetComponent<WatchAdsZone>() != null)
+            {
+                _skills.SetWatchTVInteractable(false);
             }
 
             if (other.GetComponent<MinigameZone>() != null)

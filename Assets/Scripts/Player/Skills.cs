@@ -48,7 +48,7 @@ namespace AAPlayer
         {
             ShowArrows(_body.myShortCutZone.Number);
             CurrentShortCutIn = _body.myShortCutZone.Number;
-            _body.myShortCutZone.Use(_body._Controller.LocalNumber);
+            _body.myShortCutZone.Use(_body._Controller._photonView.Owner.ActorNumber);
             _body.Hide();
             JoyStick.SetActive(false);
         }
@@ -56,7 +56,7 @@ namespace AAPlayer
         private void ExitShortCut()
         {
             HideAllArrows();
-            GameManager.Instance.AllShortCutZones[CurrentShortCutIn].Use(_body._Controller.LocalNumber);
+            GameManager.Instance.AllShortCutZones[CurrentShortCutIn].Use(_body._Controller._photonView.Owner.ActorNumber);
             _body.Show();
             JoyStick.SetActive(true);
         }

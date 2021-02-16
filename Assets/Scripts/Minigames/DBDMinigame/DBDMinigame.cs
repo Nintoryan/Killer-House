@@ -24,8 +24,6 @@ public class DBDMinigame : Minigame
 
         _index = 0;
         SetArcPosition(_index);
-
-        _cursor.transform.DORotate(Vector3.forward * -359, _cursor.Step).SetLoops(-1).SetSpeedBased();
     }
 
     public override void InitializeMiniGame()

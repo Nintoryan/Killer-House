@@ -39,18 +39,15 @@ public class FillingMinigame : Minigame
 
     public void Launch()
     {
-        _increasing = StartCoroutine(Increasing());
-        Debug.LogWarning("Вызов метода Launch!");
-
-        if (isMiniGameStarted)
+        if (!isMiniGameStarted)
         {
             StartMinigame();
         }
+        _increasing = StartCoroutine(Increasing());
     }
 
     public void Stop()
     {
-        Debug.LogWarning("Вызов метода Stop!");
         if (_increasing != null)
         {
             StopCoroutine(_increasing);
@@ -59,15 +56,12 @@ public class FillingMinigame : Minigame
 
     private IEnumerator Increasing()
     {
-        Debug.LogWarning($"Куратина началась step={_step}!");
         var currentScale = _target.localScale.x;
 
         while (currentScale <= 1)
         {
             _target.localScale += Vector3.one * _step * Time.fixedDeltaTime;
             currentScale = _target.localScale.x;
-            Debug.LogWarning($"Куратина работает currentScale{currentScale}!");
-
             yield return new WaitForFixedUpdate();
         }
 

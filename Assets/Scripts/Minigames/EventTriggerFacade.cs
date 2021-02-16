@@ -18,13 +18,11 @@ public class EventTriggerFacade : MonoBehaviour
     public void PointerDown()
     {
         OnPointerDown?.Invoke();
-        Debug.LogWarning("КНОПКА НАЖАТА!!!");
     }
 
     private void PointerUp()
     {
         OnPointerUp?.Invoke();
-        Debug.LogWarning("КНОПКА ОТЖАТА!!!");
     }
 
     public void ClearEvents()

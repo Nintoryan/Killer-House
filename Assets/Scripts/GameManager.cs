@@ -252,7 +252,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         }
         if (PhotonNetwork.IsMasterClient && isGameStarted)
         {
-            CheckGameEnded();
+            var s = DOTween.Sequence();
+            s.AppendInterval(1.5f);
+            s.AppendCallback(CheckGameEnded);
         }
     }
 
@@ -305,7 +307,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     var OrderedPlayers = _players
                         .OrderBy(p => p._photonView.Owner.ActorNumber)
                         .ToArray();
-                    var imposterIDs = KillersIDs;
+                    var imposterIDs = new List<int>();
+                    for (int i = 0; i < AmountOfKillers; i++)
+                    {
+                        imposterIDs.Add(KillersIDs[i]);
+                    }
                     int impostersAdded = 0;
                     for (int i = 0; i < OrderedPlayers.Length; i++)
                     {
@@ -376,6 +382,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     if (LocalPlayer.isImposter)
                     {
                         LocalPlayer._skills.KillGoCD();
+                    }
+                    if (Advertisment.Instance.IsInterstitialReady)
+                    {
+                        Advertisment.Instance.ShowInterstitial();
                     }
                 });
     }

@@ -145,7 +145,7 @@ public class EndGame : MonoBehaviour
         {
             if (Advertisment.Instance != null)
             {
-                if (Advertisment.Instance.IsInterstitialReady)
+                if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
                 {
                     Advertisment.Instance.ShowInterstitial();
                 }

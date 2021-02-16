@@ -10387,7 +10387,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 990164119}
         m_TargetAssemblyTypeName: NoAdsPurchase, Assembly-CSharp
-        m_MethodName: DisableAds
+        m_MethodName: OnPurchaseSuccess
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

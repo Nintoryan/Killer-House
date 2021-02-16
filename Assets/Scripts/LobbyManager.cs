@@ -90,6 +90,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         if (PlayerPrefs.GetInt("ToEndGameScreen") == 1)
         {
+            PlayerPrefs.SetInt("ToEndGameScreen",0);
             SceneManager.LoadScene("EndGameScreen");
         }
         else

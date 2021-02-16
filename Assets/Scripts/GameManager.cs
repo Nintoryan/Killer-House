@@ -226,11 +226,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         if(!PhotonNetwork.IsMasterClient) return;
-        CheckGameEnded();
         LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{otherPlayer.NickName} left the game");
         var p = FindPlayer(otherPlayer.ActorNumber);
         if (isGameStarted)
         {
+            CheckGameEnded();
             if (p == null)
             {
                 Debug.Log("Ой а всё, а он уже ливнул");

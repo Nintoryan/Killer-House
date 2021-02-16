@@ -155,22 +155,27 @@ namespace Voting
         }
         private void EndVoting()
         {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                TryKickWorstPlayer();
-            }
             var s = DOTween.Sequence();
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
             s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
                 VotingParent.SetActive(false);
+                LoadResult();
+                VotingResultRole.gameObject.SetActive(true);
                 VotingResults.SetActive(true);
                 GameManager.Instance.MovePlayersOnSpawn();
             });
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
             s.AppendInterval(7f);
-            s.AppendCallback(GameManager.Instance._beginEndGame.FadeIn);
+            s.AppendCallback(() =>
+            {
+                GameManager.Instance._beginEndGame.FadeIn();
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    TryKickWorstPlayer();
+                }
+            });
             s.AppendInterval(1f);
             s.AppendCallback(() =>
             {
@@ -209,58 +214,18 @@ namespace Voting
                 case 48:
                     var KickedPlayerActorID = (int) photonEvent.CustomData;
                     Debug.Log($"Событие исключения игрока получено. Данные: {KickedPlayerActorID}");
-                    if (KickedPlayerActorID == -1)
+                    if (KickedPlayerActorID != -1)
                     {
-                        VotingResultText.text = "Nobody was thrown into the basement";
-                        VotingResultRole.gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        VotingResultRole.gameObject.SetActive(true);
                         var KickedPlayer = GameManager.Instance.FindPlayer(KickedPlayerActorID);
-                        if (KickedPlayer.isImposter)
+                        KickedPlayer.SetDead();
+                        KickedPlayer.DisableDeadBody();
+                        var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+                        var sendOptions = new SendOptions {Reliability = true};
+                        if (PhotonNetwork.IsMasterClient)
                         {
-                            Debug.Log($"Исключённый игрок {KickedPlayer} был импостером.");
-                            VotingResultRole.text = $"{KickedPlayer.Name} was the <color=red>Killer</color>";
-                            var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                            var sendOptions = new SendOptions {Reliability = true};
-                            var s5 = DOTween.Sequence();
-                            s5.AppendInterval(1.5f);
-                            s5.AppendCallback(() =>
-                            {
-                                if (PhotonNetwork.IsMasterClient)
-                                {
-                                    PhotonNetwork.RaiseEvent(42,KickedPlayerActorID, options, sendOptions);
-                                }
-                            });
+                            PhotonNetwork.RaiseEvent(42, KickedPlayerActorID, options, sendOptions);
+                            PhotonNetwork.RaiseEvent(50, KickedPlayerActorID, options, sendOptions);
                         }
-                        else
-                        {
-                            Debug.Log($"Исключённый игрок {KickedPlayer} НЕ был импостером.");
-                            KickedPlayer.SetDead();
-                            KickedPlayer.DisableDeadBody();
-                            VotingResultRole.text = $"{KickedPlayer.Name} was the <color=#00BDBBff>Civilian</color>";
-                            var AlivePlayers = GameManager.Instance._players.Where(player => !player.isImposter).Count(player => !player.IsDead);
-                            if (AlivePlayers <= 1)
-                            {
-                                var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                                var sendOptions = new SendOptions {Reliability = true};
-                                if (PhotonNetwork.IsMasterClient)
-                                {
-                                    PhotonNetwork.RaiseEvent(57, 1, options, sendOptions);
-                                }
-                            }
-                            else if (PhotonNetwork.IsMasterClient)
-                            {
-                                //Только если мастер клиент уловил смерть игрока
-                                Debug.Log($"Мастер уловил смерть игрока {KickedPlayer}");
-                                Debug.Log($"У него {KickedPlayer.AvaliableQuestsAmount} не сделаных заданий, вызываю перераспределение");
-                                var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                                var sendOptions = new SendOptions {Reliability = true};
-                                PhotonNetwork.RaiseEvent(65,KickedPlayer.AvaliableQuestsAmount, options, sendOptions);
-                            }
-                        }
-                        VotingResultText.text = $"{KickedPlayer.Name} was thrown into the basement";
                     }
                     break;
                 case 51:
@@ -283,7 +248,11 @@ namespace Voting
 
         private void TryKickWorstPlayer()
         {
-            if (!PhotonNetwork.IsMasterClient) return;
+            RaiseKickedEvent(GetWorstPlayerID());
+        }
+
+        private int GetWorstPlayerID()
+        {
             var MaxKickScore = -100;
             var MaxI = 0;
             var NotOneMaxPlayer = false;
@@ -303,16 +272,14 @@ namespace Voting
             }
             if (NotOneMaxPlayer || MaxKickScore <= GameManager.Instance._players.Count(p => !p.IsDead)/2)
             {
-                RaiseKickedEvent(-1);
+                return -1;
             }
-            else
+            foreach (var p in GameManager.Instance._players.Where(p =>
+                p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].thisPlayerActorID))
             {
-                foreach (var p in GameManager.Instance._players.Where(p =>
-                    p._photonView.Owner.ActorNumber == _playerAvatars[MaxI].thisPlayerActorID))
-                {
-                    RaiseKickedEvent(p._photonView.Owner.ActorNumber);
-                }
+                return p._photonView.Owner.ActorNumber;
             }
+            return -1;
         }
         
         private void SetDependecy(PlayerAvatar fromPlayer, PlayerAvatar toPlayer)
@@ -356,6 +323,32 @@ namespace Voting
                 Debug.Log($"Я не нашёл {ActorID} в массиве {_playerAvatars}");
             }
             return _PlayerAvatar;
+        }
+
+        private void LoadResult()
+        {
+            VotingResultRole.gameObject.SetActive(true);
+            int WorstPlayerID = GetWorstPlayerID();
+            if (WorstPlayerID == -1)
+            {
+                VotingResultText.text = "Nobody was thrown into the basement";
+                VotingResultRole.gameObject.SetActive(false);
+            }
+            else
+            {
+                var KickedPlayer = GameManager.Instance.FindPlayer(GetWorstPlayerID());
+                if (KickedPlayer.isImposter)
+                {
+                    Debug.Log($"Исключённый игрок {KickedPlayer} был импостером.");
+                    VotingResultRole.text = $"{KickedPlayer.Name} was the <color=red>Killer</color>";
+                }
+                else
+                {
+                    Debug.Log($"Исключённый игрок {KickedPlayer} НЕ был импостером.");
+                    VotingResultRole.text = $"{KickedPlayer.Name} was the <color=#00BDBBff>Civilian</color>";
+                }
+                VotingResultText.text = $"{KickedPlayer.Name} was thrown into the basement";
+            }
         }
     }
 }

@@ -62,6 +62,7 @@ public class BeginEndGame : MonoBehaviour
     }
     public void SetCivilianVictory()
     {
+        ActivateScreen();
         BG.sprite = GreenBg;
         CivilianVictory.SetActive(true);
         CivilianScreen.SetActive(false);
@@ -78,6 +79,7 @@ public class BeginEndGame : MonoBehaviour
     
     public void SetImposterVictory()
     {
+        ActivateScreen();
         BG.sprite = GrayBg;
         ImposterVictory.SetActive(true);
         CivilianScreen.SetActive(false);

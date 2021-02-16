@@ -21,7 +21,7 @@ public class CursorRotator : MonoBehaviour
     private void FixedUpdate()
     {
         _cursor.localPosition = RotatingUtilities.Rotate(ref _currentAngle, _step * Time.fixedDeltaTime) * _radius;
-        _transform.localRotation *= Quaternion.AngleAxis(_step * Time.fixedDeltaTime, Vector3.forward);
+        _transform.localRotation *= Quaternion.AngleAxis(-1*_step * Time.fixedDeltaTime, Vector3.forward);
         TryToResetAngle();
     }
 

@@ -198,7 +198,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void CheckGameEnded()
     {
         //Проверка на конец игры
-        if(!PhotonNetwork.IsMasterClient) return;
         var AlivePlayers = _players.Where(player => !player.isImposter).
             Count(player => !player.IsDead);
         if (AlivePlayers <= 1)
@@ -225,12 +224,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        if(!PhotonNetwork.IsMasterClient) return;
         LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{otherPlayer.NickName} left the game");
         var p = FindPlayer(otherPlayer.ActorNumber);
         if (isGameStarted)
         {
-            CheckGameEnded();
             if (p == null)
             {
                 Debug.Log("Ой а всё, а он уже ливнул");
@@ -252,6 +249,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         catch (Exception e)
         {
             Console.WriteLine("Объект уже уничтожен!");
+        }
+        if (PhotonNetwork.IsMasterClient && isGameStarted)
+        {
+            CheckGameEnded();
         }
     }
 

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class RotatingInput : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private float _dumpingCofficient = 0.25f;
+    private float _dumpingCofficient = 0.3f;
 
     public RotatingMinigame Rotating { get; set; }
 

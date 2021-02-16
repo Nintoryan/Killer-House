@@ -187,14 +187,7 @@ namespace AAPlayer
                 Mathf.Clamp(position.z,-25,115)
             );
             _camera.transform.position = position;
-            var position1 = _Body.transform.position;
-            position1 += direction * (playerSpeed * Time.deltaTime);
-            position1 = new Vector3(
-                Mathf.Clamp(position1.x,-15,90),
-                position1.y,
-                Mathf.Clamp(position1.z,-25,115)
-            );
-            _Body.transform.position = position1;
+            _Body.transform.position = position+new Vector3(-13.48f,-20.03f,+13.31f);
             if (direction.magnitude >= 0.05f)
             {
                 _skills.isDancing = false;
@@ -250,7 +243,6 @@ namespace AAPlayer
             }
         }
         
-
         public void DieEvent()
         {
             int sendingData = _photonView.Owner.ActorNumber;

@@ -23,7 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EndGameScreen/EndGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F8918D0C-C5FC-41A1-BABA-01B207A4C016/a2/58bb1c85/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -70,8 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/PhotonPlayer/PlayerNumbering.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Voting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DeadBodyZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerListEntry.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VotingZone.cs" />
@@ -121,6 +121,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FillingMinigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" />
       </list>
     </option>
   </component>

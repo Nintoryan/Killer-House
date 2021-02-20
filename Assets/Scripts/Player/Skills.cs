@@ -4,6 +4,7 @@ using Voting;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UserData;
 
 #pragma warning disable CS0649
 namespace AAPlayer
@@ -81,7 +82,6 @@ namespace AAPlayer
             CurrentShortCutIn = id;
             MyController.controller.enabled = false;
             _body.transform.position = GameManager.Instance.AllShortCutZones[id].PlayerInSidePosition.position;
-            MyController.UpdateCameraPos();
             MyController.controller.enabled = true;
         }
 
@@ -203,6 +203,10 @@ namespace AAPlayer
 
         public void WatchTV()
         {
+            Advertisment.Instance.RewardedAd.OnReciveReward += () =>
+            {
+                Wallet.Balance += 150;
+            };
             Advertisment.Instance.ShowRewarded();
         }
 

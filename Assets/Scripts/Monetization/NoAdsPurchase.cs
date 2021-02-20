@@ -2,25 +2,21 @@
 using AppsFlyerSDK;
 using UnityEngine;
 using UnityEngine.Purchasing;
-using UnityEngine.UI;
 
 public class NoAdsPurchase : MonoBehaviour
 {
-    private Button _button;
-
     private void Start()
     {
-        _button = GetComponent<Button>();
         if (PlayerPrefs.GetInt("NoAds") == 1)
         {
             gameObject.SetActive(false);
         }
     }
-    
 
     public void OnPurchaseSuccess(Product _product)
     {
         PlayerPrefs.SetInt("NoAds",1);
+        
         //AppMetrica
         var metrica = AppMetrica.Instance;
         var parametrs = new Dictionary<string, object>
@@ -61,7 +57,7 @@ public class NoAdsPurchase : MonoBehaviour
         }
         
         //AppMetrica
-        
+        gameObject.SetActive(false);
         Debug.Log("Успешно куплено");
     }
 }

@@ -16,18 +16,38 @@ public class Minigame : MonoBehaviour
 
     public virtual void InitializeMiniGame()
     {
-        WinScreen.SetActive(false);
-        Guide.SetActive(true);
-        Interface.SetActive(true);
+        if (WinScreen != null)
+        {
+            WinScreen.SetActive(false);
+        }
+        if (Guide != null)
+        {
+            Guide.SetActive(true);
+        }
+
+        if (Interface != null)
+        {
+            Interface.SetActive(true);
+        }
         isMiniGameStarted = false;
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(true);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AllMinigames[Number]._MinigamePresenter.gameObject.SetActive(true);
+        }
     }
 
     public virtual void StartMinigame()
     {
         isMiniGameStarted = true;
-        Guide.SetActive(false);
-        GameManager.Instance.AllMinigames[Number]._MinigamePresenter.Play();
+        if (Guide != null)
+        {
+            Guide.SetActive(false);
+        }
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AllMinigames[Number]._MinigamePresenter.Play();
+        }
     }
     private void Complete()
     {

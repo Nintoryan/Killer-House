@@ -107,6 +107,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
         string roomName = "Room " + Random.Range(1000, 10000);
 
+        PlayerPrefs.SetInt("HostAmountOfKillers",1);
         RoomOptions options = new RoomOptions {MaxPlayers = 8};
 
         PhotonNetwork.CreateRoom(roomName, options, null);

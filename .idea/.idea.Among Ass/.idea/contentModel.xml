@@ -971,6 +971,10 @@
             <e p="EventTriggerFacade.cs" t="Include" />
             <e p="FastTapMinigame.cs" t="Include" />
             <e p="FillingMinigame.cs" t="Include" />
+            <e p="FindThePair" t="Include">
+              <e p="FindThePair.cs" t="Include" />
+              <e p="PairItem.cs" t="Include" />
+            </e>
             <e p="Gestures" t="Include">
               <e p="Swipe.cs" t="Include" />
             </e>

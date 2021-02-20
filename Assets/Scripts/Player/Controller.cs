@@ -9,7 +9,7 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Controller : MonoBehaviour, IPunObservable
+    public class Controller : MonoBehaviour
     {
         public CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
@@ -49,7 +49,7 @@ namespace AAPlayer
         public int SkinID
         {
             get => _skinID;
-            private set
+            set
             {
                 if (value != _skinID)
                 {
@@ -61,7 +61,7 @@ namespace AAPlayer
         public int LocalNumber
         {
             get => _localNumber;
-            private set => _localNumber = value;
+            set => _localNumber = value;
         }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
@@ -86,6 +86,10 @@ namespace AAPlayer
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
                 SkinID = PlayerPrefs.GetInt("SelectedSkin");
+                object[] sendingData = {_photonView.Owner.ActorNumber,SkinID};
+                RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.Others};
+                SendOptions sendOptions = new SendOptions {Reliability = true};
+                PhotonNetwork.RaiseEvent(77, sendingData, options, sendOptions);
             }
             NickNameTarget = controller.transform;
         }
@@ -100,6 +104,10 @@ namespace AAPlayer
                 {
                     if (busyNumbers.Contains(i)) continue;
                     LocalNumber = i;
+                    object[] sendingData = {_photonView.Owner.ActorNumber,LocalNumber};
+                    RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.Others};
+                    SendOptions sendOptions = new SendOptions {Reliability = true};
+                    PhotonNetwork.RaiseEvent(76, sendingData, options, sendOptions);
                     break;
                 }
             }
@@ -112,6 +120,10 @@ namespace AAPlayer
         {
             if (_photonView.IsMine)
             {
+                if (Input.GetKeyDown(KeyCode.K) && !IsDead)
+                {
+                    SetDead();
+                }
                 direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
                     _floatingJoystick.Direction.x + _floatingJoystick.Direction.y);
                 directionmagnitude = direction.magnitude;
@@ -148,25 +160,10 @@ namespace AAPlayer
                 _RunAudioSource.Pause();
                 _WalkAudioSource.Pause();
             }
-            
             NickNameCanvas.position =  NickNameTarget.position + new Vector3(0, 1.5f, 0);
+            _camera.transform.position = BodyCamDistance + controller.transform.position;
         }
 
-        public void UpdateCameraPos()
-        {
-            if (_photonView.IsMine)
-            {
-                if (!IsDead)
-                {
-                    _camera.transform.position = BodyCamDistance + controller.transform.position;
-                }
-                else
-                {
-                    _camera.transform.position = new Vector3(11,20,-13);
-                }
-            }
-        }
-        
         public void DisableNickName()
         {
             NickNameCanvas.gameObject.SetActive(false);
@@ -179,15 +176,14 @@ namespace AAPlayer
 
         private void DeadMove(Vector3 direction)
         {
-            var position = _camera.transform.position;
-            position += direction * (playerSpeed * Time.deltaTime);
-            position = new Vector3(
-                Mathf.Clamp(position.x,-15,90),
-                position.y,
-                Mathf.Clamp(position.z,-25,115)
+            var NewPosition = _Body.transform.position;
+            NewPosition += direction * (playerSpeed * Time.deltaTime);
+            NewPosition = new Vector3(
+                Mathf.Clamp(NewPosition.x,-15,90),
+                NewPosition.y,
+                Mathf.Clamp(NewPosition.z,-25,115)
             );
-            _camera.transform.position = position;
-            _Body.transform.position = position+new Vector3(-13.48f,-20.03f,+13.31f);
+            _Body.transform.position = NewPosition;
             if (direction.magnitude >= 0.05f)
             {
                 _skills.isDancing = false;
@@ -227,7 +223,6 @@ namespace AAPlayer
                     turnSmoothTime);
                 controller.transform.rotation = Quaternion.Euler(0f, angle, 0f);
                 controller.Move(direction * (Time.deltaTime * playerSpeed));
-                _camera.transform.position = BodyCamDistance + controller.transform.position;
             }
             else
             {
@@ -249,7 +244,6 @@ namespace AAPlayer
             RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             SendOptions sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(42, sendingData, options, sendOptions);
-            //Вызавает SetDead()
             Debug.Log($"Я убил игрока {sendingData}");
         }
 
@@ -288,6 +282,7 @@ namespace AAPlayer
         public void DisableControll()
         {
             _floatingJoystick.enabled = false;
+            direction = Vector3.zero;
         }
 
         public void ActivateControll()
@@ -304,19 +299,5 @@ namespace AAPlayer
         {
             NickNameTarget = newTarget;
         }
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(LocalNumber);
-                stream.SendNext(SkinID);
-            }else if (stream.IsReading)
-            {
-                LocalNumber = (int)stream.ReceiveNext();
-                SkinID = (int)stream.ReceiveNext();
-            }
-        }
-        
     }
 }

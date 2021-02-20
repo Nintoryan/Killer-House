@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     [FormerlySerializedAs("KillerPlayer")] public List<Controller> KillerPlayers = new List<Controller>();
     public Transform[] SpawnPlaces;
     public GameObject AmountOfPlayers;
-    public GameObject AmountOfKillersText;
+    public TMP_Text AmountOfKillersText;
     public int QuestsAmountForEachPlayer = 5;
     public float VotingDuration;
     public MinigameZone[] AllMinigames;
@@ -44,24 +44,26 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public static GameManager Instance;
     public bool isGameStarted;
+    
+    private Controller[] OrderedPlayers => _players
+        .OrderBy(p => p._photonView.Owner.ActorNumber).ToArray();
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-
         if (PhotonNetwork.IsMasterClient)
         {
             var props = new Hashtable {{"HostAmountOfKillers", PlayerPrefs.GetInt("HostAmountOfKillers")}};
             PhotonNetwork.CurrentRoom.SetCustomProperties(props);
-            AmountOfKillers = PlayerPrefs.GetInt("HostAmountOfKillers");
+            AmountOfKillers = Mathf.Clamp(PlayerPrefs.GetInt("HostAmountOfKillers"),1,3);
         }
         else
         {
-            AmountOfKillers = (int)PhotonNetwork.CurrentRoom.CustomProperties["HostAmountOfKillers"];
+            AmountOfKillers = Mathf.Clamp((int)PhotonNetwork.CurrentRoom.CustomProperties["HostAmountOfKillers"],1,3);
         }
-        AmountOfKillersText.GetComponent<TMP_Text>().text = "Killers:" + AmountOfKillers;
+        AmountOfKillersText.text = "Killers:" + AmountOfKillers;
     }
 
     private void Update()
@@ -162,6 +164,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 var data1 = (object[])photonEvent.CustomData;
                 AllShortCutZones[(int)data1[0]].GetEventUse((int)data1[1]);
                 break;
+            case 76:
+                //Распределение LocalNumber
+                var data2 = (object[]) photonEvent.CustomData;
+                FindPlayer((int) data2[0]).LocalNumber = (int) data2[1];
+                break;
+            case 77:
+                //Распределение SkinID
+                var data3 = (object[]) photonEvent.CustomData;
+                FindPlayer((int) data3[0]).SkinID = (int) data3[1];
+                break;
         }
     }
 
@@ -182,17 +194,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void MovePlayersOnSpawn()
     {
-        var OrderedPlayers = _players
-            .OrderBy(p => p._photonView.Owner.ActorNumber)
-            .ToArray();
-        for (int i = 0; i < OrderedPlayers.Length; i++)
-        {
-            OrderedPlayers[i]._Body.transform.position = new Vector3(
-                SpawnPlaces[i].position.x,
-                OrderedPlayers[i].transform.position.y,
-                SpawnPlaces[i].position.z);
-            OrderedPlayers[i].UpdateCameraPos();
-        }
+        LocalPlayer.transform.position = SpawnPlaces[LocalPlayer.LocalNumber].position;
     }
 
     private void CheckGameEnded()
@@ -204,10 +206,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
-            if (PhotonNetwork.IsMasterClient)
-            {
-                PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
-            }
+            PhotonNetwork.RaiseEvent(57,1, options, sendOptions);
+            return;
         }
 
         var AliveImposters = _players.Where(player => player.isImposter).Count(player => !player.IsDead);
@@ -215,10 +215,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
-            if (PhotonNetwork.IsMasterClient)
-            {
-                PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
-            }
+            PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
         }
     }
 
@@ -253,7 +250,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         if (PhotonNetwork.IsMasterClient && isGameStarted)
         {
             var s = DOTween.Sequence();
-            s.AppendInterval(1.5f);
+            s.AppendInterval(1f);
             s.AppendCallback(CheckGameEnded);
         }
     }
@@ -289,6 +286,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 s.AppendInterval(1.5f);
                 s.AppendCallback(() =>
                 {
+                    MovePlayersOnSpawn();
                     TimeSinceGameStarted = 0;
                     var metrica = AppMetrica.Instance;
                     PlayerPrefs.SetInt("levelNumber",PlayerPrefs.GetInt("levelNumber")+1);
@@ -298,15 +296,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     };
                     metrica.ReportEvent("level_start",paramerts);
                     metrica.SendEventsBuffer();
-                    
                     isGameStarted = true;
                     VotingSign.SetActive(true);
                     _beginEndGame.ActivateScreen();
                     AmountOfPlayers.SetActive(false);
-                    AmountOfKillersText.SetActive(false);
-                    var OrderedPlayers = _players
-                        .OrderBy(p => p._photonView.Owner.ActorNumber)
-                        .ToArray();
+                    AmountOfKillersText.gameObject.SetActive(false);
                     var imposterIDs = new List<int>();
                     for (int i = 0; i < AmountOfKillers; i++)
                     {
@@ -315,32 +309,23 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     int impostersAdded = 0;
                     for (int i = 0; i < OrderedPlayers.Length; i++)
                     {
-                        OrderedPlayers[i]._Body.transform.position = new Vector3(
-                            SpawnPlaces[i].position.x,
-                            OrderedPlayers[i].transform.position.y,
-                            SpawnPlaces[i].position.z);
-                        OrderedPlayers[i].UpdateCameraPos();
-                        if (imposterIDs.Contains(i) && impostersAdded < AmountOfKillers)
+                        var isKiller = imposterIDs.Contains(i) && impostersAdded < AmountOfKillers;
+                        if (isKiller)
                         {
                             //Киллер
                             KillerPlayers.Add(OrderedPlayers[i]);
-                            OrderedPlayers[i].isImposter = true;
-                            OrderedPlayers[i]._skills.SetDomofonButtonActive(true);
-                            OrderedPlayers[i]._skills.SetShortCutButtonActive(true);
-                            OrderedPlayers[i]._skills.SetKillingActive(true);
-                            OrderedPlayers[i]._skills.SetInteractButtonActive(false);
                             impostersAdded++;
                         }
                         else
                         {
                             //Мирный
-                            OrderedPlayers[i].isImposter = false;
                             OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
-                            OrderedPlayers[i]._skills.SetDomofonButtonActive(false);
-                            OrderedPlayers[i]._skills.SetShortCutButtonActive(false);
-                            OrderedPlayers[i]._skills.SetKillingActive(false);
-                            OrderedPlayers[i]._skills.SetInteractButtonActive(true);
                         }
+                        OrderedPlayers[i].isImposter = isKiller;
+                        OrderedPlayers[i]._skills.SetDomofonButtonActive(isKiller);
+                        OrderedPlayers[i]._skills.SetShortCutButtonActive(isKiller);
+                        OrderedPlayers[i]._skills.SetKillingActive(isKiller);
+                        OrderedPlayers[i]._skills.SetInteractButtonActive(!isKiller);
                         OrderedPlayers[i]._skills.SetAlarmButtonActive(true);
                     }
                     if (LocalPlayer.isImposter)

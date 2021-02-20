@@ -23,10 +23,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/forfun.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/forfun.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/Asset_180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/Asset_180.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/Button.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/Button.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Imposter/color_font.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -75,8 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Gestures/Swipe.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skin.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerOffline.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
@@ -85,14 +107,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyTopPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" />
@@ -102,15 +122,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Notifications/DailyNotifications.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/GDPR.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/TapsMinigame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FillingMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FastTapMinigame.cs" />
@@ -119,13 +136,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/CursorRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/RotatingMinigame/RotatingInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EndGameScreen/EndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
       </list>
     </option>
   </component>
@@ -229,6 +253,10 @@
       <workItem from="1613119410377" duration="30535000" />
       <workItem from="1613217474676" duration="2395000" />
       <workItem from="1613378283100" duration="26172000" />
+      <workItem from="1613472571003" duration="41000" />
+      <workItem from="1613744267036" duration="5270000" />
+      <workItem from="1613759635178" duration="1856000" />
+      <workItem from="1613811938204" duration="4463000" />
     </task>
     <servers />
   </component>
@@ -322,17 +350,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="501" y="119" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1606055245516" />
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1608049749345">
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1613815695117">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1608049749345" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1613815695117" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1608049437765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613445965400">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613814389698">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613445965400" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613814389698" />
   </component>
 </project>

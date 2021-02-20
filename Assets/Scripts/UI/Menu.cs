@@ -18,4 +18,9 @@ public class Menu : MonoBehaviour
         ShopPanel.DOAnchorPosX(3000, 0.5f);
         MainPanel.DOAnchorPosX(0, 0.5f);
     }
+
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
 }

@@ -11,11 +11,6 @@ public class RewardedAdButton : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(Watch);
-        Advertisment.Instance.RewardedAd.OnReciveReward += () =>
-        {
-            Wallet.Balance += 150;
-            _moneyBar.Refresh();
-        };
     }
 
     private void Update()
@@ -25,6 +20,11 @@ public class RewardedAdButton : MonoBehaviour
 
     private void Watch()
     {
+        Advertisment.Instance.RewardedAd.OnReciveReward += () =>
+        {
+            Wallet.Balance += 150;
+            _moneyBar.Refresh();
+        };
         Advertisment.Instance.ShowRewarded();
     }
 }

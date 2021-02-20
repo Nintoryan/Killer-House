@@ -15,6 +15,7 @@ public class PairItem : MonoBehaviour
         _image.color = new Color(1,1,1,0);
         ID = id;
         _myBrain = findThePair;
+        _button.interactable = true;
     }
 
     public void Touch()

@@ -8340,7 +8340,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: exit
+          m_StringArgument: leave
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5709560799687360253}
@@ -9850,6 +9850,7 @@ MonoBehaviour:
   UiaAudioSource: {fileID: 5709560799687360253}
   _audioListener: {fileID: 1746604318740268446}
   AvaliableQuestsAmount: 0
+  OnTeleport: 0
 --- !u!114 &3706719653554171646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9866,7 +9867,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   observableSearch: 2
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8899025424892144629}

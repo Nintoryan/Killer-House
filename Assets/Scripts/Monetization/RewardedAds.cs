@@ -31,12 +31,12 @@ public class RewardedAds : MonoBehaviour
         AdsWatched = adsWatched;
     }
 
-    public void Show()
+    public void Show(string placement)
     {
         var available = new Dictionary<string, object>
         {
             {"ad_type", "rewarded"},
-            {"placement", "get_money"},
+            {"placement", placement},
             {"result", Advertisment.Instance.IsRewardedReady ? "success" : "not_available"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };
@@ -44,7 +44,7 @@ public class RewardedAds : MonoBehaviour
         var start = new Dictionary<string, object>
         {
             {"ad_type", "rewarded"},
-            {"placement", "get_money"},
+            {"placement", placement},
             {"result", "start"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };
@@ -52,7 +52,7 @@ public class RewardedAds : MonoBehaviour
         var clicked = new Dictionary<string, object>
         {
             {"ad_type", "rewarded"},
-            {"placement", "get_money"},
+            {"placement", placement},
             {"result", "clicked"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };
@@ -60,7 +60,7 @@ public class RewardedAds : MonoBehaviour
         var canceled = new Dictionary<string, object>
         {
             {"ad_type", "rewarded"},
-            {"placement", "get_money"},
+            {"placement", placement},
             {"result", "canceled"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };
@@ -68,7 +68,7 @@ public class RewardedAds : MonoBehaviour
         var watched = new Dictionary<string, object>
         {
             {"ad_type", "rewarded"},
-            {"placement", "get_money"},
+            {"placement", placement},
             {"result", "watched"},
             {"connection", Application.internetReachability != NetworkReachability.NotReachable}
         };

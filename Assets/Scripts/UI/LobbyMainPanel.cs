@@ -50,10 +50,10 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     public void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.SendRate = 24;
+        PhotonNetwork.SendRate = 16;
         PhotonNetwork.GameVersion = Application.version; 
-        PhotonNetwork.SerializationRate = 24;
-
+        PhotonNetwork.SerializationRate = 16;
+        PlayerPrefs.SetInt("isRandomLevel", 0);
         cachedRoomList = new Dictionary<string, RoomInfo>();
         roomListEntries = new Dictionary<string, GameObject>();
         RoomNameInputField.text = "Room " + Random.Range(1000, 10000);
@@ -87,7 +87,6 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         ClearRoomListView();
-
         UpdateCachedRoomList(roomList);
         UpdateRoomListView();
     }
@@ -149,6 +148,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     public void OnJoinRandomRoomButtonClicked()
     {
         SetActivePanel(JoinRandomRoomPanel.name);
+        PlayerPrefs.SetInt("isRandomLevel", 1);
         PhotonNetwork.JoinRandomRoom();
     }
 
@@ -217,8 +217,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         SelectionPanel.SetActive(activePanel.Equals(SelectionPanel.name));
         CreateRoomPanel.SetActive(activePanel.Equals(CreateRoomPanel.name));
         JoinRandomRoomPanel.SetActive(activePanel.Equals(JoinRandomRoomPanel.name));
-        RoomListPanel.SetActive(
-            activePanel.Equals(RoomListPanel.name)); // UI should call OnRoomListButtonClicked() to activate this
+        RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name)); // UI should call OnRoomListButtonClicked() to activate this
     }
 
     private void UpdateCachedRoomList(List<RoomInfo> roomList)

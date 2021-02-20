@@ -74,7 +74,7 @@ namespace AAPlayer
             StartCoroutine(LoadLocalNumber());
             if (!_photonView.IsMine)
             {
-                _camera.gameObject.SetActive(false);
+                Destroy(_camera.gameObject);
                 Destroy(_audioListener);
             }
             else
@@ -107,9 +107,11 @@ namespace AAPlayer
 
         private float directionmagnitude;
         private Vector3 direction;
+        public bool OnTeleport;
 
         private void Update()
         {
+            if (OnTeleport) return;
             if (_photonView.IsMine)
             {
                 if (Input.GetKeyDown(KeyCode.K) && !IsDead)
@@ -130,10 +132,8 @@ namespace AAPlayer
 
                 _InGameUI.MoveMe(controller.transform.position);
             }
-
             if (directionmagnitude >= 0.05f && !IsDead)
             {
-                
                 if (directionmagnitude > 0.6f)
                 {
                     //Бег

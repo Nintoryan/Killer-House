@@ -29,17 +29,18 @@ public class InGameUI : MonoBehaviour
             Destroy(inst);
         });
     }
-    public void Leave(string result = "exit")
+    public void Leave(string result = "leave")
     {
         if (GameManager.Instance.isGameStarted)
         {
             var metrica = AppMetrica.Instance;
             var paramerts = new Dictionary<string, object>
             {
-                {"level", PlayerPrefs.GetInt("levelNumber")},
+                {"level_number", 1},
+                {"level_count", PlayerPrefs.GetInt("levelNumber")},
                 {"result", result},
-                {"time", GameManager.Instance.TimeSinceGameStarted},
-                {"progress",result == "exit"?0:GameManager.Instance.Progress}
+                {"time", (int)GameManager.Instance.TimeSinceGameStarted},
+                {"progress",result == "win"?100:0}
             };
             metrica.ReportEvent("level_finish",paramerts);
             metrica.SendEventsBuffer();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AAPlayer;
@@ -9,6 +10,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.Serialization;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
@@ -69,6 +71,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void Update()
     {
         TimeSinceGameStarted += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            MovePlayersOnSpawn();
+        }
     }
 
     public void AddPlayer(Controller Player)
@@ -181,10 +187,23 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     {
         LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
     }
-
+    
     public void MovePlayersOnSpawn()
     {
-        LocalPlayer.transform.position = SpawnPlaces[LocalPlayer.LocalNumber].position;
+        StartCoroutine(Teleport());
+    }
+
+    private IEnumerator Teleport()
+    {
+        LocalPlayer.DisableControll();
+        LocalPlayer.OnTeleport = true;
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        LocalPlayer._Body.transform.position = SpawnPlaces[LocalPlayer.LocalNumber].position;
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        LocalPlayer.ActivateControll();
+        LocalPlayer.OnTeleport = false;
     }
 
     private void CheckGameEnded()
@@ -270,99 +289,109 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void OnStartGame(List<int> KillersIDs)
     {
         //Событие начала игры
-                LocalPlayer.DisableControll();
-                var s = DOTween.Sequence();
-                s.AppendCallback(_beginEndGame.FadeIn);
-                s.AppendInterval(1.5f);
-                s.AppendCallback(() =>
+        var metrica = AppMetrica.Instance;
+        PlayerPrefs.SetInt("levelNumber", PlayerPrefs.GetInt("levelNumber") + 1);
+        var paramerts = new Dictionary<string, object>
+        {
+            {"level_number", 1},
+            {"level_count", PlayerPrefs.GetInt("levelNumber")},
+            {"level_random", PlayerPrefs.GetInt("isRandomLevel") == 1}
+        };
+        metrica.ReportEvent("level_start", paramerts);
+        metrica.SendEventsBuffer();
+
+        LocalPlayer.DisableControll();
+        var s = DOTween.Sequence();
+        s.AppendCallback(_beginEndGame.FadeIn);
+        s.AppendInterval(1.5f);
+        s.AppendCallback(() =>
+        {
+            MovePlayersOnSpawn();
+            TimeSinceGameStarted = 0;
+            isGameStarted = true;
+            VotingSign.SetActive(true);
+            _beginEndGame.ActivateScreen();
+            AmountOfPlayers.SetActive(false);
+            AmountOfKillersText.gameObject.SetActive(false);
+            var imposterIDs = new List<int>();
+            for (int i = 0; i < AmountOfKillers; i++)
+            {
+                imposterIDs.Add(KillersIDs[i]);
+            }
+
+            int impostersAdded = 0;
+            for (int i = 0; i < OrderedPlayers.Length; i++)
+            {
+                var isKiller = imposterIDs.Contains(i) && impostersAdded < AmountOfKillers;
+                if (isKiller)
                 {
-                    MovePlayersOnSpawn();
-                    TimeSinceGameStarted = 0;
-                    var metrica = AppMetrica.Instance;
-                    PlayerPrefs.SetInt("levelNumber",PlayerPrefs.GetInt("levelNumber")+1);
-                    var paramerts = new Dictionary<string, object>
-                    {
-                        {"level", PlayerPrefs.GetInt("levelNumber")}
-                    };
-                    metrica.ReportEvent("level_start",paramerts);
-                    metrica.SendEventsBuffer();
-                    isGameStarted = true;
-                    VotingSign.SetActive(true);
-                    _beginEndGame.ActivateScreen();
-                    AmountOfPlayers.SetActive(false);
-                    AmountOfKillersText.gameObject.SetActive(false);
-                    var imposterIDs = new List<int>();
-                    for (int i = 0; i < AmountOfKillers; i++)
-                    {
-                        imposterIDs.Add(KillersIDs[i]);
-                    }
-                    int impostersAdded = 0;
-                    for (int i = 0; i < OrderedPlayers.Length; i++)
-                    {
-                        var isKiller = imposterIDs.Contains(i) && impostersAdded < AmountOfKillers;
-                        if (isKiller)
-                        {
-                            //Киллер
-                            KillerPlayers.Add(OrderedPlayers[i]);
-                            impostersAdded++;
-                        }
-                        else
-                        {
-                            //Мирный
-                            OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
-                        }
-                        OrderedPlayers[i].isImposter = isKiller;
-                        OrderedPlayers[i]._skills.SetDomofonButtonActive(isKiller);
-                        OrderedPlayers[i]._skills.SetShortCutButtonActive(isKiller);
-                        OrderedPlayers[i]._skills.SetKillingActive(isKiller);
-                        OrderedPlayers[i]._skills.SetInteractButtonActive(!isKiller);
-                        OrderedPlayers[i]._skills.SetAlarmButtonActive(true);
-                    }
-                    if (LocalPlayer.isImposter)
-                    {
-                        _beginEndGame.StartKillerScreen();
-                        foreach (var mg in AllMinigames)
-                        {
-                            mg.QuestSign.SetActive(true);
-                        }
-                        LocalPlayer.SetCamFOV(24);
-                    }
-                    else
-                    {
-                        _beginEndGame.StartCivilianScreen();
-                        while(MyMinigames.Count < QuestsAmountForEachPlayer){
-                            var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
-                            if (!MyMinigames.Contains(minigame))
-                            {
-                                MyMinigames.Add(minigame);
-                                LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
-                                minigame.QuestSign.SetActive(true);
-                            }
-                        }
-                    }
-                    AmountOfQuests = (OrderedPlayers.Length-1) * QuestsAmountForEachPlayer;
-                    LocalPlayer._chat.ChatParent.SetActive(false);
-                    LocalPlayer._skills.ChatButton.gameObject.SetActive(false);
-                });
-                s.AppendCallback(_beginEndGame.FadeOut);
-                s.AppendInterval(3f);
-                s.AppendCallback(_beginEndGame.FadeIn);
-                s.AppendInterval(1.5f);
-                s.AppendCallback(_beginEndGame.DisableScreen);
-                s.AppendCallback(_beginEndGame.FadeOut);
-                s.AppendInterval(1);
-                s.AppendCallback(() =>
+                    //Киллер
+                    KillerPlayers.Add(OrderedPlayers[i]);
+                    impostersAdded++;
+                }
+                else
                 {
-                    LocalPlayer.ActivateControll();
-                    if (LocalPlayer.isImposter)
+                    //Мирный
+                    OrderedPlayers[i].AvaliableQuestsAmount = QuestsAmountForEachPlayer;
+                }
+
+                OrderedPlayers[i].isImposter = isKiller;
+                OrderedPlayers[i]._skills.SetDomofonButtonActive(isKiller);
+                OrderedPlayers[i]._skills.SetShortCutButtonActive(isKiller);
+                OrderedPlayers[i]._skills.SetKillingActive(isKiller);
+                OrderedPlayers[i]._skills.SetInteractButtonActive(!isKiller);
+                OrderedPlayers[i]._skills.SetAlarmButtonActive(true);
+            }
+
+            if (LocalPlayer.isImposter)
+            {
+                _beginEndGame.StartKillerScreen();
+                foreach (var mg in AllMinigames)
+                {
+                    mg.QuestSign.SetActive(true);
+                }
+
+                LocalPlayer.SetCamFOV(24);
+            }
+            else
+            {
+                _beginEndGame.StartCivilianScreen();
+                while (MyMinigames.Count < QuestsAmountForEachPlayer)
+                {
+                    var minigame = AllMinigames[Random.Range(0, AllMinigames.Length)];
+                    if (!MyMinigames.Contains(minigame))
                     {
-                        LocalPlayer._skills.KillGoCD();
+                        MyMinigames.Add(minigame);
+                        LocalPlayer._InGameUI.SetMarkActive(minigame.Number);
+                        minigame.QuestSign.SetActive(true);
                     }
-                    if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
-                    {
-                        Advertisment.Instance.ShowInterstitial();
-                    }
-                });
+                }
+            }
+
+            AmountOfQuests = (OrderedPlayers.Length - 1) * QuestsAmountForEachPlayer;
+            LocalPlayer._chat.ChatParent.SetActive(false);
+            LocalPlayer._skills.ChatButton.gameObject.SetActive(false);
+        });
+        s.AppendCallback(_beginEndGame.FadeOut);
+        s.AppendInterval(3f);
+        s.AppendCallback(_beginEndGame.FadeIn);
+        s.AppendInterval(1.5f);
+        s.AppendCallback(_beginEndGame.DisableScreen);
+        s.AppendCallback(_beginEndGame.FadeOut);
+        s.AppendInterval(1);
+        s.AppendCallback(() =>
+        {
+            LocalPlayer.ActivateControll();
+            if (LocalPlayer.isImposter)
+            {
+                LocalPlayer._skills.KillGoCD();
+            }
+
+            if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
+            {
+                Advertisment.Instance.ShowInterstitial();
+            }
+        });
     }
 
     private void OnImposterWin()

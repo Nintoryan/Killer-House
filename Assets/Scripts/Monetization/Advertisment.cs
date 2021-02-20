@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Advertisment : MonoBehaviour
@@ -37,13 +38,33 @@ public class Advertisment : MonoBehaviour
         }
     }
 
-    public void ShowRewarded()
+    public void ShowRewarded(string placement)
     {
-        RewardedAd.Show();
+        RewardedAd.Show(placement);
     }
 
     public void ShowInterstitial()
     {
+        var metrica = AppMetrica.Instance;
+        var parametrs = new Dictionary<string, object>
+        {
+            {"ad_type", "interstitial"},
+            {"placement", "match"},
+            {"result", IsInterstitialReady?"success":"not_available"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+        metrica.ReportEvent("video_ads_available", parametrs);
+        var parametrs1 = new Dictionary<string, object>
+        {
+            {"ad_type", "interstitial"},
+            {"placement", "match"},
+            {"result", "start"},
+            {"connection", Application.internetReachability != NetworkReachability.NotReachable}
+        };
+        if (IsInterstitialReady)
+        {
+            metrica.ReportEvent("video_ads_started", parametrs1);
+        }
         _interstitialAd.Show();
     }
 }

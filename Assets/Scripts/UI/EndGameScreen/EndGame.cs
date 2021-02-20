@@ -25,6 +25,7 @@ public class EndGame : MonoBehaviour
     private void Start()
     {
         var amountOfSkulls = Random.Range(50, 150);
+        
         var s = DOTween.Sequence();
         s.Append(Movable.DOAnchorPosY(0, 1.25f).SetEase(Ease.InOutBack));
         s.AppendCallback(() => { Result.text = $"+{amountOfSkulls} skulls"; });
@@ -70,7 +71,7 @@ public class EndGame : MonoBehaviour
     
     public void ButtonClick()
     {
-        if (!isButtonClicked)
+        if (!isButtonClicked )
         {
             ClickFirst();
             isButtonClicked = true;
@@ -150,6 +151,10 @@ public class EndGame : MonoBehaviour
                     Advertisment.Instance.ShowInterstitial();
                 }
             }
+        });
+        s.AppendInterval(1f);
+        s.AppendCallback(() =>
+        {
             SceneManager.LoadScene("LoginMenuHub");
         });
     }

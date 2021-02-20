@@ -25,6 +25,6 @@ public class RewardedAdButton : MonoBehaviour
             Wallet.Balance += 150;
             _moneyBar.Refresh();
         };
-        Advertisment.Instance.ShowRewarded();
+        Advertisment.Instance.ShowRewarded("get_money");
     }
 }

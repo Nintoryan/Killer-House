@@ -58,7 +58,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             OnJoinedRoom();
         }
-
         AmountOfPlayers.text = $"{PhotonNetwork.CurrentRoom.PlayerCount}/{PhotonNetwork.CurrentRoom.MaxPlayers}";
     }
 
@@ -108,7 +107,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private bool CheckPlayersReady()
     {
-        return PhotonNetwork.CurrentRoom.PlayerCount >= 4;
+        return PhotonNetwork.CurrentRoom.PlayerCount - GameManager.Instance.AmountOfKillers >= 3;
     }
 
     public static Color GetColor(int id)

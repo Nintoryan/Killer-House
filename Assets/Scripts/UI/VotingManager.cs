@@ -47,6 +47,14 @@ namespace Voting
             }
         }
 
+        private void Start()
+        {
+            if (!GameManager.Instance.LocalPlayer._photonView.IsMine)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         public static void RaiseVotingEvent(Controller WhoStarted)
         {
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};

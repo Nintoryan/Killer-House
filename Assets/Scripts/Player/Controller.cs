@@ -74,7 +74,7 @@ namespace AAPlayer
             StartCoroutine(LoadLocalNumber());
             if (!_photonView.IsMine)
             {
-                Destroy(_camera.gameObject);
+                _camera.gameObject.SetActive(false);
                 Destroy(_audioListener);
             }
             else

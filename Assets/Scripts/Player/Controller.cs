@@ -129,8 +129,8 @@ namespace AAPlayer
                 {
                     DeadMove(direction);
                 }
-
                 _InGameUI.MoveMe(controller.transform.position);
+                _camera.transform.position = BodyCamDistance + controller.transform.position;
             }
             if (directionmagnitude >= 0.05f && !IsDead)
             {
@@ -153,9 +153,7 @@ namespace AAPlayer
                 _WalkAudioSource.Pause();
             }
             NickNameCanvas.position =  NickNameTarget.position + new Vector3(0, 1.5f, 0);
-            _camera.transform.position = BodyCamDistance + controller.transform.position;
         }
-
         public void DisableNickName()
         {
             NickNameCanvas.gameObject.SetActive(false);

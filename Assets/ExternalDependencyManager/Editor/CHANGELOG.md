@@ -1,3 +1,48 @@
+# Version 1.2.149 - Apr 8, 2020
+## Bug Fixes
+* Unity Package Manager Resolver: Fixed spurious error message when resuming
+  migration after installing a UPM package.
+
+# Version 1.2.148 - Apr 8, 2020
+## Bug Fixes
+* Unity Package Manager Resolver: Fixed an exception when resuming migration
+  after installing a UPM package.
+
+# Version 1.2.147 - Apr 8, 2020
+## Bug Fixes
+* Version Handler: Fixed alias traversal bug which caused problems when
+  migrating from installed .unitypackage files to UPM packages.
+
+# Version 1.2.146 - Apr 8, 2020
+## Bug Fixes
+* Version Handler: Fixed exception in manifest parsing when a manifest is
+  detected with no aliases.
+
+# Version 1.2.145 - Apr 2, 2020
+## New Features
+* Unity Package Manager Resolver: Added a method to migrate Version Handler
+  managed packages installed via `.unitypackage` to Unity Package Manager
+  packages. This is initially used to migrate the External Dependency Manager
+  to UPM.
+
+## Changes
+* All: Verbose logging is now no longer automatically enabled in batch mode
+  across all components. Instead logging can be configured using each
+  component's verbose logging setting or by using the `-gvh_log_debug` command
+  line flag when starting Unity.
+* Version Handler: Sped up version handler updates when the app domain isn't
+  reloaded.
+
+## Bug Fixes
+* Version Handler: Fixed the display of the obsolete files clean up dialog
+  when the asset database refreshes.
+* Version Handler: Improved reliability of callback from
+  the VersionHandler.UpdateCompleteMethods event when an asset database
+  refresh occurs.
+* Version Handler: Fixed duplicate exportPath labels when 'Assets/' is the
+  root of paths assigned to files.
+* Version Handler: Handle empty lines in manifest files.
+
 # Version 1.2.144 - Mar 23, 2020
 ## Changed
 * iOS Resolver: Removed the ability to configure the Xcode target a Cocoapod

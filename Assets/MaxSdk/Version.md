@@ -1,5 +1,7 @@
 ## Versions
 
+## 3.2.5
+    * Fix hard coded path separator causing issues on Windows.
 ## 3.2.4
     * Fix iOS build errors on Unity 2019.3+ when embedding framework libraries if Podfile contains `Unity-iPhone` target.
     * Enable verbose logging at run time when enabling the setting via Integration Manager (previously only enabled build time logging).

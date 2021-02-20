@@ -66,6 +66,12 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         {
             PlayerNameInput.text = PlayerPrefs.GetString("NickName");
         }
+
+        if (PlayerPrefs.HasKey("NickName") && PhotonNetwork.IsConnectedAndReady)
+        {
+            LoginPanel.SetActive(false);
+            SelectionPanel.SetActive(true);    
+        }
         
     }
 

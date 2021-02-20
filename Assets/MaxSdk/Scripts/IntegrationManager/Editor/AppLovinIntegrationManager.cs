@@ -108,8 +108,8 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
         private static readonly AppLovinIntegrationManager instance = new AppLovinIntegrationManager();
 
         public static readonly string GradleTemplatePath = Path.Combine("Assets/Plugins/Android", "mainTemplate.gradle");
-        public const string DefaultPluginExportPath = "Assets/MaxSdk";
-        private const string MaxSdkAssetExportPath = "MaxSdk/Scripts/MaxSdk.cs";
+        public static readonly string DefaultPluginExportPath = Path.Combine("Assets", "MaxSdk");
+        private static readonly string MaxSdkAssetExportPath = Path.Combine("MaxSdk", "Scripts/MaxSdk.cs");
 
         /// <summary>
         /// Some publishers might re-export our plugin via Unity Package Manager and the plugin will not be under the Assets folder. This means that the mediation adapters, settings files should not be moved to the packages folder,
@@ -163,7 +163,7 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
         /// </summary>
         public static bool IsPluginOutsideAssetsDirectory
         {
-            get { return !PluginParentDirectory.StartsWith("Assets/"); }
+            get { return !PluginParentDirectory.StartsWith("Assets"); }
         }
 
         /// <summary>
@@ -570,7 +570,7 @@ namespace AppLovinMax.Scripts.IntegrationManager.Editor
                 var defaultPluginLocation = Path.Combine("Assets", "MaxSdk");
                 if (Directory.Exists(defaultPluginLocation))
                 {
-                    AddLabelsToAssets(defaultPluginLocation, "Assets/");
+                    AddLabelsToAssets(defaultPluginLocation, "Assets");
                 }
             }
 

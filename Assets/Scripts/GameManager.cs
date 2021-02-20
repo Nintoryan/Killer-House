@@ -185,7 +185,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
+        if (LocalPlayer != null && LocalPlayer._InGameUI != null)
+        {
+            LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
+        }
     }
     
     public void MovePlayersOnSpawn()

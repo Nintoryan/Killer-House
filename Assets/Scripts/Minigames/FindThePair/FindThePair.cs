@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class FindThePair : Minigame
 {
-    [SerializeField] private List<PairItem> _items = new List<PairItem>();
+    [SerializeField] private List<PairItem> _items;
     [SerializeField] private Sprite[] _sprites;
     
     [SerializeField] private UnityEvent _goalReached;
@@ -19,11 +17,6 @@ public class FindThePair : Minigame
     {
         add => _goalReached.AddListener(value);
         remove => _goalReached.RemoveListener(value);
-    }
-
-    private void Awake()
-    {
-        InitializeMiniGame();
     }
 
     public override void InitializeMiniGame()

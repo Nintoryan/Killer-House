@@ -164,16 +164,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 var data1 = (object[])photonEvent.CustomData;
                 AllShortCutZones[(int)data1[0]].GetEventUse((int)data1[1]);
                 break;
-            case 76:
-                //Распределение LocalNumber
-                var data2 = (object[]) photonEvent.CustomData;
-                FindPlayer((int) data2[0]).LocalNumber = (int) data2[1];
-                break;
-            case 77:
-                //Распределение SkinID
-                var data3 = (object[]) photonEvent.CustomData;
-                FindPlayer((int) data3[0]).SkinID = (int) data3[1];
-                break;
         }
     }
 

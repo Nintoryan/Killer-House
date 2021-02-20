@@ -9,7 +9,7 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Controller : MonoBehaviour
+    public class Controller : MonoBehaviour,IPunObservable
     {
         public CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
@@ -49,7 +49,7 @@ namespace AAPlayer
         public int SkinID
         {
             get => _skinID;
-            set
+            private set
             {
                 if (value != _skinID)
                 {
@@ -61,7 +61,7 @@ namespace AAPlayer
         public int LocalNumber
         {
             get => _localNumber;
-            set => _localNumber = value;
+            private set => _localNumber = value;
         }
         private float gravityValue = -981f;
         public bool IsDead { get; private set;}
@@ -86,10 +86,6 @@ namespace AAPlayer
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
                 SkinID = PlayerPrefs.GetInt("SelectedSkin");
-                object[] sendingData = {_photonView.Owner.ActorNumber,SkinID};
-                RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.Others};
-                SendOptions sendOptions = new SendOptions {Reliability = true};
-                PhotonNetwork.RaiseEvent(77, sendingData, options, sendOptions);
             }
             NickNameTarget = controller.transform;
         }
@@ -104,10 +100,6 @@ namespace AAPlayer
                 {
                     if (busyNumbers.Contains(i)) continue;
                     LocalNumber = i;
-                    object[] sendingData = {_photonView.Owner.ActorNumber,LocalNumber};
-                    RaiseEventOptions options = new RaiseEventOptions {Receivers = ReceiverGroup.Others};
-                    SendOptions sendOptions = new SendOptions {Reliability = true};
-                    PhotonNetwork.RaiseEvent(76, sendingData, options, sendOptions);
                     break;
                 }
             }
@@ -298,6 +290,22 @@ namespace AAPlayer
         public void SetNickNameTarget(Transform newTarget)
         {
             NickNameTarget = newTarget;
+        }
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (!GameManager.Instance.isGameStarted)
+            {
+                if (stream.IsWriting)
+                {
+                    stream.SendNext(LocalNumber);
+                    stream.SendNext(SkinID);
+                }
+                else if (stream.IsReading)
+                {
+                    LocalNumber = (int) stream.ReceiveNext();
+                    SkinID = (int) stream.ReceiveNext();
+                }
+            }
         }
     }
 }

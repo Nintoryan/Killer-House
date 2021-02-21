@@ -374,6 +374,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             AmountOfQuests = (OrderedPlayers.Length - 1) * QuestsAmountForEachPlayer;
             LocalPlayer._chat.ChatParent.SetActive(false);
             LocalPlayer._skills.ChatButton.gameObject.SetActive(false);
+            LocalPlayer._QuestArrowRotator.isTracking = true;
         });
         s.AppendCallback(_beginEndGame.FadeOut);
         s.AppendInterval(3f);

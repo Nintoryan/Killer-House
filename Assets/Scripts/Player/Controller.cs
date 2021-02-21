@@ -13,6 +13,7 @@ namespace AAPlayer
     {
         public CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
+        public QuestArrowRotator _QuestArrowRotator;
         [SerializeField] private Camera _camera;
         public Skills _skills;
         public Transform NickNameCanvas;

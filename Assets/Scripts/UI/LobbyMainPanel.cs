@@ -271,6 +271,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
             PhotonNetwork.SendRate = 16;
             PhotonNetwork.GameVersion = Application.version; 
             PhotonNetwork.SerializationRate = 16;
+            PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
             PhotonNetwork.ConnectUsingSettings();
         }
     }

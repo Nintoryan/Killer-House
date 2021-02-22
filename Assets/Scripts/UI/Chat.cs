@@ -30,7 +30,11 @@ public class Chat : MonoBehaviour, IChatClientListener
             yield return new WaitForSeconds(1.5f);
             if (_chatClient != null)
             {
-                if (_chatClient.State != ChatState.ConnectedToNameServer)
+                Debug.Log(_chatClient.State);
+                if (_chatClient.State != ChatState.ConnectedToNameServer 
+                    && _chatClient.State != ChatState.ConnectingToNameServer
+                    && _chatClient.State != ChatState.ConnectedToFrontEnd
+                    && _chatClient.State != ChatState.ConnectingToFrontEnd)
                 {
                     _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(userName));
                 }

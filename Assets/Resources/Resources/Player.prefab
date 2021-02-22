@@ -8039,7 +8039,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e30edf6edfca3409778c724f1dd11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _userID: 
   _inputField: {fileID: 3558407382877888790}
   _outputField: {fileID: 6656900091263367328}
   Notifications: {fileID: 1709620179341625573}

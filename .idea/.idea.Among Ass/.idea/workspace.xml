@@ -22,7 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="" />
+    <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/InProcess/be/be1.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/InProcess/be/be1.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stickmans/HyperCasual - Tall Stickman Pack 2/Materials/TallStickmanPack2_Base_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stickmans/HyperCasual - Tall Stickman Pack 2/Materials/TallStickmanPack2_Base_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stickmans/HyperCasual - Tall Stickman Pack 2/Materials/TallStickmanPack2_Skin_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stickmans/HyperCasual - Tall Stickman Pack 2/Materials/TallStickmanPack2_Skin_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,8 +130,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyTopPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
       </list>
     </option>
   </component>
@@ -233,7 +243,7 @@
       <workItem from="1613899232721" duration="1664000" />
       <workItem from="1613907991154" duration="4308000" />
       <workItem from="1613971437816" duration="1632000" />
-      <workItem from="1614007984888" duration="8800000" />
+      <workItem from="1614007984888" duration="10327000" />
     </task>
     <servers />
   </component>

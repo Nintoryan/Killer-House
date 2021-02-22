@@ -1,4 +1,5 @@
-﻿using ExitGames.Client.Photon;
+﻿using System.Collections;
+using ExitGames.Client.Photon;
 using Photon.Chat;
 using Photon.Pun;
 using TMPro;
@@ -17,11 +18,24 @@ public class Chat : MonoBehaviour, IChatClientListener
     {
         _chatClient = new ChatClient(this);
         _roomName = roomName;
-        _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
-            new AuthenticationValues(userName));
-        Debug.Log($"Chat initialized! roomName:{roomName} \n " +
-                  $"AppIdChat:{PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat} \n" +
-                  $"UserName:{userName}");
+        _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(userName));
+        StartCoroutine(ChatInitializer(userName));
+
+    }
+
+    private IEnumerator ChatInitializer(string userName)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1.5f);
+            if (_chatClient != null)
+            {
+                if (_chatClient.State != ChatState.ConnectedToNameServer)
+                {
+                    _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(userName));
+                }
+            }
+        }
     }
     private void Update()
     {

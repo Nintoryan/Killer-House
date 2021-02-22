@@ -1,8 +1,10 @@
-﻿using Photon.Realtime;
+﻿using System;
+using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Random = UnityEngine.Random;
 
 public class LobbyMainPanel : MonoBehaviourPunCallbacks
 {
@@ -154,6 +156,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
 
     public void Disconnect()
     {
+        PlayerPrefs.DeleteKey("NickName");
         PhotonNetwork.Disconnect();
     }
     public void OnLoginButtonClicked()
@@ -260,6 +263,17 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
         }
     }
 
+    private void Update()
+    {
+        if (!PhotonNetwork.IsConnected && PlayerPrefs.HasKey("NickName"))
+        {
+            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.SendRate = 16;
+            PhotonNetwork.GameVersion = Application.version; 
+            PhotonNetwork.SerializationRate = 16;
+            PhotonNetwork.ConnectUsingSettings();
+        }
+    }
 
     public void IncreaseKillersLevel()
     {

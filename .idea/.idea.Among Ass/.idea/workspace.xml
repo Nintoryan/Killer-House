@@ -117,11 +117,11 @@
         <option value="$PROJECT_DIR$/Assets/MenuLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" />
         <option value="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyTopPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
       </list>
     </option>
   </component>
@@ -233,7 +233,7 @@
       <workItem from="1613899232721" duration="1664000" />
       <workItem from="1613907991154" duration="4308000" />
       <workItem from="1613971437816" duration="1632000" />
-      <workItem from="1614007984888" duration="8417000" />
+      <workItem from="1614007984888" duration="8800000" />
     </task>
     <servers />
   </component>

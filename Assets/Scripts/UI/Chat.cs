@@ -7,7 +7,6 @@ using UnityEngine;
 public class Chat : MonoBehaviour, IChatClientListener
 {
     private ChatClient _chatClient;
-    [SerializeField] private string _userID;
     [SerializeField] private TMP_InputField _inputField;
     [SerializeField] private TMP_Text _outputField;
     public GameObject Notifications;
@@ -20,8 +19,10 @@ public class Chat : MonoBehaviour, IChatClientListener
         _roomName = roomName;
         _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
             new AuthenticationValues(userName));
+        Debug.Log($"Chat initialized! roomName:{roomName} \n " +
+                  $"AppIdChat:{PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat} \n" +
+                  $"UserName:{userName}");
     }
-
     private void Update()
     {
         _chatClient.Service();

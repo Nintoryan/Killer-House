@@ -78,10 +78,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void Update()
     {
         TimeSinceGameStarted += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            MovePlayersOnSpawn();
-        }
     }
 
     public void AddPlayer(Controller Player)

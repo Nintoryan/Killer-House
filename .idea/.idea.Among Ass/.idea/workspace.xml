@@ -24,6 +24,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/OverLayNoZ.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/SwipeMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/AppMetrica/AppMetrica.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DomofonZone.cs" />
@@ -111,7 +115,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" />
@@ -119,11 +122,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/MenuLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/Advertisment.cs" />
+        <option value="$PROJECT_DIR$/Assets/MaxSdk/Scripts/MaxSdkUnityEditor.cs" />
       </list>
     </option>
   </component>
@@ -235,7 +241,7 @@
       <workItem from="1613899232721" duration="1664000" />
       <workItem from="1613907991154" duration="4308000" />
       <workItem from="1613971437816" duration="1632000" />
-      <workItem from="1614007984888" duration="1102000" />
+      <workItem from="1614007984888" duration="2666000" />
     </task>
     <servers />
   </component>
@@ -337,9 +343,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613915383987">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614010987295">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613915383987" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1614010987295" />
   </component>
 </project>

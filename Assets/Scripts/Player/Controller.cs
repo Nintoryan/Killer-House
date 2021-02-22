@@ -115,10 +115,6 @@ namespace AAPlayer
             if (OnTeleport) return;
             if (_photonView.IsMine)
             {
-                if (Input.GetKeyDown(KeyCode.K) && !IsDead)
-                {
-                    SetDead();
-                }
                 direction = new Vector3(_floatingJoystick.Direction.x - _floatingJoystick.Direction.y, 0,
                     _floatingJoystick.Direction.x + _floatingJoystick.Direction.y);
                 directionmagnitude = direction.magnitude;

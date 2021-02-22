@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 60195249}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.36689863
+  m_Size: 0.36699632
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9413,23 +9413,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1348557491504865903, guid: f51dee556c5154c4c8a07852100b07c0, type: 3}
   m_PrefabInstance: {fileID: 857608278}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &870833546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6839616331449385933, guid: b736b55413b5b9948809ab24bb4247a8, type: 3}
-  m_PrefabInstance: {fileID: 7556793546124388603}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &870833547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870833546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc129a60049645f7a492a0a658a6c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &892849536
 GameObject:
   m_ObjectHideFlags: 0
@@ -19866,7 +19849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

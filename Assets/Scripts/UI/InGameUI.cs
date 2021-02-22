@@ -44,7 +44,7 @@ public class InGameUI : MonoBehaviour
             };
             metrica.ReportEvent("level_finish",paramerts);
             metrica.SendEventsBuffer();
-            if (result != "exit")
+            if (result != "leave")
             {
                 PlayerPrefs.SetInt("ToEndGameScreen",1);
             }

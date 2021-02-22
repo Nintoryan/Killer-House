@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             }
             catch (Exception e)
             {
-                Chat.SendDebug(e.ToString());
             }
         }
         AmountOfKillersText.text = "Killers:" + AmountOfKillers;

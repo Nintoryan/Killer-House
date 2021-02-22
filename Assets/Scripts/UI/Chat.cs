@@ -14,22 +14,12 @@ public class Chat : MonoBehaviour, IChatClientListener
     public GameObject ChatParent;
     private string _roomName;
 
-    public static Chat DebugChatLog;
-
-
-    private void Awake()
-    {
-        DebugChatLog = this;
-    }
-
     public void Initialize(string userName,string roomName)
     {
         _chatClient = new ChatClient(this);
         _roomName = roomName;
         _chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion,
             new AuthenticationValues(userName));
-        
-
     }
 
     private void Update()
@@ -46,13 +36,9 @@ public class Chat : MonoBehaviour, IChatClientListener
         }
     }
 
-    public static void SendDebug(string message)
-    {
-        DebugChatLog._chatClient.PublishMessage(DebugChatLog._roomName, "<color=white>DEBUG:"+message+"</color>");
-    }
-    
     public void DebugReturn(DebugLevel level, string message)
     {
+        
     }
 
     public void OnDisconnected()

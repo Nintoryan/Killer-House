@@ -125,6 +125,9 @@ public class BeginEndGame : MonoBehaviour
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
         _audioSource = GameManager.Instance.LocalPlayer.UiaAudioSource;
     }
 }

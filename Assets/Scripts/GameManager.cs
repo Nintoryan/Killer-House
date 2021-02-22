@@ -63,7 +63,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         }
         else
         {
-            AmountOfKillers = Mathf.Clamp((int)PhotonNetwork.CurrentRoom.CustomProperties["HostAmountOfKillers"],1,3);
+            try
+            {
+                AmountOfKillers = Mathf.Clamp((int)PhotonNetwork.CurrentRoom.CustomProperties["HostAmountOfKillers"],1,3); 
+            }
+            catch (Exception e)
+            {
+                Chat.SendDebug(e.ToString());
+            }
         }
         AmountOfKillersText.text = "Killers:" + AmountOfKillers;
     }

@@ -13,7 +13,15 @@ public class Chat : MonoBehaviour, IChatClientListener
     public GameObject Notifications;
     public GameObject ChatParent;
     private string _roomName;
-    
+
+    public static Chat DebugChatLog;
+
+
+    private void Awake()
+    {
+        DebugChatLog = this;
+    }
+
     public void Initialize(string userName,string roomName)
     {
         _chatClient = new ChatClient(this);
@@ -37,6 +45,12 @@ public class Chat : MonoBehaviour, IChatClientListener
             _inputField.text = "";
         }
     }
+
+    public static void SendDebug(string message)
+    {
+        DebugChatLog._chatClient.PublishMessage(DebugChatLog._roomName, "<color=white>DEBUG:"+message+"</color>");
+    }
+    
     public void DebugReturn(DebugLevel level, string message)
     {
     }

@@ -26,21 +26,17 @@ public class PairItem : MonoBehaviour
     public void Open()
     {
         var s = DOTween.Sequence();
-        s.AppendCallback(() => { _button.interactable = false;});
         s.Append(transform.DORotate(new Vector3(0, 90, 0), 0.15f));
         s.AppendCallback(()=>_image.color = Color.white);
         s.Append(transform.DORotate(new Vector3(0, 0, 0), 0.15f));
-        s.AppendCallback(() => { _button.interactable = !locked;});
     }
 
     public void Close()
     {
         var s = DOTween.Sequence();
-        s.AppendCallback(() => { _button.interactable = false;});
         s.Append(transform.DORotate(new Vector3(0, 90, 0), 0.15f));
         s.AppendCallback(()=>_image.color = Color.clear);
         s.Append(transform.DORotate(new Vector3(0, 0, 0), 0.15f));
-        s.AppendCallback(() => { _button.interactable = !locked;});
     }
 
     private bool locked;

@@ -23,17 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_184.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_184.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_185.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_185.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_186.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Gameplay_screen/Arrows/Asset_186.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,12 +119,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EndGameScreen/EndGame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
       </list>
     </option>
   </component>
@@ -243,7 +234,8 @@
       <workItem from="1613811938204" duration="14694000" />
       <workItem from="1613842170885" duration="5036000" />
       <workItem from="1613899232721" duration="1664000" />
-      <workItem from="1613907991154" duration="4097000" />
+      <workItem from="1613907991154" duration="4308000" />
+      <workItem from="1613971437816" duration="1632000" />
     </task>
     <servers />
   </component>
@@ -345,9 +337,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613847101035">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1613915383987">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613847101035" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1613915383987" />
   </component>
 </project>

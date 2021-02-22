@@ -24,7 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DyingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LobbyTopPanel.cs" />
@@ -104,7 +102,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/EventTriggerFacade.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FastTapMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/DBDMinigame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/CursorRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/RotatingMinigame/RotatingInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
@@ -123,8 +120,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -236,6 +235,7 @@
       <workItem from="1613899232721" duration="1664000" />
       <workItem from="1613907991154" duration="4308000" />
       <workItem from="1613971437816" duration="1632000" />
+      <workItem from="1614007984888" duration="1102000" />
     </task>
     <servers />
   </component>

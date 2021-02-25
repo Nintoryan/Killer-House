@@ -24,21 +24,15 @@ public class BeginEndGame : MonoBehaviour
     [SerializeField] private GameObject CivilianVictory;
     [SerializeField] private GameObject ImposterVictory;
     [Header("Sounds")]
-    private AudioSource _audioSource;
     [SerializeField] private AudioClip _StartSound;
     [SerializeField] private AudioClip _CivilianWinSound;
     [SerializeField] private AudioClip _ImposterWinSound;
-    
-    private void Start()
-    {
-        StartCoroutine(FindAudioSource());
-    }
-    
+
     public void StartCivilianScreen()
     {
         BG.sprite = GreenBg;
         CivilianScreen.SetActive(true);
-        _audioSource.PlayOneShot(_StartSound);
+        GameManager.Instance.LocalPlayer.UiaAudioSource.PlayOneShot(_StartSound);
         CharacterRawImage.SetActive(true);
         Characters[GameManager.Instance.LocalPlayer.SkinID].SetActive(true);
         CivilianNickName.text = GameManager.Instance.LocalPlayer.Name;
@@ -50,7 +44,7 @@ public class BeginEndGame : MonoBehaviour
     {
         BG.sprite = GrayBg;
         KillerScreen.SetActive(true);
-        _audioSource.PlayOneShot(_StartSound);
+        GameManager.Instance.LocalPlayer.UiaAudioSource.PlayOneShot(_StartSound);
         for (int i = 0; i < GameManager.Instance.KillerPlayers.Count; i++)
         {
             Killers[i].SetActive(true);
@@ -60,14 +54,18 @@ public class BeginEndGame : MonoBehaviour
             "You are <color #9C2116>Killers</color>" :
             "You are <color #9C2116>Killer</color>";
     }
+
+    private bool IsFinalSreenSet = false;
     public void SetCivilianVictory()
     {
+        if(IsFinalSreenSet) return;
+        IsFinalSreenSet = true;
         ActivateScreen();
         BG.sprite = GreenBg;
         CivilianVictory.SetActive(true);
         CivilianScreen.SetActive(false);
         KillerScreen.SetActive(false);
-        _audioSource.PlayOneShot(_CivilianWinSound);
+        GameManager.Instance.LocalPlayer.UiaAudioSource.PlayOneShot(_CivilianWinSound);
         foreach (var character in Characters)
         {
             character.SetActive(false);
@@ -79,13 +77,15 @@ public class BeginEndGame : MonoBehaviour
     
     public void SetImposterVictory()
     {
+        if(IsFinalSreenSet) return;
+        IsFinalSreenSet = true;
         ActivateScreen();
         BG.sprite = GrayBg;
         ImposterVictory.SetActive(true);
         CivilianScreen.SetActive(false);
         KillerScreen.SetActive(false);
         CharacterRawImage.SetActive(false);
-        _audioSource.PlayOneShot(_ImposterWinSound);
+        GameManager.Instance.LocalPlayer.UiaAudioSource.PlayOneShot(_ImposterWinSound);
         for (int i = 0; i < GameManager.Instance.KillerPlayers.Count; i++)
         {
             Killers[i].SetActive(true);
@@ -120,14 +120,4 @@ public class BeginEndGame : MonoBehaviour
         WholeScreen.SetActive(false);
     }
     
-    private IEnumerator FindAudioSource()
-    {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-        _audioSource = GameManager.Instance.LocalPlayer.UiaAudioSource;
-    }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Random = UnityEngine.Random;
 
-public class LobbyMainPanel : MonoBehaviourPunCallbacks
+public class LoginHub : MonoBehaviourPunCallbacks
 {
     [Header("Login Panel")] public GameObject LoginPanel;
 
@@ -25,7 +25,7 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
             int.TryParse(MaxPlayersInputField.text,out var result);
             return result;
         }
-        set => MaxPlayersInputField.text = Mathf.Clamp(value,Killers+3,10).ToString();
+        set => MaxPlayersInputField.text = Mathf.Clamp(value,Killers*3+1,10).ToString();
     }
     public InputField KillersAmountInputField;
     private int Killers
@@ -52,9 +52,9 @@ public class LobbyMainPanel : MonoBehaviourPunCallbacks
     public void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.SendRate = 16;
+        PhotonNetwork.SendRate = 18;
         PhotonNetwork.GameVersion = Application.version; 
-        PhotonNetwork.SerializationRate = 16;
+        PhotonNetwork.SerializationRate = 18;
         PlayerPrefs.SetInt("isRandomLevel", 0);
         cachedRoomList = new Dictionary<string, RoomInfo>();
         roomListEntries = new Dictionary<string, GameObject>();

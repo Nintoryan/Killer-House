@@ -16,12 +16,12 @@ public class InterstitialAds : MonoBehaviour
         MaxSdkCallbacks.OnInterstitialHiddenEvent += OnInterstitialDismissedEvent;
         MaxSdkCallbacks.OnInterstitialClickedEvent += MaxSdkCallbacks_OnInterstitialClickedEvent;
         MaxSdkCallbacks.OnInterstitialDisplayedEvent += OnInterstitialDisplayedEvent;
-        isSended = false;
         LoadInterstitial();
     }
 
     public void Show()
     {
+        isSended = false;
         MaxSdk.ShowInterstitial(interstitialAdUnitId);
     }
     

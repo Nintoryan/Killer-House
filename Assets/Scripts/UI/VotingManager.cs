@@ -6,7 +6,6 @@ using DG.Tweening;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
-using Shop;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -188,6 +187,10 @@ namespace Voting
             s.AppendCallback(() =>
             {
                 VotingResults.SetActive(false);
+                if (GameManager.Instance.LocalPlayer.isImposter)
+                {
+                    GameManager.Instance.LocalPlayer._skills.KillGoCD();
+                }
             });
             s.AppendCallback(GameManager.Instance._beginEndGame.FadeOut);
 

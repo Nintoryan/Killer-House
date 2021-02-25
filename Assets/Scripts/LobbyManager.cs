@@ -64,6 +64,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         AmountOfPlayers.text = $"{PhotonNetwork.CurrentRoom.PlayerCount}/{PhotonNetwork.CurrentRoom.MaxPlayers}";
+        StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         StartGameButton.interactable = CheckPlayersReady();
     }
 
@@ -77,11 +78,16 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         var gm = GameManager.Instance;
+        foreach (var player in gm._players)
+        {
+            if (Equals(PhotonNetwork.LocalPlayer, player._photonView.Owner))
+            {
+                return;
+            }
+        }
         PhotonNetwork.Instantiate(PlayerPrefab.name, 
             gm.SpawnPlaces[Random.Range(0,gm.SpawnPlaces.Length)].position, 
             Quaternion.identity);
-        StartGameButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
-        StartGameButton.interactable = CheckPlayersReady();
     }
 
     public override void OnLeftRoom()
@@ -95,7 +101,20 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             SceneManager.LoadScene(0);
         }
-        
+    }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        var metrica = AppMetrica.Instance;
+        var paramerts = new Dictionary<string, object>
+        {
+            {"level_number", 1},
+            {"level_count", PlayerPrefs.GetInt("levelNumber")},
+            {"result", "leave"},
+            {"time", (int)GameManager.Instance.TimeSinceGameStarted},
+            {"progress",0}
+        };
+        metrica.ReportEvent("level_finish",paramerts);
+        metrica.SendEventsBuffer();
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)
@@ -107,7 +126,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private bool CheckPlayersReady()
     {
-        return PhotonNetwork.CurrentRoom.PlayerCount - GameManager.Instance.AmountOfKillers >= 3;
+        return PhotonNetwork.CurrentRoom.PlayerCount >= GameManager.Instance.AmountOfKillers * 3 + 1;
     }
 
     public static Color GetColor(int id)

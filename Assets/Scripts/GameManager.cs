@@ -184,18 +184,13 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         }
         return Player;
     }
-
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        if (LocalPlayer != null && LocalPlayer._InGameUI != null)
-        {
-            LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
-        }
-    }
     
     public void MovePlayersOnSpawn()
     {
-        StartCoroutine(Teleport());
+        if (!LocalPlayer.IsDead)
+        {
+            StartCoroutine(Teleport());
+        }
     }
 
     private IEnumerator Teleport()
@@ -232,26 +227,33 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             PhotonNetwork.RaiseEvent(55,1, options, sendOptions);
         }
     }
-
+    
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        if (LocalPlayer != null && LocalPlayer._InGameUI != null)
+        {
+            LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{newPlayer.NickName} joined the game");
+        }
+    }
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{otherPlayer.NickName} left the game");
         var p = FindPlayer(otherPlayer.ActorNumber);
-        if (isGameStarted)
+        if (p == null)
         {
-            if (p == null)
-            {
-                Debug.Log("Ой а всё, а он уже ливнул");
-                return;
-            }
-            if (PhotonNetwork.IsMasterClient && !p.IsDead)
-            {
-                //Только если мастер клиент уловил уничтожение игрока
-                var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-                var sendOptions = new SendOptions {Reliability = true};
-                PhotonNetwork.RaiseEvent(65, p.AvaliableQuestsAmount, options, sendOptions);
-            }
+            Debug.Log("Предотвращён двойной выход из игры одним игроком.");
+            return;
         }
+
+        LocalPlayer._InGameUI.ShowPlayerJoinLeave($"{otherPlayer.NickName} left the game");
+
+        if (PhotonNetwork.IsMasterClient && !p.IsDead && isGameStarted)
+        {
+            //Только если мастер клиент уловил уничтожение игрока
+            var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
+            var sendOptions = new SendOptions {Reliability = true};
+            PhotonNetwork.RaiseEvent(65, p.AvaliableQuestsAmount, options, sendOptions);
+        }
+
         try
         {
             _players.Remove(p);
@@ -261,6 +263,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             Console.WriteLine("Объект уже уничтожен!");
         }
+
         if (PhotonNetwork.IsMasterClient && isGameStarted)
         {
             var s = DOTween.Sequence();
@@ -268,6 +271,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             s.AppendCallback(CheckGameEnded);
         }
     }
+
 
     private void OnPlayerDead(int DeadPlayerID)
     {
@@ -299,8 +303,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         var paramerts = new Dictionary<string, object>
         {
             {"level_number", 1},
-            {"level_count", PlayerPrefs.GetInt("levelNumber")},
-            {"level_random", PlayerPrefs.GetInt("isRandomLevel") == 1}
+            {"level_count", PlayerPrefs.GetInt("levelNumber")}
         };
         metrica.ReportEvent("level_start", paramerts);
         metrica.SendEventsBuffer();
@@ -400,8 +403,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         });
     }
 
+    private bool isGameEnded;
     private void OnImposterWin()
     {
+        if(isGameEnded) return;
+        isGameEnded = true;
         //Событие победы импостера
         LocalPlayer.DisableControll();
         var s2 = DOTween.Sequence();
@@ -421,6 +427,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     private void OnCiviliansWin()
     {
+        if(isGameEnded) return;
+        isGameEnded = true;
         //Событие победы мирных
         LocalPlayer.DisableControll();
         var s1 = DOTween.Sequence();

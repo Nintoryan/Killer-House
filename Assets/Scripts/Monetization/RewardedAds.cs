@@ -76,7 +76,7 @@ public class RewardedAds : MonoBehaviour
         Advertisment.Instance.RewardedAd.SetAnalyticsData(available, start, clicked, canceled, watched);
         var metrica = AppMetrica.Instance;        
         metrica.ReportEvent("video_ads_available", AdsAvailable);
-
+        metrica.ReportEvent("video_ads_started", AdsStarted);
         isClicked = false;
         isWatched = false;
         isCanceled = false;
@@ -121,8 +121,7 @@ public class RewardedAds : MonoBehaviour
 
     private void OnRewardedAdDisplayedEvent(string adUnitId)
     {
-        var metrica = AppMetrica.Instance;
-        metrica.ReportEvent("video_ads_started", AdsStarted);
+        
     }
 
     private void OnRewardedAdClickedEvent(string adUnitId) 

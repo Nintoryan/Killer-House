@@ -1023,9 +1023,9 @@
               <e p="EndGame.cs" t="Include" />
             </e>
             <e p="InGameUI.cs" t="Include" />
-            <e p="LobbyMainPanel.cs" t="Include" />
             <e p="LobbyTopPanel.cs" t="Include" />
             <e p="Logger.cs" t="Include" />
+            <e p="LoginHub.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="PlayerAvatar.cs" t="Include" />
             <e p="RoomListEntry.cs" t="Include" />

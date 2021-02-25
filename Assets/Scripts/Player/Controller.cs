@@ -52,11 +52,10 @@ namespace AAPlayer
             get => _skinID;
             private set
             {
-                if (value != _skinID)
-                {
-                    _skinID = value;
-                    _Body.Initialize(value);
-                }
+                if (value == _skinID) return;
+                _skinID = value;
+                _Body.Initialize(value);
+                _photonView.FindObservables(true);
             }
         }
         public int LocalNumber
@@ -68,7 +67,7 @@ namespace AAPlayer
         public bool IsDead { get; private set;}
         public int AvaliableQuestsAmount; 
 
-        private void Start()
+        private void Awake()
         {
             GameManager.Instance.AddPlayer(this);
             NickName.text = _photonView.Owner.NickName;
@@ -126,8 +125,10 @@ namespace AAPlayer
                 {
                     DeadMove(direction);
                 }
-                _InGameUI.MoveMe(controller.transform.position);
-                _camera.transform.position = BodyCamDistance + controller.transform.position;
+
+                var position = controller.transform.position;
+                _InGameUI.MoveMe(position);
+                _camera.transform.position = BodyCamDistance + position;
             }
             if (directionmagnitude >= 0.05f && !IsDead)
             {
@@ -161,21 +162,21 @@ namespace AAPlayer
             NickNameCanvas.gameObject.SetActive(true);
         }
 
-        private void DeadMove(Vector3 direction)
+        private void DeadMove(Vector3 MovingDirection)
         {
             var NewPosition = _Body.transform.position;
-            NewPosition += direction * (playerSpeed * Time.deltaTime);
+            NewPosition += MovingDirection * (playerSpeed * Time.deltaTime);
             NewPosition = new Vector3(
                 Mathf.Clamp(NewPosition.x,-15,90),
                 NewPosition.y,
                 Mathf.Clamp(NewPosition.z,-25,115)
             );
             _Body.transform.position = NewPosition;
-            if (direction.magnitude >= 0.05f)
+            if (MovingDirection.magnitude >= 0.05f)
             {
                 _skills.isDancing = false;
-                _Body._Animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
-                var targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                _Body._Animator.SetInteger(Status, MovingDirection.magnitude > 0.6f ? 2 : 1);
+                var targetAngle = Mathf.Atan2(MovingDirection.x, MovingDirection.y) * Mathf.Rad2Deg;
                 var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
                     turnSmoothTime);
                 _Body.transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -187,12 +188,12 @@ namespace AAPlayer
                     _Body._Animator.SetInteger(Status, 0);
                 }
             }
-            if (direction != Vector3.zero)
+            if (MovingDirection != Vector3.zero)
             {
-                _Body.transform.forward = direction;
+                _Body.transform.forward = MovingDirection;
             }
         }
-        private void AliveMove(Vector3 direction)
+        private void AliveMove(Vector3 MovingDirection)
         {
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)
@@ -201,15 +202,15 @@ namespace AAPlayer
             }
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
-            if (direction.magnitude >= 0.05f)
+            if (MovingDirection.magnitude >= 0.05f)
             {
                 _skills.isDancing = false;
-                _Body._Animator.SetInteger(Status, direction.magnitude > 0.6f ? 2 : 1);
-                var targetAngle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+                _Body._Animator.SetInteger(Status, MovingDirection.magnitude > 0.6f ? 2 : 1);
+                var targetAngle = Mathf.Atan2(MovingDirection.x, MovingDirection.y) * Mathf.Rad2Deg;
                 var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
                     turnSmoothTime);
                 controller.transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                controller.Move(direction * (Time.deltaTime * playerSpeed));
+                controller.Move(MovingDirection * (Time.deltaTime * playerSpeed));
             }
             else
             {
@@ -219,9 +220,9 @@ namespace AAPlayer
                 }
             }
 
-            if (direction != Vector3.zero)
+            if (MovingDirection != Vector3.zero)
             {
-                controller.transform.forward = direction;
+                controller.transform.forward = MovingDirection;
             }
         }
         
@@ -282,23 +283,28 @@ namespace AAPlayer
             _camera.fieldOfView = fovValue;
         }
 
-        public void SetNickNameTarget(Transform newTarget)
+        private void SetNickNameTarget(Transform newTarget)
         {
             NickNameTarget = newTarget;
         }
+
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            if (!GameManager.Instance.isGameStarted)
+            if (stream.IsWriting)
             {
-                if (stream.IsWriting)
-                {
-                    stream.SendNext(LocalNumber);
-                    stream.SendNext(SkinID);
-                }
-                else if (stream.IsReading)
+                stream.SendNext(LocalNumber);
+                stream.SendNext(SkinID);
+            }
+            else 
+            {
+                try
                 {
                     LocalNumber = (int) stream.ReceiveNext();
                     SkinID = (int) stream.ReceiveNext();
+                }
+                catch
+                {
+                    // ignored
                 }
             }
         }

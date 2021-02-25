@@ -30,7 +30,6 @@ public class Chat : MonoBehaviour, IChatClientListener
             yield return new WaitForSeconds(1.5f);
             if (_chatClient != null)
             {
-                Debug.Log(_chatClient.State);
                 if (_chatClient.State != ChatState.ConnectedToNameServer 
                     && _chatClient.State != ChatState.ConnectingToNameServer
                     && _chatClient.State != ChatState.ConnectedToFrontEnd
@@ -72,7 +71,7 @@ public class Chat : MonoBehaviour, IChatClientListener
 
     public void OnChatStateChange(ChatState state)
     {
-       Debug.Log("ChateStateChange.Invoked");
+        
     }
 
     public void OnGetMessages(string channelName, string[] senders, object[] messages)

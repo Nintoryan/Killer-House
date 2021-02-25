@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EndGame : MonoBehaviour
 {
@@ -148,7 +150,15 @@ public class EndGame : MonoBehaviour
             {
                 if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
                 {
-                    Advertisment.Instance.ShowInterstitial();
+                    try
+                    {
+                        Advertisment.Instance.ShowInterstitial();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogWarning(e);
+                    }
+                    
                 }
             }
         });

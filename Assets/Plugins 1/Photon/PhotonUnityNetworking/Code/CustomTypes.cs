@@ -9,13 +9,12 @@
 // ----------------------------------------------------------------------------
 
 
+using ExitGames.Client.Photon;
+using Photon.Realtime;
+using UnityEngine;
+
 namespace Photon.Pun
 {
-    using UnityEngine;
-    using Photon.Realtime;
-    using ExitGames.Client.Photon;
-
-
     /// <summary>
     /// Internally used class, containing de/serialization methods for various Unity-specific classes.
     /// Adding those to the Photon serialization protocol allows you to send them in events, etc.

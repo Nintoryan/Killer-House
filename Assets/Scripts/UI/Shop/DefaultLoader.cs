@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using ExitGames.Client.Photon;
+using Photon.Pun;
+using UnityEngine;
 
 public class DefaultLoader : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class DefaultLoader : MonoBehaviour
         var RandomInt = Random.Range(0, 8);
         PlayerPrefs.SetInt($"Skin{RandomInt}",2);
         PlayerPrefs.SetInt("SelectedSkin",RandomInt);
+        var hashtable = new Hashtable {["SelectedSkin"] = RandomInt};
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable);
         PlayerPrefs.SetInt("Dance0",2);
         PlayerPrefs.SetInt("SelectedDance",0);
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Photon.Pun
 
         // Recycled collections
         private static Queue<Transform> nodesQueue = new Queue<Transform>();
-        public static Dictionary<System.Type, ICollection> searchLists = new Dictionary<System.Type, ICollection>();
+        public static Dictionary<Type, ICollection> searchLists = new Dictionary<Type, ICollection>();
         private static Stack<Transform> nodeStack = new Stack<Transform>();
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace Photon.Pun
             if (nodeStack.Count == 0)
                 return;
 
-            System.Type type = typeof(T);
+            Type type = typeof(T);
 
             // Aquire the right searchlist from our pool
             List<T> searchList;
@@ -255,7 +256,7 @@ namespace Photon.Pun
             where T : class
             where NestedT : class
         {
-            System.Type type = typeof(T);
+            Type type = typeof(T);
 
             // Temp lists are also recycled. Get/Create a reusable List of this type.
             List<T> searchList;
@@ -334,7 +335,7 @@ namespace Photon.Pun
             if (!includeInactive && !t.gameObject.activeSelf)
                 return;
 
-            System.Type searchType = typeof(SearchT);
+            Type searchType = typeof(SearchT);
 
             // Temp lists are also recycled. Get/Create a reusable List of this type.
             List<SearchT> searchList;

@@ -1,4 +1,6 @@
 ﻿using System;
+using ExitGames.Client.Photon;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UserData;
@@ -28,6 +30,11 @@ namespace Shop
                 if (value == 2)
                 {
                     PlayerPrefs.SetInt($"Selected{_type}",PPID);
+                    if (_type == Type.Skin)
+                    {
+                        var hashtable = new Hashtable {["SelectedSkin"] = PPID};
+                        PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable);
+                    }
                 }
             }
         }

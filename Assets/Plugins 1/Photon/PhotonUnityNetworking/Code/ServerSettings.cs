@@ -9,14 +9,13 @@
 // ----------------------------------------------------------------------------
 
 
+using System;
+using System.Collections.Generic;
+using Photon.Realtime;
+using UnityEngine;
+
 namespace Photon.Pun
 {
-    using System;
-    using System.Collections.Generic;
-    using ExitGames.Client.Photon;
-    using Photon.Realtime;
-    using UnityEngine;
-
     /// <summary>
     /// Collection of connection-relevant settings, used internally by PhotonNetwork.ConnectUsingSettings.
     /// </summary>
@@ -57,9 +56,9 @@ namespace Photon.Pun
         /// <summary>Sets appid and region code in the AppSettings. Used in Editor.</summary>
         public void UseCloud(string cloudAppid, string code = "")
         {
-            this.AppSettings.AppIdRealtime = cloudAppid;
-            this.AppSettings.Server = null;
-            this.AppSettings.FixedRegion = string.IsNullOrEmpty(code) ? null : code;
+            AppSettings.AppIdRealtime = cloudAppid;
+            AppSettings.Server = null;
+            AppSettings.FixedRegion = string.IsNullOrEmpty(code) ? null : code;
         }
 
         /// <summary>Checks if a string is a Guid by attempting to create one.</summary>
@@ -94,7 +93,7 @@ namespace Photon.Pun
         /// <summary>String summary of the AppSettings.</summary>
         public override string ToString()
         {
-            return "ServerSettings: " + this.AppSettings.ToStringFull();
+            return "ServerSettings: " + AppSettings.ToStringFull();
         }
     }
 }

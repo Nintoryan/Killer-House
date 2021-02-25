@@ -705,7 +705,7 @@ PlayerSettings:
   scriptingBackend:
     Android: 1
   il2cppCompilerConfiguration:
-    Android: 2
+    Android: 0
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0

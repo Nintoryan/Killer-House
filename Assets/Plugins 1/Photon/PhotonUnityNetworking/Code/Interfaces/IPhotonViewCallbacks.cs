@@ -1,7 +1,7 @@
-﻿namespace Photon.Pun
-{
-    using Photon.Realtime;
+﻿using Photon.Realtime;
 
+namespace Photon.Pun
+{
     /// <summary>
     /// Empty Base class for all PhotonView callbacks.
     /// </summary>

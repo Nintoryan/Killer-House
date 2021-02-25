@@ -1,6 +1,7 @@
 ﻿using System;
 using Photon.Realtime;
 using System.Collections.Generic;
+using ExitGames.Client.Photon;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -83,7 +84,9 @@ public class LoginHub : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        this.SetActivePanel(SelectionPanel.name);
+        SetActivePanel(SelectionPanel.name);
+        var hashtable = new Hashtable {["SelectedSkin"] = PlayerPrefs.GetInt("SelectedSkin"),["LocalNumber"] = -1};
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hashtable);
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)

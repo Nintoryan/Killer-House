@@ -9,7 +9,7 @@ using UnityEngine;
 #pragma warning disable CS0649
 namespace AAPlayer
 {
-    public class Controller : MonoBehaviour,IPunObservable
+    public class Controller : MonoBehaviour
     {
         public CharacterController controller;
         [SerializeField] private FloatingJoystick _floatingJoystick;
@@ -55,7 +55,6 @@ namespace AAPlayer
                 if (value == _skinID) return;
                 _skinID = value;
                 _Body.Initialize(value);
-                _photonView.FindObservables(true);
             }
         }
         public int LocalNumber
@@ -85,21 +84,42 @@ namespace AAPlayer
                 _skills.SetAlarmButtonActive(false);
                 _skills.SetInteractButtonActive(false);
                 _chat.Initialize(_photonView.Owner.NickName,PhotonNetwork.CurrentRoom.Name);
-                SkinID = PlayerPrefs.GetInt("SelectedSkin");
             }
             NickNameTarget = controller.transform;
+            SkinID = (int)_photonView.Owner.CustomProperties["SelectedSkin"];
         }
 
         private IEnumerator LoadLocalNumber()
         {
-            yield return new WaitForSecondsRealtime(0.75f);
-            if (LocalNumber == -1)
+            if (!_photonView.IsMine)
             {
-                var busyNumbers = (from p in GameManager.Instance._players where p != this select p._localNumber).ToList();
+                while (LocalNumber == -1)
+                {
+                    yield return new WaitForSeconds(0.15f);
+                    if (_photonView.Owner.CustomProperties.ContainsKey("LocalNumber"))
+                    {
+                        LocalNumber = (int)_photonView.Owner.CustomProperties["LocalNumber"];
+                    }
+                }
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.5f);
+                var busyNumbers = (from p in GameManager.Instance._players where p != this select p.LocalNumber).ToList();
                 for (int i = 0; i < 10; i++)
                 {
                     if (busyNumbers.Contains(i)) continue;
                     LocalNumber = i;
+                    var hashtable = _photonView.Owner.CustomProperties;
+                    if (!hashtable.ContainsKey("LocalNumber"))
+                    {
+                        hashtable.Add("LocalNumber",i);
+                    }
+                    else
+                    {
+                        hashtable["LocalNumber"] = i;
+                    }
+                    _photonView.Owner.SetCustomProperties(hashtable);
                     break;
                 }
             }
@@ -286,27 +306,6 @@ namespace AAPlayer
         private void SetNickNameTarget(Transform newTarget)
         {
             NickNameTarget = newTarget;
-        }
-
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            if (stream.IsWriting)
-            {
-                stream.SendNext(LocalNumber);
-                stream.SendNext(SkinID);
-            }
-            else 
-            {
-                try
-                {
-                    LocalNumber = (int) stream.ReceiveNext();
-                    SkinID = (int) stream.ReceiveNext();
-                }
-                catch
-                {
-                    // ignored
-                }
-            }
         }
     }
 }

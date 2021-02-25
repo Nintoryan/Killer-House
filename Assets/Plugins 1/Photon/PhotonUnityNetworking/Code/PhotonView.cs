@@ -9,14 +9,14 @@
 // ----------------------------------------------------------------------------
 
 
+using System;
+using System.Collections.Generic;
+using Photon.Realtime;
+using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace Photon.Pun
 {
-    using System;
-    using UnityEngine;
-    using UnityEngine.Serialization;
-    using System.Collections.Generic;
-    using Photon.Realtime;
-
 #if UNITY_EDITOR
     using UnityEditor;
 #endif
@@ -51,7 +51,7 @@ namespace Photon.Pun
         private int ownerActorNr; // TODO maybe changing this should trigger "Was Transfered"!?
 
         [FormerlySerializedAs("group")]
-        public byte Group = 0;
+        public byte Group;
 
         protected internal bool mixedModeIsReliable = false;
 
@@ -61,14 +61,14 @@ namespace Photon.Pun
         {
             get
             {
-                if (this.prefixField == -1 && PhotonNetwork.NetworkingClient != null)
+                if (prefixField == -1 && PhotonNetwork.NetworkingClient != null)
                 {
-                    this.prefixField = PhotonNetwork.currentLevelPrefix;
+                    prefixField = PhotonNetwork.currentLevelPrefix;
                 }
 
-                return this.prefixField;
+                return prefixField;
             }
-            set { this.prefixField = value; }
+            set { prefixField = value; }
         }
 
         // this field is serialized by unity. that means it is copied when instantiating a persistent obj into the scene
@@ -88,15 +88,15 @@ namespace Photon.Pun
         {
             get
             {
-                if (!this.didAwake)
+                if (!didAwake)
                 {
                     // even though viewID and instantiationID are setup before the GO goes live, this data can't be set. as workaround: fetch it if needed
                     //this.instantiationDataField = PhotonNetwork.FetchInstantiationData(this.InstantiationId);
                     Debug.LogError("PhotonNetwork.FetchInstantiationData() was removed. Can only return this.instantiationDataField.");
                 }
-                return this.instantiationDataField;
+                return instantiationDataField;
             }
-            set { this.instantiationDataField = value; }
+            set { instantiationDataField = value; }
         }
 
         internal object[] instantiationDataField;
@@ -104,7 +104,7 @@ namespace Photon.Pun
         /// <summary>
         /// For internal use only, don't use
         /// </summary>
-        protected internal List<object> lastOnSerializeDataSent = null;
+        protected internal List<object> lastOnSerializeDataSent;
         protected internal List<object> syncValues;
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Photon.Pun
         #endregion Callback Interfaces
 
         [SerializeField]
-        private int viewIdField = 0;
+        private int viewIdField;
 
         /// <summary>
         /// The ID of the PhotonView. Identifies it in a networked game (per room).
@@ -252,19 +252,19 @@ namespace Photon.Pun
         /// <remarks>See: [Network Instantiation](@ref instantiateManual)</remarks>
         public int ViewID
         {
-            get { return this.viewIdField; }
+            get { return viewIdField; }
             set
             {
                 // if ID was 0 for an awakened PhotonView, the view should add itself into the NetworkingClient.photonViewList after setup
-                bool viewMustRegister = this.didAwake && this.viewIdField == 0 && value != 0;
+                bool viewMustRegister = didAwake && viewIdField == 0 && value != 0;
                 //int oldValue = this.viewIdField;
 
                 // TODO: decide if a viewID can be changed once it wasn't 0. most likely that is not a good idea
                 // check if this view is in NetworkingClient.photonViewList and UPDATE said list (so we don't keep the old viewID with a reference to this object)
                 // PhotonNetwork.NetworkingClient.RemovePhotonView(this, true);
 
-                this.viewIdField = value;
-                this.ownerActorNr = value / PhotonNetwork.MAX_VIEW_IDS;
+                viewIdField = value;
+                ownerActorNr = value / PhotonNetwork.MAX_VIEW_IDS;
 
                 if (viewMustRegister)
                 {
@@ -285,7 +285,7 @@ namespace Photon.Pun
         /// </remarks>
         public bool IsSceneView
         {
-            get { return this.CreatorActorNr == 0; }
+            get { return CreatorActorNr == 0; }
         }
 
         #region Ownership
@@ -311,20 +311,20 @@ namespace Photon.Pun
         /// </summary>
         internal void ResetOwnership()
         {
-            if (this.CreatorActorNr == 0)
+            if (CreatorActorNr == 0)
             {
-                this.SetOwnerInternal(null, 0);
+                SetOwnerInternal(null, 0);
             }
             else
             {
                 // Offline Mode or just offline edge cases... just set to null.
                 if (ReferenceEquals(PhotonNetwork.CurrentRoom, null))
                 {
-                    this.SetOwnerInternal(null, this.CreatorActorNr);
+                    SetOwnerInternal(null, CreatorActorNr);
                 }
                 else
                 {
-                    this.SetOwnerInternal(PhotonNetwork.CurrentRoom.GetPlayer(this.CreatorActorNr), this.CreatorActorNr);
+                    SetOwnerInternal(PhotonNetwork.CurrentRoom.GetPlayer(CreatorActorNr), CreatorActorNr);
                 }
             }
         }
@@ -340,7 +340,7 @@ namespace Photon.Pun
             {
                 if (ownerActorNr == newOwnerId)
                 {
-                    RebuildControllerCache(false);
+                    RebuildControllerCache();
                     return;
                 }
             }
@@ -349,10 +349,10 @@ namespace Photon.Pun
                 ownershipCacheIsValid = OwnershipCacheState.OwnerValid;
             }
 
-            Player prevOwner = this.owner;
-            this.owner = newOwner;
-            this.ownerActorNr = newOwnerId;
-            this.AmOwner = newOwner == PhotonNetwork.LocalPlayer;
+            Player prevOwner = owner;
+            owner = newOwner;
+            ownerActorNr = newOwnerId;
+            AmOwner = newOwner == PhotonNetwork.LocalPlayer;
 
             if (newOwner != prevOwner)
                 if (!ReferenceEquals(OnOwnerChangeCallbacks, null))
@@ -369,13 +369,13 @@ namespace Photon.Pun
 
         public void SetControllerInternal(Player newController, int newControllerId)
         {
-            Player prevController = this.controller;
+            Player prevController = controller;
 
-            this.controller = newController;
-            this.controllerActorNr = newControllerId;
-            this.amController = newController == PhotonNetwork.LocalPlayer;
+            controller = newController;
+            controllerActorNr = newControllerId;
+            amController = newController == PhotonNetwork.LocalPlayer;
 
-            this.ownershipCacheIsValid |= OwnershipCacheState.ControllerValid;
+            ownershipCacheIsValid |= OwnershipCacheState.ControllerValid;
 
             UpdateCallbackLists();
 
@@ -390,16 +390,16 @@ namespace Photon.Pun
             var prevController = controller;
 
             // Scene objects (ownerId 0) must change controller
-            if (owner == null || this.ownerActorNr == 0 || this.owner.IsInactive)
+            if (owner == null || ownerActorNr == 0 || owner.IsInactive)
             {
                 var masterclient = PhotonNetwork.MasterClient;
-                this.controller = masterclient;
-                this.controllerActorNr = masterclient == null ? -1 : masterclient.ActorNumber;
+                controller = masterclient;
+                controllerActorNr = masterclient == null ? -1 : masterclient.ActorNumber;
             }
             else
             {
-                this.controller = this.owner;
-                this.controllerActorNr = this.ownerActorNr;
+                controller = owner;
+                controllerActorNr = ownerActorNr;
             }
 
             //    // No changes to the controller or owner - nothing has changed.
@@ -411,14 +411,14 @@ namespace Photon.Pun
 
             ownershipCacheIsValid |= OwnershipCacheState.ControllerValid;
 
-            this.amController = this.controllerActorNr != -1 && this.controllerActorNr == PhotonNetwork.LocalPlayer.ActorNumber;
+            amController = controllerActorNr != -1 && controllerActorNr == PhotonNetwork.LocalPlayer.ActorNumber;
 
             UpdateCallbackLists();
 
             if (controller != prevController)
                 if (!ReferenceEquals(OnControllerChangeCallbacks, null))
                     for (int i = 0, cnt = OnControllerChangeCallbacks.Count; i < cnt; ++i)
-                        OnControllerChangeCallbacks[i].OnControllerChange(this.controller, prevController);
+                        OnControllerChangeCallbacks[i].OnControllerChange(controller, prevController);
         }
 
         private Player owner;
@@ -439,8 +439,8 @@ namespace Photon.Pun
                 // using this.OwnerActorNr instead of this.ownerId so that it's the right value during awake.
                 if ((ownershipCacheIsValid & OwnershipCacheState.OwnerValid) == 0)
                 {
-                    ownerActorNr = this.didAwake ? this.ownerActorNr : this.ViewID / PhotonNetwork.MAX_VIEW_IDS;
-                    owner = PhotonNetwork.CurrentRoom == null ? null : PhotonNetwork.CurrentRoom.GetPlayer(this.ownerActorNr);
+                    ownerActorNr = didAwake ? ownerActorNr : ViewID / PhotonNetwork.MAX_VIEW_IDS;
+                    owner = PhotonNetwork.CurrentRoom == null ? null : PhotonNetwork.CurrentRoom.GetPlayer(ownerActorNr);
                     ownershipCacheIsValid |= OwnershipCacheState.OwnerValid;
                 }
 
@@ -454,8 +454,8 @@ namespace Photon.Pun
             {
                 if ((ownershipCacheIsValid & OwnershipCacheState.OwnerValid) == 0)
                 {
-                    ownerActorNr = this.didAwake ? this.ownerActorNr : this.ViewID / PhotonNetwork.MAX_VIEW_IDS;
-                    owner = PhotonNetwork.CurrentRoom == null ? null : PhotonNetwork.CurrentRoom.GetPlayer(this.ownerActorNr);
+                    ownerActorNr = didAwake ? ownerActorNr : ViewID / PhotonNetwork.MAX_VIEW_IDS;
+                    owner = PhotonNetwork.CurrentRoom == null ? null : PhotonNetwork.CurrentRoom.GetPlayer(ownerActorNr);
                     ownershipCacheIsValid |= OwnershipCacheState.OwnerValid;
                 }
 
@@ -471,10 +471,10 @@ namespace Photon.Pun
             {
                 if ((ownershipCacheIsValid & OwnershipCacheState.ControllerValid) == 0)
                 {
-                    controllerActorNr = this.IsOwnerActive ? this.OwnerActorNr : (PhotonNetwork.MasterClient != null ? PhotonNetwork.MasterClient.ActorNumber : -1);
+                    controllerActorNr = IsOwnerActive ? OwnerActorNr : (PhotonNetwork.MasterClient != null ? PhotonNetwork.MasterClient.ActorNumber : -1);
                     controller =
                        (PhotonNetwork.CurrentRoom == null) ? PhotonNetwork.LocalPlayer :
-                       (!this.IsOwnerActive) ? PhotonNetwork.MasterClient :
+                       (!IsOwnerActive) ? PhotonNetwork.MasterClient :
                        owner;
 
                     ownershipCacheIsValid |= OwnershipCacheState.ControllerValid;
@@ -493,10 +493,10 @@ namespace Photon.Pun
             {
                 if ((ownershipCacheIsValid & OwnershipCacheState.ControllerValid) == 0)
                 {
-                    controllerActorNr = this.IsOwnerActive ? this.OwnerActorNr : (PhotonNetwork.MasterClient != null ? PhotonNetwork.MasterClient.ActorNumber : -1);
+                    controllerActorNr = IsOwnerActive ? OwnerActorNr : (PhotonNetwork.MasterClient != null ? PhotonNetwork.MasterClient.ActorNumber : -1);
                     controller =
                        (PhotonNetwork.CurrentRoom == null) ? PhotonNetwork.LocalPlayer :
-                       (!this.IsOwnerActive) ? PhotonNetwork.MasterClient :
+                       (!IsOwnerActive) ? PhotonNetwork.MasterClient :
                        owner;
 
                     ownershipCacheIsValid |= OwnershipCacheState.ControllerValid;
@@ -510,12 +510,12 @@ namespace Photon.Pun
 
         public bool IsOwnerActive
         {
-            get { return this.Owner != null && !this.Owner.IsInactive; }
+            get { return Owner != null && !Owner.IsInactive; }
         }
 
         public int CreatorActorNr
         {
-            get { return this.viewIdField / PhotonNetwork.MAX_VIEW_IDS; }
+            get { return viewIdField / PhotonNetwork.MAX_VIEW_IDS; }
         }
 
         internal enum OwnershipCacheState { Invalid = 0, OwnerValid = 1, ControllerValid = 2, AllValid = 3 }
@@ -539,7 +539,7 @@ namespace Photon.Pun
 
                 // using this.OwnerActorNr instead of this.ownerId so that it's the right value during awake.
                 return (ownershipCacheIsValid & OwnershipCacheState.ControllerValid) == 0 ?
-                    (this.OwnerActorNr == PhotonNetwork.LocalPlayer.ActorNumber) || (PhotonNetwork.IsMasterClient && !this.IsOwnerActive) :
+                    (OwnerActorNr == PhotonNetwork.LocalPlayer.ActorNumber) || (PhotonNetwork.IsMasterClient && !IsOwnerActive) :
                     amController;
             }
         }
@@ -568,9 +568,9 @@ namespace Photon.Pun
         /// <summary>Called by Unity on start of the application and does a setup the PhotonView.</summary>
         protected internal void Awake()
         {
-            if (this.ViewID != 0)
+            if (ViewID != 0)
             {
-                int ownerId = this.ViewID / PhotonNetwork.MAX_VIEW_IDS;
+                int ownerId = ViewID / PhotonNetwork.MAX_VIEW_IDS;
                 var room = PhotonNetwork.CurrentRoom;
                 if (room != null)
                 {
@@ -582,7 +582,7 @@ namespace Photon.Pun
                 PhotonNetwork.RegisterPhotonView(this);
             }
 
-            this.didAwake = true;
+            didAwake = true;
 
             FindObservables();
         }
@@ -614,13 +614,13 @@ namespace Photon.Pun
 
         protected internal void OnDestroy()
         {
-            if (!this.removedFromLocalViewList)
+            if (!removedFromLocalViewList)
             {
                 bool wasInList = PhotonNetwork.LocalCleanPhotonView(this);
 
-                if (wasInList && this.InstantiationId > 0 && !PhotonHandler.AppQuits && PhotonNetwork.LogLevel >= PunLogLevel.Informational)
+                if (wasInList && InstantiationId > 0 && !PhotonHandler.AppQuits && PhotonNetwork.LogLevel >= PunLogLevel.Informational)
                 {
-                    Debug.Log("PUN-instantiated '" + this.gameObject.name + "' got destroyed by engine. This is OK when loading levels. Otherwise use: PhotonNetwork.Destroy().");
+                    Debug.Log("PUN-instantiated '" + gameObject.name + "' got destroyed by engine. This is OK when loading levels. Otherwise use: PhotonNetwork.Destroy().");
                 }
             }
         }
@@ -639,7 +639,7 @@ namespace Photon.Pun
         {
             if (OwnershipTransfer != OwnershipOption.Fixed)
             {
-                PhotonNetwork.RequestOwnership(this.ViewID, this.ownerActorNr);
+                PhotonNetwork.RequestOwnership(ViewID, ownerActorNr);
             }
             else
             {
@@ -681,7 +681,7 @@ namespace Photon.Pun
         {
             if (OwnershipTransfer == OwnershipOption.Takeover || (OwnershipTransfer == OwnershipOption.Request && amController))
             {
-                PhotonNetwork.TransferOwnership(this.ViewID, newOwnerId);
+                PhotonNetwork.TransferOwnership(ViewID, newOwnerId);
             }
             else
             {
@@ -700,24 +700,24 @@ namespace Photon.Pun
 
         public void SerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            if (this.ObservedComponents != null && this.ObservedComponents.Count > 0)
+            if (ObservedComponents != null && ObservedComponents.Count > 0)
             {
-                for (int i = 0; i < this.ObservedComponents.Count; ++i)
+                for (int i = 0; i < ObservedComponents.Count; ++i)
                 {
-                    var component = this.ObservedComponents[i];
+                    var component = ObservedComponents[i];
                     if (component != null)
-                        SerializeComponent(this.ObservedComponents[i], stream, info);
+                        SerializeComponent(ObservedComponents[i], stream, info);
                 }
             }
         }
 
         public void DeserializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            if (this.ObservedComponents != null && this.ObservedComponents.Count > 0)
+            if (ObservedComponents != null && ObservedComponents.Count > 0)
             {
-                for (int i = 0; i < this.ObservedComponents.Count; ++i)
+                for (int i = 0; i < ObservedComponents.Count; ++i)
                 {
-                    var component = this.ObservedComponents[i];
+                    var component = ObservedComponents[i];
                     if (component != null)
                         DeserializeComponent(component, stream, info);
                 }
@@ -763,7 +763,7 @@ namespace Photon.Pun
         /// </remarks>
         public void RefreshRpcMonoBehaviourCache()
         {
-            this.RpcMonoBehaviours = this.GetComponents<MonoBehaviour>();
+            RpcMonoBehaviours = GetComponents<MonoBehaviour>();
         }
 
 
@@ -887,7 +887,7 @@ namespace Photon.Pun
 
         public override string ToString()
         {
-            return string.Format("View {0}{3} on {1} {2}", this.ViewID, (this.gameObject != null) ? this.gameObject.name : "GO==null", (this.IsSceneView) ? "(scene)" : string.Empty, this.Prefix > 0 ? "lvl" + this.Prefix : "");
+            return string.Format("View {0}{3} on {1} {2}", ViewID, (gameObject != null) ? gameObject.name : "GO==null", (IsSceneView) ? "(scene)" : string.Empty, Prefix > 0 ? "lvl" + Prefix : "");
         }
     }
 }

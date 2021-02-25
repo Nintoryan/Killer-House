@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -161,6 +162,11 @@ namespace AAPlayer
         public Transform AliveGraphicsTransform()
         {
             return _AliveGraphics.transform;
+        }
+
+        public PhotonAnimatorView CurrentPhotonAnimatorView()
+        {
+            return _Graphics.GetComponent<PhotonAnimatorView>();
         }
         
     } 

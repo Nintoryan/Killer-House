@@ -23,22 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/CustomTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/CustomTypes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Interfaces/IPhotonViewCallbacks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Interfaces/IPunCallbacks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonNetworkPart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonStreamQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PhotonView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PunClasses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PunClasses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/ServerSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/ServerSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Utilities/NestedComponentUtilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbody2DView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonRigidbodyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformViewClassic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAds.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BeginEndGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EndGameScreen/EndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EndGameScreen/EndGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LobbyMainPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Mandy's Sketch Extended SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/MoneyBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/05250243-5982-472D-92DA-7F939C7F8164/d0/eadbc196/PlayerPrefs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigameZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
@@ -96,8 +104,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Notifications/DailyNotifications.cs" />
@@ -111,7 +117,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/DBDMinigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/CursorRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/RotatingMinigame/RotatingInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" />
@@ -135,10 +140,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/DefaultLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/PunClasses.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Controller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" />
       </list>
     </option>
   </component>
@@ -251,7 +260,7 @@
       <workItem from="1613907991154" duration="4308000" />
       <workItem from="1613971437816" duration="1632000" />
       <workItem from="1614007984888" duration="11950000" />
-      <workItem from="1614267953893" duration="12847000" />
+      <workItem from="1614267953893" duration="21135000" />
     </task>
     <servers />
   </component>
@@ -353,9 +362,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614285349113">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614294371963">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1614285349113" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1614294371963" />
   </component>
 </project>

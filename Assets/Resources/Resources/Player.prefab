@@ -10187,9 +10187,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 8899025424892144629}
   - {fileID: 5316149679955128270}
-  - {fileID: 2342898109561713614}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -25931,7 +25929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269828414942959118, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2181385356113147668, guid: 9988cc6547d351c45820c87f25e784e5, type: 3}
       propertyPath: m_Materials.Array.data[0]

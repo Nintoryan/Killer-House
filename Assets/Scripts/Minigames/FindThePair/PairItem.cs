@@ -38,11 +38,9 @@ public class PairItem : MonoBehaviour
         s.AppendCallback(()=>_image.color = Color.clear);
         s.Append(transform.DORotate(new Vector3(0, 0, 0), 0.15f));
     }
-
-    private bool locked;
+    
     public void LockState()
     {
         _button.interactable = false;
-        locked = true;
     }
 }

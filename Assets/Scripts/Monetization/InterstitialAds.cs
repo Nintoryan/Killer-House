@@ -40,6 +40,7 @@ public class InterstitialAds : MonoBehaviour
         {
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
+            metrica.SendEventsBuffer();
         }
         
     }
@@ -62,6 +63,7 @@ public class InterstitialAds : MonoBehaviour
         {
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
+            metrica.SendEventsBuffer();
         }
     }
 
@@ -96,6 +98,7 @@ public class InterstitialAds : MonoBehaviour
         {
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
+            metrica.SendEventsBuffer();
         }
         LoadInterstitial();
     }

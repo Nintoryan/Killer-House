@@ -63,6 +63,7 @@ namespace Voting
 
         private void RaiseSkipEvent()
         {
+            if (IsVotesShown) return;
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             var sendOptions = new SendOptions {Reliability = true};
             PhotonNetwork.RaiseEvent(51, _localPlayer.thisPlayerActorID, options, sendOptions);
@@ -248,10 +249,6 @@ namespace Voting
                     {
                         SkipedPlayer._suspectPlayer.RemoveFromSuspectedByPlayer(SkipedPlayer.localPlayerNumber);
                         SkipedPlayer._suspectPlayer = null;
-                    }
-                    if (isAllVoted())
-                    {
-                        OnAllVoted();
                     }
                     break;
             }

@@ -207,7 +207,7 @@ namespace AAPlayer
             {
                 Wallet.Balance += 150;
             };
-            Advertisment.Instance.ShowRewarded("watchTV");
+            Advertisment.Instance.ShowRewarded("watchtv");
         }
 
         public void SetKillingInteractable(bool isInteractable)

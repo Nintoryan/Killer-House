@@ -57,11 +57,10 @@ public class FindThePair : Minigame
         {
             if (Selected == _pairItem) return;
             if (Selected.ID == _pairItem.ID)
-            { 
-                Selected.LockState();
+            {
                 _pairItem.Open();
+                Selected.LockState();
                 _pairItem.LockState();
-                Selected = null;
                 UnlockedAmount++;
                 if (UnlockedAmount == _sprites.Length)
                 {
@@ -70,17 +69,25 @@ public class FindThePair : Minigame
             }
             else
             {
+                var s1 = Selected;
+                var s2 = _pairItem;
                 var s = DOTween.Sequence();
                 s.AppendCallback(_pairItem.Open);
                 s.AppendInterval(0.6f);
                 s.AppendCallback(() =>
                 {
-                    Selected.Close();
-                    _pairItem.Close();
-                    Selected = null;
+                    if (s1 != Selected)
+                    {
+                        s1.Close();
+                    }
+
+                    if (s2 != Selected)
+                    {
+                        s2.Close();
+                    }
                 });
             }
-            
+            Selected = null;
         }
     }
 }

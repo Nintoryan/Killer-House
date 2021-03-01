@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using ExitGames.Client.Photon;
 using Photon.Pun;
@@ -113,6 +115,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             {"time", (int)GameManager.Instance.TimeSinceGameStarted},
             {"progress",0}
         };
+        
         metrica.ReportEvent("level_finish",paramerts);
         metrica.SendEventsBuffer();
     }

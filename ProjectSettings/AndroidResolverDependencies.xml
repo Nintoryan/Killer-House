@@ -7,9 +7,9 @@
     <package>com.android.support:customtabs:25.3.1</package>
     <package>com.android.support:recyclerview-v7:28.+</package>
     <package>com.android.support:support-v4:25.3.1</package>
-    <package>com.applovin.mediation:facebook-adapter:[6.2.1.0]</package>
+    <package>com.applovin.mediation:facebook-adapter:[6.3.0.0]</package>
     <package>com.applovin.mediation:google-adapter:[19.7.0.2]</package>
-    <package>com.applovin.mediation:ironsource-adapter:7.1.0.2.0</package>
+    <package>com.applovin.mediation:ironsource-adapter:7.1.1.0.1</package>
     <package>com.applovin.mediation:unityads-adapter:3.6.0.0</package>
     <package>com.applovin:applovin-sdk:9.15.3</package>
     <package>com.appsflyer:af-android-sdk:6.1.3</package>
@@ -70,14 +70,14 @@
     <file>Assets/Plugins/Android/androidx.work.work-runtime-2.1.0.aar</file>
     <file>Assets/Plugins/Android/com.android.installreferrer.installreferrer-2.1.aar</file>
     <file>Assets/Plugins/Android/com.applovin.applovin-sdk-9.15.3.aar</file>
-    <file>Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.2.1.0.aar</file>
+    <file>Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.3.0.0.aar</file>
     <file>Assets/Plugins/Android/com.applovin.mediation.google-adapter-19.7.0.2.aar</file>
-    <file>Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.0.2.0.aar</file>
+    <file>Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.1.0.1.aar</file>
     <file>Assets/Plugins/Android/com.applovin.mediation.unityads-adapter-3.6.0.0.aar</file>
     <file>Assets/Plugins/Android/com.appsflyer.af-android-sdk-6.1.3.aar</file>
     <file>Assets/Plugins/Android/com.appsflyer.oaid-6.1.2.aar</file>
     <file>Assets/Plugins/Android/com.appsflyer.unity-wrapper-6.1.3.aar</file>
-    <file>Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.2.1.aar</file>
+    <file>Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.3.0.aar</file>
     <file>Assets/Plugins/Android/com.facebook.android.facebook-applinks-8.2.0.aar</file>
     <file>Assets/Plugins/Android/com.facebook.android.facebook-common-8.2.0.aar</file>
     <file>Assets/Plugins/Android/com.facebook.android.facebook-core-8.2.0.aar</file>
@@ -105,7 +105,7 @@
     <file>Assets/Plugins/Android/com.google.guava.guava-27.1-android.jar</file>
     <file>Assets/Plugins/Android/com.google.guava.listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</file>
     <file>Assets/Plugins/Android/com.google.zxing.core-3.3.3.jar</file>
-    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.0.2.aar</file>
+    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.1.aar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-android-1.4.0.jar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-applinks-1.4.0.jar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-tasks-1.4.0.jar</file>

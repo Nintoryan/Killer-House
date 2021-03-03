@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
@@ -42,6 +43,14 @@ public class AudioManager : MonoBehaviour
             //Выключить музыку
             _AudioMixer.SetFloat("volume", -80);
             PlayerPrefs.SetInt("SoundsVolume",-80);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 }

@@ -5,16 +5,30 @@ using UnityEngine.Purchasing;
 
 public class NoAdsPurchase : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         if (PlayerPrefs.GetInt("NoAds") == 1)
         {
-            gameObject.SetActive(false);
+            Debug.Log("ВырубайAwake");
+            Destroy(gameObject);
+            
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (PlayerPrefs.GetInt("NoAds") == 1)
+        {
+            Destroy(gameObject);
         }
     }
 
     public void OnPurchaseSuccess(Product _product)
     {
+        if (PlayerPrefs.GetInt("NoAds") == 1)
+        {
+            return;
+        }
         PlayerPrefs.SetInt("NoAds",1);
         
         //AppMetrica

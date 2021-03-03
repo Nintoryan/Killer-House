@@ -10243,11 +10243,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 990164114}
+  - component: {fileID: 990164119}
   - component: {fileID: 990164118}
   - component: {fileID: 990164117}
   - component: {fileID: 990164116}
   - component: {fileID: 990164115}
-  - component: {fileID: 990164119}
   m_Layer: 5
   m_Name: NoAds
   m_TagString: Untagged

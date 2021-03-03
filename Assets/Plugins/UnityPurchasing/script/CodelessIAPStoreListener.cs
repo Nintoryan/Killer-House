@@ -172,7 +172,7 @@ namespace UnityEngine.Purchasing
             bool consumePurchase = false;
             bool resultProcessed = false;
 
-            foreach (IAPButton button in activeButtons)
+            foreach (IAPButton button in activeButtons.ToList())
             {
                 if (button.productId == e.purchasedProduct.definition.id)
                 {

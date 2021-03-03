@@ -126,17 +126,15 @@ namespace Photon.Pun
 
         private void Update()
         {
-            if (m_Animator.applyRootMotion && photonView.IsMine == false && PhotonNetwork.IsConnected)
-            {
-                m_Animator.applyRootMotion = false;
-            }
-
             if (PhotonNetwork.InRoom == false || PhotonNetwork.CurrentRoom.PlayerCount <= 1)
             {
                 m_StreamQueue.Reset();
                 return;
             }
-
+            if (m_Animator.applyRootMotion && photonView.IsMine == false && PhotonNetwork.IsConnected)
+            {
+                m_Animator.applyRootMotion = false;
+            }
             if (photonView.IsMine)
             {
                 SerializeDataContinuously();

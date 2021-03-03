@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,7 +24,7 @@ public class FindThePair : Minigame
     {
         base.InitializeMiniGame();
         var list = new List<int>();
-        var _tmp_items = _items;
+        var _tmp_items = _items.ToList();
         for (int i = 0; i < _sprites.Length;i++)
         {
             list.Add(i);

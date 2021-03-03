@@ -23,19 +23,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f4fa4c2-5ae6-498e-ac92-090a512d0de3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.3.0.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.3.0.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.1.0.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.1.0.1.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.3.0.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.3.0.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.1.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.1.aar.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Among Ass/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Facebook/Editor/Dependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/Google/Editor/Dependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MaxSdk/Mediation/IronSource/Editor/Dependencies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.work.work-runtime-2.1.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/androidx.work.work-runtime-2.1.0.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.2.1.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.facebook-adapter-6.2.1.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.0.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.applovin.mediation.ironsource-adapter-7.1.0.2.0.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.2.1.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.audience-network-sdk-6.2.1.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-8.2.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-common-8.2.0.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-8.2.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.facebook.android.facebook-core-8.2.0.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-ads-lite-19.7.0.aar" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/com.google.android.gms.play-services-ads-lite-19.7.0.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.0.2.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.1.0.2.aar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/CodelessIAPStoreListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/CodelessIAPStoreListener.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Resources/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/forfun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/forfun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginMenuHub.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AndroidResolverDependencies.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,14 +112,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/MinigamePresenter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KillingZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShortCutZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/PreviewerRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/TabsController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Wallet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerAvatar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Notifications/DailyNotifications.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/ShopPreview.cs" />
@@ -107,7 +131,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/DBDMinigame/CursorRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/RotatingMinigame/RotatingInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/Minigame.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAdButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/QuestArrowRotator.cs" />
         <option value="$PROJECT_DIR$/Assets/MenuLoader.cs" />
@@ -122,7 +145,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/RewardedAds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Chat.cs" />
-        <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Body.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonTransformView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/Item.cs" />
@@ -132,11 +154,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginHub.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/VotingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/PairItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Skills.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/InterstitialAds.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Minigames/FindThePair/FindThePair.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/UnityPurchasing/script/CodelessIAPStoreListener.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Plugins 1/Photon/PhotonUnityNetworking/Code/Views/PhotonAnimatorView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Monetization/NoAdsPurchase.cs" />
       </list>
     </option>
   </component>
@@ -253,6 +279,8 @@
       <workItem from="1614303966923" duration="31000" />
       <workItem from="1614333101270" duration="1522000" />
       <workItem from="1614600709370" duration="7494000" />
+      <workItem from="1614722932318" duration="5825000" />
+      <workItem from="1614796971736" duration="413000" />
     </task>
     <servers />
   </component>
@@ -342,10 +370,6 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="116" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1606742267090" />
-    <state x="501" y="119" key="RiderGenerateDialog" timestamp="1606055245516">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="501" y="119" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1606055245516" />
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1614282840043">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -354,9 +378,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1608049437765" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614608188880">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1614797112953">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1614608188880" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1614797112953" />
   </component>
 </project>

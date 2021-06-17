@@ -24,18 +24,28 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         s.AppendInterval(1.25f);
         s.AppendCallback(() =>
         {
-            int playersAmount = System.Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount);
+            int playersAmount = Convert.ToInt32(PhotonNetwork.CurrentRoom.PlayerCount);
             var NumbersList = new List<int>();
             for (int i = 0; i < playersAmount; i++)
             {
                 NumbersList.Add(i);
             }
             int ImposterID1 = Random.Range(0, playersAmount);
+            int ImposterID2, ImposterID3;
             NumbersList.Remove(ImposterID1);
-            int ImposterID2 = NumbersList[Random.Range(0, NumbersList.Count)];
-            NumbersList.Remove(ImposterID2);
-            int ImposterID3 = NumbersList[Random.Range(0, NumbersList.Count)];
-            NumbersList.Remove(ImposterID3);
+            if (NumbersList.Count == 0)
+            {
+                ImposterID2 = 0;
+                ImposterID3 = 0;
+            }
+            else
+            {
+                ImposterID2 = NumbersList[Random.Range(0, NumbersList.Count)];
+                NumbersList.Remove(ImposterID2);
+                ImposterID3 = NumbersList[Random.Range(0, NumbersList.Count)];
+                NumbersList.Remove(ImposterID3);
+            }
+            
             Debug.Log($"Players Amount:{PhotonNetwork.CurrentRoom.PlayerCount}");
             Debug.Log($"Imposter:{ImposterID1},{ImposterID2},{ImposterID3}");
             var options = new RaiseEventOptions {Receivers = ReceiverGroup.All};
@@ -97,6 +107,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         if (PlayerPrefs.GetInt("ToEndGameScreen") == 1)
         {
             PlayerPrefs.SetInt("ToEndGameScreen",0);
+            EndGame.AdsOncePerGame = false;
             SceneManager.LoadScene("EndGameScreen");
         }
         else
@@ -115,9 +126,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             {"time", (int)GameManager.Instance.TimeSinceGameStarted},
             {"progress",0}
         };
-        
-        metrica.ReportEvent("level_finish",paramerts);
-        metrica.SendEventsBuffer();
+        if (GameManager.Instance.isGameStarted && GameManager.CANFINISH)
+        {
+            metrica.ReportEvent("level_finish",paramerts);
+            metrica.SendEventsBuffer();
+            GameManager.CANFINISH = true;
+        }
     }
 
     public override void OnMasterClientSwitched(Player newMasterClient)

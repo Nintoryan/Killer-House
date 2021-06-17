@@ -45,12 +45,4 @@ public class AudioManager : MonoBehaviour
             PlayerPrefs.SetInt("SoundsVolume",-80);
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Delete))
-        {
-            PlayerPrefs.DeleteAll();
-        }
-    }
 }

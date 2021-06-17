@@ -254,9 +254,6 @@
             <e p="script" t="Include">
               <e p="CodelessIAPStoreListener.cs" t="Include" />
               <e p="ComboBox.cs" t="Include" />
-              <e p="Demo" t="Include">
-                <e p="DemoInventory.cs" t="Include" />
-              </e>
               <e p="IAPButton.cs" t="Include" />
               <e p="IAPConfigurationHelper.cs" t="Include" />
               <e p="IAPDemo.cs" t="Include" />
@@ -1043,6 +1040,7 @@
           <e p="VotingZone.cs" t="Include" />
           <e p="WatchAdsZone.cs" t="Include" />
         </e>
+        <e p="spareCam.cs" t="Include" />
       </e>
       <e p="MaxSdk.Scripts.csproj" t="IncludeRecursive" />
       <e p="MaxSdk.Scripts.Editor.csproj" t="IncludeRecursive" />

@@ -67,7 +67,7 @@ PlayerSettings:
   preserveFramebufferAlpha: 1
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
-  androidRenderOutsideSafeArea: 0
+  androidRenderOutsideSafeArea: 1
   androidUseSwappy: 1
   androidBlitType: 0
   defaultIsNativeResolution: 1
@@ -128,7 +128,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.5.18
+  bundleVersion: 2.5.23
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -178,7 +178,7 @@ PlayerSettings:
     Standalone: 1
     iPhone: 0
     tvOS: 0
-  AndroidBundleVersionCode: 8
+  AndroidBundleVersionCode: 9
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1

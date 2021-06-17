@@ -34,6 +34,7 @@ public class YandexAppMetricaDummy : BaseYandexAppMetrica
 
     public override void ReportEvent (string message, Dictionary<string, object> parameters)
     {
+        Debug.Log("Reported_Event"+message);
     }
 
     public override void ReportError (string condition, string stackTrace)

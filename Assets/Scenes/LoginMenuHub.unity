@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 60195249}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3674591
+  m_Size: 0.36711666
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7953,7 +7953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -365, y: -377}
+  m_AnchoredPosition: {x: -697, y: -377}
   m_SizeDelta: {x: 569.942, y: 115.10071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773063547
@@ -10271,7 +10271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 128, y: 0}
+  m_AnchoredPosition: {x: 128, y: -318}
   m_SizeDelta: {x: 272, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990164115
@@ -10328,6 +10328,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 990164119}
+        m_TargetAssemblyTypeName: NoAdsPurchase, Assembly-CSharp
+        m_MethodName: SetButtonWasClicked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &990164116
 MonoBehaviour:
@@ -10387,8 +10399,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 990164119}
         m_TargetAssemblyTypeName: NoAdsPurchase, Assembly-CSharp
-        m_MethodName: OnPurchaseSuccess
+        m_MethodName: Buy
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 990164113}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10399,7 +10423,19 @@ MonoBehaviour:
         m_CallState: 2
   onPurchaseFailed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 990164119}
+        m_TargetAssemblyTypeName: NoAdsPurchase, Assembly-CSharp
+        m_MethodName: SetButtonWasClicked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
@@ -13884,7 +13920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -14310,7 +14346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -111.2, y: -0.029797}
+  m_AnchoredPosition: {x: -111.20001, y: -318.02975}
   m_SizeDelta: {x: 267.65015, y: 255.94043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385071049
@@ -14939,7 +14975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 276, y: 163.35999}
+  m_AnchoredPosition: {x: 679, y: 163.35999}
   m_SizeDelta: {x: 352.71106, y: 121.44757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445773868

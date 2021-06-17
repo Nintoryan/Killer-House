@@ -1,36 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AppsFlyerSDK;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
 public class NoAdsPurchase : MonoBehaviour
 {
+    private static bool buttonWasClicked;
     private void Awake()
     {
         if (PlayerPrefs.GetInt("NoAds") == 1)
         {
-            Debug.Log("ВырубайAwake");
             Destroy(gameObject);
-            
+            //
         }
     }
 
-    private void OnEnable()
+    public void SetButtonWasClicked(bool isTrue)
     {
-        if (PlayerPrefs.GetInt("NoAds") == 1)
-        {
-            Destroy(gameObject);
-        }
+        buttonWasClicked = isTrue;
+        Debug.Log($"buttonWasClicked:{buttonWasClicked}");
     }
 
-    public void OnPurchaseSuccess(Product _product)
+    public void Buy(Product _product)
     {
-        if (PlayerPrefs.GetInt("NoAds") == 1)
+        if (PlayerPrefs.GetInt("NoAds") == 1 || !buttonWasClicked)
         {
+            PlayerPrefs.SetInt("NoAds",1);
+            Destroy(gameObject);
             return;
         }
         PlayerPrefs.SetInt("NoAds",1);
-        
         //AppMetrica
         var metrica = AppMetrica.Instance;
         var parametrs = new Dictionary<string, object>
@@ -58,16 +58,20 @@ public class NoAdsPurchase : MonoBehaviour
         try
         {
             yandexAppMetricaAndroid.ReportRevenue(revenue);
-            
+
         }
-        catch { }
+        catch(Exception e)
+        {
+            Debug.Log(e);
+        }
 
         try
         {
             metrica.ReportEvent("payment_succeed",parametrs);
         }
-        catch
+        catch(Exception e)
         {
+            Debug.Log(e);
         }
         
         //AppMetrica

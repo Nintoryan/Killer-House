@@ -21,7 +21,7 @@ namespace Photon.Pun.Demo.Asteroids
                 ConnectionStatusText.text = $"Connection Status:<color=red><b>{PhotonNetwork.NetworkClientState}</b></color>";
             }
             if(AmountOfPlayersOnline == null) return;
-            AmountOfPlayersOnline.text = PhotonNetwork.CountOfPlayers != 0 ? $"Now {PhotonNetwork.CountOfPlayers} players online" : "";
+            AmountOfPlayersOnline.text = PhotonNetwork.CountOfPlayers != 0 ? $"Now {PhotonNetwork.CountOfPlayers + 7} players online" : "";
         }
 
         #endregion

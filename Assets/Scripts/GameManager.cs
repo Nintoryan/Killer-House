@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public GameObject VotingSign;
 
     public float TimeSinceGameStarted;
+
+    public static bool CANFINISH;
     public List<int> MyMinigamesIDs
     {
         get
@@ -77,6 +79,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
     private void Update()
     {
         TimeSinceGameStarted += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            CheckGameEnded();
+        }
     }
 
     public void AddPlayer(Controller Player)
@@ -297,17 +303,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     private void OnStartGame(List<int> KillersIDs)
     {
-        //Событие начала игры
-        var metrica = AppMetrica.Instance;
-        PlayerPrefs.SetInt("levelNumber", PlayerPrefs.GetInt("levelNumber") + 1);
-        var paramerts = new Dictionary<string, object>
-        {
-            {"level_number", 1},
-            {"level_count", PlayerPrefs.GetInt("levelNumber")}
-        };
-        metrica.ReportEvent("level_start", paramerts);
-        metrica.SendEventsBuffer();
-
         LocalPlayer.DisableControll();
         var s = DOTween.Sequence();
         s.AppendCallback(_beginEndGame.FadeIn);
@@ -386,6 +381,41 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         s.AppendCallback(_beginEndGame.FadeIn);
         s.AppendInterval(1.5f);
         s.AppendCallback(_beginEndGame.DisableScreen);
+        s.AppendCallback(() =>
+        {
+            if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
+            {
+                Advertisment.Instance._interstitialAd.OnDone += () =>
+                {
+                    var metrica = AppMetrica.Instance;
+                    //
+                    PlayerPrefs.SetInt("levelNumber", PlayerPrefs.GetInt("levelNumber") + 1);
+                    var paramerts = new Dictionary<string, object>
+                    {
+                        {"level_number", 1},
+                        {"level_count", PlayerPrefs.GetInt("levelNumber")}
+                    };
+                    metrica.ReportEvent("level_start", paramerts);
+                    metrica.SendEventsBuffer();
+                    CANFINISH = true;
+                };
+                Advertisment.Instance.ShowInterstitial();
+            }
+            else
+            {
+                //Событие начала игры
+                var metrica = AppMetrica.Instance;
+                PlayerPrefs.SetInt("levelNumber", PlayerPrefs.GetInt("levelNumber") + 1);
+                var paramerts = new Dictionary<string, object>
+                {
+                    {"level_number", 1},
+                    {"level_count", PlayerPrefs.GetInt("levelNumber")}
+                };
+                metrica.ReportEvent("level_start", paramerts);
+                metrica.SendEventsBuffer();
+                CANFINISH = true;
+            }
+        });
         s.AppendCallback(_beginEndGame.FadeOut);
         s.AppendInterval(1);
         s.AppendCallback(() =>
@@ -394,11 +424,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
             if (LocalPlayer.isImposter)
             {
                 LocalPlayer._skills.KillGoCD();
-            }
-
-            if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
-            {
-                Advertisment.Instance.ShowInterstitial();
             }
         });
     }

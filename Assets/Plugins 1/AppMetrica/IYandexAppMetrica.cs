@@ -60,7 +60,7 @@ public interface IYandexAppMetrica
     /// </summary>
     /// <param name="message">Report message.</param>
     /// <param name="parameters">Custom parameters.</param>
-    void ReportEvent (string message, Dictionary<string, object> parameters);
+    void ReportEvent(string message, Dictionary<string, object> parameters);
 
     /// <summary>
     /// <para>Reports the error.</para>

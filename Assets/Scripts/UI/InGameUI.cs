@@ -42,8 +42,13 @@ public class InGameUI : MonoBehaviour
                 {"time", (int)GameManager.Instance.TimeSinceGameStarted},
                 {"progress",result == "win"?100:0}
             };
-            metrica.ReportEvent("level_finish",paramerts);
-            metrica.SendEventsBuffer();
+            if (GameManager.CANFINISH)
+            {
+                metrica.ReportEvent("level_finish", paramerts);
+                metrica.SendEventsBuffer();
+                GameManager.CANFINISH = false;
+            }
+
             if (result != "leave")
             {
                 PlayerPrefs.SetInt("ToEndGameScreen",1);

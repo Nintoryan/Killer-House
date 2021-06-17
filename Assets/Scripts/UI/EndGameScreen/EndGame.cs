@@ -24,6 +24,8 @@ public class EndGame : MonoBehaviour
     
     [SerializeField] private TMP_Text Result;
 
+    public static bool AdsOncePerGame;
+
     private void Start()
     {
         var amountOfSkulls = Random.Range(50, 150);
@@ -61,7 +63,7 @@ public class EndGame : MonoBehaviour
             UserData.Wallet.Balance += amountOfSkulls;
             _moneyBar.Refresh();
         });
-        s.AppendInterval(0.1f);
+        s.AppendInterval(0.5f);
         s.AppendCallback(() =>
         {
             ClickButton.interactable = true;
@@ -70,33 +72,41 @@ public class EndGame : MonoBehaviour
     }
 
     private bool isButtonClicked;
+    private bool isButtonClicked1;
     
     public void ButtonClick()
     {
-        if (!isButtonClicked )
+        ClickButton.interactable = false;
+        if (!isButtonClicked)
         {
             ClickFirst();
             isButtonClicked = true;
         }
+        else if(!isButtonClicked1)
+        {
+            if (PlayerPrefs.GetInt("NoAds") == 1)
+            {
+                ClickThird();
+            }
+            else
+            {
+                ClickSecond();
+                isButtonClicked1 = true;
+            }
+        }
         else
         {
-            ClickSecond();
+            ClickThird();
         }
     }
     
     private void ClickFirst()
     {
         var s = DOTween.Sequence();
-        s.AppendCallback(() =>
-        {
-            ClickButton.interactable = false;
-        });
         s.Append(Glowing.DOScale(Vector3.zero, 0.5f));
         s.Join(Skull.DOScale(Vector3.zero, 0.5f));
         s.Join(Result.DOFade(0, 0.5f));
-
         s.AppendInterval(0.5f);
-
         s.AppendCallback(() =>
         {
             Key.transform.localScale = new Vector3(0,0,0);
@@ -126,7 +136,7 @@ public class EndGame : MonoBehaviour
             UserData.Wallet.Keys += 1;
             _moneyBar.Refresh();
         });
-        s.AppendInterval(0.1f);
+        s.AppendInterval(0.5f);
         s.AppendCallback(() =>
         {
             ClickButton.interactable = true;
@@ -136,20 +146,14 @@ public class EndGame : MonoBehaviour
     private void ClickSecond()
     {
         var s = DOTween.Sequence();
-        s.AppendCallback(() =>
-        {
-            ClickButton.interactable = false;
-        });
-        s.Append(Glowing.DOScale(Vector3.zero, 0.5f));
-        s.Join(Key.DOScale(Vector3.zero, 0.5f));
-        s.Join(Result.DOFade(0, 0.5f));
         s.AppendInterval(1.5f);
         s.AppendCallback(() =>
         {
             if (Advertisment.Instance != null)
             {
-                if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1)
+                if (Advertisment.Instance.IsInterstitialReady && PlayerPrefs.GetInt("NoAds") != 1 && !AdsOncePerGame)
                 {
+                    AdsOncePerGame = true;
                     try
                     {
                         Advertisment.Instance.ShowInterstitial();
@@ -158,14 +162,26 @@ public class EndGame : MonoBehaviour
                     {
                         Debug.LogWarning(e);
                     }
-                    
                 }
             }
         });
+        s.AppendInterval(1.5f);
+        s.AppendCallback(() =>
+        {
+            ClickButton.interactable = true;
+        });
+    }
+
+    private void ClickThird()
+    {
+        var s = DOTween.Sequence();
+        s.Append(Glowing.DOScale(Vector3.zero, 0.5f));
+        s.Join(Key.DOScale(Vector3.zero, 0.5f));
+        s.Join(Result.DOFade(0, 0.5f));
         s.AppendInterval(1f);
         s.AppendCallback(() =>
         {
-            SceneManager.LoadScene("LoginMenuHub");
+            SceneManager.LoadScene(0);
         });
     }
 }

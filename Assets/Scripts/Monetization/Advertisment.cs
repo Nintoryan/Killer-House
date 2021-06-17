@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Advertisment : MonoBehaviour
 {
-    [SerializeField] private InterstitialAds _interstitialAd;
+    public InterstitialAds _interstitialAd;
     public RewardedAds RewardedAd;
 
     public bool IsInterstitialReady => _interstitialAd.IsReady;

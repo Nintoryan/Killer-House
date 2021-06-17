@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InterstitialAds : MonoBehaviour
 {
     private const string interstitialAdUnitId = "9454ad4f18bc9b91";
     private int retryAttempt;
+    public event UnityAction OnDone;
 
     public bool IsReady => MaxSdk.IsInterstitialReady(interstitialAdUnitId);
 
@@ -41,6 +43,8 @@ public class InterstitialAds : MonoBehaviour
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
             metrica.SendEventsBuffer();
+            OnDone?.Invoke();
+            OnDone = null;
         }
         
     }
@@ -64,6 +68,8 @@ public class InterstitialAds : MonoBehaviour
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
             metrica.SendEventsBuffer();
+            OnDone?.Invoke();
+            OnDone = null;
         }
     }
 
@@ -99,6 +105,8 @@ public class InterstitialAds : MonoBehaviour
             isSended = true;
             metrica.ReportEvent("video_ads_watch", parametrs);
             metrica.SendEventsBuffer();
+            OnDone?.Invoke();
+            OnDone = null;
         }
         LoadInterstitial();
     }
